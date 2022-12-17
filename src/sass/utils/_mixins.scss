@@ -1,0 +1,38 @@
+@use 'sass:math';
+@use 'sass:list';
+@use 'sass:map';
+
+
+
+
+@mixin mq($from: null, $until: null) {
+    @if ($until) and (unit($until)=='px') {
+        $until: $until - 0.1px;
+    }
+
+    @if ($from) and ($until) {
+        @media screen and (min-width: $from) and (max-width: $until) {
+            @content;
+        }
+    }
+
+    @else if ($from) {
+        @media screen and (min-width: $from) {
+            @content;
+        }
+    }
+
+    @else if ($until) {
+        @media screen and (max-width: $until) {
+            @content;
+        }
+    }
+}
+
+@mixin retina($pixel-density: 2) {
+
+    @media (min-device-pixel-ratio: $pixel-density),
+    (min-resolution: ($pixel-density * 96dpi)),
+    (min-resolution: #{$pixel-density}dppx) {
+        @content;
+    }}

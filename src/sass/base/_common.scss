@@ -1,0 +1,19 @@
+body {
+    color: getColor('black');
+    background-color: getColor('white');
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 20px;
+
+    @include mq($width-tablet) {
+        max-width: $width-tablet;
+        padding: 0 32px;
+    }
+
+    @include mq($width-desktop) {
+        max-width: $width-desktop;
+    }
+}

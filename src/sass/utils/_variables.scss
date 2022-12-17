@@ -1,0 +1,22 @@
+$colors: (
+    'white': #fff,
+    'black': #000,
+    'accent': #FF6B01,
+    'footer-text': #545454,
+    'error-text': #FF001B,
+    'modal-info': #8C8C8C,
+    'modal-accent':  #FF6B08,
+    'footer-bgr': #F7F7F7,
+);
+
+@function getColor($key) {
+    @return map-get($colors, $key);
+}
+
+$width-mobile: 320px;
+$width-tablet: 768px;
+$width-desktop: 1280px;
+
+$timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+$duration: 250ms;
+
