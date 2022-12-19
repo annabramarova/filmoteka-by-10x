@@ -13,7 +13,8 @@ $colors: (
     @return map-get($colors, $key);
 }
 
-$width-mobile: 320px;
+$width-min-allowable: 320px;
+$width-mobile: 480px;
 $width-tablet: 768px;
 $width-desktop: 1280px;
 
