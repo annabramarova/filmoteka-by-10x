@@ -1,4 +1,4 @@
-Website project "Filmoteka" by team "10x developers" академии GOIT 🚀
+Website project "Filmoteka" by team "10x developers" академіЇ GOIT 🚀
 
 Проект по курсу JavaScript
 
