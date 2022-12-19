@@ -21,3 +21,12 @@ $width-desktop: 1280px;
 $timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 $duration: 250ms;
 
+@keyframes anime {
+    from {
+        transform: scale(1) rotate(1deg);
+    }
+
+    to {
+        transform: scale(1.5) rotate(1deg);
+    }
+}
