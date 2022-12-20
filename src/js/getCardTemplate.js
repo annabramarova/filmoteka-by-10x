@@ -1,4 +1,5 @@
 export const getCardTemplate = ({
+  id,
   poster_path,
   title,
   vote_average,

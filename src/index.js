@@ -1,8 +1,11 @@
 import './js/preloader';
+import './js/refs';
 import './js/render-gallery';
 import './js/team-modal';
 import './js/pagination';
 import './js/api-service';
 import './js/loading';
-import './js/api-service';
 import './js/modal';
+import './js/trend';
+import './js/gallery';
+import './js/getCardTemplate';
