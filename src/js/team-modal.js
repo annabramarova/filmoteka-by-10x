@@ -1,3 +1,4 @@
+import { loader, loaderRemove } from './loading';
 (() => {
   const refs = {
     openModalBtn: document.querySelector('[data-team-modal-open]'),
@@ -10,7 +11,9 @@
   refs.closeModalBtn.addEventListener('click', toggleModal);
 
   function toggleModal() {
+    loader();
     refs.modal.classList.toggle('visually-hidden');
+    loaderRemove();
     refs.body.classList.toggle('no-scroll');
   }
 })();
