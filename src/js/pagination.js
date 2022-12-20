@@ -1,13 +1,14 @@
-// import { refs } from './refs';
+import { refs } from './refs';
+// import from '../sass/components/_pagination.scss'
+// пагінація
 
-// // пагінація
-
-// let minPage = 1;
-// let pageBeforeTwo = page - 2;
-// let pageBefore = page - 1;
-// let pageAfter = page + 1;
-// let pageAfterTwo = page + 2;
-// let maxPage = 20;
+let page = 1;
+let minPage = 1;
+let pageBeforeTwo = page - 2;
+let pageBefore = page - 1;
+let pageAfter = page + 1;
+let pageAfterTwo = page + 2;
+let maxPage = 20;
 
 // function on_pagin_rander() {
 //   refs.pagin_box.innerHTML = `
