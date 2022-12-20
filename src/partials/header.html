@@ -1,0 +1,71 @@
+<header class="header header--home-page">
+  <div class="container">
+    <div class="wrapper">
+      <a class="logo wrapper" href="./index.html">
+        <svg class="logo__icon" width="24" height="24">
+          <use href="./images/sprite.svg#icon-film"></use>
+        </svg>
+        <p class="logo__text">Filmoteka</p>
+      </a>
+
+      <nav class="navigation">
+        <ul class="navigation__list list">
+          <li class="navigation__item">
+            <a class="navigation__link" href="./index.html" id="home-link"
+              >Home</a
+            >
+          </li>
+          <li class="navigation__item">
+            <a class="navigation__link" href="#" id="my-library-link"
+              >My library</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <form class="search-form" id="search-form">
+      <div class="wrapper wrapper--input">
+        <input
+          class="search-form__input"
+          type="text"
+          name="searchQuery"
+          autocomplete="off"
+          id="searchQuery"
+          placeholder="&nbsp;"
+        />
+
+        <label class="search-form__label" for="searchQuery">Movie search</label>
+
+        <button type="submit" class="search-form__submit" data-activ="search">
+          <svg class="search-form__icon" width="14" height="14">
+            <use
+              class="search-form__icon--search"
+              href="./images/sprite.svg#icon-search"
+            ></use>
+            <!-- <use
+                class="search-form__icon--spinner is-hidden"
+                href="./img/icon.svg#spinner"
+              ></use> -->
+          </svg>
+        </button>
+      </div>
+
+      <p class="search-form__warnang">
+        Search result not successful. Enter the correct movie name and try
+        again.
+      </p>
+    </form>
+
+    <div class="wrapper wrapper--buttons">
+      <button type="button" class="header-button" data-activ="watched">
+        <span class="wrapper-span">
+          <span class="header-button__title">Watched</span>
+        </span>
+      </button>
+      <button type="button" class="header-button" data-activ="queue">
+        <span class="header-button__title">Queue</span>
+      </button>
+    </div>
+  </div>
+</header>
