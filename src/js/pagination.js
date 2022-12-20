@@ -96,6 +96,10 @@ refs.pagin_box.addEventListener('click', on_pagin_button);
 
 function on_pagin_button(evt) {
   if (evt.target.type === 'submit') {
+    if (Number(page) === Number(evt.target.innerText)) {
+      return;
+    }
+
     page = Number(evt.target.innerText);
 
     pageBeforeFour = page - 4;
