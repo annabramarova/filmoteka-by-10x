@@ -1,7 +1,8 @@
 import { refs } from './refs';
-
+// import from '../sass/components/_pagination.scss'
 // пагінація
 
+let page = 1;
 let minPage = 1;
 let pageBeforeTwo = page - 2;
 let pageBefore = page - 1;
