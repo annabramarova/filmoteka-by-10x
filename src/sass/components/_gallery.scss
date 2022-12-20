@@ -1,13 +1,9 @@
 .gallery-container {
   @include mq($until: $width-tablet) {
     padding-top: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
     padding-bottom: 40px;
   }
   padding-top: 60px;
-  padding-left: 32px;
-  padding-right: 32px;
   padding-bottom: 60px;
 }
 .collection_list {
