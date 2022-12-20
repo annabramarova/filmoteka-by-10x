@@ -6,7 +6,7 @@ Website project "Filmoteka" by team "10x developers" академіЇ GOIT 🚀
 
 Team-lead: Ганна Брамарова
 
-Scrum-master & Front-end developer: Марина Данилюк
+Scrum-master & Front-end developer: Софія Гакало
 
 Front-end developer: Ігор Бєлоус
 
@@ -18,7 +18,7 @@ Front-end developerr: Сергій Гончаров
 
 Front-end developer: Володимир Кудрявцев
 
-Front-end developer: Софія Гакало
+Front-end developer: Марина Данилюк
 
 Front-end developer: Микола Ковбасинський
 

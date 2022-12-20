@@ -1,0 +1,36 @@
+.gallery-container {
+  @include mq($until: $width-tablet) {
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.collection_list {
+  display: flex;
+  flex-wrap: wrap;
+//   justify-content: center;
+  align-items: center;
+  @include mq($from: $width-min-allowable, $until: $width-tablet) {
+    row-gap: 20px;
+  }
+  @include mq($from: $width-tablet, $until: $width-desktop) {
+    column-gap: 32px;
+    row-gap: 32px;
+  }
+  @include mq($from: $width-desktop) {
+    column-gap: 16px;
+    row-gap: 32px;
+  }
+}
+.collection_item {
+  @include mq($from: $width-min-allowable, $until: $width-tablet) {
+    width: 100%;
+  }
+  @include mq($from: $width-tablet, $until: $width-desktop) {
+    width: calc((100% - 32px) / 2);
+  }
+  @include mq($from: $width-desktop) {
+    width: calc((100% - 32px) / 3);
+  }
+}
