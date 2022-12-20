@@ -14,7 +14,7 @@ Front-end developer: Віктор Звонар
 
 Front-end developer: Степан Дрімак
 
-Front-end developerr: Марина Данилюк
+Front-end developerr: Сергій Гончаров
 
 Front-end developer: Володимир Кудрявцев
 
