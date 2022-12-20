@@ -16,7 +16,6 @@ export class Api {
       )
       .then(res => res.data);
 
-    console.log(r.results);
     return r.results;
   }
 
@@ -29,7 +28,16 @@ export class Api {
     let nextPagfe = this.page + 1;
     return nextPage;
   }
+
+  async getGenres() {
+    const g = await axios
+      .get(`/genre/movie/list?api_key=${this.KEY}&language=en-US`)
+      .then(r => r.data);
+    const genres = g.genres;
+    return genres;
+  }
 }
 
-const films = new Api();
-films.getTrendingFilms();
+// const films = new Api();
+// films.getTrendingFilms();
+// films.getGenres();
