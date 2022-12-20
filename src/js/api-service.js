@@ -1,7 +1,8 @@
 import axios from 'axios';
+
+axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
 export class Api {
   constructor() {
-    this.URL = 'https://api.themoviedb.org/3/';
     this.KEY = 'c23d7755b502540a74ef819e02a6a593';
     this.page = 1;
     this.query = '';
@@ -9,13 +10,17 @@ export class Api {
 
   async getTrendingFilms() {
     const r = await axios.get(
-      `${this.URL}/trending/movie/week?api_key=${this.KEY}&language=en-US&page=${this.page}`
+      `/trending/movie/week?api_key=${this.KEY}&language=en-US&page=${this.page}`
     );
     const d = await axios.get(r.data);
     return d;
   }
 
-  async getFilmBySearch() {}
+  async getFilmBySearch() {
+    const r = await axios.get(
+      `/search/movie?api_key=${this.KEY}&query=${this.query}&language=en-US&${this.page}`
+    );
+  }
 }
 
 // const vars = {
