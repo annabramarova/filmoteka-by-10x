@@ -1,6 +1,8 @@
+// ----------MAIN STYLES----------
+
 header {
   min-width: 320px;
-  height: 230px;
+  //! height: 230px;
   padding-top: 40px;
   padding-bottom: 45px;
   font-weight: 500;
@@ -13,7 +15,7 @@ header {
   background-repeat: no-repeat;
 
   @media screen and (min-width: 768px) {
-    height: 216px;
+    //! height: 216px;
   }
 }
 
@@ -115,16 +117,16 @@ header {
   border: none;
   outline: none;
   color: getColor('white');
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid getColor('white');
   background: inherit;
 
-  // @include tablet {
-  //   width: 310px;
-  // }
+  @media screen and (min-width: 480px) {
+    width: 310px;
+  }
 
-  // @include desktop {
-  //   width: 370px;
-  // }
+  @media screen and (min-width: 1280px) {
+    width: 370px;
+  }
 }
 
 .wrapper--input {
@@ -133,4 +135,146 @@ header {
   margin-left: auto;
   margin-right: auto;
   align-items: flex-end;
+}
+
+.search-form__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  background-color: inherit;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid getColor('white');
+  transition-property: background-color, border-bottom, border-radius;
+  transition-duration: $duration;
+  transition-timing-function: $timing-function;
+
+  &:hover,
+  &:focus {
+    background-color: getColor('accent');
+    border-bottom: 1px solid var(--acent-color);
+    border-radius: 50px;
+  }
+}
+
+.search-form__warning {
+  margin-top: 16px;
+  color: getColor('error-text');
+
+  @media screen and (min-width: 768px) {
+    margin-top: 20px;
+  }
+}
+
+// ----------MY-LIB HEADER STYLES----------
+
+//! .header--my-library {
+//   //! background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+//   //   url(../img/ml-mob.jpg);
+//   // @include retina {
+//   //   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+//   //     url(../img/ml-mob@2x.jpg);
+//   // }
+
+//   //! @media screen and (min-width: 480px) {
+//   //   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+//   //     url(../img/ml-tab.jpg);
+//   //   @include retina {
+//   //     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+//   //       url(../img/ml-tab@2x.jpg);
+//   //   }
+//   // }
+
+//   //! @include desktop {
+//   //   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+//   //     url(../img/ml-desk.jpg);
+//   //   @include retina {
+//   //     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+//   //       url(../img/ml-desk@2x.jpg);
+//   //   }
+//   // }
+// }
+
+.wrapper--buttons {
+  justify-content: center;
+  gap: 20px;
+
+  @media screen and (min-width: 768px) {
+    gap: 32px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    gap: 16px;
+  }
+}
+
+.header-button {
+  position: relative;
+  margin-top: 60px;
+  font-size: 12px;
+  font-weight: inherit;
+  line-height: 1.33;
+  text-transform: uppercase;
+  color: getColor('white');
+  background-color: inherit;
+  border: 1px solid getColor('white');
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  transition-property: background-color, border-color;
+  transition-duration: $duration;
+  transition-timing-function: $timing-function;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 40px;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: getColor('accent');
+    border-color: getColor('accent');
+  }
+
+  &.current {
+    border-color: getColor('accent');
+  }
+}
+
+[data-activ='watched'] {
+  padding: 12px 35px;
+
+  @media screen and (min-width: 768px) {
+    padding: 12px 46px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding: 11px 44px;
+  }
+}
+
+[data-activ='queue'] {
+  padding: 12px 44px;
+
+  @media screen and (min-width: 768px) {
+    padding: 12px 55px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding: 11px 53px;
+  }
+}
+
+.header-button.current::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 7px;
+  width: 57px;
+  height: 3px;
+  opacity: 1;
+  background-color: getColor('accent');
 }
