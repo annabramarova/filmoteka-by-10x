@@ -17,6 +17,10 @@ header {
   @include mq($width-tablet) {
     height: 216px;
   }
+
+  a {
+    outline: none;
+  }
 }
 
 .logo__text {
@@ -52,7 +56,6 @@ header {
   position: relative;
   padding: 5px 2px;
   border-radius: 5px;
-  outline: none;
   transition: color $duration $timing-function;
 
   &:hover,
@@ -70,6 +73,28 @@ header {
   height: 3px;
   opacity: 1;
   background-color: getColor('error-text');
+}
+
+.wrapper--log-buttons {
+  display: flex;
+}
+
+.header__log-button {
+  margin-left: 4px;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: inherit;
+  fill: getColor('white');
+  cursor: pointer;
+  transition: fill $duration $timing-function;
+
+  &:hover,
+  &:focus {
+    fill: getColor('accent');
+  }
 }
 
 .search-form {

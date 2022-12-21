@@ -26,20 +26,32 @@
         </ul>
       </nav>
 
-      <button
-        type="button"
-        class="header__log-button visually-hidden"
-        data-action="login"
-      >
-        Login
-      </button>
-      <button
-        type="button"
-        class="header__log-button visually-hidden"
-        data-action="logout"
-      >
-        Logout
-      </button>
+      <div class="wrapper--log-buttons">
+        <button
+          type="button"
+          class="header__log-button visually-hidden"
+          data-action="login"
+        >
+          <svg width="20" height="20">
+            <use
+              class="header__icon-login"
+              href="./images/sprite.svg#icon-login"
+            ></use>
+          </svg>
+        </button>
+        <button
+          type="button"
+          class="header__log-button visually-hidden"
+          data-action="logout"
+        >
+          <svg width="20" height="20">
+            <use
+              class="header__icon-login"
+              href="./images/sprite.svg#icon-logout"
+            ></use>
+          </svg>
+        </button>
+      </div>
     </div>
 
     <form class="search-form" id="search-form">
