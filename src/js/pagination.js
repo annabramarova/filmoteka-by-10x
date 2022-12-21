@@ -158,7 +158,8 @@ function on_pagin_button(evt) {
 
     console.log('page: ', page);
 
-    return on_pagin_rander();
+    on_pagin_rander();
+
     // onFetch() функція для створення розмітки
   }
 }
