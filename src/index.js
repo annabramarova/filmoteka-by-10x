@@ -6,3 +6,4 @@ import './js/loading';
 import './js/api-service';
 import './js/modal';
 import './js/search-film';
+import './js/header';

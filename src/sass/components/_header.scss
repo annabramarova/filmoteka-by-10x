@@ -2,7 +2,7 @@
 
 header {
   min-width: 320px;
-  //! height: 230px;
+  height: 230px;
   padding-top: 40px;
   padding-bottom: 45px;
   font-weight: 500;
@@ -15,7 +15,7 @@ header {
   background-repeat: no-repeat;
 
   @include mq($width-tablet) {
-    //! height: 216px;
+    height: 216px;
   }
 }
 
@@ -53,7 +53,7 @@ header {
   padding: 5px 2px;
   border-radius: 5px;
   outline: none;
-  transition: background-color $duration $timing-function;
+  transition: color $duration $timing-function;
 
   &:hover,
   &:focus {
@@ -70,12 +70,6 @@ header {
   height: 3px;
   opacity: 1;
   background-color: getColor('error-text');
-  transition: opacity $duration $timing-function;
-}
-
-.navigation__link:hover::after,
-.navigation__link:focus::after {
-  opacity: 0;
 }
 
 .search-form {
@@ -206,7 +200,7 @@ header {
     gap: 32px;
   }
 
- @include mq($width-desktop) {
+  @include mq($width-desktop) {
     gap: 16px;
   }
 }
@@ -242,12 +236,15 @@ header {
     background-color: getColor('accent');
     border-color: getColor('accent');
     color: getColor('white');
+    transition-property: background-color, border-color;
+    transition-duration: $duration;
+    transition-timing-function: $timing-function;
 
     &:hover,
-      &:focus {
-        background-color: getColor('error-text');
-        border-color: getColor('error-text');
-      }
+    &:focus {
+      background-color: getColor('error-text');
+      border-color: getColor('error-text');
+    }
   }
 }
 
