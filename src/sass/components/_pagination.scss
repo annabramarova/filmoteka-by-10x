@@ -14,7 +14,7 @@
   justify-content: center;
   margin-top: 40px;
   margin-bottom: 40px;
-  column-gap: 5px;
+  column-gap: 3px;
 
   @include mq($width-tablet) {
     margin-top: 60px;
