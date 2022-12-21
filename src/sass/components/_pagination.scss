@@ -26,6 +26,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 
   width: 40px;
   height: 40px;
@@ -35,11 +36,12 @@ background-color: transparent;
 color: getColor('black');
 border-radius: 5px;
 
-
-} 
-button.pagin_button:hover{
+    &:hover,
+      &:focus {
     background-color: getColor('error-text');
-  }
+    color: getColor('white');
+    } 
+}
 
 .pagin_nothing {
   background-color: transparent;
@@ -55,7 +57,6 @@ button.pagin_button:hover{
 .pagin_button_left{
 background-color: getColor('footer-bgr');
 color: getColor('black');
-
 }
 
 .pagin_button_rigth{
