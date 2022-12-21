@@ -1,0 +1,63 @@
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.pagin_box {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  column-gap: 3px;
+
+  @include mq($width-tablet) {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    }
+}
+
+.pagin_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 40px;
+  height: 40px;
+
+  border: none;
+background-color: transparent;
+color: getColor('black');
+border-radius: 5px;
+
+
+} 
+button.pagin_button:hover{
+    background-color: getColor('error-text');
+  }
+
+.pagin_nothing {
+  background-color: transparent;
+  border-color: transparent;
+  color: getColor('black');
+}
+
+.pagin_accent {
+  background-color: getColor('modal-accent');
+  color: getColor('white');
+}
+
+.pagin_button_left{
+background-color: getColor('footer-bgr');
+color: getColor('black');
+}
+
+.pagin_button_rigth{
+  background-color: getColor('footer-bgr');
+  color: getColor('black');
+}

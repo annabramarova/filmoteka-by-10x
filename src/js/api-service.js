@@ -25,7 +25,7 @@ export default class Api {
     );
   }
   getNextPage() {
-    let nextPagfe = this.page + 1;
+    let nextPage = this.page + 1;
     return nextPage;
   }
 
