@@ -1,12 +1,6 @@
-import Notiflix from 'notiflix';
-// import { refs } from './refs.js';
-import { Api } from './api-service.js';
-import { render } from './render-gallery';
-import { getCardTemplate } from './getCardTemplate';
-
-const refs = {
-  formSearch: document.querySelector('.search-form'),
-};
+import { refs } from './refs.js';
+import Api from './api-service.js';
+import { renderGallery } from './render-gallery';
 
 const api = new Api();
 
@@ -14,15 +8,23 @@ refs.formSearch.addEventListener('submit', onFormSubmit);
 
 async function onFormSubmit(e) {
   e.preventDefault();
-  console.log(e);
   const {
     elements: { searchQuery },
   } = e.target;
-
-  console.log(searchQuery.value);
+  console.dir(e.target);
   api.query = searchQuery.value.trim();
-  console.log(api.query);
-  await api.getFilmBySearch();
-  api.getNextPage();
-  console.log(api.page);
+  if (api.query === '') {
+    return console.log('nothing');
+  }
+  try {
+    const results = await api.getFilmBySearch();
+    if (results.length === 0) {
+      return console.log('qwe');
+    }
+    renderGallery(results);
+
+    console.dir(results.length);
+  } catch {
+    console.error();
+  }
 }
