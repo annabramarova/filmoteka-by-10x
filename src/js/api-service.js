@@ -7,7 +7,7 @@ export default class Api {
     this.KEY = 'c23d7755b502540a74ef819e02a6a593';
     this.page = 1;
     this.query = '';
-    this.id = 676547;
+    // this.id = 436270;
   }
 
   async getTrendingFilms() {
@@ -16,16 +16,26 @@ export default class Api {
         `/trending/movie/week?api_key=${this.KEY}&language=en-US&page=${this.page}`
       )
       .then(res => res.data);
+    console.log(r.results);
     return r.results;
   }
 
-  async getFilmBySearch() {
+  async getFilmBySearch(search) {
+    this.query = search;
     const r = await axios
       .get(
         `/search/movie?api_key=${this.KEY}&query=${this.query}&language=en-US&${this.page}`
       )
       .then(res => res.data);
     return r.results;
+  }
+
+  async getFilmById(id) {
+    // this.id = id;
+    const r = await axios
+      .get(`/movie/${this.id}?api_key=${this.KEY}&language=en-US`)
+      .then(res => res.data);
+    return r;
   }
 
   getNextPage() {
@@ -51,9 +61,8 @@ export default class Api {
   }
 }
 
-
-// const films = new Api();
+const films = new Api();
 // films.getTrendingFilms();
 // films.getGenres();
 // films.getTreiler();
-
+// films.getFilmById();
