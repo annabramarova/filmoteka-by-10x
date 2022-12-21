@@ -6,6 +6,7 @@ export function galleryTemplate({
   original_title,
   release_date,
   genre_ids,
+  vote_average,
 }) {
   const url = `https://image.tmdb.org/t/p/original/${poster_path}`;
   const date = release_date.slice(0, 4);
@@ -13,9 +14,11 @@ export function galleryTemplate({
     genres.find(genre => genre.id === id)
   );
   const genresNames = genresArray.map(({ name }) => name).join(', ');
+  const rating = vote_average.toFixed(2);
 
   return `<li class="collection_item">
 <article class="card" data-id=${id}>
+<span class="card-rating">${rating}</span>
 <a href="" class="card_link">
 <img class="card_img" width="394" src=${url} alt="{original_title}">
 </a>

@@ -9,6 +9,7 @@
 .collection_list {
   display: flex;
   flex-wrap: wrap;
+
   @include mq($from: $width-min-allowable, $until: $width-tablet) {
     row-gap: 20px;
   }
@@ -33,17 +34,21 @@
   }
 }
 .card {
-  transition-property: transform;
-  transition-duration: 1000ms;
-  border-radius: 5px;
+  position: relative;
   display: flex;
   flex-direction: column;
-  cursor: pointer;
+
+  border-radius: 5px;
   font-weight: 500;
+
+  transition-property: transform;
+  transition-duration: 1000ms;
+  cursor: pointer;
+
   @include mq($from: $width-min-allowable, $until: $width-tablet) {
+    gap: 10px;
     font-size: 12px;
     line-height: calc(14 / 12);
-    gap: 10px;
   }
   @include mq($from: $width-tablet, $until: $width-desktop) {
     font-size: 12px;
@@ -66,5 +71,16 @@
   text-transform: uppercase;
 }
 .card-genres {
-  color: getColor("modal-accent");
+  color: getColor('modal-accent');
+}
+.card-rating {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  padding: 5px 10px;
+
+  border-radius: 10px;
+
+  background-color: getColor('modal-accent');
+  color: getColor('white');
 }
