@@ -9,8 +9,6 @@
 .collection_list {
   display: flex;
   flex-wrap: wrap;
-//   justify-content: center;
-  align-items: center;
   @include mq($from: $width-min-allowable, $until: $width-tablet) {
     row-gap: 20px;
   }
@@ -33,4 +31,40 @@
   @include mq($from: $width-desktop) {
     width: calc((100% - 32px) / 3);
   }
+}
+.card {
+  transition-property: transform;
+  transition-duration: 1000ms;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  font-weight: 500;
+  @include mq($from: $width-min-allowable, $until: $width-tablet) {
+    font-size: 12px;
+    line-height: calc(14 / 12);
+    gap: 10px;
+  }
+  @include mq($from: $width-tablet, $until: $width-desktop) {
+    font-size: 12px;
+    line-height: calc(16 / 12);
+    gap: 8px;
+  }
+  @include mq($from: $width-desktop) {
+    font-size: 20px;
+    line-height: calc(24 / 20);
+    gap: 12px;
+  }
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card_img {
+  border-radius: 5px;
+}
+.card-name {
+  text-transform: uppercase;
+}
+.card-genres {
+  color: getColor("modal-accent");
 }
