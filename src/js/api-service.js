@@ -15,14 +15,16 @@ export class Api {
         `/trending/movie/week?api_key=${this.KEY}&language=en-US&page=${this.page}`
       )
       .then(res => res.data);
-
     return r.results;
   }
 
   async getFilmBySearch() {
-    const r = await axios.get(
-      `/search/movie?api_key=${this.KEY}&query=${this.query}&language=en-US&${this.page}`
-    );
+    const r = await axios
+      .get(
+        `/search/movie?api_key=${this.KEY}&query=${this.query}&language=en-US&${this.page}`
+      )
+      .then(res => res.data);
+    return r.results;
   }
   getNextPage() {
     let nextPagfe = this.page + 1;
