@@ -1,6 +1,6 @@
 import { galleryTemplate } from './gallery';
 import { refs } from './refs';
-import Api from './js/api-service';
+import Api from './api-service';
 const apiService = new Api();
 
 
