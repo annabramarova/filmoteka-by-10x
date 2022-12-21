@@ -24,9 +24,7 @@ function on_pagin_render() {
     <button type="submit" class="pagin_button">${pageAfterFour}</button>
     <p class="pagin_button pagin_nothing">...</p>
     <button type="submit" class="pagin_button">${maxPage}</button>
-    <button type="submit" class="pagin_button pagin_button_rigth"><svg class="pagin__icon" width="16" height="16">
-        <use href="./images/sprite.svg#icon-arrow-right"></use>
-      </svg></button>
+    <button type="submit" class="pagin_button pagin_button_rigth"></button>
   `;
   } else if (page === 2) {
     refs.pagin_box.innerHTML = `
@@ -37,9 +35,7 @@ function on_pagin_render() {
     <button type="submit" class="pagin_button">${pageAfterThree}</button>
     <p class="pagin_button pagin_nothing">...</p>
     <button type="submit" class="pagin_button">${maxPage}</button>
-    <button type="submit" class="pagin_button pagin_button_rigth"><svg class="pagin__icon" width="16" height="16">
-        <use href="./images/sprite.svg#icon-arrow-right"></use>
-      </svg></button>
+    <button type="submit" class="pagin_button pagin_button_rigth"></button>
   `;
   } else if (page === 3) {
     refs.pagin_box.innerHTML = `
@@ -50,15 +46,11 @@ function on_pagin_render() {
     <button type="submit" class="pagin_button">${pageAfterTwo}</button>
     <p class="pagin_button pagin_nothing">...</p>
     <button type="submit" class="pagin_button">${maxPage}</button>
-    <button type="submit" class="pagin_button pagin_button_rigth"><svg class="pagin__icon" width="16" height="16">
-        <use href="./images/sprite.svg#icon-arrow-right"></use>
-      </svg></button>
+    <button type="submit" class="pagin_button pagin_button_rigth"></button>
   `;
   } else if (page >= 4 && page <= 17) {
     refs.pagin_box.innerHTML = `
-    <button type="submit" class="pagin_button pagin_button_left"><svg class="pagin__icon" width="16" height="16">
-        <use href="./images/sprite.svg#icon-arrow-left"></use>
-      </svg></button>
+    <button type="submit" class="pagin_button pagin_button_left"></button>
     <button type="submit" class="pagin_button">${minPage}</button>
     <p class="pagin_button pagin_nothing">...</p>
     <button type="submit" class="pagin_button">${pageBeforeTwo}</button>
@@ -68,15 +60,11 @@ function on_pagin_render() {
     <button type="submit" class="pagin_button">${pageAfterTwo}</button>
     <p class="pagin_button pagin_nothing">...</p>
     <button type="submit" class="pagin_button">${maxPage}</button>
-    <button type="submit" class="pagin_button pagin_button_rigth"><svg class="pagin__icon" width="16" height="16">
-        <use href="./images/sprite.svg#icon-arrow-right"></use>
-      </svg></button>
+    <button type="submit" class="pagin_button pagin_button_rigth"></button>
   `;
   } else if (page === 18) {
     refs.pagin_box.innerHTML = `
-    <button type="submit" class="pagin_button pagin_button_left"><svg class="pagin__icon" width="16" height="16">
-        <use href="./images/sprite.svg#icon-arrow-left"></use>
-      </svg></button>
+    <button type="submit" class="pagin_button pagin_button_left"></button>
     <button type="submit" class="pagin_button">${minPage}</button>
     <p class="pagin_button pagin_nothing">...</p>
     <button type="submit" class="pagin_button">${pageBeforeThree}</button>
@@ -98,9 +86,7 @@ function on_pagin_render() {
   `;
   } else if (page === 20) {
     refs.pagin_box.innerHTML = `
-    <button type="submit" class="pagin_button pagin_button_left"><svg class="pagin__icon" width="16" height="16">
-        <use href="./images/sprite.svg#icon-arrow-left"></use>
-      </svg></button>
+    <button type="submit" class="pagin_button pagin_button_left"></button>
     <button type="submit" class="pagin_button">${minPage}</button>
     <p class="pagin_button pagin_nothing">...</p>
     <button type="submit" class="pagin_button">${pageBeforeFour}</button>
