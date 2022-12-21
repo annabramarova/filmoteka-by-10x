@@ -14,7 +14,7 @@ let pageAfterThree = page + 3;
 let pageAfterFour = page + 4;
 let maxPage = 20;
 
-function on_pagin_rander() {
+function on_pagin_render() {
   if (page === 1) {
     refs.pagin_box.innerHTML = `
     <button type="submit" class="pagin_button pagin_accent">${page}</button>
