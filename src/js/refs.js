@@ -7,4 +7,6 @@ export const refs = {
   homeLink: document.querySelector('#home-link'),
   myLibraryLink: document.querySelector('#my-library-link'),
   headerButtons: document.querySelectorAll('.header-button'),
+  loginButton: document.querySelector('[data-action="login"]'),
+  logoutButton: document.querySelector('[data-action="logout"]'),
 };
