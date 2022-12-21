@@ -14,7 +14,7 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
 
-  @media screen and (min-width: 768px) {
+  @include mq($width-tablet) {
     //! height: 216px;
   }
 }
@@ -24,7 +24,7 @@ header {
   margin-left: 10px;
   font-size: 30px;
 
-  @media screen and (min-width: 768px) {
+  @include mq($width-tablet) {
     display: block;
   }
 }
@@ -85,7 +85,7 @@ header {
   line-height: 1.33;
   text-align: center;
 
-  @media screen and (min-width: 768px) {
+  @include mq($width-tablet) {
     margin-top: 40px;
   }
 }
@@ -120,11 +120,11 @@ header {
   border-bottom: 1px solid getColor('white');
   background: inherit;
 
-  @media screen and (min-width: 480px) {
+  @include mq($width-mobile) {
     width: 310px;
   }
 
-  @media screen and (min-width: 1280px) {
+  @include mq($width-desktop) {
     width: 370px;
   }
 }
@@ -164,7 +164,7 @@ header {
   margin-top: 16px;
   color: getColor('error-text');
 
-  @media screen and (min-width: 768px) {
+  @include mq($width-tablet) {
     margin-top: 20px;
   }
 }
