@@ -8,15 +8,3 @@ import './js/api-service';
 import './js/loading';
 import './js/api-service';
 import './js/modal';
-import './js/search-film';
-
-import Api from './js/api-service';
-import { renderGallery } from './js/render-gallery';
-const apiService = new Api();
-
-async function trendFilms() {
-  let trendFilmes = await apiService.getTrendingFilms();
-  renderGallery(trendFilmes);
-}
-
-trendFilms();
