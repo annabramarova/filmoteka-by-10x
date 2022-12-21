@@ -1,4 +1,4 @@
-import { Loading } from 'notiflix/build/notiflix-loading-aio';
+// import { Loading } from 'notiflix/build/notiflix-loading-aio';
 
 export function loader() {
   Loading.arrows({

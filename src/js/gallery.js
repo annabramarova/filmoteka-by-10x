@@ -6,7 +6,7 @@ export function galleryTemplate({
   genre_ids,
 }) {
   const url = `https://image.tmdb.org/t/p/original/${poster_path}`;
-  const date = release_date.splice(0,3);
+  const date = release_date.splice(0, 3);
   const genres = genre_ids;
 
   return `<li class="collection_item">
