@@ -1,5 +1,5 @@
-import ApiService from './api-service';
-const apiService = new ApiService();
+import Api from './api-service';
+const apiService = new Api();
 
 export function galleryTemplate({
   id,

@@ -2,7 +2,7 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
 
-export class Api {
+export default class Api {
   constructor() {
     this.KEY = 'c23d7755b502540a74ef819e02a6a593';
     this.page = 1;
