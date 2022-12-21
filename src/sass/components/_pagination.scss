@@ -1,0 +1,36 @@
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.pagin_box {
+  display: flex;
+  justify-content: center;
+}
+
+.pagin_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 40px;
+  height: 40px;
+
+  margin: 10px;
+  margin-top: 30px;
+}
+
+.pagin_nothing {
+  background-color: rgb(0, 0, 0, 0);
+  border-color: rgb(0, 0, 0, 0);
+}
+
+.pagin_accent {
+  background-color: rgba(255, 100, 0);
+}
