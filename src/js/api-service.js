@@ -20,10 +20,14 @@ export default class Api {
   }
 
   async getFilmBySearch() {
-    const r = await axios.get(
-      `/search/movie?api_key=${this.KEY}&query=${this.query}&language=en-US&${this.page}`
-    );
+    const r = await axios
+      .get(
+        `/search/movie?api_key=${this.KEY}&query=${this.query}&language=en-US&${this.page}`
+      )
+      .then(res => res.data);
+    return r.results;
   }
+
   getNextPage() {
     let nextPage = this.page + 1;
     return nextPage;
