@@ -57,7 +57,7 @@ header {
 
   &:hover,
   &:focus {
-    background-color: getColor('accent');
+    color: getColor('accent');
   }
 }
 
@@ -202,11 +202,11 @@ header {
   justify-content: center;
   gap: 20px;
 
-  @media screen and (min-width: 768px) {
+  @include mq($width-tablet) {
     gap: 32px;
   }
 
-  @media screen and (min-width: 1280px) {
+ @include mq($width-desktop) {
     gap: 16px;
   }
 }
@@ -228,7 +228,7 @@ header {
   transition-duration: $duration;
   transition-timing-function: $timing-function;
 
-  @media screen and (min-width: 768px) {
+  @include mq($width-tablet) {
     margin-top: 40px;
   }
 
@@ -242,6 +242,12 @@ header {
     background-color: getColor('accent');
     border-color: getColor('accent');
     color: getColor('white');
+
+    &:hover,
+      &:focus {
+        background-color: getColor('error-text');
+        border-color: getColor('error-text');
+      }
   }
 }
 
