@@ -22,7 +22,7 @@ async function onFormSubmit(e) {
   console.log(searchQuery.value);
   api.query = searchQuery.value.trim();
   console.log(api.query);
-  await api.getTrendingFilms();
+  await api.getFilmBySearch();
   api.getNextPage();
   console.log(api.page);
 }
