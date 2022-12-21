@@ -16,16 +16,18 @@ export default class Api {
         `/trending/movie/week?api_key=${this.KEY}&language=en-US&page=${this.page}`
       )
       .then(res => res.data);
-    console.log(r.results);
-
     return r.results;
   }
 
   async getFilmBySearch() {
-    const r = await axios.get(
-      `/search/movie?api_key=${this.KEY}&query=${this.query}&language=en-US&${this.page}`
-    );
+    const r = await axios
+      .get(
+        `/search/movie?api_key=${this.KEY}&query=${this.query}&language=en-US&${this.page}`
+      )
+      .then(res => res.data);
+    return r.results;
   }
+
   getNextPage() {
     let nextPage = this.page + 1;
     return nextPage;
@@ -49,7 +51,9 @@ export default class Api {
   }
 }
 
+
 // const films = new Api();
 // films.getTrendingFilms();
 // films.getGenres();
 // films.getTreiler();
+
