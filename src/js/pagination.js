@@ -14,7 +14,7 @@ let pageAfterThree = page + 3;
 let pageAfterFour = page + 4;
 let maxPage = 20;
 
-function on_pagin_rander() {
+function on_pagin_render() {
   if (page === 1) {
     refs.pagin_box.innerHTML = `
     <button type="submit" class="pagin_button pagin_accent">${page}</button>
@@ -98,7 +98,7 @@ function on_pagin_rander() {
   }
 }
 
-on_pagin_rander();
+on_pagin_render();
 
 refs.pagin_box.addEventListener('click', on_pagin_button);
 
@@ -123,7 +123,7 @@ function on_pagin_button(evt) {
 
       console.log('page: ', page);
 
-      return on_pagin_rander();
+      return on_pagin_render();
     }
 
     if (evt.target.innerText === 'rigth') {
@@ -142,7 +142,7 @@ function on_pagin_button(evt) {
 
       console.log('page: ', page);
 
-      return on_pagin_rander();
+      return on_pagin_render();
     }
 
     page = Number(evt.target.innerText);
@@ -158,7 +158,7 @@ function on_pagin_button(evt) {
 
     console.log('page: ', page);
 
-    return on_pagin_rander();
+    return on_pagin_render();
     // onFetch() функція для створення розмітки
   }
 }
