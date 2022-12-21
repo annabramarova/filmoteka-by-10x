@@ -5,11 +5,9 @@ body {
 }
 
 .container {
-  outline: 1px solid red;
 
   margin: 0 auto;
   padding: 0 20px;
-  outline: none;
 
   @include mq($width-mobile) {
     max-width: $width-mobile;
