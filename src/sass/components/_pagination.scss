@@ -12,6 +12,14 @@
 .pagin_box {
   display: flex;
   justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  column-gap: 5px;
+
+  @include mq($width-tablet) {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    }
 }
 
 .pagin_button {
@@ -27,7 +35,7 @@ background-color: transparent;
 color: getColor('black');
 border-radius: 5px;
 
-  margin-top: 30px;
+
 } 
 button.pagin_button:hover{
     background-color: getColor('error-text');
