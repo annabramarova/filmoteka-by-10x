@@ -57,7 +57,7 @@ header {
 
   &:hover,
   &:focus {
-    background-color: getColor('accent');
+    color: getColor('accent');
   }
 }
 
@@ -69,7 +69,7 @@ header {
   width: 100%;
   height: 3px;
   opacity: 1;
-  background-color: getColor('accent');
+  background-color: getColor('error-text');
   transition: opacity $duration $timing-function;
 }
 
@@ -202,11 +202,11 @@ header {
   justify-content: center;
   gap: 20px;
 
-  @media screen and (min-width: 768px) {
+  @include mq($width-tablet) {
     gap: 32px;
   }
 
-  @media screen and (min-width: 1280px) {
+ @include mq($width-desktop) {
     gap: 16px;
   }
 }
@@ -224,22 +224,30 @@ header {
   border-radius: 5px;
   cursor: pointer;
   outline: none;
-  transition-property: background-color, border-color;
+  transition-property: color, border-color;
   transition-duration: $duration;
   transition-timing-function: $timing-function;
 
-  @media screen and (min-width: 768px) {
+  @include mq($width-tablet) {
     margin-top: 40px;
   }
 
   &:hover,
   &:focus {
-    background-color: getColor('accent');
+    color: getColor('accent');
     border-color: getColor('accent');
   }
 
   &.current {
+    background-color: getColor('accent');
     border-color: getColor('accent');
+    color: getColor('white');
+
+    &:hover,
+      &:focus {
+        background-color: getColor('error-text');
+        border-color: getColor('error-text');
+      }
   }
 }
 
@@ -265,16 +273,4 @@ header {
   @media screen and (min-width: 1280px) {
     padding: 11px 53px;
   }
-}
-
-.header-button.current::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 7px;
-  width: 57px;
-  height: 3px;
-  opacity: 1;
-  background-color: getColor('accent');
 }
