@@ -24,8 +24,13 @@ export class Api {
         `/search/movie?api_key=${this.KEY}&query=${this.query}&language=en-US&${this.page}`
       )
       .then(res => res.data);
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     return r.results;
   }
+
   getNextPage() {
     let nextPagfe = this.page + 1;
     return nextPage;
@@ -40,6 +45,6 @@ export class Api {
   }
 }
 
-// const films = new Api();
-// films.getTrendingFilms();
-// films.getGenres();
+const films = new Api();
+films.getTrendingFilms();
+films.getGenres();
