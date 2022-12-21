@@ -24,10 +24,6 @@ export class Api {
         `/search/movie?api_key=${this.KEY}&query=${this.query}&language=en-US&${this.page}`
       )
       .then(res => res.data);
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
     return r.results;
   }
 
