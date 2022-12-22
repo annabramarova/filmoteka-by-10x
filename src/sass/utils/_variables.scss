@@ -7,6 +7,8 @@ $colors: (
     'modal-info': #8C8C8C,
     'modal-accent':  #FF6B08,
     'footer-bgr': #F7F7F7,
+    'auth-modal':#000000a0,
+    'auth-cancel-btn':#757575,
 );
 
 @function getColor($key) {
