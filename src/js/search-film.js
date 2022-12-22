@@ -8,6 +8,10 @@ refs.formSearch.addEventListener('submit', onFormSubmit);
 
 async function onFormSubmit(e) {
   e.preventDefault();
+  const {
+    elements: { searchQuery },
+    lastElementChild,
+  } = e.currentTarget;
   api.query = searchQuery.value.trim();
   if (api.query === '') {
     lastElementChild.style.display = 'block';
@@ -21,6 +25,7 @@ async function onFormSubmit(e) {
       return;
     }
     renderGallery(results);
+    console.dir(results);
   } catch {
     console.error();
   }
