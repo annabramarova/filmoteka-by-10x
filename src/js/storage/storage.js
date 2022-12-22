@@ -22,6 +22,7 @@ class Storage {
   }
 
   includes(id) {
+    console.log(this.#STORAGE_KEY, this.items);
     return this.items.includes(id);
   }
   getIds() {
@@ -42,7 +43,8 @@ class Storage {
   }
 
   addId(id) {
-    if (this.includes(id)) return;
+    console.log('addId', id);
+    if (this.items.includes(id)) return;
 
     this.items.push(id);
     localStorage.setItem(this.#STORAGE_KEY, JSON.stringify(this.items));

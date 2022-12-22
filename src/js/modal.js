@@ -1,7 +1,17 @@
 import { getCardTemplate } from './templates/getCardTemplate';
 import Api from './api-service';
 import { refs } from './refs';
+import {
+  isWatched,
+  isQueued,
+  addWatchedId,
+  addQueuedId,
+  removeWatchedId,
+  removeQueuedId,
+} from './storage/storage';
+
 const apiService = new Api();
+let cardId = null;
 
 const modalMovieContainer = document.querySelector('.movie-modal__container');
 const backDrop = document.querySelector('.movie-backdrop');
@@ -31,7 +41,8 @@ function renderCard(data) {
 function onGalleryClick(e) {
   e.preventDefault();
   const card = e.target.closest('.card');
-  const cardId = card.dataset.id;
+  cardId = Number(card.dataset.id);
+  console.log('cardId =', cardId);
   const isPicture = e.target.classList.contains('card_img');
 
   if (!isPicture) {
@@ -47,20 +58,52 @@ function onGalleryClick(e) {
     .getFilmById(cardId)
     .then(data => {
       console.log('data', data);
+      updateButtonsCaption(cardId);
       renderCard(data);
     })
     .catch(console.log);
-  apiService
-    .getFilmById(cardId)
-    .then(data => {
-      console.log('data', data);
-      renderCard(data);
-    })
-    .catch(console.log);
+  // apiService
+  //   .getFilmById(cardId)
+  //   .then(data => {
+  //     console.log('data', data);
+  //     renderCard(data);
+  //   })
+  //   .catch(console.log);
 
   backDrop.addEventListener('mousedown', killModal);
   document.addEventListener('keydown', killModal);
 }
-  backDrop.addEventListener('mousedown', killModal);
-  document.addEventListener('keydown', killModal);
+backDrop.addEventListener('mousedown', killModal);
+document.addEventListener('keydown', killModal);
 
+const ADD_TO_WATCHED_CAPTION = 'Add to watched';
+const REMOVE_WROM_WATCHED_CAPTION = 'Remove from watched';
+const ADD_TO_QUEUE_CAPTION = 'Add to queue';
+const REMOVE_FROM_QUEUE_CAPTION = 'Remove from queue';
+
+function updateButtonsCaption(id) {
+  refs.modalWatchedButton.textContent = isWatched(id)
+    ? REMOVE_WROM_WATCHED_CAPTION
+    : ADD_TO_WATCHED_CAPTION;
+  refs.modalQueueButton.textContent = isQueued(id)
+    ? REMOVE_FROM_QUEUE_CAPTION
+    : ADD_TO_QUEUE_CAPTION;
+}
+
+refs.modalWatchedButton.addEventListener('click', e => {
+  if (isWatched(cardId)) {
+    removeWatchedId(cardId);
+  } else {
+    addWatchedId(cardId);
+  }
+  updateButtonsCaption(cardId);
+});
+
+refs.modalQueueButton.addEventListener('click', e => {
+  if (isQueued(cardId)) {
+    removeQueuedId(cardId);
+  } else {
+    addQueuedId(cardId);
+  }
+  updateButtonsCaption(cardId);
+});
