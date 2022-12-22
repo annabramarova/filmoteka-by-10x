@@ -8,22 +8,19 @@ refs.formSearch.addEventListener('submit', onFormSubmit);
 
 async function onFormSubmit(e) {
   e.preventDefault();
-  const {
-    elements: { searchQuery },
-  } = e.target;
-  console.dir(e.target);
   api.query = searchQuery.value.trim();
   if (api.query === '') {
-    return console.log('nothing');
+    lastElementChild.style.display = 'block';
+    return;
   }
   try {
+    lastElementChild.style.display = 'none';
     const results = await api.getFilmBySearch();
     if (results.length === 0) {
-      return console.log('qwe');
+      lastElementChild.style.display = 'block';
+      return;
     }
     renderGallery(results);
-
-    console.dir(results.length);
   } catch {
     console.error();
   }
