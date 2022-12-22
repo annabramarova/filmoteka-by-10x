@@ -9,4 +9,7 @@ export const refs = {
   headerButtons: document.querySelectorAll('.header-button'),
   loginButton: document.querySelector('[data-action="login"]'),
   logoutButton: document.querySelector('[data-action="logout"]'),
+  auth: document.querySelector('.auth'), //Бекдроп вікна для авторизації
+  authForm: document.querySelector('.auth__form'), //Форма авторизації
+  authCancelButton: document.querySelector('.auth [data-action="cancel"]'), //Кнопка Cancel
 };
