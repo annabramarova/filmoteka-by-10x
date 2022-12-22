@@ -7,7 +7,7 @@ export default class Api {
     this.KEY = 'c23d7755b502540a74ef819e02a6a593';
     this.page = 1;
     this.query = '';
-    this.id = 676547;
+    this.id = null;
   }
 
   async getTrendingFilms() {
