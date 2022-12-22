@@ -3,25 +3,29 @@ import Api from './api-service';
 import { refs } from './refs';
 const apiService = new Api();
 
-refs.galleryList.addEventListener('click', onGalleryClick);
-refs.movieModalCloseBtn.addEventListener('click', toggleModal);
+const modalMovieContainer = document.querySelector('.movie-modal__container');
+const backDrop = document.querySelector('.movie-backdrop');
+const closeMovieModal = document.querySelector('.modal-close-btn');
 
-console.log(refs.movieModalWatched);
-console.log(refs.movieModalQueue);
+refs.galleryList.addEventListener('click', onGalleryClick);
+closeMovieModal.addEventListener('click', toggleModal);
+
+backDrop.removeEventListener('mousedown', killModal);
+document.removeEventListener('keydown', killModal);
 
 function toggleModal() {
-  refs.movieModalBackDrop.classList.toggle('hidden');
+  backDrop.classList.toggle('hidden');
 }
 
 function killModal(e) {
   if (e.currentTarget === e.target || e.code === 'Escape') {
-    refs.movieModalBackDrop.classList.add('hidden');
+    backDrop.classList.add('hidden');
   }
 }
 
 function renderCard(data) {
   const cardMarkup = getCardTemplate(data);
-  refs.movieModalContainer.innerHTML = cardMarkup;
+  modalMovieContainer.innerHTML = cardMarkup;
 }
 
 function onGalleryClick(e) {
@@ -37,18 +41,26 @@ function onGalleryClick(e) {
     return;
   }
 
-  refs.movieModalBackDrop.classList.remove('hidden');
+  backDrop.classList.remove('hidden');
 
   apiService
     .getFilmById(cardId)
     .then(data => {
       console.log('data', data);
       renderCard(data);
-      refs.movieModalBackDrop.addEventListener('mousedown', killModal);
-      document.addEventListener('keydown', killModal);
+    })
+    .catch(console.log);
+  apiService
+    .getFilmById(cardId)
+    .then(data => {
+      console.log('data', data);
+      renderCard(data);
     })
     .catch(console.log);
 
-  document.removeEventListener('keydown', killModal);
-  refs.movieModalBackDrop.removeEventListener('mousedown', killModal);
+  backDrop.addEventListener('mousedown', killModal);
+  document.addEventListener('keydown', killModal);
 }
+  backDrop.addEventListener('mousedown', killModal);
+  document.addEventListener('keydown', killModal);
+
