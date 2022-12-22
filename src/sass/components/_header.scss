@@ -14,26 +14,31 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
 
-  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url(../images/main/main-bg-mob.jpg);
   @include retina {
-    background-image: url(../images/main/main-bg-mob@2x.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url(../images/main/main-bg-mob@2x.jpg);
   }
 
   @include mq($width-tablet) {
     height: 216px;
 
-    background-image: url(../images/main/main-bg-tablet.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url(../images/main/main-bg-tablet.jpg);
     @include retina {
-      background-image: url(../images/main/main-bg-tablet@2x.jpg);
+      background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url(../images/main/main-bg-tablet@2x.jpg);
     }
   }
 
   @include mq($width-desktop) {
-    // background-image: url(../img/hp-desk.png);
-    // @include retina {
-    //   background-image: url(../img/hp-desk@2x.png);
-    // }
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url(../images/main/main-bg-desktop.jpg);
+    @include retina {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url(../images/main/main-bg-desktop@2x.jpg);
+    }
   }
 
   a {
@@ -208,32 +213,32 @@ header {
 
 // ----------MY-LIB HEADER STYLES----------
 
-//! .header--my-library {
-//   //! background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-//   //   url(../img/ml-mob.jpg);
-//   // @include retina {
-//   //   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-//   //     url(../img/ml-mob@2x.jpg);
-//   // }
+.header--my-library {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(../images/my-library/library-bg-mob.jpg);
+  @include retina {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url(../images/my-library/library-bg-mob@2x.jpg);
+  }
 
-//   //! @media screen and (min-width: 480px) {
-//   //   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-//   //     url(../img/ml-tab.jpg);
-//   //   @include retina {
-//   //     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-//   //       url(../img/ml-tab@2x.jpg);
-//   //   }
-//   // }
+  @include mq($width-mobile) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url(../images/my-library/library-bg-tablet.jpg);
+    @include retina {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url(../images/my-library/library-bg-tablet@2x.jpg);
+    }
+  }
 
-//   //! @include desktop {
-//   //   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-//   //     url(../img/ml-desk.jpg);
-//   //   @include retina {
-//   //     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-//   //       url(../img/ml-desk@2x.jpg);
-//   //   }
-//   // }
-// }
+  @include mq($width-desktop) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url(../images/my-library/library-bg-desktop.jpg);
+    @include retina {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url(../images/my-library/library-bg-desktop@2x.jpg);
+    }
+  }
+}
 
 .wrapper--buttons {
   justify-content: center;
