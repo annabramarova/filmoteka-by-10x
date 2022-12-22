@@ -6,10 +6,8 @@ export default class Api {
   constructor() {
     this.KEY = 'c23d7755b502540a74ef819e02a6a593';
     this.page = 1;
-    // this.search = 'cat';
-    // this.query = '';
-    // this.IdMassive = [436270, 899112, 751741];
-    // this.id = 436270;
+    this.query = '';
+    this.id = null;
   }
 
   async getTrendingFilms() {
@@ -56,7 +54,7 @@ export default class Api {
     return genres;
   }
 
-  async getTreiler() {
+  async getTrаiler() {
     const r = await axios
       .get(`/movie/${this.id}/videos?api_key=${this.KEY}&language=en-US`)
       .then(r => r.data);
