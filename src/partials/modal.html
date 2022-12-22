@@ -1,11 +1,21 @@
-<div class="backdrop">
+<div class="movie-backdrop hidden">
   <div class="movie-modal">
     <button class="modal-close-btn" data-modal-close>
-      <svg class="button-close__icon-close" width="14" height="14">
+      <svg class="modal-close-btn__icon-close" width="30" height="30">
+      <svg class="modal-close-btn__icon-close" width="30" height="30">
         <use href="./images/sprite.svg#icon-close-modal"></use>
       </svg>
     </button>
-
-    <div class="movie-card"></div>
-  </div>
+    <div class="movie-modal__container"></div>
+    <div class="modal-btn__wrapper">
+      <button class="modal-btn modal-btn__watched" data-action-modal-watched>add to watched</button>
+      <button class="modal-btn modal-btn__queue" data-action-modal-queue>add to queue</button>
+    </div>
+    <!-- <div class="movie-modal__container"></div>
+    <div class="modal-btn__wrapper">
+      <button class="modal-btn modal-btn__watched">add to watched</button>
+      <button class="modal-btn modal-btn__queue">add to queue</button>
+    </div>
+  </div> -->
+</div>
 </div>

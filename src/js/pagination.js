@@ -2,6 +2,17 @@ import { refs } from './refs';
 // import from '../sass/components/_pagination.scss'
 // пагінація
 
+let callback = page => {};
+
+export function tune(totalPages, newCallback) {
+  // Перерисовать компоненту чтоб было totalPages страниц
+  // Установить текущей страницу № 1
+  // Если totalPages === 0, скрыть компоненту
+  if (callback instanceof Function) {
+    callback = newCallback;
+  }
+}
+
 let page = 1;
 let minPage = 1;
 let pageBeforeFour = page - 4;
@@ -123,6 +134,8 @@ function on_pagin_button(evt) {
 
       console.log('page: ', page);
 
+      callback(page);
+
       return on_pagin_render();
     }
 
@@ -142,6 +155,8 @@ function on_pagin_button(evt) {
 
       console.log('page: ', page);
 
+      callback(page);
+
       return on_pagin_render();
     }
 
@@ -157,6 +172,8 @@ function on_pagin_button(evt) {
     pageAfterFour = page + 4;
 
     console.log('page: ', page);
+
+    callback(page);
 
     return on_pagin_render();
     // onFetch() функція для створення розмітки

@@ -35,26 +35,9 @@ function tuneRender(getFunction) {
   });
 }
 
-import { renderGallery } from '../render-gallery';
-import Api from '../api-service';
-const apiService = new Api();
-
 async function trendFilms() {
   let trendFilmes = await apiService.getTrendingFilms();
   return renderGallery(trendFilmes);
 }
 
 // trendFilms();
-
-import { getQueued, getWatched } from './storage';
-
-const res = getWatched(1);
-res.then(({ results }) => {
-  console.log('res', results);
-  renderGallery(
-    results.map(item => {
-      item.genre_ids = item.genres.map(({ id }) => id);
-      return item;
-    })
-  );
-});

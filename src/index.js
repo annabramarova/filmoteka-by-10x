@@ -1,5 +1,5 @@
 import './js/preloader';
-import './js/render-gallery';
+import './js/render/render-gallery';
 import './js/getTrendFilms';
 import './js/team-modal';
 import './js/pagination';
@@ -9,5 +9,7 @@ import './js/modal';
 import './js/search-film';
 import './js/header';
 import './js/authentication';
+import './js/empty-lib-modal';
+import './js/empty-watch-modal';
 
 import './js/storage/test';

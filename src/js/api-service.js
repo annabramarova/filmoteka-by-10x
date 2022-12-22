@@ -28,11 +28,10 @@ export default class Api {
     return r;
   }
 
-  async getFilmBySearch(search) {
-    // this.query = search;
+  async getFilmBySearch() {
     const r = await axios
       .get(
-        `/search/movie?api_key=${this.KEY}&query=${search}&language=en-US&page=${this.page}`
+        `/search/movie?api_key=${this.KEY}&query=${this.query}&language=en-US&page=${this.page}`
       )
       .then(res => res.data);
     return r.results;
@@ -80,6 +79,18 @@ export default class Api {
     const trailer = r.results.filter(v => v.name === 'Official Trailer');
     console.log(trailer[0]);
     return trailer[0];
+  }
+
+  async getFilmById(id) {
+    console.log('id', id);
+    const r = await axios
+      .get(`/movie/${id}?api_key=${this.KEY}&language=en-US`)
+      .then(res => {
+        console.log('res', res);
+        console.log('data', res.data);
+        return res.data;
+      });
+    return r;
   }
 }
 
