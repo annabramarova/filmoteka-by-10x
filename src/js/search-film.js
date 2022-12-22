@@ -1,6 +1,7 @@
 import { refs } from './refs.js';
 import Api from './api-service.js';
 import { renderGallery } from './render-gallery';
+import { loader, loaderRemove } from './loading';
 
 const api = new Api();
 
@@ -18,13 +19,16 @@ async function onFormSubmit(e) {
     return;
   }
   try {
+    loader();
     lastElementChild.style.display = 'none';
     const results = await api.getFilmBySearch();
     if (results.length === 0) {
       lastElementChild.style.display = 'block';
+      loaderRemove();
       return;
     }
     renderGallery(results);
+    loaderRemove();
     console.dir(results);
   } catch {
     console.error();
