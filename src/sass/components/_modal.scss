@@ -7,8 +7,8 @@
   background-color: getColor('black');
   opacity: 1;
   visibility: visible;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 500ms cubic-bezier(0.4, 0, 0.2, 1);
 
   overflow-y: scroll;
   z-index: 1;
@@ -17,10 +17,6 @@
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
-    .movie-modal {
-      transform: translate(-50%, -50%) scale(2);
-      opacity: 0;
-    }
   }
 }
 
@@ -31,18 +27,12 @@
 
   display: flex;
 
-  transform: translate(-50%, -50%);
   background-color: getColor('white');
   padding: 40px 12px 40px 12px;
 
   transform: translate(-50%, -50%) scale(1);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 500ms cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 1;
   width: 806px;
   height: 558px;
@@ -89,6 +79,12 @@
   outline: none;
   border-radius: 5px;
   cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: getColor('modal-info');
+    color: getColor('white');
+  }
 }
 
 .modal-btn__watched {
@@ -115,15 +111,16 @@
 }
 
 .cardItem__image {
-  width: 319px;
+  width: 375px;
   height: 478px;
   margin-right: 16px;
-  margin-left: 16px;
   border-radius: 5px;
 }
 
 .image {
-  max-height: 100%;
+  object-fit: cover;
+  width: 375px;
+  height: 478px;
 }
 
 .cardItem__name {

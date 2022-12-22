@@ -10,8 +10,17 @@ const closeMovieModal = document.querySelector('.modal-close-btn');
 refs.galleryList.addEventListener('click', onGalleryClick);
 closeMovieModal.addEventListener('click', toggleModal);
 
+backDrop.removeEventListener('mousedown', killModal);
+document.removeEventListener('keydown', killModal);
+
 function toggleModal() {
   backDrop.classList.toggle('visually-hidden');
+}
+
+function killModal(e) {
+  if (e.currentTarget === e.target || e.code === 'Escape') {
+    backDrop.classList.add('visually-hidden');
+  }
 }
 
 function renderCard(data) {
@@ -38,4 +47,7 @@ function onGalleryClick(e) {
       renderCard(data);
     })
     .catch(console.log);
+
+  backDrop.addEventListener('mousedown', killModal);
+  document.addEventListener('keydown', killModal);
 }
