@@ -1,19 +1,53 @@
-// import axios from 'axios';
-// import { getCardTemplate } from './getCardTemplate';
+import { getCardTemplate } from './getCardTemplate';
+import Api from './api-service';
+import { refs } from './refs';
+const apiService = new Api();
 
-// axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
-// const API_KEY = 'e236468c654efffdf9704cd975a74a96';
+const modalMovieContainer = document.querySelector('.movie-modal__container');
+const backDrop = document.querySelector('.movie-backdrop');
+const closeMovieModal = document.querySelector('.modal-close-btn');
 
-// async function fetchMovie(movieId) {
-//   return await axios.get(`/movie/${movieId}?api_key=${API_KEY}&language=en-US`);
-// }
+refs.galleryList.addEventListener('click', onGalleryClick);
+closeMovieModal.addEventListener('click', toggleModal);
 
-// function renderCard() {
-//   const cardMarkup = getCardTemplate();
-//   const сard = document.querySelector('.movie-card');
-//   сard.insertAdjacentHTML('beforeend', cardMarkup);
-// }
+backDrop.removeEventListener('mousedown', killModal);
+document.removeEventListener('keydown', killModal);
 
-// fetchMovie(76600)
-//   .then(({ data }) => renderCard(data))
-//   .catch(() => []);
+function toggleModal() {
+  backDrop.classList.toggle('visually-hidden');
+}
+
+function killModal(e) {
+  if (e.currentTarget === e.target || e.code === 'Escape') {
+    backDrop.classList.add('visually-hidden');
+  }
+}
+
+function renderCard(data) {
+  const cardMarkup = getCardTemplate(data);
+  modalMovieContainer.innerHTML = cardMarkup;
+}
+
+function onGalleryClick(e) {
+  e.preventDefault();
+  const card = e.target.closest('.card');
+  const cardId = card.dataset.id;
+  const isPicture = e.target.classList.contains('card_img');
+
+  if (!isPicture) {
+    return;
+  }
+
+  backDrop.classList.remove('visually-hidden');
+
+  apiService
+    .getFilmById(cardId)
+    .then(data => {
+      console.log('data', data);
+      renderCard(data);
+    })
+    .catch(console.log);
+
+  backDrop.addEventListener('mousedown', killModal);
+  document.addEventListener('keydown', killModal);
+}
