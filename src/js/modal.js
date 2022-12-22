@@ -42,7 +42,6 @@ function onGalleryClick(e) {
   e.preventDefault();
   const card = e.target.closest('.card');
   cardId = Number(card.dataset.id);
-  console.log('cardId =', cardId);
   const isPicture = e.target.classList.contains('card_img');
 
   if (!isPicture) {
@@ -57,18 +56,10 @@ function onGalleryClick(e) {
   apiService
     .getFilmById(cardId)
     .then(data => {
-      console.log('data', data);
       updateButtonsCaption(cardId);
       renderCard(data);
     })
     .catch(console.log);
-  // apiService
-  //   .getFilmById(cardId)
-  //   .then(data => {
-  //     console.log('data', data);
-  //     renderCard(data);
-  //   })
-  //   .catch(console.log);
 
   backDrop.addEventListener('mousedown', killModal);
   document.addEventListener('keydown', killModal);
