@@ -12,13 +12,13 @@ export const getCardTemplate = ({
   return `
   <div class="movie-card" data-action=${id}>
        <div class="cardItem__image">
-        <img class="image" src="https://image.tmdb.org/t/p/w500/${poster_path}" alt="" />
+        <img class="image" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${id}" />
       </div>
 
       <div class="cardItem__wrapper">
         <h2 class="cardItem__name">${title}</h2>
         <p class="cardItem__text">
-          Vote / Votes<span class="cardItem__averageVote">>${vote_average}</span>/<span
+          Vote / Votes<span class="cardItem__averageVote">${vote_average}</span>/<span
             class="cardItem__countVote"
             >${vote_count}</span
           >
@@ -31,7 +31,9 @@ export const getCardTemplate = ({
         </p>
         <div class="genres">
           <p class="cardItem__text">Genre</p>
-          <p class="cardItem__genreList">${genres}</p>
+          <p class="cardItem__genreList">${genres
+            .map(item => item.name)
+            .join(', ')}</p>
         </div>
 
         <p class="cardItem__about">About</p>
