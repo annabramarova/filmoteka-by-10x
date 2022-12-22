@@ -11,7 +11,6 @@ async function onFormSubmit(e) {
   const {
     elements: { searchQuery },
   } = e.target;
-  console.dir(e.target);
   api.query = searchQuery.value.trim();
   if (api.query === '') {
     return console.log('nothing');
