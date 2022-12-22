@@ -3,29 +3,25 @@ import Api from './api-service';
 import { refs } from './refs';
 const apiService = new Api();
 
-const modalMovieContainer = document.querySelector('.movie-modal__container');
-const backDrop = document.querySelector('.movie-backdrop');
-const closeMovieModal = document.querySelector('.modal-close-btn');
-
 refs.galleryList.addEventListener('click', onGalleryClick);
-closeMovieModal.addEventListener('click', toggleModal);
+refs.movieModalCloseBtn.addEventListener('click', toggleModal);
 
-backDrop.removeEventListener('mousedown', killModal);
-document.removeEventListener('keydown', killModal);
+console.log(refs.movieModalWatched);
+console.log(refs.movieModalQueue);
 
 function toggleModal() {
-  backDrop.classList.toggle('hidden');
+  refs.movieModalBackDrop.classList.toggle('hidden');
 }
 
 function killModal(e) {
   if (e.currentTarget === e.target || e.code === 'Escape') {
-    backDrop.classList.add('hidden');
+    refs.movieModalBackDrop.classList.add('hidden');
   }
 }
 
 function renderCard(data) {
   const cardMarkup = getCardTemplate(data);
-  modalMovieContainer.innerHTML = cardMarkup;
+  refs.movieModalContainer.innerHTML = cardMarkup;
 }
 
 function onGalleryClick(e) {
@@ -41,26 +37,18 @@ function onGalleryClick(e) {
     return;
   }
 
-  backDrop.classList.remove('hidden');
+  refs.movieModalBackDrop.classList.remove('hidden');
 
   apiService
     .getFilmById(cardId)
     .then(data => {
       console.log('data', data);
       renderCard(data);
-    })
-    .catch(console.log);
-  apiService
-    .getFilmById(cardId)
-    .then(data => {
-      console.log('data', data);
-      renderCard(data);
+      refs.movieModalBackDrop.addEventListener('mousedown', killModal);
+      document.addEventListener('keydown', killModal);
     })
     .catch(console.log);
 
-  backDrop.addEventListener('mousedown', killModal);
-  document.addEventListener('keydown', killModal);
+  document.removeEventListener('keydown', killModal);
+  refs.movieModalBackDrop.removeEventListener('mousedown', killModal);
 }
-  backDrop.addEventListener('mousedown', killModal);
-  document.addEventListener('keydown', killModal);
-
