@@ -14,12 +14,12 @@ backDrop.removeEventListener('mousedown', killModal);
 document.removeEventListener('keydown', killModal);
 
 function toggleModal() {
-  backDrop.classList.toggle('visually-hidden');
+  backDrop.classList.toggle('hidden');
 }
 
 function killModal(e) {
   if (e.currentTarget === e.target || e.code === 'Escape') {
-    backDrop.classList.add('visually-hidden');
+    backDrop.classList.add('hidden');
   }
 }
 
@@ -37,9 +37,19 @@ function onGalleryClick(e) {
   if (!isPicture) {
     return;
   }
+  if (!isPicture) {
+    return;
+  }
 
-  backDrop.classList.remove('visually-hidden');
+  backDrop.classList.remove('hidden');
 
+  apiService
+    .getFilmById(cardId)
+    .then(data => {
+      console.log('data', data);
+      renderCard(data);
+    })
+    .catch(console.log);
   apiService
     .getFilmById(cardId)
     .then(data => {
@@ -51,3 +61,6 @@ function onGalleryClick(e) {
   backDrop.addEventListener('mousedown', killModal);
   document.addEventListener('keydown', killModal);
 }
+  backDrop.addEventListener('mousedown', killModal);
+  document.addEventListener('keydown', killModal);
+
