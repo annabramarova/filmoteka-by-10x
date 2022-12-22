@@ -4,13 +4,23 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #000000a0;
+  background-color: getColor('auth-modal');
 }
 
 .auth__cancel {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  padding: 5px 10px;
+
+  border-radius: 5px;
+  border: none;
+
+  box-shadow: 0 2px 2px rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%),
+    0 1px 5px rgb(0 0 0 / 12%);
+  color: getColor('auth-cancel-btn');
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .auth__heading {
@@ -23,5 +33,28 @@
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 40px 20px;
-  background-color: #eeeeee;
+
+  background-color: getColor('white');
+
+  border-radius: 5px;
+  @include mq($from: $width-min-allowable, $until: $width-mobile) {
+    width: 100%;
+    font-size: 12px;
+    line-height: calc(14 / 12);
+  }
+  @include mq($from: $width-mobile, $until: $width-tablet) {
+    width: 450px;
+    font-size: 12px;
+    line-height: calc(14 / 12);
+  }
+  @include mq($from: $width-tablet, $until: $width-desktop) {
+    width: 450px;
+    font-size: 16px;
+    line-height: calc(20 / 16);
+  }
+  @include mq($from: $width-desktop) {
+    width: 520px;
+    font-size: 18px;
+    line-height: calc(22 / 18);
+  }
 }
