@@ -134,6 +134,8 @@ function on_pagin_button(evt) {
 
       console.log('page: ', page);
 
+      callback(newPage);
+
       return on_pagin_render();
     }
 
@@ -152,6 +154,8 @@ function on_pagin_button(evt) {
       pageAfterFour = page + 4;
 
       console.log('page: ', page);
+
+      callback(newPage);
 
       return on_pagin_render();
     }
