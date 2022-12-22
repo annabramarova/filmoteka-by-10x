@@ -8,12 +8,24 @@ export function galleryTemplate({
   genre_ids,
   vote_average,
 }) {
+  let genresArray = [];
+  function getGenres() {
+    genre_ids.map(genreId =>
+      genres.filter(oneGenre => {
+        if (oneGenre.id === genreId) {
+          genresArray.push(`${oneGenre.name}`);
+        }
+      })
+    );
+    if (genresArray.length >= 3) {
+      genresArray.splice(2, genresArray.length - 1, 'Other');
+    }
+  }
+  getGenres();
+
   const url = `https://image.tmdb.org/t/p/original/${poster_path}`;
   const date = release_date.slice(0, 4);
-  const genresArray = genre_ids.map(id =>
-    genres.find(genre => genre.id === id)
-  );
-  const genresNames = genresArray.map(({ name }) => name).join(', ');
+  const genresNames = genresArray.join(', ');
   const rating = vote_average.toFixed(2);
 
   return `<li class="collection_item">

@@ -3,19 +3,13 @@ export const refs = {
   pagin_box: document.querySelector('.pagin_box'),
   formSearch: document.querySelector('.search-form'),
 
+  header: document.querySelector('.header'),
   homeLink: document.querySelector('#home-link'),
   myLibraryLink: document.querySelector('#my-library-link'),
-  watchedButton: document.querySelector('[data-activ="watched"]'),
-  queueButton: document.querySelector('[data-activ="queue"]'),
+  headerButtons: document.querySelectorAll('.header-button'),
+  loginButton: document.querySelector('[data-action="login"]'),
+  logoutButton: document.querySelector('[data-action="logout"]'),
+  auth: document.querySelector('.auth'), //Бекдроп вікна для авторизації
+  authForm: document.querySelector('.auth__form'), //Форма авторизації
+  authCancelButton: document.querySelector('.auth [data-action="cancel"]'), //Кнопка Cancel
 };
-
-refs.homeLink.addEventListener('click', e => {
-  e.preventDefault();
-  console.log('CLICK!');
-});
-refs.myLibraryLink.addEventListener('click', e => {
-  e.preventDefault();
-  console.log('CLICK!');
-});
-refs.watchedButton.addEventListener('click', e => console.log('CLICK!'));
-refs.queueButton.addEventListener('click', e => console.log('CLICK!'));

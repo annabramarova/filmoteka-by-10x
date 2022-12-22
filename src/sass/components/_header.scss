@@ -2,7 +2,7 @@
 
 header {
   min-width: 320px;
-  //! height: 230px;
+  height: 230px;
   padding-top: 40px;
   padding-bottom: 45px;
   font-weight: 500;
@@ -14,8 +14,35 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
 
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url(../images/main/main-bg-mob.jpg);
+  @include retina {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url(../images/main/main-bg-mob@2x.jpg);
+  }
+
   @include mq($width-tablet) {
-    //! height: 216px;
+    height: 216px;
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url(../images/main/main-bg-tablet.jpg);
+    @include retina {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url(../images/main/main-bg-tablet@2x.jpg);
+    }
+  }
+
+  @include mq($width-desktop) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url(../images/main/main-bg-desktop.jpg);
+    @include retina {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url(../images/main/main-bg-desktop@2x.jpg);
+    }
+  }
+
+  a {
+    outline: none;
   }
 }
 
@@ -52,8 +79,7 @@ header {
   position: relative;
   padding: 5px 2px;
   border-radius: 5px;
-  outline: none;
-  transition: background-color $duration $timing-function;
+  transition: color $duration $timing-function;
 
   &:hover,
   &:focus {
@@ -70,12 +96,28 @@ header {
   height: 3px;
   opacity: 1;
   background-color: getColor('error-text');
-  transition: opacity $duration $timing-function;
 }
 
-.navigation__link:hover::after,
-.navigation__link:focus::after {
-  opacity: 0;
+.wrapper--log-buttons {
+  display: flex;
+}
+
+.header__log-button {
+  margin-left: 4px;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: inherit;
+  fill: getColor('white');
+  cursor: pointer;
+  transition: fill $duration $timing-function;
+
+  &:hover,
+  &:focus {
+    fill: getColor('accent');
+  }
 }
 
 .search-form {
@@ -163,6 +205,7 @@ header {
 .search-form__warning {
   margin-top: 16px;
   color: getColor('error-text');
+  display: none;
 
   @include mq($width-tablet) {
     margin-top: 20px;
@@ -171,32 +214,32 @@ header {
 
 // ----------MY-LIB HEADER STYLES----------
 
-//! .header--my-library {
-//   //! background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-//   //   url(../img/ml-mob.jpg);
-//   // @include retina {
-//   //   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-//   //     url(../img/ml-mob@2x.jpg);
-//   // }
+.header--my-library {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(../images/my-library/library-bg-mob.jpg);
+  @include retina {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url(../images/my-library/library-bg-mob@2x.jpg);
+  }
 
-//   //! @media screen and (min-width: 480px) {
-//   //   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-//   //     url(../img/ml-tab.jpg);
-//   //   @include retina {
-//   //     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-//   //       url(../img/ml-tab@2x.jpg);
-//   //   }
-//   // }
+  @include mq($width-mobile) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url(../images/my-library/library-bg-tablet.jpg);
+    @include retina {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url(../images/my-library/library-bg-tablet@2x.jpg);
+    }
+  }
 
-//   //! @include desktop {
-//   //   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-//   //     url(../img/ml-desk.jpg);
-//   //   @include retina {
-//   //     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-//   //       url(../img/ml-desk@2x.jpg);
-//   //   }
-//   // }
-// }
+  @include mq($width-desktop) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url(../images/my-library/library-bg-desktop.jpg);
+    @include retina {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url(../images/my-library/library-bg-desktop@2x.jpg);
+    }
+  }
+}
 
 .wrapper--buttons {
   justify-content: center;
@@ -206,7 +249,7 @@ header {
     gap: 32px;
   }
 
- @include mq($width-desktop) {
+  @include mq($width-desktop) {
     gap: 16px;
   }
 }
@@ -242,12 +285,15 @@ header {
     background-color: getColor('accent');
     border-color: getColor('accent');
     color: getColor('white');
+    transition-property: background-color, border-color;
+    transition-duration: $duration;
+    transition-timing-function: $timing-function;
 
     &:hover,
-      &:focus {
-        background-color: getColor('error-text');
-        border-color: getColor('error-text');
-      }
+    &:focus {
+      background-color: getColor('error-text');
+      border-color: getColor('error-text');
+    }
   }
 }
 
