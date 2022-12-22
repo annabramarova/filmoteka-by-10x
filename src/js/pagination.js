@@ -27,10 +27,12 @@ let pageAfterFour = page + 4;
 let maxPage = 1;
 
 function on_pagin_rander() {
-  if (maxPage === 2) {
-    pagin_rander_two();
+  if (maxPage === 1) {
+    pagin_rander_1();
+  } else if (maxPage === 2) {
+    pagin_rander_2();
   } else if (maxPage === 3) {
-    pagin_rander_three();
+    pagin_rander_3();
   } else if (maxPage === 4) {
     pagin_rander_4();
   } else if (maxPage === 5) {
@@ -39,6 +41,13 @@ function on_pagin_rander() {
     pagin_rander_6();
   } else {
     pagin_rander_7();
+  }
+}
+
+function pagin_rander_1() {
+  if (page === 1) {
+    refs.pagin_box.innerHTML = `
+    <button type="submit" class="pagin_button pagin_accent">${page}</button>`;
   }
 }
 
