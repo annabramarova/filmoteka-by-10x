@@ -1,6 +1,7 @@
 import { refs } from './refs.js';
 import Api from './api-service.js';
 import { renderGallery } from './render-gallery';
+import { loader, loaderRemove } from './loading';
 
 const api = new Api();
 
@@ -10,20 +11,28 @@ async function onFormSubmit(e) {
   e.preventDefault();
   const {
     elements: { searchQuery },
+    lastElementChild,
   } = e.target;
-  console.dir(e.target);
+  const buttonSearch = e.target[1];
   api.query = searchQuery.value.trim();
   if (api.query === '') {
-    return console.log('nothing');
+    lastElementChild.style.display = 'block';
+    return;
   }
   try {
+    loader();
+    buttonSearch.setAttribute('disabled', true);
+    lastElementChild.style.display = 'none';
     const results = await api.getFilmBySearch();
     if (results.length === 0) {
-      return console.log('qwe');
+      lastElementChild.style.display = 'block';
+      buttonSearch.removeAttribute('disabled');
+      loaderRemove();
+      return;
     }
     renderGallery(results);
-
-    console.dir(results.length);
+    buttonSearch.removeAttribute('disabled');
+    loaderRemove();
   } catch {
     console.error();
   }
