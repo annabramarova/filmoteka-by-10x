@@ -3,12 +3,15 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100wh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 22;
   opacity: 1;
-  transition: opacity $duration $timing-function,
-    visibility $duration $timing-function;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &.visually-hidden {
     visibility: hidden;
@@ -26,47 +29,49 @@
 }
 
 .team-modal {
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  max-width: 100%;
-  max-height: 95vh;
+  transform: translate(-90%, 0%) scale(1);
+  max-width: 768px;
+  width: 100%;
+  min-height: 120px;
+  max-height: 90vh;
   padding: 5px;
-  background-color: getColor('white');
+  background-color: #fff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 14px;
+  border-radius: 4px;
   opacity: 1;
-  transition: transform 600ms, opacity $duration $timing-function;
+  transition: transform 600ms, opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   overflow: auto;
 
   &__title {
-    text-align: center;
-    border-radius: 14px;
-    padding: 5px;
-    font-weight: 500;
+    font-weight: 700;
     line-height: 1.15;
-    font-size: 15px;
+    text-align: center;
     letter-spacing: 0.03em;
     color: inherit;
-    box-shadow: 0px 1px 3px 0px getColor('modal-info');
-
-    &:hover {
-      box-shadow: 0px 4px 4px #5daadd;
-      background-color: getColor('modal-accent');
-    }
+    box-shadow: 0px 1px 3px 0px #354c5f;
+    font-size: 30px;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 20px;
+    line-height: 1.15;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #212121;
   }
 }
 
 .team-modal__button {
   position: absolute;
-  top: 6px;
-  right: 6px;
-  width: 25px;
-  height: 25px;
+  top: 12px;
+  right: 12px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  background-color: getColor('white');
+  background-color: #ffffff;
   display: flex;
   padding: 0;
   align-items: center;
@@ -77,34 +82,49 @@
 }
 
 .team-modal__icon {
-  fill: getColor('black');
-  transition: fill $duration $timing-function;
+  fill: #000000;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: block;
   .team-modal__button:hover > &,
   .team-modal__button:focus > & {
-    fill: getColor('modal-accent');
+    fill: #2196f3;
   }
 }
 
-.team-list__item {
-  height: 230px;
-  min-width: 150px;
-  position: relative;
-  display: flex;
-  margin: 10px;
-  flex-direction: column;
-  background-color: getColor('footer-bgr');
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+.team-modal__cards {
+  max-width: 768px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  padding: 3px 3px;
-  border-radius: 45px;
+.team-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -15px;
+  list-style: none;
+  padding-left: 0;
+  padding-bottom: 50px;
+}
+
+.team-list__item {
+  display: flex;
+  flex-direction: column;
+  background-color: #b7d8f3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 5px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 5px;
+  flex-basis: calc(25% - 10px);
+  border-radius: 14px;
   overflow: hidden;
-  transition: box-shadow $duration $timing-function,
-    background-color $duration $timing-function;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  // height: 280px;
 
   &:hover {
-    box-shadow: 0px 4px 4px #5daadd;
-    background-color: getColor('modal-accent');
+    box-shadow: 0px 4px 4px #2196f3;
   }
 }
 
@@ -123,112 +143,37 @@
   text-align: center;
   letter-spacing: 0.03em;
   color: inherit;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 }
 
 .team-list__img {
   display: block;
-  min-width: 150px;
-  height: 150px;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 50%;
-  margin-bottom: 5px;
+  width: 100%;
+  height: 200px;
+}
+
+.soc {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 .soc__link {
-  position: absolute;
-  bottom: 90px;
-  left: 12px;
-  padding: 0;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  outline: transparent;
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background-color: black;
   display: flex;
   align-items: center;
   justify-content: center;
   fill: white;
-  transition: background-color $duration $timing-function,
-    fill $duration $timing-function;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   &:focus {
     outline: transparent;
     fill: black;
     background-color: white;
-  }
-}
-
-@include mq($from: $width-mobile, $until: $width-tablet) {
-  .team-list__item {
-    width: 180px;
-  }
-  .team-list__img {
-    width: 150px;
-  }
-}
-
-@include mq($from: $width-tablet, $until: $width-desktop) {
-  .team-modal {
-    width: 410px;
-    &__title {
-      font-weight: 700;
-      font-size: 30px;
-    }
-  }
-
-  .team-modal__button {
-    top: 12px;
-    right: 12px;
-    width: 30px;
-    height: 30px;
-  }
-
-  .team-list {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .team-list__item {
-    width: 180px;
-  }
-
-  .soc__link {
-    width: 30px;
-    height: 30px;
-  }
-}
-
-@include mq($from: $width-desktop) {
-  .team-modal {
-    min-width: 730px;
-    &__title {
-      font-weight: 700;
-      font-size: 30px;
-    }
-  }
-
-  .team-modal__button {
-    top: 12px;
-    right: 12px;
-    width: 30px;
-    height: 30px;
-  }
-  .team-list {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .team-list__item {
-    margin-left: auto;
-    margin-right: auto;
-    width: calc((100% - 90px) / 4);
-  }
-  .soc__link {
-    width: 30px;
-    height: 30px;
   }
 }
