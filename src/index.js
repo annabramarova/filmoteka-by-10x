@@ -9,3 +9,5 @@ import './js/modal';
 import './js/search-film';
 import './js/header';
 import './js/authentication';
+import './js/empty-lib-modal';
+import './js/empty-watch-modal';
