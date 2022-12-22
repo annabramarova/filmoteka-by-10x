@@ -1,4 +1,4 @@
-import { renderGallery } from './render-gallery';
+import { renderGallery } from './render/render-gallery';
 import Api from './api-service';
 const apiService = new Api();
 
