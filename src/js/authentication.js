@@ -19,16 +19,18 @@ import {
 
 hideLoginForm();
 
-const firebaseApp = initializeApp({
+export const firebaseApp = initializeApp({
   apiKey: 'AIzaSyDIoIRzEVLYUAacFuhtdxkAGV2NgLE6g88',
   authDomain: 'filmoteka-by-10x.firebaseapp.com',
   projectId: 'filmoteka-by-10x',
   storageBucket: 'filmoteka-by-10x.appspot.com',
   messagingSenderId: '584362052438',
   appId: '1:584362052438:web:cf4a6cf976e80465e364f7',
+  databaseURL:
+    'https://filmoteka-by-10x-default-rtdb.europe-west1.firebasedatabase.app/',
 });
 
-const auth = getAuth(firebaseApp);
+export const auth = getAuth(firebaseApp);
 
 monitorAuthState();
 
