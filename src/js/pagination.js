@@ -5,9 +5,10 @@ import { refs } from './refs';
 let callback = page => {};
 
 export function tune(totalPages, newCallback) {
-  // Перерисовать компоненту чтоб было totalPages страниц
-  // Установить текущей страницу № 1
-  // Если totalPages === 0, скрыть компоненту
+  page = 1;
+  maxPage = totalPages;
+  on_pagin_rander();
+
   if (callback instanceof Function) {
     callback = newCallback;
   }
