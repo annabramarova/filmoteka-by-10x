@@ -1,19 +1,51 @@
-import axios from 'axios';
 import { getCardTemplate } from './getCardTemplate';
+import Api from './api-service';
+import { refs } from './refs';
+const apiService = new Api();
 
-axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
-const API_KEY = 'e236468c654efffdf9704cd975a74a96';
+const modalMovieContainer = document.querySelector('.movie-modal__container');
+console.log(modalMovieContainer);
+const backDrop = document.querySelector('.movie-backdrop');
+// const modalEl = document.querySelector('.movie-modal');
 
-async function fetchMovie(movieId) {
-  return await axios.get(`/movie/${movieId}?api_key=${API_KEY}&language=en-US`);
+const closeMovieModal = document.querySelector('.modal-close-btn');
+
+refs.galleryList.addEventListener('click', onGalleryClick);
+closeMovieModal.addEventListener('click', toggleModal);
+
+function onGalleryClick(e) {
+  e.preventDefault();
+  const card = e.target.closest('.card');
+  console.log(card);
+  const cardId = card.dataset.id;
+  console.log('cardId1', cardId);
+  const isPicture = e.target.classList.contains('card_img');
+
+  if (!isPicture) {
+    return;
+  }
+
+  backDrop.classList.remove('visually-hidden');
+
+  apiService
+    .getFilmById(cardId)
+    .then(data => {
+      console.log('data', data);
+    })
+    .catch(console.log);
 }
 
-function renderCard() {
-  const cardMarkup = getCardTemplate();
-  const сard = document.querySelector('.movie-card');
-  сard.insertAdjacentHTML('beforeend', cardMarkup);
+function toggleModal() {
+  backDrop.classList.toggle('visually-hidden');
 }
 
-fetchMovie(76600)
-  .then(({ data }) => renderCard(data))
-  .catch(() => []);
+// function renderCard(id) {
+//   const cardMarkup = getCardTemplate(id);
+//   modalMovieContainer.innerHTML = cardMarkup;
+// }
+// async function cardByID(id) {
+//   let filmById = await apiService.getFilmById(id);
+//   renderCard(filmById);
+// }
+
+// cardByID();
