@@ -14,8 +14,8 @@ function onMyLibraryClick(e) {
   refs.headerButtons.forEach(element => {
     element.classList.remove('visually-hidden');
   });
-  showLoginButton();
-  showLogoutButton();
+  // showLoginButton();
+  // showLogoutButton();
 }
 
 function onWatchedClick(e) {

@@ -6,8 +6,10 @@ export default class Api {
   constructor() {
     this.KEY = 'c23d7755b502540a74ef819e02a6a593';
     this.page = 1;
-    this.query = '';
-    this.id = 676547;
+    // this.search = 'cat';
+    // this.query = '';
+    // this.IdMassive = [436270, 899112, 751741];
+    // this.id = 436270;
   }
 
   async getTrendingFilms() {
@@ -19,13 +21,26 @@ export default class Api {
     return r.results;
   }
 
-  async getFilmBySearch() {
+  async getFilmBySearch(search) {
+    // this.query = search;
     const r = await axios
       .get(
-        `/search/movie?api_key=${this.KEY}&query=${this.query}&language=en-US&${this.page}`
+        `/search/movie?api_key=${this.KEY}&query=${search}&language=en-US&${this.page}`
       )
       .then(res => res.data);
     return r.results;
+  }
+
+  async getFilmById(id) {
+    const r = await axios
+      .get(`/movie/${id}?api_key=${this.KEY}&language=en-US`)
+      .then(res => res.data);
+    return r;
+  }
+
+  getFilmMassiveById(idMassive) {
+    let res = this.IdMassive.map(i => this.getFilmById(i));
+    return res;
   }
 
   getNextPage() {
@@ -51,9 +66,10 @@ export default class Api {
   }
 }
 
-
-// const films = new Api();
+const films = new Api();
 // films.getTrendingFilms();
 // films.getGenres();
 // films.getTreiler();
-
+// films.getFilmById();
+// films.getFilmMassiveById();
+films.getFilmBySearch();
