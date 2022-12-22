@@ -19,10 +19,4 @@ export const refs = {
   auth: document.querySelector('.auth'), //Бекдроп вікна для авторизації
   authForm: document.querySelector('.auth__form'), //Форма авторизації
   authCancelButton: document.querySelector('.auth [data-action="cancel"]'), //Кнопка Cancel
-
-  movieModalContainer: document.querySelector('.movie-modal__container'),
-  movieModalBackDrop: document.querySelector('.movie-backdrop'),
-  movieModalCloseBtn: document.querySelector('.modal-close-btn'),
-  movieModalWatched: document.querySelector('[data-action="add-to-watched"]'), //для Сергея
-  movieModalQueue: document.querySelector('[data-action="add-to-queue"]'), //для Сергея
 };

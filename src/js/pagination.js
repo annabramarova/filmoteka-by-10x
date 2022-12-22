@@ -309,7 +309,7 @@ function on_pagin_button(evt) {
 
       callback(page);
 
-      return on_pagin_render();
+      return on_pagin_rander();
     }
 
     if (evt.target.innerText === 'rigth') {
@@ -330,7 +330,7 @@ function on_pagin_button(evt) {
 
       callback(page);
 
-      return on_pagin_render();
+      return on_pagin_rander();
     }
 
     page = Number(evt.target.innerText);
@@ -348,7 +348,7 @@ function on_pagin_button(evt) {
 
     callback(page);
 
-    return on_pagin_render();
+    return on_pagin_rander();
     // onFetch() функція для створення розмітки
   }
 }
