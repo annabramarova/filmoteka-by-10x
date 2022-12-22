@@ -187,7 +187,14 @@
 .genres {
   display: flex;
 }
+.genres {
+  display: flex;
+}
 
+.cardItem__genre {
+  display: inline-block;
+  margin-right: 90px;
+}
 .cardItem__genre {
   display: inline-block;
   margin-right: 90px;
@@ -196,7 +203,17 @@
 .cardItem {
   display: flex;
 }
+.cardItem {
+  display: flex;
+}
 
+.cardItem__genreList {
+  margin-left: 120px;
+  color: getColor('black');
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+}
 .cardItem__genreList {
   margin-left: 120px;
   color: getColor('black');
@@ -214,6 +231,15 @@
   margin-top: 20px;
   margin-bottom: 8px;
 }
+.cardItem__about {
+  text-transform: uppercase;
+  color: getColor('black');
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
 
 .cardItem__description {
   color: getColor('black');
@@ -221,7 +247,17 @@
   font-size: 12px;
   line-height: 1.7;
 }
+.cardItem__description {
+  color: getColor('black');
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.7;
+}
 
+//   .cardItem__wrapper {
+//     width: 370px;
+//     padding: 10px;
+//     margin-left: 30px;
 //   .cardItem__wrapper {
 //     width: 370px;
 //     padding: 10px;

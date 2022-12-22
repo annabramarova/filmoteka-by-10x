@@ -37,6 +37,9 @@ function onGalleryClick(e) {
   if (!isPicture) {
     return;
   }
+  if (!isPicture) {
+    return;
+  }
 
   backDrop.classList.remove('hidden');
 
@@ -47,7 +50,17 @@ function onGalleryClick(e) {
       renderCard(data);
     })
     .catch(console.log);
+  apiService
+    .getFilmById(cardId)
+    .then(data => {
+      console.log('data', data);
+      renderCard(data);
+    })
+    .catch(console.log);
 
+  backDrop.addEventListener('mousedown', killModal);
+  document.addEventListener('keydown', killModal);
+}
   backDrop.addEventListener('mousedown', killModal);
   document.addEventListener('keydown', killModal);
 }
