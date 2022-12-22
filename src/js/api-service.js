@@ -21,36 +21,15 @@ export default class Api {
     return r.results;
   }
 
-
-  async getTrendingFilmsByPage(page) {
-    const r = await axios
-      .get(
-        `/trending/movie/week?api_key=${this.KEY}&language=en-US&page=${page}`
-      )
-      .then(res => res.data);
-    return r;
-  }
-
-
-
   async getFilmBySearch(search) {
     // this.query = search;
     const r = await axios
       .get(
-        `/search/movie?api_key=${this.KEY}&query=${search}&language=en-US&page=${this.page}`
+        `/search/movie?api_key=${this.KEY}&query=${search}&language=en-US&${this.page}`
       )
       .then(res => res.data);
     return r.results;
   }
-
-
-  async getFilmSearchByPage(page) {
-    const r = await axios
-      .get(
-        `/search/movie?api_key=${this.KEY}&query=${this.query}&language=en-US&page=${page}`
-      )
-      .then(res => res.data);
-    return r;
 
   async getFilmById(id) {
     const r = await axios
@@ -64,11 +43,10 @@ export default class Api {
     return res;
   }
 
-
-  // getNextPage() {
-  //   let nextPage = this.page + 1;
-  //   return nextPage;
-  // }
+  getNextPage() {
+    let nextPage = this.page + 1;
+    return nextPage;
+  }
 
   async getGenres() {
     const g = await axios
@@ -88,12 +66,6 @@ export default class Api {
   }
 }
 
-
-// const films = new Api();
-// films.getTrendingFilmsByPage(5);
-// films.getFilmSearchByPage(6);
-// films.getGenres();
-// films.getTreiler();
 const films = new Api();
 // films.getTrendingFilms();
 // films.getGenres();
@@ -101,4 +73,3 @@ const films = new Api();
 // films.getFilmById();
 // films.getFilmMassiveById();
 films.getFilmBySearch();
-
