@@ -8,7 +8,6 @@ export default class Api {
     this.page = 1;
     this.query = '';
     this.id = null;
-
   }
 
   async getTrendingFilms() {
@@ -29,11 +28,10 @@ export default class Api {
     return r;
   }
 
-  async getFilmBySearch(search) {
-    // this.query = search;
+  async getFilmBySearch() {
     const r = await axios
       .get(
-        `/search/movie?api_key=${this.KEY}&query=${search}&language=en-US&page=${this.page}`
+        `/search/movie?api_key=${this.KEY}&query=${this.query}&language=en-US&page=${this.page}`
       )
       .then(res => res.data);
     return r.results;
@@ -67,7 +65,6 @@ export default class Api {
     const genres = g.genres;
     return genres;
   }
-
 
   async getTrailer(id) {
     const r = await axios
