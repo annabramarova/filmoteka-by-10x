@@ -12,7 +12,8 @@ async function onFormSubmit(e) {
   const {
     elements: { searchQuery },
     lastElementChild,
-  } = e.currentTarget;
+  } = e.target;
+  const buttonSearch = e.target[1];
   api.query = searchQuery.value.trim();
   if (api.query === '') {
     lastElementChild.style.display = 'block';
@@ -20,16 +21,18 @@ async function onFormSubmit(e) {
   }
   try {
     loader();
+    buttonSearch.setAttribute('disabled', true);
     lastElementChild.style.display = 'none';
     const results = await api.getFilmBySearch();
     if (results.length === 0) {
       lastElementChild.style.display = 'block';
+      buttonSearch.removeAttribute('disabled');
       loaderRemove();
       return;
     }
     renderGallery(results);
+    buttonSearch.removeAttribute('disabled');
     loaderRemove();
-    console.dir(results);
   } catch {
     console.error();
   }
