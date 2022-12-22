@@ -134,7 +134,7 @@ function on_pagin_button(evt) {
 
       console.log('page: ', page);
 
-      callback(newPage);
+      callback(page);
 
       return on_pagin_render();
     }
@@ -155,7 +155,7 @@ function on_pagin_button(evt) {
 
       console.log('page: ', page);
 
-      callback(newPage);
+      callback(page);
 
       return on_pagin_render();
     }
