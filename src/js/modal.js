@@ -1,4 +1,4 @@
-import { getCardTemplate } from './getCardTemplate';
+import { getCardTemplate } from './templates/getCardTemplate';
 import Api from './api-service';
 import { refs } from './refs';
 const apiService = new Api();
