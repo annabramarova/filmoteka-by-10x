@@ -6,8 +6,9 @@ export default class Api {
   constructor() {
     this.KEY = 'c23d7755b502540a74ef819e02a6a593';
     this.page = 1;
-    this.search = 'cat';
     this.query = '';
+    this.id = null;
+
   }
 
   async getTrendingFilms() {
@@ -66,6 +67,7 @@ export default class Api {
     const genres = g.genres;
     return genres;
   }
+
 
   async getTrailer(id) {
     const r = await axios
