@@ -7,7 +7,7 @@ function visibleArrow(e) {
   e.preventDefault();
   let area = document.scrollingElement.scrollTop;
   console.log(document.scrollingElement.scrollTop);
-  if (area >= 300) {
+  if (area >= 500) {
     refs.arrow.classList.add('arrow-visible');
     return;
   }
