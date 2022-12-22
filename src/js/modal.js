@@ -14,12 +14,12 @@ backDrop.removeEventListener('mousedown', killModal);
 document.removeEventListener('keydown', killModal);
 
 function toggleModal() {
-  backDrop.classList.toggle('visually-hidden');
+  backDrop.classList.toggle('hidden');
 }
 
 function killModal(e) {
   if (e.currentTarget === e.target || e.code === 'Escape') {
-    backDrop.classList.add('visually-hidden');
+    backDrop.classList.add('hidden');
   }
 }
 
@@ -38,7 +38,7 @@ function onGalleryClick(e) {
     return;
   }
 
-  backDrop.classList.remove('visually-hidden');
+  backDrop.classList.remove('hidden');
 
   apiService
     .getFilmById(cardId)
