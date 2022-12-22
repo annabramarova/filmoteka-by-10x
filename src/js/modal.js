@@ -63,4 +63,4 @@ function onGalleryClick(e) {
 }
   backDrop.addEventListener('mousedown', killModal);
   document.addEventListener('keydown', killModal);
-}
+
