@@ -53,8 +53,14 @@ export default class Api {
     return r;
   }
 
-  getFilmMassiveById(idMassive) {
-    let res = this.IdMassive.map(i => this.getFilmById(i));
+  async getFilmMassiveById(idMassive) {
+    if (idMassive.length === 0) return [];
+    let res = idMassive.map(i => this.getFilmById(i));
+    res = await Promise.allSettled(res);
+    res = res
+      .filter(({ status }) => status === 'fulfilled')
+      .map(({ value }) => value);
+    console.log('!re', res);
     return res;
   }
 

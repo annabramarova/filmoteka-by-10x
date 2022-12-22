@@ -11,3 +11,5 @@ import './js/header';
 import './js/authentication';
 import './js/empty-lib-modal';
 import './js/empty-watch-modal';
+
+import './js/storage/test';
