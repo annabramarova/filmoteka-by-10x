@@ -9,22 +9,27 @@ const refs = {
   libMenu: document.querySelector('[data-modal]'),
   libMenuCloseBtn: document.querySelector('.lib_modal-close-btn'),
   bestCardContainer: document.querySelector(`.proposed-card`),
+  addToQueueBtn: document.querySelector(`.addToQueue`),
 };
 
 refs.galleryQueueBtn.addEventListener('click', onLibClick);
 
 function onLibClick() {
   refs.libMenu.classList.remove('is-hidden');
+  refs.addToQueueBtn.classList.remove('is-hidden');
   refs.libMenuCloseBtn.addEventListener(`click`, onLibMenuCloseBtnClick);
   window.addEventListener(`keydown`, handleEsc);
   window.addEventListener(`click`, handleOutClick);
+  showBestCard();
 }
 
 function onLibMenuCloseBtnClick() {
   refs.libMenu.classList.add('is-hidden');
+  refs.addToQueueBtn.classList.add('is-hidden');
   refs.libMenuCloseBtn.removeEventListener(`click`, onLibMenuCloseBtnClick);
   window.removeEventListener(`keydown`, handleEsc);
   window.removeEventListener(`click`, handleOutClick);
+  refs.bestCardContainer.innerHTML = ``;
 }
 
 function handleEsc(event) {
@@ -33,9 +38,11 @@ function handleEsc(event) {
     return;
   }
   refs.libMenu.classList.add('is-hidden');
+  refs.addToQueueBtn.classList.add('is-hidden');
   refs.libMenuCloseBtn.removeEventListener(`click`, onLibMenuCloseBtnClick);
   window.removeEventListener(`keydown`, handleEsc);
   window.removeEventListener(`click`, handleOutClick);
+  refs.bestCardContainer.innerHTML = ``;
 }
 
 function handleOutClick(event) {
@@ -43,9 +50,11 @@ function handleOutClick(event) {
     return;
   }
   refs.libMenu.classList.add('is-hidden');
+  refs.addToQueueBtn.classList.add('is-hidden');
   refs.libMenuCloseBtn.removeEventListener(`click`, onLibMenuCloseBtnClick);
   window.removeEventListener(`keydown`, handleEsc);
   window.removeEventListener(`click`, handleOutClick);
+  refs.bestCardContainer.innerHTML = ``;
 }
 
 async function showBestCard() {
@@ -84,5 +93,3 @@ function BestCardTemplate({
             </div>
           </article>`;
 }
-
-showBestCard();
