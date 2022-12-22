@@ -14,6 +14,8 @@ function onMyLibraryClick(e) {
   refs.headerButtons.forEach(element => {
     element.classList.remove('visually-hidden');
   });
+  showLoginButton();
+  showLogoutButton();
 }
 
 function onWatchedClick(e) {
@@ -29,4 +31,17 @@ function onQueueClick(e) {
 function makeCurrent(e) {
   e.target.classList.add('current');
   e.target.blur();
+}
+
+export function showLoginButton() {
+  refs.loginButton.classList.remove('visually-hidden');
+}
+export function hideLoginButton() {
+  refs.loginButton.classList.add('visually-hidden');
+}
+export function showLogoutButton() {
+  refs.logoutButton.classList.remove('visually-hidden');
+}
+export function hideLogoutButton() {
+  refs.logoutButton.classList.add('visually-hidden');
 }
