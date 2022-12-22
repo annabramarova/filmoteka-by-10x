@@ -59,7 +59,7 @@ export default class Api {
     return genres;
   }
 
-  async getTreiler() {
+  async getTrаiler() {
     const r = await axios
       .get(`/movie/${this.id}/videos?api_key=${this.KEY}&language=en-US`)
       .then(r => r.data);
