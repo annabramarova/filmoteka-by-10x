@@ -13,6 +13,10 @@ export const refs = {
   watchedButton: document.querySelector('[data-activ="watched"]'),
   queueButton: document.querySelector('[data-activ="queue"]'),
 
+  movieModalContainer: document.querySelector('.movie-modal__container'),
+  movieModalBackDrop: document.querySelector('.movie-backdrop'),
+  movieModalCloseBtn: document.querySelector('.modal-close-btn'),
+
   modalWatchedButton: document.querySelector('[data-action-modal-watched]'),
   modalQueueButton: document.querySelector('[data-action-modal-queue]'),
 
