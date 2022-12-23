@@ -2,7 +2,7 @@ export const refs = {
   galleryList: document.querySelector('.collection_list'),
   pagin_box: document.querySelector('.pagin_box'),
   formSearch: document.querySelector('.search-form'),
-
+  arrow: document.querySelector('.arrow-ref'),
   header: document.querySelector('.header'),
   logo: document.querySelector('.header .logo'),
   homeLink: document.querySelector('#home-link'),
@@ -19,4 +19,10 @@ export const refs = {
   auth: document.querySelector('.auth'), //Бекдроп вікна для авторизації
   authForm: document.querySelector('.auth__form'), //Форма авторизації
   authCancelButton: document.querySelector('.auth [data-action="cancel"]'), //Кнопка Cancel
+
+  //team modal
+  openModalBtn: document.querySelector('[data-team-modal-open]'),
+  closeModalBtn: document.querySelector('[data-team-modal-close]'),
+  modalTeam: document.querySelector('[data-team-modal]'),
+  body: document.querySelector('body'),
 };
