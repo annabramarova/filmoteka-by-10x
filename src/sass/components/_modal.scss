@@ -15,7 +15,7 @@ body.modal-open {
     visibility 500ms cubic-bezier(0.4, 0, 0.2, 1);
 
   overflow-y: scroll;
-  z-index: 2;
+  z-index: 999;
 
   &.hidden {
     visibility: hidden;
@@ -28,18 +28,30 @@ body.modal-open {
   position: absolute;
   top: 50%;
   left: 50%;
-
   display: flex;
-
   background-color: getColor('white');
-  padding: 40px 12px 40px 12px;
 
   transform: translate(-50%, -50%) scale(1);
   transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1),
     opacity 500ms cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 1;
-  width: 806px;
-  height: 558px;
+  min-width: 280px;
+  max-width: 100%;
+  overflow-y: scroll;
+  max-height: 95vh;
+  padding: 48px 20px 40px 20px;
+
+  @include mq($from: $width-tablet, $until: $width-desktop) {
+    width: 704px;
+    height: 552px;
+    padding: 40px 72px 40px 36px;
+  }
+
+  @include mq($from: $width-desktop) {
+    width: 806px;
+    height: 558px;
+    padding: 40px 12px 40px 12px;
+  }
 }
 
 .modal-close-btn {
@@ -67,14 +79,32 @@ body.modal-open {
 
 .modal-btn__wrapper {
   display: flex;
-  position: absolute;
-  bottom: 111px;
-  right: 108px;
+  // position: absolute;
+
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  // @include mq($from: $width-min-allowable, $until: $width-tablet) {
+  //   bottom: 40px;
+  //   left: 50%;
+  //   transform: translateX(-50%);
+  // }
+
+  // @include mq($from: $width-tablet, $until: $width-desktop) {
+  //   bottom: 40px;
+  //   right: 72px;
+  // }
+
+  // @include mq($from: $width-desktop) {
+  //   bottom: 111px;
+  //   right: 108px;
+  // }
 }
 
 .modal-btn {
-  width: 136px;
-  height: 44px;
+  width: 110px;
+  max-height: 65px;
+  min-height: 44px;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
@@ -89,12 +119,19 @@ body.modal-open {
     background-color: getColor('modal-info');
     color: getColor('white');
   }
+
+  @include mq($from: $width-tablet) {
+    width: 125.03px;
+  }
+
+  @include mq($from: $width-desktop) {
+    width: 136px;
+  }
 }
 
 .modal-btn__watched {
   background-color: getColor('modal-accent');
   color: getColor('white');
-  padding: 15px 10px 13px 10px;
   border: none;
   margin-right: 15px;
 }
@@ -102,36 +139,69 @@ body.modal-open {
 .modal-btn__queue {
   background-color: getColor('white');
   color: getColor('black');
-  padding: 14px 8px 12px 8px;
   border: 1px solid getColor('black');
 }
 
 .movie-card {
-  display: flex;
+  @include mq($from: $width-tablet) {
+    display: flex;
+  }
 }
 
 .cardItem__wrapper {
-  width: 391px;
+  width: 240px;
+  @include mq($from: $width-desktop) {
+    width: 391px;
+  }
 }
 
 .cardItem__image {
-  width: 375px;
-  height: 478px;
-  margin-right: 16px;
-  border-radius: 5px;
+  width: 240px;
+  height: 357px;
+  margin-bottom: 20px;
+
+  @include mq($from: $width-tablet, $until: $width-desktop) {
+    width: 264px;
+    height: 373.55px;
+    margin-right: 68px;
+    margin-bottom: 0;
+  }
+
+  @include mq($from: $width-desktop) {
+    width: 375px;
+    height: 478px;
+    margin-right: 16px;
+    margin-bottom: 0;
+  }
 }
 
 .image {
+  width: 240px;
+  height: 357px;
   object-fit: cover;
-  width: 375px;
-  height: 478px;
+  border-radius: 5px;
+  @include mq($from: $width-tablet, $until: $width-desktop) {
+    width: 264px;
+    height: 373.55px;
+  }
+  @include mq($from: $width-desktop) {
+    width: 375px;
+    height: 478px;
+  }
 }
 
 .cardItem__name {
   font-weight: 500;
-  font-size: 30px;
-  line-height: 1.17;
+  font-size: 20px;
+  line-height: 1.15;
   margin-bottom: 20px;
+  text-transform: uppercase;
+  color: getColor('black');
+
+  @include mq($from: $width-desktop) {
+    font-size: 30px;
+    line-height: 1.17;
+  }
 }
 
 .cardItem__text {
@@ -140,14 +210,19 @@ body.modal-open {
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
+  letter-spacing: 1px;
+
   color: getColor('modal-info');
   margin-bottom: 8px;
+
+  @include mq($from: $width-desktop) {
+  }
 }
 
 .cardItem__averageVote {
   display: inline-block;
-  margin-left: 85px;
-  margin-right: 3px;
+  margin-left: 41px;
+  margin-right: 4px;
   background-color: getColor('modal-accent');
   border-radius: 5px;
   color: getColor('white');
@@ -155,7 +230,11 @@ body.modal-open {
   font-size: 12px;
   text-align: center;
   line-height: 1.17;
-  padding: 1px 10px 1px 10px;
+  padding: 1px 9px 1px 10px;
+
+  @include mq($from: $width-desktop) {
+    margin-left: 85px;
+  }
 }
 
 .cardItem__countVote {
@@ -164,7 +243,7 @@ body.modal-open {
   color: getColor('black');
   font-weight: 500;
   font-size: 12px;
-  background-color: getColor('white');
+  background: #f7f7f7;
   border-radius: 5px;
   padding: 1px 4px 1px 4px;
   text-align: center;
@@ -172,58 +251,56 @@ body.modal-open {
 }
 
 .cardItem__data {
-  margin-left: 97px;
+  margin-left: 53px;
   color: getColor('black');
   font-weight: 500;
   font-size: 12px;
   line-height: 1.17;
+
+  @include mq($from: $width-desktop) {
+    margin-left: 97px;
+  }
 }
 
 .cardItem__title {
-  margin-left: 83px;
+  margin-left: 39px;
   text-transform: uppercase;
   color: getColor('black');
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
+
+  @include mq($from: $width-desktop) {
+    margin-left: 83px;
+  }
 }
 
 .genres {
   display: flex;
 }
-.genres {
-  display: flex;
-}
 
 .cardItem__genre {
+  align-items: center;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  color: getColor('modal-info');
   display: inline-block;
-  margin-right: 90px;
-}
-.cardItem__genre {
-  display: inline-block;
-  margin-right: 90px;
 }
 
 .cardItem {
   display: flex;
 }
-.cardItem {
-  display: flex;
-}
 
 .cardItem__genreList {
-  margin-left: 120px;
+  margin-left: 76px;
   color: getColor('black');
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
-}
-.cardItem__genreList {
-  margin-left: 120px;
-  color: getColor('black');
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.33;
+  @include mq($from: $width-desktop) {
+    margin-left: 120px;
+  }
 }
 
 .cardItem__about {
@@ -235,22 +312,7 @@ body.modal-open {
   margin-top: 20px;
   margin-bottom: 8px;
 }
-.cardItem__about {
-  text-transform: uppercase;
-  color: getColor('black');
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.33;
-  margin-top: 20px;
-  margin-bottom: 8px;
-}
 
-.cardItem__description {
-  color: getColor('black');
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.7;
-}
 .cardItem__description {
   color: getColor('black');
   font-weight: 500;

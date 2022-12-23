@@ -11,21 +11,21 @@ let inWatchedStorage = `[]`;
 let inWatchedStorageParsed = [];
 let lehghtSt = 0;
 
-refs.galleryWatchedBtn.addEventListener('click', onEmptyWatched);
+// refs.galleryWatchedBtn.addEventListener('click', onEmptyWatched);
 
 export function onEmptyWatched() {
-  inWatchedStorage = localStorage.getItem('watched');
+  // inWatchedStorage = localStorage.getItem('watched');
 
-  if (!inWatchedStorage) {
-    inWatchedStorage = `[]`;
-  }
+  // if (!inWatchedStorage) {
+  //   inWatchedStorage = `[]`;
+  // }
 
-  inWatchedStorageParsed = JSON.parse(inWatchedStorage);
-  lehghtSt = inWatchedStorageParsed.length;
+  // inWatchedStorageParsed = JSON.parse(inWatchedStorage);
+  // lehghtSt = inWatchedStorageParsed.length;
 
-  if (lehghtSt !== 0) {
-    return;
-  }
+  // if (lehghtSt !== 0) {
+  //   return;
+  // }
 
   refs.libMenu.classList.remove('is-hidden');
   refs.libMenuCloseBtn.addEventListener(`click`, onLibMenuCloseBtnClick);

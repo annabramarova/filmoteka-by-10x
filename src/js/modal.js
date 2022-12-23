@@ -9,33 +9,84 @@ import {
   removeWatchedId,
   removeQueuedId,
 } from './storage/storage';
+import { removeFromGalleryById } from './render/render-gallery';
+import { getCurrentPage } from './header';
 
 const apiService = new Api();
 let cardId = null;
 
 refs.galleryList.addEventListener('click', onGalleryClick);
-refs.movieModalCloseBtn.addEventListener('click', toggleModal);
+refs.movieModalCloseBtn.addEventListener('click', killModal);
 
 if (refs.movieModalBackDrop.classList.contains('hidden')) {
   refs.movieModalBackDrop.removeEventListener('mousedown', killModal);
   document.removeEventListener('keydown', killModal);
 }
 
-function toggleModal() {
-  document.body.classList.toggle('modal-open');
-  refs.movieModalBackDrop.classList.toggle('hidden');
-}
+// function toggleModal() {
+//   document.body.classList.toggle('modal-open');
+//   refs.movieModalBackDrop.classList.toggle('hidden');
+// }
 
 function killModal(e) {
-  if (e.currentTarget === e.target || e.code === 'Escape') {
+  if (
+    e.currentTarget === refs.movieModalCloseBtn ||
+    e.currentTarget === e.target ||
+    e.code === 'Escape'
+  ) {
     document.body.classList.toggle('modal-open');
     refs.movieModalBackDrop.classList.add('hidden');
+    console.log('killModal', cardId);
+    if (getCurrentPage() === 'watched') {
+      isWatched(cardId).then(isWatched => {
+        if (!isWatched) {
+          removeFromGalleryById(cardId);
+        }
+      });
+    }
+    if (getCurrentPage() === 'queue') {
+      isQueued(cardId).then(isQueued => {
+        if (!isQueued) {
+          removeFromGalleryById(cardId);
+        }
+      });
+    }
+
+    // isQueued(cardId).then(isQueued => {
+    //   if (!isQueued) {
+    //     removeFromGalleryById(cardId);
+    //   }
+    // });
   }
 }
 
 function renderCard(data) {
   const cardMarkup = getCardTemplate(data);
   refs.movieModalContainer.innerHTML = cardMarkup;
+  refs.modalWatchedButton = document.querySelector(
+    '[data-action-modal-watched]'
+  );
+  refs.modalQueueButton = document.querySelector('[data-action-modal-queue]');
+
+  refs.modalWatchedButton.addEventListener('click', async e => {
+    if (await isWatched(cardId)) {
+      removeWatchedId(cardId);
+    } else {
+      addWatchedId(cardId);
+    }
+    updateButtonsCaption(cardId);
+  });
+
+  refs.modalQueueButton.addEventListener('click', async e => {
+    if (await isQueued(cardId)) {
+      removeQueuedId(cardId);
+    } else {
+      addQueuedId(cardId);
+    }
+    updateButtonsCaption(cardId);
+  });
+
+  updateButtonsCaption(cardId);
 }
 
 function onGalleryClick(e) {
@@ -54,7 +105,6 @@ function onGalleryClick(e) {
   apiService
     .getFilmById(cardId)
     .then(data => {
-      updateButtonsCaption(cardId);
       renderCard(data);
       refs.movieModalBackDrop.addEventListener('mousedown', killModal);
       document.addEventListener('keydown', killModal);
@@ -67,29 +117,11 @@ const REMOVE_WROM_WATCHED_CAPTION = 'Remove from watched';
 const ADD_TO_QUEUE_CAPTION = 'Add to queue';
 const REMOVE_FROM_QUEUE_CAPTION = 'Remove from queue';
 
-function updateButtonsCaption(id) {
-  refs.modalWatchedButton.textContent = isWatched(id)
+async function updateButtonsCaption(id) {
+  refs.modalWatchedButton.textContent = (await isWatched(id))
     ? REMOVE_WROM_WATCHED_CAPTION
     : ADD_TO_WATCHED_CAPTION;
-  refs.modalQueueButton.textContent = isQueued(id)
+  refs.modalQueueButton.textContent = (await isQueued(id))
     ? REMOVE_FROM_QUEUE_CAPTION
     : ADD_TO_QUEUE_CAPTION;
 }
-
-refs.modalWatchedButton.addEventListener('click', e => {
-  if (isWatched(cardId)) {
-    removeWatchedId(cardId);
-  } else {
-    addWatchedId(cardId);
-  }
-  updateButtonsCaption(cardId);
-});
-
-refs.modalQueueButton.addEventListener('click', e => {
-  if (isQueued(cardId)) {
-    removeQueuedId(cardId);
-  } else {
-    addQueuedId(cardId);
-  }
-  updateButtonsCaption(cardId);
-});

@@ -11,10 +11,9 @@ export const getCardTemplate = ({
 }) => {
   return `
   <div class="movie-card" data-action=${id}>
-       <div class="cardItem__image">
+      <div class="cardItem__image">
         <img class="image" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${id}" />
       </div>
-
       <div class="cardItem__wrapper">
         <h2 class="cardItem__name">${title}</h2>
         <p class="cardItem__text">
@@ -30,16 +29,27 @@ export const getCardTemplate = ({
           Original Title<span class="cardItem__title">${original_title}</span>
         </p>
         <div class="genres">
-          <p class="cardItem__text">Genre</p>
+          <p class="cardItem__genre">Genre</p>
           <p class="cardItem__genreList">${genres
             .map(item => item.name)
             .join(', ')}</p>
         </div>
-
         <p class="cardItem__about">About</p>
         <p class="cardItem__description">${overview}
         </p>
+         <div class="modal-btn__wrapper">
+      
+      <button class="modal-btn modal-btn__watched" data-action-modal-watched>add to watched</button>
+      <button class="modal-btn modal-btn__queue" data-action-modal-queue>add to queue</button>
+     </div>
+
+
       </div>
-      </div>
+
+       
+      
+
+    
+  </div>
       `;
 };
