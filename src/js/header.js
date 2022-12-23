@@ -1,6 +1,8 @@
 import { refs } from './refs';
 import { getQueued, getWatched } from './storage/storage';
 import { tuneRender } from './render/render-gallery';
+import { showEmptyQueueModal } from './empty-lib-modal';
+import { showEmptyWatchedModal } from './empty-watch-modal';
 import Api from './api-service';
 const apiService = new Api();
 
@@ -49,9 +51,15 @@ export function hideLogoutButton() {
   refs.logoutButton.classList.add('visually-hidden');
 }
 
-refs.watchedButton.addEventListener('click', tuneRender.bind(null, getWatched));
+refs.watchedButton.addEventListener(
+  'click',
+  tuneRender.bind(null, getWatched, showEmptyWatchedModal)
+);
 
-refs.queueButton.addEventListener('click', tuneRender.bind(null, getQueued));
+refs.queueButton.addEventListener(
+  'click',
+  tuneRender.bind(null, getQueued, showEmptyQueueModal)
+);
 
 refs.homeLink.addEventListener('click', goHome);
 refs.logo.addEventListener('click', goHome);

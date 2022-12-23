@@ -12,7 +12,7 @@ const QUEUED_KEY = 'queued';
 
 // STORAGE CLASS
 
-class Storage {
+class StorageLoc {
   #STORAGE_KEY;
 
   constructor(storage_key) {
@@ -71,7 +71,7 @@ class Storage {
 
 // STORAGE Database CLASS
 
-class StorageDb {
+class Storage {
   #STORAGE_KEY;
 
   constructor(storage_key) {
@@ -79,34 +79,47 @@ class StorageDb {
     this.getIds();
   }
 
-  includes(id) {
-    return this.items.includes(id);
+  async includes(id) {
+    if (!auth.currentUser) {
+      return false;
+    }
+
+    try {
+      const snapshot = await get(
+        ref(db, `/users/${auth.currentUser.uid}/${this.#STORAGE_KEY}/${id}`)
+      );
+      const ex = snapshot.exists();
+      return ex;
+    } catch (error) {
+      console.log('Include error:', error);
+      return false;
+    }
   }
 
   async getIds() {
     console.log('currentUser', auth.currentUser);
     if (!auth.currentUser) {
-      this.items = [];
-      return this.items;
+      return [];
     }
+
     try {
       const snapshot = await get(
         ref(db, `/users/${auth.currentUser.uid}/${this.#STORAGE_KEY}`)
       );
-      const data = snapshot.exists() ? snapshot.val() : [];
-      console.log('!data', data);
-      this.items = data;
+      let data = snapshot.exists() ? snapshot.val() : {};
+      const items = Object.keys(data);
+      console.log('getIds items', items);
+
+      return items;
     } catch (error) {
-      console.log('!error', error);
-      this.items = [];
+      console.log('getIds error:', error);
     }
 
-    return this.items;
+    return [];
   }
 
   async addId(id) {
     if (!auth.currentUser) return;
-    if (this.includes(id)) return;
 
     try {
       await update(
@@ -115,28 +128,48 @@ class StorageDb {
           [id]: id,
         }
       );
-      this.items.push(id);
     } catch {}
   }
 
   async removeId(id) {
+    if (!auth.currentUser) return;
     try {
       await remove(
         ref(db, `/users/${auth.currentUser.uid}/${this.#STORAGE_KEY}/${id}`)
       );
-      this.items = this.items.filter(itemId => itemId !== id);
     } catch {}
   }
 
   async getItems(page) {
-    const firstItem = page * ITEMS_PER_PAGE;
+    if (!auth.currentUser)
+      return {
+        page: 0,
+        total_pages: 0,
+        total_results: 0,
+        results: [],
+      };
+
+    const allItems = await this.getIds();
+
+    const firstItem = (page - 1) * ITEMS_PER_PAGE;
     const lastItem = firstItem + ITEMS_PER_PAGE;
-    const items = this.items.slice(firstItem, lastItem);
+
+    const items = allItems.slice(firstItem, lastItem);
+
+    const total_results = allItems.length;
+    const total_pages = Math.ceil(total_results / ITEMS_PER_PAGE);
+
+    console.log('GetItems:', items);
+    const results = (await api.getFilmMassiveById(items)).map(item => {
+      item.genre_ids = item.genres.map(({ id }) => id);
+      return item;
+    });
+
     return {
       page,
-      totalPages: Math.ceil(this.items.length / ITEMS_PER_PAGE),
-      totalItems: this.items.length,
-      items: api.getFilmMassiveById(items),
+      total_pages,
+      total_results,
+      results,
     };
   }
 }
