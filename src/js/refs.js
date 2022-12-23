@@ -37,4 +37,5 @@ export const refs = {
   bestCardContainer: document.querySelector(`.proposed-card`),
   galleryQueueBtn: document.querySelector('button[data-activ="queue"]'),
   addToQueueBtn: document.querySelector(`.addToQueue`),
+  galleryContainer: document.querySelector(`.gallery-container`),
 };

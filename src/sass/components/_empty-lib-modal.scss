@@ -150,17 +150,17 @@
 .card-proposed:hover {
   transform: scale(1.03);
 }
-.card_img {
+.lib-card_img {
   border-radius: 5px;
   padding-bottom: 5px;
 }
-.card-name {
+.lib-card-name {
   text-transform: uppercase;
 }
-.card-genres {
+.lib-card-genres {
   color: getColor('modal-accent');
 }
-.card-rating {
+.lib-card-rating {
   position: absolute;
   left: 7px;
   top: 7px;
@@ -189,4 +189,16 @@
 
 .addToQueue.is-hidden {
   display: none;
+}
+
+.spider-thumb {
+  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.spyder-hidden {
+  opacity: 0;
+  visibility: hidden;
 }

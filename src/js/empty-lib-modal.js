@@ -12,15 +12,71 @@ import { genres } from './data/genres';
 //   addToQueueBtn: document.querySelector(`.addToQueue`),
 // };
 
-let inLibStorage = ``;
-let inLibStorageParsed = [];
+const spiderThumb = document.querySelector(`.spider-thumb`);
+
+let inLibStorage = `[]`;
+let inLibParsed = [];
+let lehghtLibSt = 0;
+let libraryOpenBefor = false;
+
+let inWatchedStorage = `[]`;
+let inWatchedStorageParsed = [];
+let lehghtSt = 0;
+
+refs.myLibraryLink.addEventListener(`click`, onLibraryOpen);
+
+function onLibraryOpen() {
+  inLibStorage = localStorage.getItem('queued');
+
+  if (!inLibStorage) {
+    inLibStorage = `[]`;
+  }
+
+  inLibParsed = JSON.parse(inLibStorage);
+  lehghtLibSt = inLibParsed.length;
+
+  // ----------------------------------
+  inWatchedStorage = localStorage.getItem('watched');
+
+  if (!inWatchedStorage) {
+    inWatchedStorage = `[]`;
+  }
+
+  inWatchedStorageParsed = JSON.parse(inWatchedStorage);
+  lehghtSt = inWatchedStorageParsed.length;
+  // ----------------------------------
+
+  if (!libraryOpenBefor && lehghtLibSt === 0 && lehghtSt === 0) {
+    let testString = `
+     <div class="spider-thumb">
+      <p class="lib-modal-content__text">
+      Nothing to see here<br />Add a movie please
+      </p>
+     </div>`;
+    refs.galleryContainer.insertAdjacentHTML('beforeend', testString);
+    console.log(spiderThumb);
+    // spiderThumb.classList.remove('spyder-hidden');
+
+    libraryOpenBefor = true;
+
+    // if (libraryOpenBefor) {
+    //   refs.galleryContainer.innerHTML('');
+    //   libraryOpenBefor = false;
+    // }
+  }
+}
 
 refs.galleryQueueBtn.addEventListener('click', onEmptyLibrary);
 
 export function onEmptyLibrary() {
   inLibStorage = localStorage.getItem('queued');
+
+  if (!inLibStorage) {
+    inLibStorage = `[]`;
+  }
+
   inLibParsed = JSON.parse(inLibStorage);
-  let lehghtLibSt = inLibParsed.length;
+  lehghtLibSt = inLibParsed.length;
 
   if (lehghtLibSt !== 0) {
     return;
@@ -85,13 +141,13 @@ function BestCardTemplate({
 
   return `<p class="lib-modal-content__text-small">you might like this movie:</p>
           <article class="card-proposed" data-id=${id}>
-            <span class="card-rating">${rating}</span>
+            <span class="card-rating lib-card-rating">${rating}</span>
             <a href="" class="card_link">
-              <img class="card_img" width="394" src=${url} alt="{original_title}">
+              <img class="card_img lib-card_img" width="394" src=${url} alt="{original_title}">
             </a>
             <div class="card-wrap">
-              <h3 class="card-name">${original_title}</h3>
-              <p class="card-genres">${genresNames} | ${date}</p>
+              <h3 class="card-name lib-card-name">${original_title}</h3>
+              <p class="lib-card-genres">${genresNames} | ${date}</p>
             </div>
           </article>`;
 }

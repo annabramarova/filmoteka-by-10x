@@ -7,15 +7,21 @@ import { refs } from './refs';
 //   bestCardContainer: document.querySelector(`.proposed-card`),
 // };
 
-let inWatchedStorage = ``;
+let inWatchedStorage = `[]`;
 let inWatchedStorageParsed = [];
+let lehghtSt = 0;
 
 refs.galleryWatchedBtn.addEventListener('click', onEmptyWatched);
 
 export function onEmptyWatched() {
   inWatchedStorage = localStorage.getItem('watched');
+
+  if (!inWatchedStorage) {
+    inWatchedStorage = `[]`;
+  }
+
   inWatchedStorageParsed = JSON.parse(inWatchedStorage);
-  let lehghtSt = inWatchedStorageParsed.length;
+  lehghtSt = inWatchedStorageParsed.length;
 
   if (lehghtSt !== 0) {
     return;
