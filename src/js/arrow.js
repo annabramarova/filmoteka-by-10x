@@ -6,7 +6,6 @@ window.addEventListener('scroll', throttle(visibleArrow, 500));
 function visibleArrow(e) {
   e.preventDefault();
   let area = document.scrollingElement.scrollTop;
-  console.log(document.scrollingElement.scrollTop);
   if (area >= 500) {
     refs.arrow.classList.add('arrow-visible');
     return;

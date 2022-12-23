@@ -1,6 +1,7 @@
 .arrow-area {
   position: relative;
 }
+
 .arrow-ref {
   display: none;
   padding: 5px;
@@ -11,19 +12,16 @@
   animation-duration: 1s;
   animation-timing-function: ease;
   animation-iteration-count: infinite;
-  border-radius: 50%;
   animation-direction: alternate;
-  transform: rotateX(0.5turn);
-
-  transition-duration: 700ms;
 }
+
 .arrow-visible {
   display: inline;
 }
-.arrow-ref:hover,
-.arrow-ref:focus {
-  transform: rotateX(1turn);
 
+.arrow-img:hover,
+.arrow-img:focus {
+  transform: scale(1.05);
   transition-duration: 700ms;
 }
 

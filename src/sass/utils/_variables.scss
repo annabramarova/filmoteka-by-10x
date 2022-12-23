@@ -1,18 +1,18 @@
 $colors: (
-    'white': #fff,
-    'black': #000,
-    'accent': #FF6B01,
-    'footer-text': #545454,
-    'error-text': #FF001B,
-    'modal-info': #8C8C8C,
-    'modal-accent':  #FF6B08,
-    'footer-bgr': #F7F7F7,
-    'auth-modal':#000000a0,
-    'auth-cancel-btn':#757575,
+  'white': #fff,
+  'black': #000,
+  'accent': #ff6b01,
+  'footer-text': #545454,
+  'error-text': #ff001b,
+  'modal-info': #8c8c8c,
+  'modal-accent': #ff6b08,
+  'footer-bgr': #f7f7f7,
+  'auth-modal': #000000a0,
+  'auth-cancel-btn': #757575,
 );
 
 @function getColor($key) {
-    @return map-get($colors, $key);
+  @return map-get($colors, $key);
 }
 
 $width-min-allowable: 320px;
@@ -24,11 +24,11 @@ $timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 $duration: 250ms;
 
 @keyframes anime {
-    from {
-        transform: scale(1) rotate(1deg);
-    }
+  from {
+    transform: scale(1) rotate(1deg);
+  }
 
-    to {
-        transform: scale(1.5) rotate(1deg);
-    }
+  to {
+    transform: scale(1.5) rotate(1deg);
+  }
 }
