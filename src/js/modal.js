@@ -1,4 +1,4 @@
-import { getCardTemplate } from './templates/getCardTemplate';
+import { getCardTemplate } from './templates/getcardtemplate';
 import Api from './api-service';
 import { refs } from './refs';
 import {
