@@ -181,6 +181,16 @@ header::after {
   }
 }
 
+.wrapper--input {
+  z-index: 1;
+  position: relative;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: flex-end;
+  border-bottom: 1px solid getColor('white');
+}
+
 .search-form__input {
   -webkit-appearance: none;
   appearance: none;
@@ -190,7 +200,7 @@ header::after {
   border: none;
   outline: none;
   color: getColor('white');
-  border-bottom: 1px solid getColor('white');
+  // border-bottom: 1px solid getColor('white');
   background: inherit;
   cursor: text;
 
@@ -203,14 +213,6 @@ header::after {
   }
 }
 
-.wrapper--input {
-  position: relative;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  align-items: flex-end;
-}
-
 .search-form__submit {
   // -webkit-appearance: none;
   // appearance: none;
@@ -218,8 +220,8 @@ header::after {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   cursor: pointer;
   background-color: inherit;
   background-position: center;
@@ -228,10 +230,12 @@ header::after {
   background-image: url(../images/search.svg);
   border: none;
   outline: none;
-  border-bottom: 1px solid getColor('white');
+  // border-bottom: 1px solid getColor('white');
   transition-property: background-color, border-bottom, border-radius;
   transition-duration: $duration;
   transition-timing-function: $timing-function;
+
+  fill: green;
 
   &:hover,
   &:focus {
