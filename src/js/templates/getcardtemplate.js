@@ -30,7 +30,7 @@ export const getCardTemplate = ({
           Original Title<span class="cardItem__title">${original_title}</span>
         </p>
         <div class="genres">
-          <p class="cardItem__text">Genre</p>
+          <p class="cardItem__genre">Genre</p>
           <p class="cardItem__genreList">${genres
             .map(item => item.name)
             .join(', ')}</p>
