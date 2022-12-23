@@ -1,19 +1,15 @@
-import { galleryTemplate } from './templates/gallery';
-// import { refs } from './refs';
-import Api from './api-service';
-const apiService = new Api();
-import { genres } from './data/genres';
+import { refs } from './refs';
 
-const refs = {
-  galleryWatchedBtn: document.querySelector('button[data-activ="watched"]'),
-  libMenu: document.querySelector('[data-modal]'),
-  libMenuCloseBtn: document.querySelector('.lib_modal-close-btn'),
-  bestCardContainer: document.querySelector(`.proposed-card`),
-};
+// const refs = {
+//   galleryWatchedBtn: document.querySelector('button[data-activ="watched"]'),
+//   libMenu: document.querySelector('[data-modal]'),
+//   libMenuCloseBtn: document.querySelector('.lib_modal-close-btn'),
+//   bestCardContainer: document.querySelector(`.proposed-card`),
+// };
 
-refs.galleryWatchedBtn.addEventListener('click', onWatchedClick);
+refs.galleryWatchedBtn.addEventListener('click', onEmptyWatched);
 
-function onWatchedClick() {
+export function onEmptyWatched() {
   refs.libMenu.classList.remove('is-hidden');
   refs.libMenuCloseBtn.addEventListener(`click`, onLibMenuCloseBtnClick);
   window.addEventListener(`keydown`, handleEsc);
@@ -21,10 +17,7 @@ function onWatchedClick() {
 }
 
 function onLibMenuCloseBtnClick() {
-  refs.libMenu.classList.add('is-hidden');
-  refs.libMenuCloseBtn.removeEventListener(`click`, onLibMenuCloseBtnClick);
-  window.removeEventListener(`keydown`, handleEsc);
-  window.removeEventListener(`click`, handleOutClick);
+  removeAllListn();
 }
 
 function handleEsc(event) {
@@ -32,16 +25,17 @@ function handleEsc(event) {
   if (!(event.code === `Escape`)) {
     return;
   }
-  refs.libMenu.classList.add('is-hidden');
-  refs.libMenuCloseBtn.removeEventListener(`click`, onLibMenuCloseBtnClick);
-  window.removeEventListener(`keydown`, handleEsc);
-  window.removeEventListener(`click`, handleOutClick);
+  removeAllListn();
 }
 
 function handleOutClick(event) {
   if (!event.target.classList.contains(`backdrop`)) {
     return;
   }
+  removeAllListn();
+}
+
+function removeAllListn() {
   refs.libMenu.classList.add('is-hidden');
   refs.libMenuCloseBtn.removeEventListener(`click`, onLibMenuCloseBtnClick);
   window.removeEventListener(`keydown`, handleEsc);

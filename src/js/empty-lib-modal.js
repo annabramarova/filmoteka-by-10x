@@ -1,20 +1,20 @@
-import { galleryTemplate } from './templates/gallery';
-// import { refs } from './refs';
+// import { galleryTemplate } from './templates/gallery';
+import { refs } from './refs';
 import Api from './api-service';
 const apiService = new Api();
 import { genres } from './data/genres';
 
-const refs = {
-  galleryQueueBtn: document.querySelector('button[data-activ="queue"]'),
-  libMenu: document.querySelector('[data-modal]'),
-  libMenuCloseBtn: document.querySelector('.lib_modal-close-btn'),
-  bestCardContainer: document.querySelector(`.proposed-card`),
-  addToQueueBtn: document.querySelector(`.addToQueue`),
-};
+// const refs = {
+//   galleryQueueBtn: document.querySelector('button[data-activ="queue"]'),
+//   libMenu: document.querySelector('[data-modal]'),
+//   libMenuCloseBtn: document.querySelector('.lib_modal-close-btn'),
+//   bestCardContainer: document.querySelector(`.proposed-card`),
+//   addToQueueBtn: document.querySelector(`.addToQueue`),
+// };
 
-refs.galleryQueueBtn.addEventListener('click', onLibClick);
+refs.galleryQueueBtn.addEventListener('click', onEmptyLibrary);
 
-function onLibClick() {
+export function onEmptyLibrary() {
   refs.libMenu.classList.remove('is-hidden');
   refs.addToQueueBtn.classList.remove('is-hidden');
   refs.libMenuCloseBtn.addEventListener(`click`, onLibMenuCloseBtnClick);
@@ -24,12 +24,7 @@ function onLibClick() {
 }
 
 function onLibMenuCloseBtnClick() {
-  refs.libMenu.classList.add('is-hidden');
-  refs.addToQueueBtn.classList.add('is-hidden');
-  refs.libMenuCloseBtn.removeEventListener(`click`, onLibMenuCloseBtnClick);
-  window.removeEventListener(`keydown`, handleEsc);
-  window.removeEventListener(`click`, handleOutClick);
-  refs.bestCardContainer.innerHTML = ``;
+  removeAllListner();
 }
 
 function handleEsc(event) {
@@ -37,18 +32,17 @@ function handleEsc(event) {
   if (!(event.code === `Escape`)) {
     return;
   }
-  refs.libMenu.classList.add('is-hidden');
-  refs.addToQueueBtn.classList.add('is-hidden');
-  refs.libMenuCloseBtn.removeEventListener(`click`, onLibMenuCloseBtnClick);
-  window.removeEventListener(`keydown`, handleEsc);
-  window.removeEventListener(`click`, handleOutClick);
-  refs.bestCardContainer.innerHTML = ``;
+  removeAllListner();
 }
 
 function handleOutClick(event) {
   if (!event.target.classList.contains(`backdrop`)) {
     return;
   }
+  removeAllListner();
+}
+
+function removeAllListner() {
   refs.libMenu.classList.add('is-hidden');
   refs.addToQueueBtn.classList.add('is-hidden');
   refs.libMenuCloseBtn.removeEventListener(`click`, onLibMenuCloseBtnClick);

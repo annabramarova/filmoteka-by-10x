@@ -29,4 +29,12 @@ export const refs = {
   closeModalBtn: document.querySelector('[data-team-modal-close]'),
   modalTeam: document.querySelector('[data-team-modal]'),
   body: document.querySelector('body'),
+
+  // empty library-watcher modal
+  galleryWatchedBtn: document.querySelector('button[data-activ="watched"]'),
+  libMenu: document.querySelector('[data-modal]'),
+  libMenuCloseBtn: document.querySelector('.lib_modal-close-btn'),
+  bestCardContainer: document.querySelector(`.proposed-card`),
+  galleryQueueBtn: document.querySelector('button[data-activ="queue"]'),
+  addToQueueBtn: document.querySelector(`.addToQueue`),
 };
