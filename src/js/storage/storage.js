@@ -42,7 +42,7 @@ class Storage {
   }
 
   addId(id) {
-    if (this.includes(id)) return;
+    if (this.items.includes(id)) return;
 
     this.items.push(id);
     localStorage.setItem(this.#STORAGE_KEY, JSON.stringify(this.items));
@@ -57,8 +57,6 @@ class Storage {
     const firstItem = (page - 1) * ITEMS_PER_PAGE;
     const lastItem = firstItem + ITEMS_PER_PAGE;
     const items = this.items.slice(firstItem, lastItem);
-    console.log('this.iems', this.items);
-    console.log('iems', items);
     return {
       page,
       total_pages: Math.ceil(this.items.length / ITEMS_PER_PAGE),
@@ -91,7 +89,6 @@ class StorageDb {
       this.items = [];
       return this.items;
     }
-    console.log('!logged');
     try {
       const snapshot = await get(
         ref(db, `/users/${auth.currentUser.uid}/${this.#STORAGE_KEY}`)
