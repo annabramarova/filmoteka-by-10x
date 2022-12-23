@@ -1,6 +1,6 @@
 import './js/preloader';
 import './js/render/render-gallery';
-import './js/getTrendFilms';
+import './js/gettrendfilms';
 import './js/team-modal';
 import './js/pagination';
 import './js/loading';
