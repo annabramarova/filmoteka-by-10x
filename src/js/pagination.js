@@ -217,7 +217,7 @@ function pagin_rander_7() {
     <button type="submit" class="pagin_button">${pageAfterTwo}</button>
     <button type="submit" class="pagin_button">${pageAfterThree}</button>
     <button type="submit" class="pagin_button">${pageAfterFour}</button>
-    <p class="pagin_button pagin_nothing">...</p>
+    <p class="pagin_nothing">...</p>
     <button type="submit" class="pagin_button">${maxPage}</button>
     <button type="submit" class="pagin_button pagin_button_rigth">rigth</button>
   `;
@@ -228,7 +228,7 @@ function pagin_rander_7() {
     <button type="submit" class="pagin_button">${pageAfter}</button>
     <button type="submit" class="pagin_button">${pageAfterTwo}</button>
     <button type="submit" class="pagin_button">${pageAfterThree}</button>
-    <p class="pagin_button pagin_nothing">...</p>
+    <p class="pagin_nothing">...</p>
     <button type="submit" class="pagin_button">${maxPage}</button>
     <button type="submit" class="pagin_button pagin_button_rigth">rigth</button>
   `;
@@ -239,7 +239,7 @@ function pagin_rander_7() {
     <button type="submit" class="pagin_button pagin_accent">${page}</button>
     <button type="submit" class="pagin_button">${pageAfter}</button>
     <button type="submit" class="pagin_button">${pageAfterTwo}</button>
-    <p class="pagin_button pagin_nothing">...</p>
+    <p class="pagin_nothing">...</p>
     <button type="submit" class="pagin_button">${maxPage}</button>
     <button type="submit" class="pagin_button pagin_button_rigth">rigth</button>
   `;
@@ -247,13 +247,13 @@ function pagin_rander_7() {
     refs.pagin_box.innerHTML = `
     <button type="submit" class="pagin_button pagin_button_left">left</button>
     <button type="submit" class="pagin_button">${minPage}</button>
-    <p class="pagin_button pagin_nothing">...</p>
+    <p class="pagin_nothing">...</p>
     <button type="submit" class="pagin_button">${pageBeforeTwo}</button>
     <button type="submit" class="pagin_button">${pageBefore}</button>
     <button type="submit" class="pagin_button pagin_accent">${page}</button>
     <button type="submit" class="pagin_button">${pageAfter}</button>
     <button type="submit" class="pagin_button">${pageAfterTwo}</button>
-    <p class="pagin_button pagin_nothing">...</p>
+    <p class="pagin_nothing">...</p>
     <button type="submit" class="pagin_button">${maxPage}</button>
     <button type="submit" class="pagin_button pagin_button_rigth">rigth</button>
   `;
@@ -261,7 +261,7 @@ function pagin_rander_7() {
     refs.pagin_box.innerHTML = `
     <button type="submit" class="pagin_button pagin_button_left">left</button>
     <button type="submit" class="pagin_button">${minPage}</button>
-    <p class="pagin_button pagin_nothing">...</p>
+    <p class="pagin_nothing">...</p>
     <button type="submit" class="pagin_button">${pageBeforeThree}</button>
     <button type="submit" class="pagin_button">${pageBefore}</button>
     <button type="submit" class="pagin_button pagin_accent">${page}</button>
@@ -272,7 +272,7 @@ function pagin_rander_7() {
     refs.pagin_box.innerHTML = `
     <button type="submit" class="pagin_button pagin_button_left">left</button>
     <button type="submit" class="pagin_button">${minPage}</button>
-    <p class="pagin_button pagin_nothing">...</p>
+    <p class="pagin_nothing">...</p>
     <button type="submit" class="pagin_button">${pageBeforeThree}</button>
     <button type="submit" class="pagin_button">${pageBeforeTwo}</button>
     <button type="submit" class="pagin_button">${pageBefore}</button>
@@ -283,7 +283,7 @@ function pagin_rander_7() {
     refs.pagin_box.innerHTML = `
     <button type="submit" class="pagin_button pagin_button_left">left</button>
     <button type="submit" class="pagin_button">${minPage}</button>
-    <p class="pagin_button pagin_nothing">...</p>
+    <p class="pagin_nothing">...</p>
     <button type="submit" class="pagin_button">${pageBeforeFour}</button>
     <button type="submit" class="pagin_button">${pageBeforeThree}</button>
     <button type="submit" class="pagin_button">${pageBeforeTwo}</button>
@@ -351,8 +351,6 @@ function on_pagin_button(evt) {
     pageAfterTwo = page + 2;
     pageAfterThree = page + 3;
     pageAfterFour = page + 4;
-
-    console.log('page: ', page);
 
     callback(page);
 

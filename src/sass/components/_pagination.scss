@@ -36,6 +36,8 @@ background-color: transparent;
 color: getColor('black');
 border-radius: 5px;
 
+margin: 1px;
+
     &:hover,
       &:focus {
     background-color: getColor('error-text');
@@ -44,6 +46,14 @@ border-radius: 5px;
 }
 
 .pagin_nothing {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+  
+    width: 40px;
+    height: 40px;
+
   background-color: transparent;
   border-color: transparent;
   color: getColor('black');
