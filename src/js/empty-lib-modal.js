@@ -23,47 +23,47 @@ let inWatchedStorage = `[]`;
 let inWatchedStorageParsed = [];
 let lehghtSt = 0;
 
-refs.myLibraryLink.addEventListener(`click`, onLibraryOpen);
+// refs.myLibraryLink.addEventListener(`click`, onLibraryOpen);
 
-function onLibraryOpen() {
-  inLibStorage = localStorage.getItem('queued');
+export function onLibraryOpen() {
+  // inLibStorage = localStorage.getItem('queued');
 
-  if (!inLibStorage) {
-    inLibStorage = `[]`;
-  }
+  // if (!inLibStorage) {
+  //   inLibStorage = `[]`;
+  // }
 
-  inLibParsed = JSON.parse(inLibStorage);
-  lehghtLibSt = inLibParsed.length;
+  // inLibParsed = JSON.parse(inLibStorage);
+  // lehghtLibSt = inLibParsed.length;
 
   // ----------------------------------
-  inWatchedStorage = localStorage.getItem('watched');
+  // inWatchedStorage = localStorage.getItem('watched');
 
-  if (!inWatchedStorage) {
-    inWatchedStorage = `[]`;
-  }
+  // if (!inWatchedStorage) {
+  //   inWatchedStorage = `[]`;
+  // }
 
-  inWatchedStorageParsed = JSON.parse(inWatchedStorage);
-  lehghtSt = inWatchedStorageParsed.length;
+  // inWatchedStorageParsed = JSON.parse(inWatchedStorage);
+  // lehghtSt = inWatchedStorageParsed.length;
   // ----------------------------------
 
-  if (!libraryOpenBefor && lehghtLibSt === 0 && lehghtSt === 0) {
-    let testString = `
+  // if (!libraryOpenBefor && lehghtLibSt === 0 && lehghtSt === 0) {
+  let testString = `
      <div class="spider-thumb">
       <p class="lib-modal-content__text">
       Nothing to see here<br />Add a movie please
       </p>
      </div>`;
-    refs.galleryContainer.insertAdjacentHTML('beforeend', testString);
-    console.log(spiderThumb);
-    // spiderThumb.classList.remove('spyder-hidden');
+  refs.galleryContainer.insertAdjacentHTML('beforeend', testString);
+  console.log(spiderThumb);
+  // spiderThumb.classList.remove('spyder-hidden');
 
-    libraryOpenBefor = true;
+  // libraryOpenBefor = true;
 
-    // if (libraryOpenBefor) {
-    //   refs.galleryContainer.innerHTML('');
-    //   libraryOpenBefor = false;
-    // }
-  }
+  // if (libraryOpenBefor) {
+  //   refs.galleryContainer.innerHTML('');
+  //   libraryOpenBefor = false;
+  // }
+  // }
 }
 
 refs.galleryQueueBtn.addEventListener('click', onEmptyLibrary);
