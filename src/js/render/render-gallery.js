@@ -2,6 +2,7 @@ import { galleryTemplate } from '../templates/gallery';
 import { refs } from '../refs';
 import { tune as tunePagination } from '../pagination';
 import { loader, loaderRemove } from '../loading';
+import { ref } from 'firebase/database';
 
 export function renderGallery(movies) {
   let moviesCollection = movies.map(galleryTemplate).join('');
@@ -30,4 +31,13 @@ export async function tuneRender(getMoviesCallback, runIfNoResults) {
     renderGallery(results);
     loaderRemove();
   });
+}
+
+export function removeFromGalleryById(id) {
+  const card = refs.galleryList
+    .querySelector(`[data-id="${id}"]`)
+    .closest('.collection_item');
+  if (card) {
+    card.remove();
+  }
 }
