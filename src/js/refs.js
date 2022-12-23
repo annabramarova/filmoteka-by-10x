@@ -2,7 +2,7 @@ export const refs = {
   galleryList: document.querySelector('.collection_list'),
   pagin_box: document.querySelector('.pagin_box'),
   formSearch: document.querySelector('.search-form'),
-
+  arrow: document.querySelector('.arrow-ref'),
   header: document.querySelector('.header'),
   logo: document.querySelector('.header .logo'),
   homeLink: document.querySelector('#home-link'),

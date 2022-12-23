@@ -12,3 +12,5 @@ import './js/empty-lib-modal';
 import './js/empty-watch-modal';
 import './js/modal';
 // import './js/storage/test';
+import './js/trailer';
+import './js/arrow';
