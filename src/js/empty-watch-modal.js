@@ -11,7 +11,11 @@ const refs = {
   bestCardContainer: document.querySelector(`.proposed-card`),
 };
 
-refs.galleryWatchedBtn.addEventListener('click', onWatchedClick);
+// refs.galleryWatchedBtn.addEventListener('click', onWatchedClick);
+
+export function showEmptyWatchedModal() {
+  onWatchedClick();
+}
 
 function onWatchedClick() {
   refs.libMenu.classList.remove('is-hidden');

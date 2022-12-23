@@ -9,10 +9,15 @@ export function renderGallery(movies) {
   refs.galleryList.insertAdjacentHTML('beforeend', moviesCollection);
 }
 
-export async function tuneRender(getMoviesCallback) {
+export async function tuneRender(getMoviesCallback, runIfNoResults) {
   loader();
   const { total_pages, results } = await getMoviesCallback(1);
   renderGallery(results);
+
+  if (total_pages === 0 && runIfNoResults) {
+    runIfNoResults();
+  }
+
   loaderRemove();
   tunePagination(total_pages, async page => {
     loader();

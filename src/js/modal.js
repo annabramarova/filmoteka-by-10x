@@ -67,17 +67,17 @@ const REMOVE_WROM_WATCHED_CAPTION = 'Remove from watched';
 const ADD_TO_QUEUE_CAPTION = 'Add to queue';
 const REMOVE_FROM_QUEUE_CAPTION = 'Remove from queue';
 
-function updateButtonsCaption(id) {
-  refs.modalWatchedButton.textContent = isWatched(id)
+async function updateButtonsCaption(id) {
+  refs.modalWatchedButton.textContent = (await isWatched(id))
     ? REMOVE_WROM_WATCHED_CAPTION
     : ADD_TO_WATCHED_CAPTION;
-  refs.modalQueueButton.textContent = isQueued(id)
+  refs.modalQueueButton.textContent = (await isQueued(id))
     ? REMOVE_FROM_QUEUE_CAPTION
     : ADD_TO_QUEUE_CAPTION;
 }
 
-refs.modalWatchedButton.addEventListener('click', e => {
-  if (isWatched(cardId)) {
+refs.modalWatchedButton.addEventListener('click', async e => {
+  if (await isWatched(cardId)) {
     removeWatchedId(cardId);
   } else {
     addWatchedId(cardId);
@@ -85,8 +85,8 @@ refs.modalWatchedButton.addEventListener('click', e => {
   updateButtonsCaption(cardId);
 });
 
-refs.modalQueueButton.addEventListener('click', e => {
-  if (isQueued(cardId)) {
+refs.modalQueueButton.addEventListener('click', async e => {
+  if (await isQueued(cardId)) {
     removeQueuedId(cardId);
   } else {
     addQueuedId(cardId);

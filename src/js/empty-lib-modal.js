@@ -12,7 +12,11 @@ const refs = {
   addToQueueBtn: document.querySelector(`.addToQueue`),
 };
 
-refs.galleryQueueBtn.addEventListener('click', onLibClick);
+// refs.galleryQueueBtn.addEventListener('click', onLibClick);
+
+export function showEmptyQueueModal() {
+  onLibClick();
+}
 
 function onLibClick() {
   refs.libMenu.classList.remove('is-hidden');
