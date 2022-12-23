@@ -19,4 +19,10 @@ export const refs = {
   auth: document.querySelector('.auth'), //Бекдроп вікна для авторизації
   authForm: document.querySelector('.auth__form'), //Форма авторизації
   authCancelButton: document.querySelector('.auth [data-action="cancel"]'), //Кнопка Cancel
+
+  //team modal
+  openModalBtn: document.querySelector('[data-team-modal-open]'),
+  closeModalBtn: document.querySelector('[data-team-modal-close]'),
+  modalTeam: document.querySelector('[data-team-modal]'),
+  body: document.querySelector('body'),
 };

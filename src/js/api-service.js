@@ -60,7 +60,6 @@ export default class Api {
     res = res
       .filter(({ status }) => status === 'fulfilled')
       .map(({ value }) => value);
-    console.log('!re', res);
     return res;
   }
 
@@ -82,12 +81,9 @@ export default class Api {
   }
 
   async getFilmById(id) {
-    console.log('id', id);
     const r = await axios
       .get(`/movie/${id}?api_key=${this.KEY}&language=en-US`)
       .then(res => {
-        console.log('res', res);
-        console.log('data', res.data);
         return res.data;
       });
     return r;
