@@ -91,13 +91,12 @@ class Storage {
       const ex = snapshot.exists();
       return ex;
     } catch (error) {
-      console.log('Include error:', error);
+      console.error('Include error:', error);
       return false;
     }
   }
 
   async getIds() {
-    console.log('currentUser', auth.currentUser);
     if (!auth.currentUser) {
       return [];
     }
@@ -108,11 +107,10 @@ class Storage {
       );
       let data = snapshot.exists() ? snapshot.val() : {};
       const items = Object.keys(data);
-      console.log('getIds items', items);
 
       return items;
     } catch (error) {
-      console.log('getIds error:', error);
+      console.error('getIds error:', error);
     }
 
     return [];
@@ -159,7 +157,6 @@ class Storage {
     const total_results = allItems.length;
     const total_pages = Math.ceil(total_results / ITEMS_PER_PAGE);
 
-    console.log('GetItems:', items);
     const results = (await api.getFilmMassiveById(items)).map(item => {
       item.genre_ids = item.genres.map(({ id }) => id);
       return item;
