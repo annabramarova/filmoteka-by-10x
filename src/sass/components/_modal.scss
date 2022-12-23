@@ -38,13 +38,13 @@ body.modal-open {
   min-width: 280px;
   max-width: 100%;
   overflow-y: scroll;
-    max-height: 95vh;
+  max-height: 95vh;
   padding: 48px 20px 40px 20px;
 
   @include mq($from: $width-tablet, $until: $width-desktop) {
     width: 704px;
     height: 552px;
-    padding: 40px 36px 40px 72px;
+    padding: 40px 72px 40px 36px;
   }
 
   @include mq($from: $width-desktop) {
@@ -118,6 +118,10 @@ body.modal-open {
   &:focus {
     background-color: getColor('modal-info');
     color: getColor('white');
+  }
+
+  @include mq($from: $width-tablet) {
+    width: 125.03px;
   }
 
   @include mq($from: $width-desktop) {
