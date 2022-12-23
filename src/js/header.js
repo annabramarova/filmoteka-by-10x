@@ -1,6 +1,8 @@
 import { refs } from './refs';
 import { getQueued, getWatched } from './storage/storage';
 import { tuneRender } from './render/render-gallery';
+import { onLibraryOpen } from './empty-lib-modal';
+import { onEmptyWatched } from './empty-watch-modal';
 import Api from './api-service';
 const apiService = new Api();
 
@@ -18,7 +20,7 @@ function onMyLibraryClick(e) {
   refs.headerButtons.forEach(element => {
     element.classList.remove('visually-hidden');
   });
-  tuneRender(getWatched);
+  tuneRender(getWatched, onEmptyWatched);
 }
 
 function onWatchedClick(e) {
@@ -49,9 +51,15 @@ export function hideLogoutButton() {
   refs.logoutButton.classList.add('visually-hidden');
 }
 
-refs.watchedButton.addEventListener('click', tuneRender.bind(null, getWatched));
+refs.watchedButton.addEventListener(
+  'click',
+  tuneRender.bind(null, getWatched, onEmptyWatched)
+);
 
-refs.queueButton.addEventListener('click', tuneRender.bind(null, getQueued));
+refs.queueButton.addEventListener(
+  'click',
+  tuneRender.bind(null, getQueued, onLibraryOpen)
+);
 
 refs.homeLink.addEventListener('click', goHome);
 refs.logo.addEventListener('click', goHome);
