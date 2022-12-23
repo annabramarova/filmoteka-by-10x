@@ -36,6 +36,28 @@ function killModal(e) {
 function renderCard(data) {
   const cardMarkup = getCardTemplate(data);
   refs.movieModalContainer.innerHTML = cardMarkup;
+  refs.modalWatchedButton = document.querySelector(
+    '[data-action-modal-watched]'
+  );
+  refs.modalQueueButton = document.querySelector('[data-action-modal-queue]');
+
+  refs.modalWatchedButton.addEventListener('click', e => {
+    if (isWatched(cardId)) {
+      removeWatchedId(cardId);
+    } else {
+      addWatchedId(cardId);
+    }
+    updateButtonsCaption(cardId);
+  });
+
+  refs.modalQueueButton.addEventListener('click', e => {
+    if (isQueued(cardId)) {
+      removeQueuedId(cardId);
+    } else {
+      addQueuedId(cardId);
+    }
+    updateButtonsCaption(cardId);
+  });
 }
 
 function onGalleryClick(e) {
@@ -54,8 +76,8 @@ function onGalleryClick(e) {
   apiService
     .getFilmById(cardId)
     .then(data => {
-      updateButtonsCaption(cardId);
       renderCard(data);
+      updateButtonsCaption(cardId);
       refs.movieModalBackDrop.addEventListener('mousedown', killModal);
       document.addEventListener('keydown', killModal);
     })
@@ -67,29 +89,11 @@ const REMOVE_WROM_WATCHED_CAPTION = 'Remove from watched';
 const ADD_TO_QUEUE_CAPTION = 'Add to queue';
 const REMOVE_FROM_QUEUE_CAPTION = 'Remove from queue';
 
-async function updateButtonsCaption(id) {
-  refs.modalWatchedButton.textContent = (await isWatched(id))
+function updateButtonsCaption(id) {
+  refs.modalWatchedButton.textContent = isWatched(id)
     ? REMOVE_WROM_WATCHED_CAPTION
     : ADD_TO_WATCHED_CAPTION;
-  refs.modalQueueButton.textContent = (await isQueued(id))
+  refs.modalQueueButton.textContent = isQueued(id)
     ? REMOVE_FROM_QUEUE_CAPTION
     : ADD_TO_QUEUE_CAPTION;
 }
-
-refs.modalWatchedButton.addEventListener('click', async e => {
-  if (await isWatched(cardId)) {
-    removeWatchedId(cardId);
-  } else {
-    addWatchedId(cardId);
-  }
-  updateButtonsCaption(cardId);
-});
-
-refs.modalQueueButton.addEventListener('click', async e => {
-  if (await isQueued(cardId)) {
-    removeQueuedId(cardId);
-  } else {
-    addQueuedId(cardId);
-  }
-  updateButtonsCaption(cardId);
-});
