@@ -27,6 +27,8 @@ let pageAfterFour = page + 4;
 let maxPage = 1;
 
 function on_pagin_rander() {
+  window.scrollTo(0, 0);
+  pagin_namer_button();
   console.log('maxPage: ', maxPage);
   console.log('page: ', page);
   if (maxPage === 0) {
@@ -63,7 +65,9 @@ function pagin_rander_2() {
   if (page === 1) {
     refs.pagin_box.innerHTML = `
     <button type="submit" class="pagin_button pagin_accent">${page}</button>
-    <button type="submit" class="pagin_button">${pageAfter}</button>`;
+    <button type="submit" class="pagin_button">${pageAfter}</button>
+    <button type="submit" class="pagin_button pagin_button_rigth">rigth</button>
+`;
   } else {
     refs.pagin_box.innerHTML = `
     <button type="submit" class="pagin_button">${pageBefore}</button>
@@ -76,14 +80,20 @@ function pagin_rander_3() {
     refs.pagin_box.innerHTML = `
     <button type="submit" class="pagin_button pagin_accent">${page}</button>
     <button type="submit" class="pagin_button">${pageAfter}</button>
-    <button type="submit" class="pagin_button">${pageAfterTwo}</button>`;
+    <button type="submit" class="pagin_button">${pageAfterTwo}</button>
+        <button type="submit" class="pagin_button pagin_button_rigth">rigth</button>
+`;
   } else if (page === 2) {
     refs.pagin_box.innerHTML = `
+    <button type="submit" class="pagin_button pagin_button_left">left</button>
     <button type="submit" class="pagin_button">${pageBefore}</button>
     <button type="submit" class="pagin_button pagin_accent">${page}</button>
-    <button type="submit" class="pagin_button">${pageAfter}</button>`;
+    <button type="submit" class="pagin_button">${pageAfter}</button>
+        <button type="submit" class="pagin_button pagin_button_rigth">rigth</button>
+`;
   } else if (page === 3) {
     refs.pagin_box.innerHTML = `
+    <button type="submit" class="pagin_button pagin_button_left">left</button>
     <button type="submit" class="pagin_button">${pageBeforeTwo}</button>
     <button type="submit" class="pagin_button">${pageBefore}</button>
     <button type="submit" class="pagin_button pagin_accent">${page}</button>`;
@@ -304,14 +314,7 @@ function on_pagin_button(evt) {
       // console.log(evt.target.innerText);
       page--;
 
-      pageBeforeFour = page - 4;
-      pageBeforeThree = page - 3;
-      pageBeforeTwo = page - 2;
-      pageBefore = page - 1;
-      pageAfter = page + 1;
-      pageAfterTwo = page + 2;
-      pageAfterThree = page + 3;
-      pageAfterFour = page + 4;
+      pagin_namer_button();
 
       console.log('page: ', page);
 
@@ -325,14 +328,7 @@ function on_pagin_button(evt) {
 
       page++;
 
-      pageBeforeFour = page - 4;
-      pageBeforeThree = page - 3;
-      pageBeforeTwo = page - 2;
-      pageBefore = page - 1;
-      pageAfter = page + 1;
-      pageAfterTwo = page + 2;
-      pageAfterThree = page + 3;
-      pageAfterFour = page + 4;
+      pagin_namer_button();
 
       console.log('page: ', page);
 
@@ -343,18 +339,22 @@ function on_pagin_button(evt) {
 
     page = Number(evt.target.innerText);
 
-    pageBeforeFour = page - 4;
-    pageBeforeThree = page - 3;
-    pageBeforeTwo = page - 2;
-    pageBefore = page - 1;
-    pageAfter = page + 1;
-    pageAfterTwo = page + 2;
-    pageAfterThree = page + 3;
-    pageAfterFour = page + 4;
+    pagin_namer_button();
 
     callback(page);
 
     return on_pagin_rander();
     // onFetch() функція для створення розмітки
   }
+}
+
+function pagin_namer_button() {
+  pageBeforeFour = page - 4;
+  pageBeforeThree = page - 3;
+  pageBeforeTwo = page - 2;
+  pageBefore = page - 1;
+  pageAfter = page + 1;
+  pageAfterTwo = page + 2;
+  pageAfterThree = page + 3;
+  pageAfterFour = page + 4;
 }
