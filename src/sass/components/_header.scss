@@ -182,6 +182,8 @@ header::after {
 }
 
 .search-form__input {
+  -webkit-appearance: none;
+  appearance: none;
   z-index: 1;
   min-width: 255px;
   height: 30px;
@@ -210,6 +212,8 @@ header::after {
 }
 
 .search-form__submit {
+  // -webkit-appearance: none;
+  // appearance: none;
   z-index: 1;
   display: inline-flex;
   align-items: center;
