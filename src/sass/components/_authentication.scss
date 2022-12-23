@@ -5,6 +5,7 @@
   width: 100vw;
   height: 100vh;
   background-color: getColor('auth-modal');
+  z-index: 1;
 }
 
 .auth__cancel {
