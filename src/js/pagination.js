@@ -27,7 +27,11 @@ let pageAfterFour = page + 4;
 let maxPage = 1;
 
 function on_pagin_rander() {
-  if (maxPage === 1) {
+  console.log('maxPage: ', maxPage);
+  console.log('page: ', page);
+  if (maxPage === 0) {
+    pagin_rander_0();
+  } else if (maxPage === 1) {
     pagin_rander_1();
   } else if (maxPage === 2) {
     pagin_rander_2();
@@ -39,9 +43,13 @@ function on_pagin_rander() {
     pagin_rander_5();
   } else if (maxPage === 6) {
     pagin_rander_6();
-  } else {
+  } else if (maxPage > 6) {
     pagin_rander_7();
   }
+}
+
+function pagin_rander_0() {
+  refs.pagin_box.innerHTML = ``;
 }
 
 function pagin_rander_1() {
