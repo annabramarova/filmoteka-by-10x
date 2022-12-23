@@ -1,4 +1,4 @@
-import { galleryTemplate } from './gallery';
+import { galleryTemplate } from './templates/gallery';
 // import { refs } from './refs';
 import Api from './api-service';
 const apiService = new Api();

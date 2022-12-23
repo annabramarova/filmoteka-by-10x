@@ -1,6 +1,6 @@
 import { refs } from './refs.js';
 import Api from './api-service.js';
-import { renderGallery } from './render-gallery';
+import { renderGallery } from './render/render-gallery';
 import { loader, loaderRemove } from './loading';
 
 const api = new Api();

@@ -53,8 +53,13 @@ export default class Api {
     return r;
   }
 
-  getFilmMassiveById(idMassive) {
-    let res = this.IdMassive.map(i => this.getFilmById(i));
+  async getFilmMassiveById(idMassive) {
+    if (idMassive.length === 0) return [];
+    let res = idMassive.map(i => this.getFilmById(i));
+    res = await Promise.allSettled(res);
+    res = res
+      .filter(({ status }) => status === 'fulfilled')
+      .map(({ value }) => value);
     return res;
   }
 
@@ -76,12 +81,9 @@ export default class Api {
   }
 
   async getFilmById(id) {
-    console.log('id', id);
     const r = await axios
       .get(`/movie/${id}?api_key=${this.KEY}&language=en-US`)
       .then(res => {
-        console.log('res', res);
-        console.log('data', res.data);
         return res.data;
       });
     return r;

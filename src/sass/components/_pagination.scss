@@ -54,10 +54,28 @@ border-radius: 5px;
   color: getColor('white');
 }
 
-.pagin_button_left {
-  background-color: #F7F7F7;
+.pagin_button_left{
+background-color: getColor('footer-bgr');
+color: getColor('black');
 }
 
-.pagin_button_rigth {
-  background-color: #F7F7F7;
+.pagin_button_rigth{
+  position: relative;
+  background-color: getColor('footer-bgr');
+  color: getColor('black');
+  display: flex;
+    align-items: center;
 }
+
+.pagin__icon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    // fill: currentColor;
+    fill: getColor('black');
+  }
