@@ -234,6 +234,8 @@ header::after {
 }
 
 .search-form__warning {
+  position: relative;
+  z-index: 1;
   margin-top: 16px;
   color: getColor('error-text');
   display: none;
