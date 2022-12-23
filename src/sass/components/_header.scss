@@ -2,11 +2,13 @@
 
 header {
   min-width: 320px;
+  max-width: 1280px;
   height: 230px;
   padding-top: 40px;
   padding-bottom: 45px;
   font-weight: 500;
   line-height: 1.17;
+  margin: 0 auto;
 
   background-color: rgba(0, 0, 0, 0.7);
   color: getColor('white');
