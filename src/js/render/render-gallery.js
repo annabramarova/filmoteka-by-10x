@@ -21,6 +21,11 @@ export async function tuneRender(getMoviesCallback, runIfNoResults) {
   loaderRemove();
   tunePagination(total_pages, async page => {
     loader();
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      // behavior: 'smooth',
+    });
     const { results } = await getMoviesCallback(page);
     renderGallery(results);
     loaderRemove();
