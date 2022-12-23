@@ -13,33 +13,34 @@ import {
 const apiService = new Api();
 let cardId = null;
 
-const modalMovieContainer = document.querySelector('.movie-modal__container');
-const backDrop = document.querySelector('.movie-backdrop');
-const closeMovieModal = document.querySelector('.modal-close-btn');
-
 refs.galleryList.addEventListener('click', onGalleryClick);
-closeMovieModal.addEventListener('click', toggleModal);
+refs.movieModalCloseBtn.addEventListener('click', toggleModal);
 
-backDrop.removeEventListener('mousedown', killModal);
-document.removeEventListener('keydown', killModal);
+if (refs.movieModalBackDrop.classList.contains('hidden')) {
+  refs.movieModalBackDrop.removeEventListener('mousedown', killModal);
+  document.removeEventListener('keydown', killModal);
+}
 
 function toggleModal() {
-  backDrop.classList.toggle('hidden');
+  document.body.classList.toggle('modal-open');
+  refs.movieModalBackDrop.classList.toggle('hidden');
 }
 
 function killModal(e) {
   if (e.currentTarget === e.target || e.code === 'Escape') {
-    backDrop.classList.add('hidden');
+    document.body.classList.toggle('modal-open');
+    refs.movieModalBackDrop.classList.add('hidden');
   }
 }
 
 function renderCard(data) {
   const cardMarkup = getCardTemplate(data);
-  modalMovieContainer.innerHTML = cardMarkup;
+  refs.movieModalContainer.innerHTML = cardMarkup;
 }
 
 function onGalleryClick(e) {
   e.preventDefault();
+  document.body.classList.toggle('modal-open');
   const card = e.target.closest('.card');
   cardId = Number(card.dataset.id);
   const isPicture = e.target.classList.contains('card_img');
@@ -47,25 +48,19 @@ function onGalleryClick(e) {
   if (!isPicture) {
     return;
   }
-  if (!isPicture) {
-    return;
-  }
 
-  backDrop.classList.remove('hidden');
+  refs.movieModalBackDrop.classList.remove('hidden');
 
   apiService
     .getFilmById(cardId)
     .then(data => {
       updateButtonsCaption(cardId);
       renderCard(data);
+      refs.movieModalBackDrop.addEventListener('mousedown', killModal);
+      document.addEventListener('keydown', killModal);
     })
     .catch(console.log);
-
-  backDrop.addEventListener('mousedown', killModal);
-  document.addEventListener('keydown', killModal);
 }
-backDrop.addEventListener('mousedown', killModal);
-document.addEventListener('keydown', killModal);
 
 const ADD_TO_WATCHED_CAPTION = 'Add to watched';
 const REMOVE_WROM_WATCHED_CAPTION = 'Remove from watched';
