@@ -12,9 +12,20 @@ import { genres } from './data/genres';
 //   addToQueueBtn: document.querySelector(`.addToQueue`),
 // };
 
+let inLibStorage = ``;
+let inLibStorageParsed = [];
+
 refs.galleryQueueBtn.addEventListener('click', onEmptyLibrary);
 
 export function onEmptyLibrary() {
+  inLibStorage = localStorage.getItem('queued');
+  inLibParsed = JSON.parse(inLibStorage);
+  let lehghtLibSt = inLibParsed.length;
+
+  if (lehghtLibSt !== 0) {
+    return;
+  }
+
   refs.libMenu.classList.remove('is-hidden');
   refs.addToQueueBtn.classList.remove('is-hidden');
   refs.libMenuCloseBtn.addEventListener(`click`, onLibMenuCloseBtnClick);
@@ -28,7 +39,6 @@ function onLibMenuCloseBtnClick() {
 }
 
 function handleEsc(event) {
-  console.log(event);
   if (!(event.code === `Escape`)) {
     return;
   }
@@ -55,8 +65,6 @@ async function showBestCard() {
   let trendFilmes = await apiService.getTrendingFilms();
   let bestCard = BestCardTemplate(trendFilmes[0]);
   refs.bestCardContainer.innerHTML = bestCard;
-
-  console.log(bestCard);
 }
 
 function BestCardTemplate({
