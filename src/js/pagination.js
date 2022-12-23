@@ -1,5 +1,4 @@
 import { refs } from './refs';
-// import from '../sass/components/_pagination.scss'
 // пагінація
 
 let callback = page => {};
@@ -29,8 +28,8 @@ let maxPage = 1;
 function on_pagin_rander() {
   window.scrollTo(0, 0);
   pagin_namer_button();
-  console.log('maxPage: ', maxPage);
-  console.log('page: ', page);
+  // console.log('maxPage: ', maxPage);
+  // console.log('page: ', page);
   if (maxPage === 0) {
     pagin_rander_0();
   } else if (maxPage === 1) {
@@ -66,10 +65,11 @@ function pagin_rander_2() {
     refs.pagin_box.innerHTML = `
     <button type="submit" class="pagin_button pagin_accent">${page}</button>
     <button type="submit" class="pagin_button">${pageAfter}</button>
-    <button type="submit" class="pagin_button pagin_button_rigth">rigth</button>
+    <button type="submit" class="pagin_button pagin_button_rigth"> </button>
 `;
   } else {
     refs.pagin_box.innerHTML = `
+    <button type="submit" class="pagin_button pagin_button_left">left</button>
     <button type="submit" class="pagin_button">${pageBefore}</button>
     <button type="submit" class="pagin_button pagin_accent">${page}</button>`;
   }
@@ -106,21 +106,27 @@ function pagin_rander_4() {
     <button type="submit" class="pagin_button pagin_accent">${page}</button>
     <button type="submit" class="pagin_button">${pageAfter}</button>
     <button type="submit" class="pagin_button">${pageAfterTwo}</button>
-    <button type="submit" class="pagin_button">${pageAfterThree}</button>`;
+    <button type="submit" class="pagin_button">${pageAfterThree}</button>
+    <button type="submit" class="pagin_button pagin_button_rigth">rigth</button>`;
   } else if (page === 2) {
     refs.pagin_box.innerHTML = `
+    <button type="submit" class="pagin_button pagin_button_left">left</button>
     <button type="submit" class="pagin_button">${pageBefore}</button>
     <button type="submit" class="pagin_button pagin_accent">${page}</button>
     <button type="submit" class="pagin_button">${pageAfter}</button>
-    <button type="submit" class="pagin_button">${pageAfterTwo}</button>`;
+    <button type="submit" class="pagin_button">${pageAfterTwo}</button>
+    <button type="submit" class="pagin_button pagin_button_rigth">rigth</button>`;
   } else if (page === 3) {
     refs.pagin_box.innerHTML = `
+    <button type="submit" class="pagin_button pagin_button_left">left</button>
     <button type="submit" class="pagin_button">${pageBeforeTwo}</button>
     <button type="submit" class="pagin_button">${pageBefore}</button>
     <button type="submit" class="pagin_button pagin_accent">${page}</button>
-    <button type="submit" class="pagin_button">${pageAfter}</button>`;
+    <button type="submit" class="pagin_button">${pageAfter}</button>
+    <button type="submit" class="pagin_button pagin_button_rigth">rigth</button>`;
   } else if (page === 4) {
     refs.pagin_box.innerHTML = `
+    <button type="submit" class="pagin_button pagin_button_left">left</button>
     <button type="submit" class="pagin_button">${pageBeforeThree}</button>
     <button type="submit" class="pagin_button">${pageBeforeTwo}</button>
     <button type="submit" class="pagin_button">${pageBefore}</button>
@@ -135,30 +141,38 @@ function pagin_rander_5() {
     <button type="submit" class="pagin_button">${pageAfter}</button>
     <button type="submit" class="pagin_button">${pageAfterTwo}</button>
     <button type="submit" class="pagin_button">${pageAfterThree}</button>
-    <button type="submit" class="pagin_button">${pageAfterFour}</button>`;
+    <button type="submit" class="pagin_button">${pageAfterFour}</button>
+    <button type="submit" class="pagin_button pagin_button_rigth">rigth</button>`;
   } else if (page === 2) {
     refs.pagin_box.innerHTML = `
+    <button type="submit" class="pagin_button pagin_button_left">left</button>
     <button type="submit" class="pagin_button">${pageBefore}</button>
     <button type="submit" class="pagin_button pagin_accent">${page}</button>
     <button type="submit" class="pagin_button">${pageAfter}</button>
     <button type="submit" class="pagin_button">${pageAfterTwo}</button>
-    <button type="submit" class="pagin_button">${pageAfterThree}</button>`;
+    <button type="submit" class="pagin_button">${pageAfterThree}</button>
+    <button type="submit" class="pagin_button pagin_button_rigth">rigth</button>`;
   } else if (page === 3) {
     refs.pagin_box.innerHTML = `
+    <button type="submit" class="pagin_button pagin_button_left">left</button>
     <button type="submit" class="pagin_button">${pageBeforeTwo}</button>
     <button type="submit" class="pagin_button">${pageBefore}</button>
     <button type="submit" class="pagin_button pagin_accent">${page}</button>
     <button type="submit" class="pagin_button">${pageAfter}</button>
-    <button type="submit" class="pagin_button">${pageAfterTwo}</button>`;
+    <button type="submit" class="pagin_button">${pageAfterTwo}</button>
+    <button type="submit" class="pagin_button pagin_button_rigth">rigth</button>`;
   } else if (page === 4) {
     refs.pagin_box.innerHTML = `
+    <button type="submit" class="pagin_button pagin_button_left">left</button>
     <button type="submit" class="pagin_button">${pageBeforeThree}</button>
     <button type="submit" class="pagin_button">${pageBeforeTwo}</button>
     <button type="submit" class="pagin_button">${pageBefore}</button>
     <button type="submit" class="pagin_button" pagin_accent>${page}</button>
-    <button type="submit" class="pagin_button">${pageAfter}</button>`;
+    <button type="submit" class="pagin_button">${pageAfter}</button>
+    <button type="submit" class="pagin_button pagin_button_rigth">rigth</button>`;
   } else if (page === 5) {
     refs.pagin_box.innerHTML = `
+    <button type="submit" class="pagin_button pagin_button_left">left</button>
     <button type="submit" class="pagin_button">${pageBeforeFour}</button>
     <button type="submit" class="pagin_button">${pageBeforeThree}</button>
     <button type="submit" class="pagin_button">${pageBeforeTwo}</button>
@@ -175,41 +189,51 @@ function pagin_rander_6() {
     <button type="submit" class="pagin_button">${pageAfterTwo}</button>
     <button type="submit" class="pagin_button">${pageAfterThree}</button>
     <button type="submit" class="pagin_button">${pageAfterFour}</button>
-    <button type="submit" class="pagin_button">${maxPage}</button>`;
+    <button type="submit" class="pagin_button">${maxPage}</button>
+    <button type="submit" class="pagin_button pagin_button_rigth">rigth</button>`;
   } else if (page === 2) {
     refs.pagin_box.innerHTML = `
+    <button type="submit" class="pagin_button pagin_button_left">left</button>
     <button type="submit" class="pagin_button">${pageBefore}</button>
     <button type="submit" class="pagin_button pagin_accent">${page}</button>
     <button type="submit" class="pagin_button">${pageAfter}</button>
     <button type="submit" class="pagin_button">${pageAfterTwo}</button>
     <button type="submit" class="pagin_button">${pageAfterThree}</button>
-    <button type="submit" class="pagin_button">${pageAfterFour}</button>`;
+    <button type="submit" class="pagin_button">${pageAfterFour}</button>
+    <button type="submit" class="pagin_button pagin_button_rigth">rigth</button>`;
   } else if (page === 3) {
     refs.pagin_box.innerHTML = `
+    <button type="submit" class="pagin_button pagin_button_left">left</button>
     <button type="submit" class="pagin_button">${pageBeforeTwo}</button>
     <button type="submit" class="pagin_button">${pageBefore}</button>
     <button type="submit" class="pagin_button pagin_accent">${page}</button>
     <button type="submit" class="pagin_button">${pageAfter}</button>
     <button type="submit" class="pagin_button">${pageAfterTwo}</button>
-    <button type="submit" class="pagin_button">${pageAfterThree}</button>`;
+    <button type="submit" class="pagin_button">${pageAfterThree}</button>
+    <button type="submit" class="pagin_button pagin_button_rigth">rigth</button>`;
   } else if (page === 4) {
     refs.pagin_box.innerHTML = `
+    <button type="submit" class="pagin_button pagin_button_left">left</button>
     <button type="submit" class="pagin_button">${pageBeforeThree}</button>
     <button type="submit" class="pagin_button">${pageBeforeTwo}</button>
     <button type="submit" class="pagin_button">${pageBefore}</button>
     <button type="submit" class="pagin_button" pagin_accent>${page}</button>
     <button type="submit" class="pagin_button">${pageAfter}</button>
-    <button type="submit" class="pagin_button">${pageAfterTwo}</button>`;
+    <button type="submit" class="pagin_button">${pageAfterTwo}</button>
+    <button type="submit" class="pagin_button pagin_button_rigth">rigth</button>`;
   } else if (page === 5) {
     refs.pagin_box.innerHTML = `
+    <button type="submit" class="pagin_button pagin_button_left">left</button>
     <button type="submit" class="pagin_button">${pageBeforeFour}</button>
     <button type="submit" class="pagin_button">${pageBeforeThree}</button>
     <button type="submit" class="pagin_button">${pageBeforeTwo}</button>
     <button type="submit" class="pagin_button">${pageBefore}</button>
     <button type="submit" class="pagin_button" pagin_accent>${page}</button>
-    <button type="submit" class="pagin_button">${pageAfter}</button>`;
+    <button type="submit" class="pagin_button">${pageAfter}</button>
+    <button type="submit" class="pagin_button pagin_button_rigth">rigth</button>`;
   } else if (page === 6) {
     refs.pagin_box.innerHTML = `
+    <button type="submit" class="pagin_button pagin_button_left">left</button>
     <button type="submit" class="pagin_button">${minPage}</button>
     <button type="submit" class="pagin_button">${pageBeforeFour}</button>
     <button type="submit" class="pagin_button">${pageBeforeThree}</button>
@@ -230,7 +254,7 @@ function pagin_rander_7() {
     <p class="pagin_nothing">...</p>
     <button type="submit" class="pagin_button">${maxPage}</button>
     <button type="submit" class="pagin_button pagin_button_rigth">rigth</button>
-  `;
+    </div>`;
   } else if (page === 2) {
     refs.pagin_box.innerHTML = `
     <button type="submit" class="pagin_button">${pageBefore}</button>
@@ -277,6 +301,7 @@ function pagin_rander_7() {
     <button type="submit" class="pagin_button pagin_accent">${page}</button>
     <button type="submit" class="pagin_button">${pageAfter}</button>
     <button type="submit" class="pagin_button">${pageAfterTwo}</button>
+
   `;
   } else if (page === maxPage - 1) {
     refs.pagin_box.innerHTML = `
@@ -298,7 +323,8 @@ function pagin_rander_7() {
     <button type="submit" class="pagin_button">${pageBeforeThree}</button>
     <button type="submit" class="pagin_button">${pageBeforeTwo}</button>
     <button type="submit" class="pagin_button">${pageBefore}</button>
-    <button type="submit" class="pagin_button pagin_accent">${page}</button>`;
+    <button type="submit" class="pagin_button pagin_accent">${page}</button>
+    `;
   }
 }
 
@@ -311,40 +337,26 @@ function on_pagin_button(evt) {
     }
 
     if (evt.target.innerText === 'left') {
-      // console.log(evt.target.innerText);
       page--;
 
       pagin_namer_button();
-
-      console.log('page: ', page);
-
       callback(page);
-
       return on_pagin_rander();
     }
 
     if (evt.target.innerText === 'rigth') {
-      // console.log(evt.target.innerText);
-
       page++;
 
       pagin_namer_button();
-
-      console.log('page: ', page);
-
       callback(page);
-
       return on_pagin_rander();
     }
 
     page = Number(evt.target.innerText);
 
     pagin_namer_button();
-
     callback(page);
-
     return on_pagin_rander();
-    // onFetch() функція для створення розмітки
   }
 }
 
