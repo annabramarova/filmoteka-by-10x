@@ -218,10 +218,14 @@ header::after {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
   background-color: inherit;
+  background-position: center;
+  // background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(../images/search.svg);
   border: none;
   outline: none;
   border-bottom: 1px solid getColor('white');
