@@ -1,22 +1,26 @@
 import { refs } from './refs';
 
 (() => {
-  refs.openModalBtn.addEventListener('click', toggleModal);
-  refs.closeModalBtn.addEventListener('click', toggleModal);
+  refs.openModalBtn.addEventListener('click', openModalTeam);
 
-  function toggleModal() {
-    refs.modalTeam.classList.toggle('visually-hidden');
-    refs.body.classList.toggle('no-scroll');
+  function openModalTeam() {
+    refs.modalTeam.classList.toggle('visually-team-hidden');
 
-    refs.modalTeam.addEventListener('mousedown', offModal);
-    document.addEventListener('keydown', offModal);
+    refs.body.classList.add('no-scroll');
+    refs.closeModalBtn.addEventListener('click', offModalTeam);
+    refs.modalTeam.addEventListener('mousedown', offModalTeam);
+    document.addEventListener('keydown', offModalTeam);
   }
 })();
 
-function offModal(e) {
-  if (e.currentTarget === e.target || e.code === 'Escape') {
-    refs.modalTeam.classList.add('visually-hidden');
-
+function offModalTeam(e) {
+  if (
+    e.currentTarget === refs.closeModalBtn ||
+    e.currentTarget === e.target ||
+    e.code === 'Escape'
+  ) {
+    refs.modalTeam.classList.add('visually-team-hidden');
+    refs.body.classList.remove('no-scroll');
     refs.modalTeam.removeEventListener('mousedown', offModal);
     document.removeEventListener('keydown', offModal);
   }
