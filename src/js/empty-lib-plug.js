@@ -34,11 +34,11 @@ const getEmptyQueueMarkup = GIF => {
 };
 
 export const emptyWatchedRender = () => {
-  refs.plug.insertAdjacentHTML('beforeend', getEmptyWatchedMarkup(watchedGIF));
+  refs.plug.innerHTML = getEmptyWatchedMarkup(watchedGIF);
 };
 
 export const emptyQueueRender = () => {
-  refs.plug.insertAdjacentHTML('beforeend', getEmptyQueueMarkup(queueGIF));
+  refs.plug.innerHTML = getEmptyQueueMarkup(queueGIF);
 };
 
 export const clearEmptyGallery = () => {
