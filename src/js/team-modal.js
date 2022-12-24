@@ -7,6 +7,7 @@ import { refs } from './refs';
   function toggleModal() {
     refs.modalTeam.classList.toggle('visually-hidden');
     refs.body.classList.toggle('no-scroll');
+
     refs.modalTeam.addEventListener('mousedown', offModal);
     document.addEventListener('keydown', offModal);
   }
