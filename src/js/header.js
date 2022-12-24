@@ -1,5 +1,5 @@
 import { refs } from './refs';
-import { getQueued, getWatched } from './storage/storage';
+import { getQueued, getWatched } from './storage';
 import { tuneRender } from './render/render-gallery';
 import { onLibraryOpen } from './empty-lib-modal';
 import { onEmptyWatched } from './empty-watch-modal';
@@ -25,7 +25,6 @@ function onMyLibraryClick(e) {
     element.classList.remove('visually-hidden');
   });
   refs.watchedButton.click();
-  tuneRender(getWatched, onEmptyWatched);
 }
 
 function onWatchedClick(e) {
