@@ -65,16 +65,15 @@ margin: 1px;
 }
 
 .pagin_button_left{
+    font-size: large;
 background-color: getColor('footer-bgr');
 color: getColor('black');
 }
 
 .pagin_button_rigth{
-  position: relative;
-  background-color: getColor('footer-bgr');
-  color: getColor('black');
-  display: flex;
-    align-items: center;
+    font-size: large;
+      background-color: getColor('footer-bgr');
+      color: getColor('black');
 }
 
 .pagin__icon {
