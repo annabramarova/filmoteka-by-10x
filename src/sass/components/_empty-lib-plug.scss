@@ -1,0 +1,68 @@
+.plug__container {
+  outline: 1px dashed blue;
+  padding: 10px;
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.14;
+}
+
+.plug__title {
+  margin-bottom: 10px;
+  color: getColor('error-text');
+}
+
+.plug__gif {
+  margin: 0 auto 10px auto;
+  width: 600px;
+}
+
+.plug__text {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.plug__button {
+  font-size: 12px;
+  font-weight: inherit;
+  line-height: 1.33;
+  text-transform: uppercase;
+  color: getColor('white');
+  background-color: getColor('accent');
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  transition-property: color, border-color;
+  transition-duration: $duration;
+  transition-timing-function: $timing-function;
+
+  &:hover,
+  &:focus {
+    color: getColor('accent');
+    border-color: getColor('accent');
+  }
+}
+
+[data-activ='watched'] {
+  padding: 12px 35px;
+
+  @media screen and (min-width: 768px) {
+    padding: 12px 46px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding: 11px 44px;
+  }
+}
+
+[data-activ='queue'] {
+  padding: 12px 44px;
+
+  @media screen and (min-width: 768px) {
+    padding: 12px 55px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding: 11px 53px;
+  }
+}
