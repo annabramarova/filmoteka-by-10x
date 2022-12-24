@@ -60,6 +60,8 @@ refs.myLibraryLink.addEventListener('click', () => {
 
 // ***** FUNCTION DEFINITION *****
 
+export const isLoggedIn = () => Boolean(auth.currentUser);
+
 // Monitor auth state
 async function monitorAuthState() {
   onAuthStateChanged(auth, user => {
@@ -81,7 +83,7 @@ async function logout() {
   await signOut(auth);
 }
 
-function login() {
+export function login() {
   authUi.start(refs.authForm, uiConfig);
   showLoginForm();
 }
