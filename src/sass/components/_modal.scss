@@ -293,12 +293,6 @@ body.modal-open {
   border-radius: 5px;
   cursor: pointer;
 
-  &:hover,
-  &:focus {
-    background-color: getColor('modal-info');
-    color: getColor('white');
-  }
-
   @include mq($from: $width-tablet) {
     width: 125.03px;
   }
@@ -316,12 +310,24 @@ body.modal-open {
   @include mq($from: $width-desktop) {
     margin-right: 15px;
   }
+
+     &:hover,
+     &:focus {
+       background-color: getColor('error-text');
+     }
 }
 
 .modal-btn__queue {
   background-color: getColor('white');
   color: getColor('black');
   border: 1px solid getColor('black');
+
+  &:hover,
+    &:focus {
+      background-color: getColor('white');
+      color: getColor('modal-accent');
+      border: 1px solid getColor('modal-accent');
+    }
 }
 
 //   .cardItem__wrapper {
