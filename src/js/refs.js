@@ -17,6 +17,10 @@ export const refs = {
   movieModalBackDrop: document.querySelector('.movie-backdrop'),
   movieModalCloseBtn: document.querySelector('.modal-close-btn'),
 
+  modalCardItem: document.querySelector('.cardItem__image'),
+  trailerBtn: document.querySelector('.trailer-button'),
+  trailerVideo: document.querySelector('.trailer'),
+
   modalWatchedButton: document.querySelector('[data-action-modal-watched]'),
   modalQueueButton: document.querySelector('[data-action-modal-queue]'),
 
