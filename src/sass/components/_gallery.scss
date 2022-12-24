@@ -76,6 +76,12 @@
 }
 .card-name {
   text-transform: uppercase;
+  white-space: nowrap;
+    overflow: hidden;
+    max-width: 394px;
+    height: 30px;
+    text-overflow: ellipsis;
+  
 }
 .card-genres {
   color: getColor('modal-accent');
