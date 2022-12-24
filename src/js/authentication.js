@@ -18,7 +18,10 @@ import {
 } from 'firebase/auth';
 
 import { getCurrentPage } from './header';
-import { tuneRenderQeueue, tuneRenderWantched } from './ui-controller';
+import { tuneRender } from './render/render-gallery';
+import { onEmptyLibrary } from './empty-lib-modal';
+import { onEmptyWatched } from './empty-watch-modal';
+import { getWatched, getQueued } from './storage';
 
 hideLoginForm();
 
@@ -110,10 +113,10 @@ function showLoginState(user) {
 function LoginStateChangeHandler(isLogged) {
   switch (getCurrentPage()) {
     case 'watched':
-      tuneRenderWantched();
+      tuneRender(getWatched, onEmptyWatched);
       break;
     case 'queue':
-      tuneRenderQeueue();
+      tuneRender(getQueued, onEmptyLibrary);
       break;
   }
 }
