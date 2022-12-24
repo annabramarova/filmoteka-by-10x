@@ -33,7 +33,7 @@ function on_pagin_rander() {
   if (maxPage === 0) {
     pagin_rander_0();
   } else if (maxPage === 1) {
-    pagin_rander_1();
+    pagin_rander_0();
   } else if (maxPage === 2) {
     pagin_rander_2();
   } else if (maxPage === 3) {
