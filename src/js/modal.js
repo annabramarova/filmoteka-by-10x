@@ -9,7 +9,7 @@ import {
   removeWatchedId,
   removeQueuedId,
 } from './storage';
-import { removeFromGalleryById } from './render/render-gallery';
+import { removeFromGalleryById } from './ui-controller';
 import { getCurrentPage } from './header';
 import { trailer, onBtnClickTrailer } from './trailer';
 

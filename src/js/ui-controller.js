@@ -4,8 +4,11 @@ import { loader, loaderRemove } from './loading';
 import { renderGallery } from './render/render-gallery';
 import { renderLibrary } from './render/render-library';
 
-// import { onEmptyLibrary } from './empty-lib-modal';
-// import { onEmptyWatched } from './empty-watch-modal';
+import {
+  emptyWatchedRender,
+  emptyQueueRender,
+  clearEmptyGallery,
+} from './empty-lib-plug';
 import { onEmptySearch } from './search-film';
 import { api } from './api-service';
 import { getWatched, getQueued } from './storage';
@@ -19,6 +22,7 @@ export async function tuneRender({
   console.log('name', getMoviesCallback.name);
   try {
     loader();
+    clearEmptyGallery();
     const { total_pages, results } = await getMoviesCallback(1);
 
     if (total_pages === 0 && runIfNoResultsCallback) {
@@ -75,13 +79,13 @@ export const tuneRenderSearch = tuneRender.bind(null, {
 export const tuneRenderWantched = tuneRender.bind(null, {
   getMoviesCallback: getWatched,
   renderCallback: renderLibrary,
-  runIfNoResultsCallback: null,
+  runIfNoResultsCallback: emptyWatchedRender,
 });
 
 export const tuneRenderQeueue = tuneRender.bind(null, {
   getMoviesCallback: getQueued,
   renderCallback: renderLibrary,
-  runIfNoResultsCallback: null,
+  runIfNoResultsCallback: emptyQueueRender,
 });
 
 tuneRenderTrending();
