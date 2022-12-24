@@ -19,7 +19,7 @@ let cardId = null;
 refs.galleryList.addEventListener('click', onGalleryClick);
 refs.movieModalCloseBtn.addEventListener('click', killModal);
 
-if (refs.movieModalBackDrop.classList.contains('hidden')) {
+if (refs.movieModalBackDrop.classList.contains('modal-hidden')) {
   refs.movieModalBackDrop.removeEventListener('mousedown', killModal);
   document.removeEventListener('keydown', killModal);
 }
@@ -36,7 +36,7 @@ function killModal(e) {
     e.code === 'Escape'
   ) {
     refs.movieModalContainer.innerHTML = '';
-    refs.movieModalBackDrop.classList.add('hidden');
+    refs.movieModalBackDrop.classList.add('modal-hidden');
     onBtnClickTrailer();
     console.log('killModal', cardId);
     if (getCurrentPage() === 'watched') {
@@ -97,12 +97,13 @@ function onGalleryClick(e) {
   const card = e.target.closest('.card');
   cardId = Number(card.dataset.id);
   const isPicture = e.target.classList.contains('card_img');
+  const blankPicture = e.target.classList.contains('card_no-img');
 
-  if (!isPicture) {
+  if (!isPicture && blankPicture) {
     return;
   }
 
-  refs.movieModalBackDrop.classList.remove('hidden');
+  refs.movieModalBackDrop.classList.remove('modal-hidden');
 
   apiService
     .getFilmById(cardId)
