@@ -19,6 +19,7 @@ export const refs = {
 
   modalCardItem: document.querySelector('.cardItem__image'),
   trailerBtn: document.querySelector('.trailer-button'),
+  trailerVideo: document.querySelector('.trailer'),
 
   modalWatchedButton: document.querySelector('[data-action-modal-watched]'),
   modalQueueButton: document.querySelector('[data-action-modal-queue]'),

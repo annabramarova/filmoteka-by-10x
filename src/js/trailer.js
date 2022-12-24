@@ -4,23 +4,37 @@ import { loader, loaderRemove } from './loading';
 import { async } from '@firebase/util';
 
 const api = new Api();
-
-function renderTrailerButton(official) {
-  if (!official) {
-    return;
+export async function trailer(id) {
+  try {
+    const { official, key } = await api.getTrailer(id);
+    if (!official) {
+      return console.log(official);
+    }
+    console.log(official);
+    renderTrailerButton();
+    renderTrailer(key);
+    refs.trailerBtn = document.querySelector('.trailer-button');
+    refs.trailerVideo = document.querySelector('.trailer');
+    refs.trailerBtn.addEventListener('click', onBtnClickTrailer);
+    if (refs.trailerVideo.classList.contains('hidden-trailer')) {
+      console.log('playing stop');
+    }
+  } catch {
+    err => console.log(err.massage);
   }
-  const trailerBtnRender = `<button type="button" class="trailer-button">Play</button>`;
-  refs.modalCardItem.insertAdjacentHTML('beforeend', trailerBtnRender);
-  refs.trailerBtn.addEventListener('click', onClickTrailer);
 }
 
-// async function onClickTrailer(id) {
-//     const {}
-// }
+export const onBtnClickTrailer = () =>
+  refs.trailerVideo.classList.toggle('hidden-trailer');
+
+function renderTrailerButton() {
+  const trailerBtnRender = `<button type="button" class="trailer-button">Play</button>`;
+  return refs.modalCardItem.insertAdjacentHTML('beforeend', trailerBtnRender);
+}
 
 function renderTrailer(key) {
   console.log(key);
-  return `<iframe
+  const trailer = `<iframe
       width="560"
       height="315"
       src="https://www.youtube.com/embed/${key}"
@@ -28,7 +42,7 @@ function renderTrailer(key) {
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
-      class="trailer"
+      class="trailer hidden-trailer"
     ></iframe>`;
+  return refs.modalCardItem.insertAdjacentHTML('beforeend', trailer);
 }
-renderTrailer(76600);

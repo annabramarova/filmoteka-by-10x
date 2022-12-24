@@ -83,6 +83,7 @@ body.modal-open {
 }
 
 .cardItem__image {
+  position: relative;
   width: 240px;
   height: 357px;
   margin-bottom: 20px;
@@ -311,10 +312,10 @@ body.modal-open {
     margin-right: 15px;
   }
 
-     &:hover,
-     &:focus {
-       background-color: getColor('error-text');
-     }
+  &:hover,
+  &:focus {
+    background-color: getColor('error-text');
+  }
 }
 
 .modal-btn__queue {
@@ -323,11 +324,11 @@ body.modal-open {
   border: 1px solid getColor('black');
 
   &:hover,
-    &:focus {
-      background-color: getColor('white');
-      color: getColor('modal-accent');
-      border: 1px solid getColor('modal-accent');
-    }
+  &:focus {
+    background-color: getColor('white');
+    color: getColor('modal-accent');
+    border: 1px solid getColor('modal-accent');
+  }
 }
 
 //   .cardItem__wrapper {
