@@ -1,6 +1,6 @@
-import Api from '../api-service';
+import Api from './api-service';
 import { getDatabase, ref, get, update, remove } from 'firebase/database';
-import { firebaseApp, auth } from '../authentication';
+import { firebaseApp, auth } from './authentication';
 
 const api = new Api();
 
