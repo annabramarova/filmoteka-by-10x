@@ -30,6 +30,7 @@ if (refs.movieModalBackDrop.classList.contains('modal-hidden')) {
 // }
 
 function killModal(e) {
+  document.body.classList.remove('modal-open');
   if (
     e.currentTarget === refs.movieModalCloseBtn ||
     e.currentTarget === e.target ||
@@ -93,7 +94,7 @@ function renderCard(data) {
 
 function onGalleryClick(e) {
   e.preventDefault();
-  document.body.classList.toggle('modal-open');
+  document.body.classList.add('modal-open');
   const card = e.target.closest('.card');
   cardId = Number(card.dataset.id);
   const isPicture = e.target.classList.contains('card_img');
