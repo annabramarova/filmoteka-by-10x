@@ -43,15 +43,20 @@ body.modal-open {
 
   @include mq($from: $width-tablet, $until: $width-desktop) {
     width: 704px;
-    height: 552px;
     padding: 40px 72px 40px 36px;
   }
 
   @include mq($from: $width-desktop) {
     width: 806px;
-    height: 558px;
     padding: 40px 12px 40px 12px;
+    max-height: 100vh;
+    overflow: hidden;
   }
+}
+
+.movie-modal__container {
+  width: 100%;
+  height: 100%;
 }
 
 .modal-close-btn {
@@ -74,84 +79,6 @@ body.modal-open {
   .modal-close-btn:focus &,
   .modal-close-btn:hover & {
     stroke: getColor('modal-accent');
-  }
-}
-
-.modal-btn__wrapper {
-  display: flex;
-  // position: absolute;
-
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  // @include mq($from: $width-min-allowable, $until: $width-tablet) {
-  //   bottom: 40px;
-  //   left: 50%;
-  //   transform: translateX(-50%);
-  // }
-
-  // @include mq($from: $width-tablet, $until: $width-desktop) {
-  //   bottom: 40px;
-  //   right: 72px;
-  // }
-
-  // @include mq($from: $width-desktop) {
-  //   bottom: 111px;
-  //   right: 108px;
-  // }
-}
-
-.modal-btn {
-  width: 110px;
-  max-height: 65px;
-  min-height: 44px;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.33;
-  text-align: center;
-  text-transform: uppercase;
-  outline: none;
-  border-radius: 5px;
-  cursor: pointer;
-
-  &:hover,
-  &:focus {
-    background-color: getColor('modal-info');
-    color: getColor('white');
-  }
-
-  @include mq($from: $width-tablet) {
-    width: 125.03px;
-  }
-
-  @include mq($from: $width-desktop) {
-    width: 136px;
-  }
-}
-
-.modal-btn__watched {
-  background-color: getColor('modal-accent');
-  color: getColor('white');
-  border: none;
-  margin-right: 15px;
-}
-
-.modal-btn__queue {
-  background-color: getColor('white');
-  color: getColor('black');
-  border: 1px solid getColor('black');
-}
-
-.movie-card {
-  @include mq($from: $width-tablet) {
-    display: flex;
-  }
-}
-
-.cardItem__wrapper {
-  width: 240px;
-  @include mq($from: $width-desktop) {
-    width: 391px;
   }
 }
 
@@ -190,6 +117,26 @@ body.modal-open {
   }
 }
 
+.movie-card {
+  @include mq($from: $width-tablet) {
+    display: flex;
+  }
+}
+
+.cardItem__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 240px;
+  @include mq($from: $width-tablet) {
+    width: 264px;
+    height: 100%;
+  }
+  @include mq($from: $width-desktop) {
+    width: 391px;
+  }
+}
+
 .cardItem__name {
   font-weight: 500;
   font-size: 20px;
@@ -210,7 +157,6 @@ body.modal-open {
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
-  letter-spacing: 1px;
 
   color: getColor('modal-info');
   margin-bottom: 8px;
@@ -220,7 +166,6 @@ body.modal-open {
 }
 
 .cardItem__averageVote {
-  display: inline-block;
   margin-left: 41px;
   margin-right: 4px;
   background-color: getColor('modal-accent');
@@ -238,7 +183,6 @@ body.modal-open {
 }
 
 .cardItem__countVote {
-  display: inline-block;
   margin-left: 3px;
   color: getColor('black');
   font-weight: 500;
@@ -246,7 +190,6 @@ body.modal-open {
   background: #f7f7f7;
   border-radius: 5px;
   padding: 1px 4px 1px 4px;
-  text-align: center;
   line-height: 1.17;
 }
 
@@ -318,6 +261,67 @@ body.modal-open {
   font-weight: 500;
   font-size: 12px;
   line-height: 1.7;
+}
+
+.modal-btn__wrapper {
+  display: flex;
+  margin-top: 20px;
+
+  // @include mq($from: $width-tablet, $until: $width-desktop) {
+  //   position: fixed;
+  //   bottom: 40px;
+  //   right: 72px;
+  // }
+
+  // @include mq($from: $width-desktop) {
+  //   position: fixed;
+  //   bottom: 111px;
+  //   right: 108px;
+  // }
+}
+
+.modal-btn {
+  width: 110px;
+  max-height: 65px;
+  min-height: 44px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  text-align: center;
+  text-transform: uppercase;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: getColor('modal-info');
+    color: getColor('white');
+  }
+
+  @include mq($from: $width-tablet) {
+    width: 125.03px;
+  }
+
+  @include mq($from: $width-desktop) {
+    width: 136px;
+  }
+}
+
+.modal-btn__watched {
+  background-color: getColor('modal-accent');
+  color: getColor('white');
+  border: none;
+  margin-right: auto;
+  @include mq($from: $width-desktop) {
+    margin-right: 15px;
+  }
+}
+
+.modal-btn__queue {
+  background-color: getColor('white');
+  color: getColor('black');
+  border: 1px solid getColor('black');
 }
 
 //   .cardItem__wrapper {
