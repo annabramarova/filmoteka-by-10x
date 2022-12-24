@@ -49,6 +49,7 @@ body.modal-open {
   @include mq($from: $width-desktop) {
     width: 806px;
     padding: 40px 12px 40px 12px;
+    max-height: 100vh;
     overflow: hidden;
   }
 }
