@@ -42,4 +42,7 @@ export const refs = {
   galleryQueueBtn: document.querySelector('button[data-activ="queue"]'),
   addToQueueBtn: document.querySelector(`.addToQueue`),
   galleryContainer: document.querySelector(`.gallery-container`),
+
+  // emty library-plug
+  plug: document.querySelector('.plug'),
 };

@@ -15,3 +15,4 @@ import './js/modal';
 // import './js/storage/test';
 import './js/trailer';
 import './js/arrow';
+import './js/empty-lib-plug';
