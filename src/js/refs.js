@@ -12,6 +12,8 @@ export const refs = {
   logoutButton: document.querySelector('[data-action="logout"]'),
   watchedButton: document.querySelector('[data-activ="watched"]'),
   queueButton: document.querySelector('[data-activ="queue"]'),
+  searchErrorMessage: document.querySelector('#search-form p'),
+  searchButton: document.querySelector('[data-activ="search"]'),
 
   movieModalContainer: document.querySelector('.movie-modal__container'),
   movieModalBackDrop: document.querySelector('.movie-backdrop'),
