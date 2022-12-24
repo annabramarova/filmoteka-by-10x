@@ -8,39 +8,3 @@ export function renderGallery(movies) {
   refs.galleryList.innerHTML = '';
   refs.galleryList.insertAdjacentHTML('beforeend', moviesCollection);
 }
-
-export async function tuneRender(getMoviesCallback, runIfNoResults) {
-  loader();
-  const { total_pages, results } = await getMoviesCallback(1);
-  renderGallery(results);
-
-  if (total_pages === 0 && runIfNoResults) {
-    runIfNoResults();
-  }
-
-  loaderRemove();
-  tunePagination(total_pages, async page => {
-    loader();
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      // behavior: 'smooth',
-    });
-    const { results } = await getMoviesCallback(page);
-    renderGallery(results);
-    loaderRemove();
-  });
-}
-
-export function removeFromGalleryById(id) {
-  const card = refs.galleryList
-    .querySelector(`[data-id="${id}"]`)
-    .closest('.collection_item');
-  if (card) {
-    card.remove();
-  }
-}
-
-export function clearGallery() {
-  refs.galleryList.innerHTML = '';
-}
