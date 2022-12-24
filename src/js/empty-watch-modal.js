@@ -1,53 +1,60 @@
-// import { refs } from './refs';
+import { refs } from './refs';
 
-// let inWatchedStorage = `[]`;
-// let inWatchedStorageParsed = [];
-// let lehghtSt = 0;
+// const refs = {
+//   galleryWatchedBtn: document.querySelector('button[data-activ="watched"]'),
+//   libMenu: document.querySelector('[data-modal]'),
+//   libMenuCloseBtn: document.querySelector('.lib_modal-close-btn'),
+//   bestCardContainer: document.querySelector(`.proposed-card`),
+// };
 
-// // refs.galleryWatchedBtn.addEventListener('click', onEmptyWatched);
+let inWatchedStorage = `[]`;
+let inWatchedStorageParsed = [];
+let lehghtSt = 0;
 
-// export function onEmptyWatched() {
-//   inWatchedStorage = localStorage.getItem('watched');
+// refs.galleryWatchedBtn.addEventListener('click', onEmptyWatched);
 
-//   if (!inWatchedStorage) {
-//     inWatchedStorage = `[]`;
-//   }
+export function onEmptyWatched() {
+  // inWatchedStorage = localStorage.getItem('watched');
 
-//   inWatchedStorageParsed = JSON.parse(inWatchedStorage);
-//   lehghtSt = inWatchedStorageParsed.length;
+  // if (!inWatchedStorage) {
+  //   inWatchedStorage = `[]`;
+  // }
 
-//   if (lehghtSt !== 0) {
-//     return;
-//   }
+  // inWatchedStorageParsed = JSON.parse(inWatchedStorage);
+  // lehghtSt = inWatchedStorageParsed.length;
 
-//   refs.libMenu.classList.remove('lib-is-hidden');
-//   refs.libMenuCloseBtn.addEventListener(`click`, onLibMenuCloseBtnClick);
-//   window.addEventListener(`keydown`, handleEsc);
-//   window.addEventListener(`click`, handleOutClick);
-// }
+  // if (lehghtSt !== 0) {
+  //   return;
+  // }
 
-// function onLibMenuCloseBtnClick() {
-//   removeAllListn();
-// }
+  refs.libMenu.classList.remove('is-hidden');
+  refs.libMenuCloseBtn.addEventListener(`click`, onLibMenuCloseBtnClick);
+  window.addEventListener(`keydown`, handleEsc);
+  window.addEventListener(`click`, handleOutClick);
+}
 
-// function handleEsc(event) {
-//   console.log(event);
-//   if (!(event.code === `Escape`)) {
-//     return;
-//   }
-//   removeAllListn();
-// }
+function onLibMenuCloseBtnClick() {
+  removeAllListn();
+}
 
-// function handleOutClick(event) {
-//   if (!event.target.classList.contains(`lib-backdrop`)) {
-//     return;
-//   }
-//   removeAllListn();
-// }
+function handleEsc(event) {
+  console.log(event);
+  if (!(event.code === `Escape`)) {
+    return;
+  }
+  removeAllListn();
+}
 
-// function removeAllListn() {
-//   refs.libMenu.classList.add('lib-is-hidden');
-//   refs.libMenuCloseBtn.removeEventListener(`click`, onLibMenuCloseBtnClick);
-//   window.removeEventListener(`keydown`, handleEsc);
-//   window.removeEventListener(`click`, handleOutClick);
-// }
+function handleOutClick(event) {
+  if (!event.target.classList.contains(`backdrop`)) {
+    return;
+  }
+  removeAllListn();
+}
+
+function removeAllListn() {
+  refs.libMenu.classList.add('is-hidden');
+  refs.libMenuCloseBtn.removeEventListener(`click`, onLibMenuCloseBtnClick);
+  window.removeEventListener(`keydown`, handleEsc);
+  window.removeEventListener(`click`, handleOutClick);
+}
