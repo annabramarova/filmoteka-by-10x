@@ -74,13 +74,13 @@ export const tuneRenderSearch = tuneRender.bind(null, {
 export const tuneRenderWantched = tuneRender.bind(null, {
   getMoviesCallback: getWatched,
   renderCallback: renderLibrary,
-  runIfNoResultsCallback: onEmptyWatched,
+  runIfNoResultsCallback: null, //onEmptyWatched,
 });
 
 export const tuneRenderQeueue = tuneRender.bind(null, {
   getMoviesCallback: getQueued,
   renderCallback: renderLibrary,
-  runIfNoResultsCallback: onEmptyLibrary,
+  runIfNoResultsCallback: null, //onEmptyLibrary,
 });
 
 tuneRenderTrending();

@@ -35,6 +35,7 @@ function killModal(e) {
     e.currentTarget === e.target ||
     e.code === 'Escape'
   ) {
+    document.body.classList.toggle('modal-open');
     refs.movieModalContainer.innerHTML = '';
     refs.movieModalBackDrop.classList.add('hidden');
     onBtnClickTrailer();
@@ -93,7 +94,7 @@ function renderCard(data) {
 
 function onGalleryClick(e) {
   e.preventDefault();
-  document.body.classList.toggle('modal-open');
+
   const card = e.target.closest('.card');
   cardId = Number(card.dataset.id);
   const isPicture = e.target.classList.contains('card_img');
@@ -103,7 +104,7 @@ function onGalleryClick(e) {
   }
 
   refs.movieModalBackDrop.classList.remove('hidden');
-
+  document.body.classList.toggle('modal-open');
   apiService
     .getFilmById(cardId)
     .then(data => {

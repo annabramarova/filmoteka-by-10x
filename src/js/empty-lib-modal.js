@@ -66,7 +66,7 @@ export function onLibraryOpen() {
   // }
 }
 
-refs.galleryQueueBtn.addEventListener('click', onEmptyLibrary);
+// refs.galleryQueueBtn.addEventListener('click', onEmptyLibrary);
 
 export function onEmptyLibrary() {
   inLibStorage = localStorage.getItem('queued');

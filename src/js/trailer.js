@@ -22,7 +22,7 @@ export async function trailer(id) {
 }
 
 export const onBtnClickTrailer = () =>
-  refs.trailerVideo.classList.remove('hidden-trailer');
+  refs.trailerVideo?.classList.remove('hidden-trailer');
 
 function renderTrailerButton() {
   const trailerBtnRender = `<button type="button" class="trailer-button"><i class="fa fa-play-circle" aria-hidden="true"></i></button>`;
