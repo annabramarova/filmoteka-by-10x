@@ -3,9 +3,8 @@ import Api from './api-service.js';
 import { renderGallery } from './render/render-gallery';
 import { loader, loaderRemove } from './loading';
 import { tune as tunePagination } from './pagination';
-import { tuneRenderSearch } from './ui-controller.js';
 
-export const api = new Api();
+const api = new Api();
 
 refs.formSearch.addEventListener('submit', onFormSubmit);
 
@@ -25,20 +24,30 @@ async function onFormSubmit(e) {
     return;
   }
   try {
+    loader();
     buttonSearch.setAttribute('disabled', true);
     lastElementChild.style.display = 'none';
+    const { total_pages, results } = await api.getFilmSearchByPage(1);
+    if (results.length === 0) {
+      console.log('no data');
+      lastElementChild.style.display = 'block';
+      buttonSearch.removeAttribute('disabled');
+      return;
+    }
+    renderGallery(results);
+    tunePagination(total_pages, async page => {
+      loader();
+      const { results } = await api.getFilmSearchByPage(page);
+      renderGallery(results);
+
+      loaderRemove();
+    });
     buttonSearch.removeAttribute('disabled');
-    tuneRenderSearch();
   } catch {
     console.error();
   } finally {
     refs.formSearch.reset();
     loaderRemove();
+    console.log('finally');
   }
-}
-
-export function onEmptySearch() {
-  console.log('no data');
-  lastElementChild.style.display = 'block';
-  buttonSearch.removeAttribute('disabled');
 }
