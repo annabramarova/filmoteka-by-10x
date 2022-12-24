@@ -11,7 +11,7 @@ import {
 } from './storage';
 import { removeFromGalleryById } from './render/render-gallery';
 import { getCurrentPage } from './header';
-import { isLoggedIn, login } from './authentication';
+import { trailer, onBtnClickTrailer } from './trailer';
 
 const apiService = new Api();
 let cardId = null;
@@ -19,7 +19,7 @@ let cardId = null;
 refs.galleryList.addEventListener('click', onGalleryClick);
 refs.movieModalCloseBtn.addEventListener('click', killModal);
 
-if (refs.movieModalBackDrop.classList.contains('hidden')) {
+if (refs.movieModalBackDrop.classList.contains('modal-hidden')) {
   refs.movieModalBackDrop.removeEventListener('mousedown', killModal);
   document.removeEventListener('keydown', killModal);
 }
@@ -35,8 +35,9 @@ function killModal(e) {
     e.currentTarget === e.target ||
     e.code === 'Escape'
   ) {
-    document.body.classList.toggle('modal-open');
-    refs.movieModalBackDrop.classList.add('hidden');
+    refs.movieModalContainer.innerHTML = '';
+    refs.movieModalBackDrop.classList.add('modal-hidden');
+    onBtnClickTrailer();
     console.log('killModal', cardId);
     if (getCurrentPage() === 'watched') {
       isWatched(cardId).then(isWatched => {
@@ -70,11 +71,6 @@ function renderCard(data) {
   refs.modalQueueButton = document.querySelector('[data-action-modal-queue]');
 
   refs.modalWatchedButton.addEventListener('click', async e => {
-    if (!isLoggedIn()) {
-      login();
-      return;
-    }
-
     if (await isWatched(cardId)) {
       removeWatchedId(cardId);
     } else {
@@ -84,11 +80,6 @@ function renderCard(data) {
   });
 
   refs.modalQueueButton.addEventListener('click', async e => {
-    if (!isLoggedIn()) {
-      login();
-      return;
-    }
-
     if (await isQueued(cardId)) {
       removeQueuedId(cardId);
     } else {
@@ -106,12 +97,13 @@ function onGalleryClick(e) {
   const card = e.target.closest('.card');
   cardId = Number(card.dataset.id);
   const isPicture = e.target.classList.contains('card_img');
+  const blankPicture = e.target.classList.contains('card_no-img');
 
-  if (!isPicture) {
+  if (!isPicture && blankPicture) {
     return;
   }
 
-  refs.movieModalBackDrop.classList.remove('hidden');
+  refs.movieModalBackDrop.classList.remove('modal-hidden');
 
   apiService
     .getFilmById(cardId)
@@ -119,6 +111,8 @@ function onGalleryClick(e) {
       renderCard(data);
       refs.movieModalBackDrop.addEventListener('mousedown', killModal);
       document.addEventListener('keydown', killModal);
+      refs.modalCardItem = document.querySelector('.cardItem__image');
+      trailer(cardId);
     })
     .catch(console.log);
 }

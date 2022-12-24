@@ -33,14 +33,12 @@ body.modal-open {
   overflow-y: scroll;
   z-index: 999;
 
-  &.hidden {
+  &.modal-hidden {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
   }
-  &.hidden .movie-modal {
-    opacity: 0;
-    visibility: hidden;
+  &.modal-hidden .movie-modal {
     transform: translate(-50%, -50%) scale(2);
   }
 }
@@ -52,11 +50,8 @@ body.modal-open {
   display: flex;
   background-color: getColor('white');
 
-  opacity: 1;
-  visibility: visible;
   transform: translate(-50%, -50%) scale(1);
-  transition: transform $duration $timing-function,
-    opacity $duration $timing-function;
+  transition: transform $duration $timing-function;
 
   min-width: 280px;
   max-width: 100%;
@@ -106,6 +101,7 @@ body.modal-open {
 }
 
 .cardItem__image {
+  position: relative;
   width: 240px;
   height: 357px;
   margin-bottom: 20px;

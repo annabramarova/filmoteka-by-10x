@@ -8,6 +8,22 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+body,
+html {
+  height: 100%;
+}
+
+.body-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex-grow: 1;
+}
+
+
 .container {
   margin: 0 auto;
   padding: 0 20px;

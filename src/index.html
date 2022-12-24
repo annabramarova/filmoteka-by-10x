@@ -12,21 +12,26 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./sass/main.scss" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body>
-    <include src="./partials/preloader.html"></include>
-    <include src="./partials/modal.html"></include>
-    <include src="./partials/header.html"></include>
-    <include src="./partials/gallery.html"></include>
-    <include src="./partials/pagination.html"></include>
-    <include src="./partials/empty-lib-modal.html"></include>
-    <include src="./partials/button-to-top.html"></include>
-    <include src="./partials/footer.html"></include>
-
-    <include src="./partials/team-modal.html"></include>
-
-    <include src="./partials/authentication.html"></include>
-
+    <div class="body-wrapper">
+      <include src="./partials/header.html"></include>
+      <main class="content">
+        <include src="./partials/preloader.html"></include>
+        <include src="./partials/gallery.html"></include>
+        <include src="./partials/modal.html"></include>
+        <include src="./partials/pagination.html"></include>
+        <include src="./partials/empty-lib-modal.html"></include>
+        <include src="./partials/button-to-top.html"></include>
+      </main>
+      <include src="./partials/footer.html"></include>
+      <include src="./partials/team-modal.html"></include>
+      <include src="./partials/authentication.html"></include>
+    </div>
     <script type="module" src="./index.js"></script>
   </body>
 </html>
