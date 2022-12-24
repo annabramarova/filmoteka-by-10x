@@ -8,7 +8,7 @@ import {
   addQueuedId,
   removeWatchedId,
   removeQueuedId,
-} from './storage/storage';
+} from './storage';
 import { removeFromGalleryById } from './render/render-gallery';
 import { getCurrentPage } from './header';
 import { trailer, onBtnClickTrailer } from './trailer';

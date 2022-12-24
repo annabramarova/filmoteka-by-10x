@@ -2,7 +2,6 @@ import { galleryTemplate } from '../templates/gallery';
 import { refs } from '../refs';
 import { tune as tunePagination } from '../pagination';
 import { loader, loaderRemove } from '../loading';
-import { ref } from 'firebase/database';
 
 export function renderGallery(movies) {
   let moviesCollection = movies.map(galleryTemplate).join('');
@@ -40,4 +39,8 @@ export function removeFromGalleryById(id) {
   if (card) {
     card.remove();
   }
+}
+
+export function clearGallery() {
+  refs.galleryList.innerHTML = '';
 }
