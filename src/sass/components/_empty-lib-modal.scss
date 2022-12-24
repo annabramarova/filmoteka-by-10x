@@ -1,4 +1,4 @@
-.lib-backdrop {
+.backdrop {
   position: fixed;
   top: 0;
   left: 0;
@@ -12,7 +12,7 @@
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.lib-backdrop.lib-is-hidden {
+.backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
@@ -188,7 +188,7 @@
   }
 }
 
-.addToQueue.lib-is-hidden {
+.addToQueue.is-hidden {
   display: none;
 }
 
