@@ -21,8 +21,6 @@ async function onFormSubmit(e) {
   if (api.query === '') {
     lastElementChild.style.display = 'block';
     e.currentTarget.reset();
-    console.log(refs.formSearch);
-    console.log(e.currentTarget);
     return;
   }
   try {
