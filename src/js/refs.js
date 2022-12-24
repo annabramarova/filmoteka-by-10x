@@ -32,7 +32,7 @@ export const refs = {
 
   // empty library-watcher modal
   galleryWatchedBtn: document.querySelector('button[data-activ="watched"]'),
-  libMenu: document.querySelector('[data-modal]'),
+  libMenu: document.querySelector('[data-modal-lib]'),
   libMenuCloseBtn: document.querySelector('.lib_modal-close-btn'),
   bestCardContainer: document.querySelector(`.proposed-card`),
   galleryQueueBtn: document.querySelector('button[data-activ="queue"]'),
