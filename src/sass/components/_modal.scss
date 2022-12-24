@@ -2,6 +2,21 @@ body.modal-open {
   overflow: hidden;
 }
 
+.no-poster {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid getColor('black');
+  border-radius: 5px;
+
+  text-align: center;
+  color: getColor('modal-accent');
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
 .movie-backdrop {
   position: fixed;
   top: 0;
@@ -311,10 +326,10 @@ body.modal-open {
     margin-right: 15px;
   }
 
-     &:hover,
-     &:focus {
-       background-color: getColor('error-text');
-     }
+  &:hover,
+  &:focus {
+    background-color: getColor('error-text');
+  }
 }
 
 .modal-btn__queue {
@@ -323,11 +338,11 @@ body.modal-open {
   border: 1px solid getColor('black');
 
   &:hover,
-    &:focus {
-      background-color: getColor('white');
-      color: getColor('modal-accent');
-      border: 1px solid getColor('modal-accent');
-    }
+  &:focus {
+    background-color: getColor('white');
+    color: getColor('modal-accent');
+    border: 1px solid getColor('modal-accent');
+  }
 }
 
 //   .cardItem__wrapper {
