@@ -81,6 +81,11 @@ header::after {
   }
 }
 
+.logo:hover .logo__icon,
+.logo:focus .logo__icon {
+  animation: rotateZ 1500ms infinite alternate ease-in-out 1000ms;
+}
+
 .navigation {
   margin-left: auto;
   font-size: 12px;
@@ -200,7 +205,6 @@ header::after {
   border: none;
   outline: none;
   color: getColor('white');
-  // border-bottom: 1px solid getColor('white');
   background: inherit;
   cursor: text;
 
@@ -214,8 +218,6 @@ header::after {
 }
 
 .search-form__submit {
-  // -webkit-appearance: none;
-  // appearance: none;
   z-index: 1;
   display: inline-flex;
   align-items: center;
@@ -225,12 +227,10 @@ header::after {
   cursor: pointer;
   background-color: inherit;
   background-position: center;
-  // background-size: contain;
   background-repeat: no-repeat;
   background-image: url(../images/search.svg);
   border: none;
   outline: none;
-  // border-bottom: 1px solid getColor('white');
   transition-property: background-color, border-bottom, border-radius;
   transition-duration: $duration;
   transition-timing-function: $timing-function;

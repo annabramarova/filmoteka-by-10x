@@ -32,3 +32,18 @@ $duration: 250ms;
     transform: scale(1.5) rotate(1deg);
   }
 }
+
+@keyframes rotateZ {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  33% {
+    transform: rotateZ(40deg);
+  }
+  66% {
+    transform: rotateZ(-40deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
