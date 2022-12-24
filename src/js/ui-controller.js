@@ -64,24 +64,18 @@ export const tuneRenderTrending = tuneRender.bind(null, {
   runIfNoResultsCallback: null,
 });
 
-export const tuneRenderSearch = tuneRender.bind(
-  null,
-  tuneRender({
-    getMoviesCallback: api.getFilmSearchByPage.bind(api),
-    renderCallback: renderLibrary,
-    runIfNoResultsCallback: onEmptySearch,
-    preventRenderIfNoResults: true,
-  })
-);
+export const tuneRenderSearch = tuneRender.bind(null, {
+  getMoviesCallback: api.getFilmSearchByPage.bind(api),
+  renderCallback: renderLibrary,
+  runIfNoResultsCallback: onEmptySearch,
+  preventRenderIfNoResults: true,
+});
 
-export const tuneRenderWantched = tuneRender.bind(
-  null,
-  tuneRender({
-    getMoviesCallback: getWatched,
-    renderCallback: renderLibrary,
-    runIfNoResultsCallback: onEmptyWatched,
-  })
-);
+export const tuneRenderWantched = tuneRender.bind(null, {
+  getMoviesCallback: getWatched,
+  renderCallback: renderLibrary,
+  runIfNoResultsCallback: onEmptyWatched,
+});
 
 export const tuneRenderQeueue = tuneRender.bind(null, {
   getMoviesCallback: getQueued,
@@ -89,4 +83,4 @@ export const tuneRenderQeueue = tuneRender.bind(null, {
   runIfNoResultsCallback: onEmptyLibrary,
 });
 
-// tuneRenderTrending();
+tuneRenderTrending();

@@ -28,14 +28,12 @@ async function onFormSubmit(e) {
     buttonSearch.setAttribute('disabled', true);
     lastElementChild.style.display = 'none';
     buttonSearch.removeAttribute('disabled');
-
     tuneRenderSearch();
   } catch {
     console.error();
   } finally {
     refs.formSearch.reset();
     loaderRemove();
-    console.log('finally');
   }
 }
 
