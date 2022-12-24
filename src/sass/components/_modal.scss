@@ -24,18 +24,23 @@ body.modal-open {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
+
   opacity: 1;
   visibility: visible;
-  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity $duration $timing-function,
+    visibility $duration $timing-function;
 
   overflow-y: scroll;
   z-index: 999;
 
   &.hidden {
-    visibility: hidden;
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
+  }
+  &.hidden .movie-modal {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2);
   }
 }
 
@@ -46,10 +51,11 @@ body.modal-open {
   display: flex;
   background-color: getColor('white');
 
-  transform: translate(-50%, -50%) scale(1);
-  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 500ms cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform $duration $timing-function,
+    opacity $duration $timing-function;
+
   min-width: 280px;
   max-width: 100%;
   overflow-y: scroll;
@@ -90,7 +96,7 @@ body.modal-open {
   stroke: getColor('black');
   stroke-width: 2px;
 
-  transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: stroke $duration $timing-function;
   .modal-close-btn:focus &,
   .modal-close-btn:hover & {
     stroke: getColor('modal-accent');
@@ -346,58 +352,3 @@ body.modal-open {
     border: 1px solid getColor('modal-accent');
   }
 }
-
-//   .cardItem__wrapper {
-//     width: 370px;
-//     padding: 10px;
-//     margin-left: 30px;
-//   .cardItem__wrapper {
-//     width: 370px;
-//     padding: 10px;
-//     margin-left: 30px;
-//   }
-
-// .cardItem__wrapper p {
-//   font-size: 12px;
-//   font-weight: 500;
-
-//   font-family: 'Roboto';
-//   line-height: 1.333;
-//   margin-bottom: 18px;
-//   letter-spacing: 1px;
-// }
-
-// @media screen and (min-width: 768px) {
-//   .movie-card {
-//     background-color: #ffffff;
-//     width: 720px;
-//     margin-top: 0px;
-//     display: flex;
-//   }
-
-//   .cardItem__name {
-//     font-size: 25px;
-//     line-height: 35px;
-//   }
-// }
-
-// @media (min-width: 1024px) {
-//   .modal-card {
-//     background-color: #ffffff;
-//     width: 810px;
-//     margin-top: 0px;
-//     display: flex;
-//   }
-//   .image {
-//     display: block;
-//     width: auto;
-//     height: auto;
-//     padding-top: 10px;
-//     border-radius: 5px;
-//   }
-
-//   .cardItem__wrapper {
-//     width: 423px;
-//   }
-
-// }
