@@ -272,6 +272,8 @@ body.modal-open {
 }
 
 .cardItem__description {
+  height: 100px;
+  overflow-y: auto;
   color: getColor('black');
   font-weight: 500;
   font-size: 12px;
