@@ -11,7 +11,7 @@ import {
 } from './storage';
 import { removeFromGalleryById } from './render/render-gallery';
 import { getCurrentPage } from './header';
-import { isLoggedIn, login } from './authentication';
+import { trailer, onBtnClickTrailer } from './trailer';
 
 const apiService = new Api();
 let cardId = null;
@@ -35,8 +35,9 @@ function killModal(e) {
     e.currentTarget === e.target ||
     e.code === 'Escape'
   ) {
-    document.body.classList.toggle('modal-open');
+    refs.movieModalContainer.innerHTML = '';
     refs.movieModalBackDrop.classList.add('hidden');
+    onBtnClickTrailer();
     console.log('killModal', cardId);
     if (getCurrentPage() === 'watched') {
       isWatched(cardId).then(isWatched => {
@@ -70,11 +71,6 @@ function renderCard(data) {
   refs.modalQueueButton = document.querySelector('[data-action-modal-queue]');
 
   refs.modalWatchedButton.addEventListener('click', async e => {
-    if (!isLoggedIn()) {
-      login();
-      return;
-    }
-
     if (await isWatched(cardId)) {
       removeWatchedId(cardId);
     } else {
@@ -84,11 +80,6 @@ function renderCard(data) {
   });
 
   refs.modalQueueButton.addEventListener('click', async e => {
-    if (!isLoggedIn()) {
-      login();
-      return;
-    }
-
     if (await isQueued(cardId)) {
       removeQueuedId(cardId);
     } else {
@@ -119,6 +110,8 @@ function onGalleryClick(e) {
       renderCard(data);
       refs.movieModalBackDrop.addEventListener('mousedown', killModal);
       document.addEventListener('keydown', killModal);
+      refs.modalCardItem = document.querySelector('.cardItem__image');
+      trailer(cardId);
     })
     .catch(console.log);
 }
