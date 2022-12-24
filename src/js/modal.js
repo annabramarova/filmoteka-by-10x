@@ -9,7 +9,7 @@ import {
   removeWatchedId,
   removeQueuedId,
 } from './storage';
-import { removeFromGalleryById } from './render/render-gallery';
+import { removeFromGalleryById } from './ui-controller';
 import { getCurrentPage } from './header';
 import { trailer, onBtnClickTrailer } from './trailer';
 
@@ -35,6 +35,7 @@ function killModal(e) {
     e.currentTarget === e.target ||
     e.code === 'Escape'
   ) {
+    document.body.classList.toggle('modal-open');
     refs.movieModalContainer.innerHTML = '';
     refs.movieModalBackDrop.classList.add('modal-hidden');
     onBtnClickTrailer();

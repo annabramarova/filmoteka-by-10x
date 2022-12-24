@@ -90,6 +90,8 @@ export default class Api {
   }
 }
 
+export const api = new Api();
+
 // const films = new Api();
 // films.getTrendingFilms();
 // films.getGenres();
