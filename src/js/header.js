@@ -73,6 +73,7 @@ function goHome(e) {
   refs.myLibraryLink.classList.remove('current');
   makeCurrent({ target: refs.homeLink });
   refs.formSearch.classList.remove('visually-hidden');
+  refs.formSearch.reset();
   refs.headerButtons.forEach(element => {
     element.classList.add('visually-hidden');
   });
