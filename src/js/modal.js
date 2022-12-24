@@ -35,7 +35,7 @@ function killModal(e) {
     e.currentTarget === e.target ||
     e.code === 'Escape'
   ) {
-    document.body.classList.toggle('modal-open');
+    refs.movieModalContainer.innerHTML = '';
     refs.movieModalBackDrop.classList.add('hidden');
     onBtnClickTrailer();
     console.log('killModal', cardId);

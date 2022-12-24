@@ -8,14 +8,22 @@
   border-radius: 5px;
 }
 .trailer-button {
-  background-color: tomato;
-  color: darkblue;
-  border-radius: 50%;
+  background-color: transparent;
+  font-size: 55px;
+  color: getColor('modal-accent');
+  transition-duration: 1000ms;
+  border: none;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   cursor: pointer;
+}
+
+.trailer-button:hover,
+.trailer-button:focus {
+  color: getColor('accent');
+  transform: scale(1.1);
 }
 .hidden-trailer {
   display: none;

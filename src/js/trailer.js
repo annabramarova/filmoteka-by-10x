@@ -16,19 +16,16 @@ export async function trailer(id) {
     refs.trailerBtn = document.querySelector('.trailer-button');
     refs.trailerVideo = document.querySelector('.trailer');
     refs.trailerBtn.addEventListener('click', onBtnClickTrailer);
-    if (refs.trailerVideo.classList.contains('hidden-trailer')) {
-      console.log('playing stop');
-    }
   } catch {
     err => console.log(err.massage);
   }
 }
 
 export const onBtnClickTrailer = () =>
-  refs.trailerVideo.classList.toggle('hidden-trailer');
+  refs.trailerVideo.classList.remove('hidden-trailer');
 
 function renderTrailerButton() {
-  const trailerBtnRender = `<button type="button" class="trailer-button">Play</button>`;
+  const trailerBtnRender = `<button type="button" class="trailer-button"><i class="fa fa-play-circle" aria-hidden="true"></i></button>`;
   return refs.modalCardItem.insertAdjacentHTML('beforeend', trailerBtnRender);
 }
 
