@@ -6,7 +6,6 @@ body {
   color: getColor('black');
   background-color: getColor('white');
   font-family: 'Roboto', sans-serif;
-  min-height: calc(100vh - 77px);
 }
 
 body,
@@ -15,13 +14,13 @@ html {
 }
 
 .body-wrapper {
-  min-height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 .content {
-  flex: 1 auto;
+  flex-grow: 1;
 }
 
 
