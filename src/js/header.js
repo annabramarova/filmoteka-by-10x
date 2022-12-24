@@ -1,8 +1,11 @@
 import { refs } from './refs';
 import { getQueued, getWatched } from './storage';
-import { tuneRender } from './render/render-gallery';
-import { onLibraryOpen } from './empty-lib-modal';
-import { onEmptyWatched } from './empty-watch-modal';
+import {
+  tuneRenderTrending,
+  tuneRenderWantched,
+  tuneRenderQeueue,
+} from './ui-controller';
+
 import Api from './api-service';
 const apiService = new Api();
 
@@ -32,7 +35,7 @@ function onWatchedClick(e) {
   makeCurrent(e);
 
   currentPage = 'watched';
-  tuneRender(getWatched, onEmptyWatched);
+  tuneRenderWantched();
 }
 
 function onQueueClick(e) {
@@ -40,7 +43,7 @@ function onQueueClick(e) {
   makeCurrent(e);
 
   currentPage = 'queue';
-  tuneRender(getQueued, onLibraryOpen);
+  tuneRenderQeueue();
 }
 
 function makeCurrent(e) {
@@ -77,7 +80,5 @@ function goHome(e) {
     element.classList.add('visually-hidden');
   });
 
-  tuneRender(apiService.getTrendingFilmsByPage.bind(apiService));
+  tuneRenderTrending();
 }
-
-tuneRender(apiService.getTrendingFilmsByPage.bind(apiService));
