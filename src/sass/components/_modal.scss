@@ -40,6 +40,7 @@ body.modal-open {
   }
   &.hidden .movie-modal {
     opacity: 0;
+    visibility: hidden;
     transform: translate(-50%, -50%) scale(2);
   }
 }
@@ -52,6 +53,7 @@ body.modal-open {
   background-color: getColor('white');
 
   opacity: 1;
+  visibility: visible;
   transform: translate(-50%, -50%) scale(1);
   transition: transform $duration $timing-function,
     opacity $duration $timing-function;
