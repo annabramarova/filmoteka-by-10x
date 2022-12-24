@@ -2,8 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  min-height: 77px;
+  flex: 0 0 auto;
+  
+  height: 77px;
 
   background-color: getColor('footer-bgr');
 }
