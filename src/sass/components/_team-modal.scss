@@ -6,17 +6,19 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 32;
+
   opacity: 1;
+  visibility: visible;
+
   transition: opacity $duration $timing-function,
     visibility $duration $timing-function;
 
-  &.visually-hidden {
+  &.visually-team-hidden {
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
   }
-  &.visually-hidden > .team-modal {
-    opacity: 0;
+  &.visually-team-hidden > .team-modal {
     transform: translate(-50%);
   }
 }
@@ -31,7 +33,6 @@
   flex-direction: row;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   max-width: 200px;
   max-height: 96vh;
   padding: 5px;
@@ -39,10 +40,9 @@
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 14px;
-  opacity: 1;
-  transition: transform 600ms, opacity $duration $timing-function;
-  overflow: hidden;
 
+  transform: translate(-50%, -50%);
+  transition: transform $duration $timing-function;
   &__decor {
     flex-shrink: 0;
     width: 100%;
@@ -60,7 +60,12 @@
     font-size: 16px;
     letter-spacing: 0.03em;
     color: getColor('black');
+
+    background-color: getColor('footer-bgr');
     box-shadow: 0px 1px 3px 0px getColor('modal-info');
+
+    transition: background-color $duration $timing-function,
+      box-shadow $duration $timing-function;
 
     &:hover {
       box-shadow: 0px 4px 4px #5daadd;
