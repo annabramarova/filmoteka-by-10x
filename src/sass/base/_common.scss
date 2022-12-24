@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: getColor('black');
   background-color: getColor('white');
@@ -5,7 +9,6 @@ body {
 }
 
 .container {
-
   margin: 0 auto;
   padding: 0 20px;
 
@@ -21,5 +24,4 @@ body {
   @include mq($width-desktop) {
     max-width: $width-desktop;
   }
-  
 }
