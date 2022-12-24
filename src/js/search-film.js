@@ -20,6 +20,7 @@ async function onFormSubmit(e) {
   api.query = searchQuery.value.trim();
   if (api.query === '') {
     lastElementChild.style.display = 'block';
+    e.currentTarget.reset();
     return;
   }
   try {
@@ -38,13 +39,14 @@ async function onFormSubmit(e) {
       loader();
       const { results } = await api.getFilmSearchByPage(page);
       renderGallery(results);
+
       loaderRemove();
     });
-
     buttonSearch.removeAttribute('disabled');
   } catch {
     console.error();
   } finally {
+    refs.formSearch.reset();
     loaderRemove();
     console.log('finally');
   }

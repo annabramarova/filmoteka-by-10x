@@ -1,5 +1,5 @@
 import { refs } from './refs';
-import { getQueued, getWatched } from './storage/storage';
+import { getQueued, getWatched } from './storage';
 import { tuneRender } from './render/render-gallery';
 import { onLibraryOpen } from './empty-lib-modal';
 import { onEmptyWatched } from './empty-watch-modal';
@@ -25,7 +25,6 @@ function onMyLibraryClick(e) {
     element.classList.remove('visually-hidden');
   });
   refs.watchedButton.click();
-  tuneRender(getWatched, onEmptyWatched);
 }
 
 function onWatchedClick(e) {
@@ -73,6 +72,7 @@ function goHome(e) {
   refs.myLibraryLink.classList.remove('current');
   makeCurrent({ target: refs.homeLink });
   refs.formSearch.classList.remove('visually-hidden');
+  refs.formSearch.reset();
   refs.headerButtons.forEach(element => {
     element.classList.add('visually-hidden');
   });

@@ -8,9 +8,10 @@ import {
   addQueuedId,
   removeWatchedId,
   removeQueuedId,
-} from './storage/storage';
+} from './storage';
 import { removeFromGalleryById } from './render/render-gallery';
 import { getCurrentPage } from './header';
+import { isLoggedIn, login } from './authentication';
 
 const apiService = new Api();
 let cardId = null;
@@ -69,6 +70,11 @@ function renderCard(data) {
   refs.modalQueueButton = document.querySelector('[data-action-modal-queue]');
 
   refs.modalWatchedButton.addEventListener('click', async e => {
+    if (!isLoggedIn()) {
+      login();
+      return;
+    }
+
     if (await isWatched(cardId)) {
       removeWatchedId(cardId);
     } else {
@@ -78,6 +84,11 @@ function renderCard(data) {
   });
 
   refs.modalQueueButton.addEventListener('click', async e => {
+    if (!isLoggedIn()) {
+      login();
+      return;
+    }
+
     if (await isQueued(cardId)) {
       removeQueuedId(cardId);
     } else {

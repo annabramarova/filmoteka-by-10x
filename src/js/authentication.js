@@ -17,6 +17,12 @@ import {
   EmailAuthProvider,
 } from 'firebase/auth';
 
+import { getCurrentPage } from './header';
+import { tuneRender } from './render/render-gallery';
+import { onEmptyLibrary } from './empty-lib-modal';
+import { onEmptyWatched } from './empty-watch-modal';
+import { getWatched, getQueued } from './storage';
+
 hideLoginForm();
 
 export const firebaseApp = initializeApp({
@@ -60,6 +66,8 @@ refs.myLibraryLink.addEventListener('click', () => {
 
 // ***** FUNCTION DEFINITION *****
 
+export const isLoggedIn = () => Boolean(auth.currentUser);
+
 // Monitor auth state
 async function monitorAuthState() {
   onAuthStateChanged(auth, user => {
@@ -73,6 +81,7 @@ async function monitorAuthState() {
       showLoginButton();
       console.log("You're not logged in.");
     }
+    LoginStateChangeHandler(Boolean(user));
   });
 }
 
@@ -81,7 +90,7 @@ async function logout() {
   await signOut(auth);
 }
 
-function login() {
+export function login() {
   authUi.start(refs.authForm, uiConfig);
   showLoginForm();
 }
@@ -99,4 +108,15 @@ function showLoginState(user) {
   console.log("You're logged in as", displayName);
   console.log('Your uid:', uid);
   console.log('Your email:', email);
+}
+
+function LoginStateChangeHandler(isLogged) {
+  switch (getCurrentPage()) {
+    case 'watched':
+      tuneRender(getWatched, onEmptyWatched);
+      break;
+    case 'queue':
+      tuneRender(getQueued, onEmptyLibrary);
+      break;
+  }
 }
