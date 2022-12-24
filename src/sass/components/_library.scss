@@ -1,0 +1,27 @@
+.library-card-genres {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+  
+  color: getColor('modal-accent');
+}
+
+.library-card-rating {
+  border-radius: 5px;
+
+  font-weight: 500;
+  font-size: 12px;
+  line-height: calc(14 / 12);
+
+  background-color: getColor('modal-accent');
+  color: getColor('white');
+
+  @include mq($from: $width-min-allowable, $until: $width-desktop) {
+    padding: 1px 10px;
+  }
+  @include mq($from: $width-desktop) {
+    padding: 3px 11px;
+  }
+}
