@@ -11,6 +11,7 @@ import {
 } from './storage';
 import { removeFromGalleryById } from './ui-controller';
 import { getCurrentPage } from './header';
+import { isLoggedIn, login } from './authentication';
 import { trailer, onBtnClickTrailer } from './trailer';
 
 const apiService = new Api();
@@ -72,6 +73,11 @@ function renderCard(data) {
   refs.modalQueueButton = document.querySelector('[data-action-modal-queue]');
 
   refs.modalWatchedButton.addEventListener('click', async e => {
+    if (!isLoggedIn()) {
+      login();
+      return;
+    }
+
     if (await isWatched(cardId)) {
       removeWatchedId(cardId);
     } else {
@@ -81,6 +87,11 @@ function renderCard(data) {
   });
 
   refs.modalQueueButton.addEventListener('click', async e => {
+    if (!isLoggedIn()) {
+      login();
+      return;
+    }
+
     if (await isQueued(cardId)) {
       removeQueuedId(cardId);
     } else {
