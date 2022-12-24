@@ -1,17 +1,61 @@
+// import { galleryTemplate } from './templates/gallery';
 import { refs } from './refs';
 import Api from './api-service';
 const apiService = new Api();
 import { genres } from './data/genres';
+
+
 
 const spiderThumb = document.querySelector(`.spider-thumb`);
 
 let inLibStorage = `[]`;
 let inLibParsed = [];
 let lehghtLibSt = 0;
+let libraryOpenBefor = false;
+
+let inWatchedStorage = `[]`;
+let inWatchedStorageParsed = [];
+let lehghtSt = 0;
+
+refs.myLibraryLink.addEventListener(`click`, onLibraryOpenAndEmpty);
+
+export function onLibraryOpenAndEmpty() {
+  inLibStorage = localStorage.getItem('queued');
+
+  if (!inLibStorage) {
+    inLibStorage = `[]`;
+  }
+
+  inLibParsed = JSON.parse(inLibStorage);
+  lehghtLibSt = inLibParsed.length;
+
+  inWatchedStorage = localStorage.getItem('watched');
+
+  if (!inWatchedStorage) {
+    inWatchedStorage = `[]`;
+  }
+
+  inWatchedStorageParsed = JSON.parse(inWatchedStorage);
+  lehghtSt = inWatchedStorageParsed.length;
+
+  if (!libraryOpenBefor && lehghtLibSt === 0 && lehghtSt === 0) {
+  let testString = `
+     <div class="spider-thumb">
+      <p class="lib-modal-content__text">
+      Nothing to see here<br />Add a movie please
+      </p>
+     </div>`;
+  refs.galleryContainer.insertAdjacentHTML('beforeend', testString);
+  console.log(spiderThumb);
+
+  libraryOpenBefor = true;
+
+
+}
 
 refs.galleryQueueBtn.addEventListener('click', onEmptyLibrary);
 
-export function onEmptyLibrary() {
+function onEmptyLibrary() {
   inLibStorage = localStorage.getItem('queued');
 
   if (!inLibStorage) {
@@ -25,8 +69,8 @@ export function onEmptyLibrary() {
     return;
   }
 
-  refs.libMenu.classList.remove('lib-is-hidden');
-  refs.addToQueueBtn.classList.remove('lib-is-hidden');
+  refs.libMenu.classList.remove('is-hidden');
+  refs.addToQueueBtn.classList.remove('is-hidden');
   refs.libMenuCloseBtn.addEventListener(`click`, onLibMenuCloseBtnClick);
   window.addEventListener(`keydown`, handleEsc);
   window.addEventListener(`click`, handleOutClick);
@@ -45,15 +89,15 @@ function handleEsc(event) {
 }
 
 function handleOutClick(event) {
-  if (!event.target.classList.contains(`lib-backdrop`)) {
+  if (!event.target.classList.contains(`backdrop`)) {
     return;
   }
   removeAllListner();
 }
 
 function removeAllListner() {
-  refs.libMenu.classList.add('lib-is-hidden');
-  refs.addToQueueBtn.classList.add('lib-is-hidden');
+  refs.libMenu.classList.add('is-hidden');
+  refs.addToQueueBtn.classList.add('is-hidden');
   refs.libMenuCloseBtn.removeEventListener(`click`, onLibMenuCloseBtnClick);
   window.removeEventListener(`keydown`, handleEsc);
   window.removeEventListener(`click`, handleOutClick);
