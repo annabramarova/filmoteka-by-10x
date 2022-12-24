@@ -64,7 +64,6 @@ refs.myLibraryLink.addEventListener('click', () => {
   login();
 });
 
-authUi.start(refs.authForm, uiConfig);
 // ***** FUNCTION DEFINITION *****
 
 export const isLoggedIn = () => Boolean(auth.currentUser);
@@ -92,7 +91,7 @@ async function logout() {
 }
 
 export function login() {
-  // authUi.start(refs.authForm, uiConfig);
+  authUi.start(refs.authForm, uiConfig);
   showLoginForm();
 }
 
