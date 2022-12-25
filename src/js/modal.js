@@ -105,15 +105,16 @@ function renderCard(data) {
 
 function onGalleryClick(e) {
   e.preventDefault();
-  document.body.classList.toggle('modal-open');
+
   const card = e.target.closest('.card');
   cardId = Number(card.dataset.id);
-  const isPicture = e.target.classList.contains('card_img');
-  const blankPicture = e.target.classList.contains('card_no-img');
+  // const isPicture = e.target.classList.contains('card_img');
+  // const blankPicture = e.target.classList.contains('card_no-img');
 
-  if (!isPicture && blankPicture) {
-    return;
-  }
+  // if (!isPicture && blankPicture && card) return;
+
+  if (!card) return;
+  document.body.classList.toggle('modal-open');
 
   refs.movieModalBackDrop.classList.remove('modal-hidden');
 
