@@ -76,7 +76,7 @@ class Storage {
 
   constructor(storage_key) {
     this.#STORAGE_KEY = storage_key;
-    this.getIds();
+    // this.getIds();
   }
 
   async includes(id) {
@@ -91,7 +91,7 @@ class Storage {
       const ex = snapshot.exists();
       return ex;
     } catch (error) {
-      console.error('Include error:', error);
+      console.error('Includes error:', error);
       return false;
     }
   }
@@ -161,7 +161,6 @@ class Storage {
       item.genre_ids = item.genres.map(({ id }) => id);
       return item;
     });
-
     return {
       page,
       total_pages,
