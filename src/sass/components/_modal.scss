@@ -328,6 +328,7 @@ body.modal-open {
   color: getColor('white');
   border: none;
   margin-right: auto;
+  transition: background-color $duration $timing-function;
   @include mq($from: $width-desktop) {
     margin-right: 15px;
   }
@@ -342,6 +343,9 @@ body.modal-open {
   background-color: getColor('white');
   color: getColor('black');
   border: 1px solid getColor('black');
+  transition: background-color color border;
+  transition-duration: $duration;
+  transition-timing-function: $timing-function;
 
   &:hover,
   &:focus {

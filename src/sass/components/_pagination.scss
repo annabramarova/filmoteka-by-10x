@@ -19,7 +19,7 @@
   @include mq($width-tablet) {
     margin-top: 60px;
     margin-bottom: 60px;
-    }
+  }
 }
 
 .pagin_button {
@@ -32,30 +32,30 @@
   height: 40px;
 
   border: none;
-background-color: transparent;
-color: getColor('black');
-border-radius: 5px;
+  background-color: transparent;
+  color: getColor('black');
+  border-radius: 5px;
 
-margin: 1px;
+  margin: 1px;
 
-overflow: hidden;
+  overflow: hidden;
 
-    &:hover,
-      &:focus {
+  &:hover,
+  &:focus {
     background-color: getColor('error-text');
     color: getColor('white');
     fill: getColor('white');
-    } 
+  }
 }
 
 .pagin_nothing {
   display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: default;
-  
-    width: 40px;
-    height: 40px;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+
+  width: 40px;
+  height: 40px;
 
   background-color: transparent;
   border-color: transparent;
@@ -67,19 +67,19 @@ overflow: hidden;
   color: getColor('white');
 }
 
-.pagin_button_left{
-    font-size: large;
-background-color: getColor('footer-bgr');
-color: getColor('black');
+.pagin_button_left {
+  font-size: large;
+  background-color: getColor('footer-bgr');
+  color: getColor('black');
 }
 
-.pagin_button_rigth{
-    font-size: large;
-      background-color: getColor('footer-bgr');
-      color: getColor('black');
+.pagin_button_rigth {
+  font-size: large;
+  background-color: getColor('footer-bgr');
+  color: getColor('black');
 }
 
-.pagin_svg{
+.pagin_svg {
   pointer-events: none;
   width: 16px;
   height: 16px;

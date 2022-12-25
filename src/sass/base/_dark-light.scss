@@ -125,9 +125,6 @@
   }
 
   .modal-btn__queue {
-  }
-
-  .modal-btn__queue {
     background-color: transparent;
     color: getColor('white');
     border: 1px solid getColor('white');
@@ -137,6 +134,17 @@
       color: getColor('modal-accent');
       border: 1px solid getColor('modal-accent');
     }
+  }
+
+  .pagin_button,
+  .pagin_nothing {
+    color: getColor('white');
+  }
+
+  .pagin_button_left,
+  .pagin_button_rigth {
+    fill: getColor('white');
+    background-color: getColor('modal-background');
   }
 }
 
