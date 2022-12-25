@@ -1,4 +1,4 @@
-import { genres } from '../data/genres';
+import { genres, genresDictiorary } from '../data/genres';
 
 export function galleryTemplate({
   id,
@@ -9,19 +9,25 @@ export function galleryTemplate({
   vote_average,
 }) {
   let genresArray = [];
-  function getGenres() {
-    genre_ids.map(genreId =>
-      genres.filter(oneGenre => {
-        if (oneGenre.id === genreId) {
-          genresArray.push(`${oneGenre.name}`);
-        }
-      })
-    );
-    if (genresArray.length >= 3) {
-      genresArray.splice(2, genresArray.length - 1, 'Other');
-    }
+
+  // function getGenres() {
+  // genre_ids.map(genreId =>
+  //   genres.filter(oneGenre => {
+  //     if (oneGenre.id === genreId) {
+  //       genresArray.push(`${oneGenre.name}`);
+  //     }
+  //   })
+  // );
+  // if (genresArray.length >= 3) {
+  //   genresArray.splice(2, genresArray.length - 1, 'Other');
+  // }
+  // }
+  // getGenres();
+
+  if (genre_ids.length > 3) {
+    genre_ids.splice(2, genre_ids.length, 'other');
   }
-  getGenres();
+  genresArray = genre_ids.map(genreId => genresDictiorary[genreId]);
 
   const url = `https://image.tmdb.org/t/p/original/${poster_path}`;
   const date = release_date ? release_date.slice(0, 4) : '';
