@@ -8,12 +8,12 @@ const getEmptyWatchedMarkup = GIF => {
   return `
     <div class="plug__container">
       <h1 class="plug__title">Ooops! Is nothing here yet!</h1>      
-      <img class="plag__gif" src="${GIF}" />
+      <img class="plug__gif" src="${GIF}" />
       <p class="plug__text">Hurry up and watch a movie!</p>
-      <button type="button" class="plug__button" data-action="go home">
+      <button type="button" class="plug__button" data-activ="go-home">
         Go Home
       </button>
-      <button type="button" class="plug__button" data-action="go queue">
+      <button type="button" class="plug__button" data-activ="go-queue">
         Go Queue
       </button>
     </div>
@@ -26,7 +26,7 @@ const getEmptyQueueMarkup = GIF => {
       <h1 class="plug__title">Ooops! Is nothing here yet!</h1>
       <img class="plug__gif" src="${GIF}" />
       <p class="plug__text">Hurry up and add the movie!</p>
-      <button type="button" class="plug__button" data-action="go home">
+      <button type="button" class="plug__button" data-activ="go-home">
         Go Home
       </button>  
     </div>

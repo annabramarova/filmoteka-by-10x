@@ -1,9 +1,10 @@
 .plug__container {
-  outline: 1px dashed blue;
   padding: 10px;
   text-align: center;
   font-weight: 700;
   line-height: 1.14;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .plug__title {
@@ -12,13 +13,15 @@
 }
 
 .plug__gif {
-  margin: 0 auto 10px auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
   width: 600px;
 }
 
 .plug__text {
   margin-bottom: 10px;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .plug__button {
@@ -32,37 +35,41 @@
   border-radius: 5px;
   cursor: pointer;
   outline: none;
-  transition-property: color, border-color;
-  transition-duration: $duration;
-  transition-timing-function: $timing-function;
+  box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+    rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+  transition: background-color $duration $timing-function;
 
   &:hover,
   &:focus {
-    color: getColor('accent');
-    border-color: getColor('accent');
+    background-color: getColor('error-text');
   }
 }
 
-[data-activ='watched'] {
-  padding: 12px 35px;
+[data-activ='go-home'] {
+  padding: 12px 36px;
 
-  @media screen and (min-width: 768px) {
-    padding: 12px 46px;
+  @include mq($width-mobile) {
+    margin-right: 10px;
   }
 
-  @media screen and (min-width: 1280px) {
-    padding: 11px 44px;
+  @include mq($width-tablet) {
+    margin-right: 20px;
+    padding: 12px 47px;
+  }
+
+  @include mq($width-desktop) {
+    padding: 11px 45px;
   }
 }
 
-[data-activ='queue'] {
-  padding: 12px 44px;
+[data-activ='go-queue'] {
+  padding: 12px 34px;
 
-  @media screen and (min-width: 768px) {
-    padding: 12px 55px;
+  @include mq($width-tablet) {
+    padding: 12px 45px;
   }
 
-  @media screen and (min-width: 1280px) {
-    padding: 11px 53px;
+  @include mq($width-desktop) {
+    padding: 11px 43px;
   }
 }
