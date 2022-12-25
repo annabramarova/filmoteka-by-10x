@@ -148,3 +148,10 @@ export const genresDictiorary = genres.reduce(
   },
   { other: 'Other' }
 );
+
+export function formatGenres(genre_ids) {
+  if (genre_ids.length > 3) {
+    genre_ids.splice(2, genre_ids.length - 2, 'other');
+  }
+  return genre_ids.map(genreId => genresDictiorary[genreId]);
+}
