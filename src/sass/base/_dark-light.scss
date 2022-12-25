@@ -14,12 +14,44 @@
 // }
 
 .toggle-wrapper {
-  position: relative; //! absolute
+  position: absolute;
   z-index: 1;
+  right: 20px;
+  top: -30px;
+  display: inline-block;
+
+  @include mq($width-tablet) {
+    right: 32px;
+  }
 }
+
 .theme-toggle {
-  //
-  //
+  -webkit-appearance: none;
+  appearance: none;
+  width: 55px;
+  height: 20px;
+  outline: none;
+  border-radius: 10px;
+  background: #33c5f6;
+  transition: 0.3s;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+.theme-toggle:checked {
+  background: #77031a;
+}
+
+.theme-toggle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #e6e6fa;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .dark body {
