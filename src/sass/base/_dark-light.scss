@@ -12,9 +12,14 @@
 //     height: 77px;
 //   }
 // }
-.theme-toggle {
+
+.toggle-wrapper {
   position: relative; //! absolute
   z-index: 1;
+}
+.theme-toggle {
+  //
+  //
 }
 
 .dark body {

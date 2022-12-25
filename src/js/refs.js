@@ -45,8 +45,6 @@ export const refs = {
 
   // emty library-plug
   plug: document.querySelector('.plug'),
-  // goHomeButton: document.querySelector('[data-action="go-home"]'),
-  // goQueueButton: document.querySelector('[data-action="go-queue"]'),
 
   pagin_box: document.querySelector('.pagin_box'),
   pagin_button_el_1: document.querySelector('.pagin_button_el_1'),
@@ -60,4 +58,6 @@ export const refs = {
   pagin_button_el_9: document.querySelector('.pagin_button_el_9'),
   pagin_button_el_10: document.querySelector('.pagin_button_el_10'),
   pagin_button_el_11: document.querySelector('.pagin_button_el_11'),
+
+  // theme-dark/light-toggle
 };
