@@ -56,286 +56,834 @@ function pagin_rander_0() {
   refs.pagin_box.innerHTML = ``;
 }
 
-function pagin_rander_1() {
-  if (page === 1) {
-    refs.pagin_box.innerHTML = `
-    <button type="submit" class="pagin_button pagin_accent">${page}</button>`;
-  }
-}
-
 function pagin_rander_2() {
   if (page === 1) {
-    refs.pagin_box.innerHTML = `
-    <button type="submit" class="pagin_button pagin_accent">${page}</button>
-    <button type="submit" class="pagin_button">${pageAfter}</button>
-    <button type="submit" class="pagin_button pagin_button_rigth">🡲</button>
-`;
-  } else {
-    refs.pagin_box.innerHTML = `
-    <button type="submit" class="pagin_button pagin_button_left">🡰</button>
-    <button type="submit" class="pagin_button">${pageBefore}</button>
-    <button type="submit" class="pagin_button pagin_accent">${page}</button>`;
+    if (refs.pagin_button_el_1.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_1.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_2.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_2.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_3.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_3.classList.add('hidden');
+    }
+    if (refs.pagin_button_el_4.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_4.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_5.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_5.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_8.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_8.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_9.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_9.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_10.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_10.classList.add('hidden');
+    }
+    refs.pagin_button_el_6.classList.add('pagin_accent');
+
+    refs.pagin_button_el_6.innerHTML = `${page}`;
+    refs.pagin_button_el_7.innerHTML = `${pageAfter}`;
+  } else if (page === 2) {
+    if (refs.pagin_button_el_1.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_1.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_2.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_2.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_3.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_3.classList.add('hidden');
+    }
+    if (refs.pagin_button_el_4.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_4.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_5.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_5.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_8.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_8.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_9.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_9.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_10.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_10.classList.add('hidden');
+    }
+    refs.pagin_button_el_7.classList.add('pagin_accent');
+
+    refs.pagin_button_el_6.innerHTML = `${pageBefore}`;
+    refs.pagin_button_el_7.innerHTML = `${page}`;
   }
 }
 
 function pagin_rander_3() {
   if (page === 1) {
-    refs.pagin_box.innerHTML = `
-    <button type="submit" class="pagin_button pagin_accent">${page}</button>
-    <button type="submit" class="pagin_button">${pageAfter}</button>
-    <button type="submit" class="pagin_button">${pageAfterTwo}</button>
-        <button type="submit" class="pagin_button pagin_button_rigth">🡲</button>
-`;
+    if (refs.pagin_button_el_1.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_1.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_2.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_2.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_3.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_3.classList.add('hidden');
+    }
+    if (refs.pagin_button_el_4.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_4.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_5.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_5.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_9.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_9.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_10.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_10.classList.add('hidden');
+    }
+    refs.pagin_button_el_6.classList.add('pagin_accent');
+
+    refs.pagin_button_el_6.innerHTML = `${page}`;
+    refs.pagin_button_el_7.innerHTML = `${pageAfter}`;
+    refs.pagin_button_el_8.innerHTML = `${pageAfterTwo}`;
   } else if (page === 2) {
-    refs.pagin_box.innerHTML = `
-    <button type="submit" class="pagin_button pagin_button_left">🡰</button>
-    <button type="submit" class="pagin_button">${pageBefore}</button>
-    <button type="submit" class="pagin_button pagin_accent">${page}</button>
-    <button type="submit" class="pagin_button">${pageAfter}</button>
-        <button type="submit" class="pagin_button pagin_button_rigth">🡲</button>
-`;
+    if (refs.pagin_button_el_2.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_2.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_3.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_3.classList.add('hidden');
+    }
+    if (refs.pagin_button_el_4.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_4.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_5.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_5.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_9.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_9.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_10.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_10.classList.add('hidden');
+    }
+    refs.pagin_button_el_7.classList.add('pagin_accent');
+
+    refs.pagin_button_el_6.innerHTML = `${pageBefore}`;
+    refs.pagin_button_el_7.innerHTML = `${page}`;
+    refs.pagin_button_el_8.innerHTML = `${pageAfter}`;
   } else if (page === 3) {
-    refs.pagin_box.innerHTML = `
-    <button type="submit" class="pagin_button pagin_button_left">🡰</button>
-    <button type="submit" class="pagin_button">${pageBeforeTwo}</button>
-    <button type="submit" class="pagin_button">${pageBefore}</button>
-    <button type="submit" class="pagin_button pagin_accent">${page}</button>`;
+    if (refs.pagin_button_el_2.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_2.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_3.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_3.classList.add('hidden');
+    }
+    if (refs.pagin_button_el_4.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_4.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_5.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_5.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_9.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_9.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_10.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_10.classList.add('hidden');
+    }
+
+    refs.pagin_button_el_8.classList.add('pagin_accent');
+
+    refs.pagin_button_el_6.innerHTML = `${pageBeforeTwo}`;
+    refs.pagin_button_el_7.innerHTML = `${pageBefore}`;
+    refs.pagin_button_el_8.innerHTML = `${page}`;
   }
 }
 
 function pagin_rander_4() {
   if (page === 1) {
-    refs.pagin_box.innerHTML = `
-    <button type="submit" class="pagin_button pagin_accent">${page}</button>
-    <button type="submit" class="pagin_button">${pageAfter}</button>
-    <button type="submit" class="pagin_button">${pageAfterTwo}</button>
-    <button type="submit" class="pagin_button">${pageAfterThree}</button>
-    <button type="submit" class="pagin_button pagin_button_rigth">🡲</button>`;
+    if (refs.pagin_button_el_1.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_1.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_2.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_2.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_3.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_3.classList.add('hidden');
+    }
+    if (refs.pagin_button_el_4.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_4.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_9.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_9.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_10.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_10.classList.add('hidden');
+    }
+    refs.pagin_button_el_5.classList.add('pagin_accent');
+
+    refs.pagin_button_el_5.innerHTML = `${page}`;
+    refs.pagin_button_el_6.innerHTML = `${pageAfter}`;
+    refs.pagin_button_el_7.innerHTML = `${pageAfterTwo}`;
+    refs.pagin_button_el_8.innerHTML = `${pageAfterThree}`;
   } else if (page === 2) {
-    refs.pagin_box.innerHTML = `
-    <button type="submit" class="pagin_button pagin_button_left">🡰</button>
+    if (refs.pagin_button_el_2.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_2.classList.add('hidden');
+    }
 
-    <button type="submit" class="pagin_button">${pageBefore}</button>
-    <button type="submit" class="pagin_button pagin_accent">${page}</button>
-    <button type="submit" class="pagin_button">${pageAfter}</button>
-    <button type="submit" class="pagin_button">${pageAfterTwo}</button>
-    <button type="submit" class="pagin_button pagin_button_rigth">🡲</button>`;
+    if (refs.pagin_button_el_3.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_3.classList.add('hidden');
+    }
+    if (refs.pagin_button_el_4.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_4.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_9.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_9.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_10.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_10.classList.add('hidden');
+    }
+    refs.pagin_button_el_6.classList.add('pagin_accent');
+
+    refs.pagin_button_el_5.innerHTML = `${pageBefore}`;
+    refs.pagin_button_el_6.innerHTML = `${page}`;
+    refs.pagin_button_el_7.innerHTML = `${pageAfter}`;
+    refs.pagin_button_el_8.innerHTML = `${pageAfterTwo}`;
   } else if (page === 3) {
-    refs.pagin_box.innerHTML = `
-    <button type="submit" class="pagin_button pagin_button_left">🡰</button>
+    if (refs.pagin_button_el_2.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_2.classList.add('hidden');
+    }
 
-    <button type="submit" class="pagin_button">${pageBeforeTwo}</button>
-    <button type="submit" class="pagin_button">${pageBefore}</button>
-    <button type="submit" class="pagin_button pagin_accent">${page}</button>
-    <button type="submit" class="pagin_button">${pageAfter}</button>
-    <button type="submit" class="pagin_button pagin_button_rigth">🡲</button>`;
+    if (refs.pagin_button_el_3.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_3.classList.add('hidden');
+    }
+    if (refs.pagin_button_el_4.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_4.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_9.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_9.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_10.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_10.classList.add('hidden');
+    }
+
+    refs.pagin_button_el_7.classList.add('pagin_accent');
+
+    refs.pagin_button_el_5.innerHTML = `${pageBeforeTwo}`;
+    refs.pagin_button_el_6.innerHTML = `${pageBefore}`;
+    refs.pagin_button_el_7.innerHTML = `${page}`;
+    refs.pagin_button_el_8.innerHTML = `${pageAfter}`;
   } else if (page === 4) {
-    refs.pagin_box.innerHTML = `
-    <button type="submit" class="pagin_button pagin_button_left">🡰</button>
+    if (refs.pagin_button_el_2.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_2.classList.add('hidden');
+    }
 
-    <button type="submit" class="pagin_button">${pageBeforeThree}</button>
-    <button type="submit" class="pagin_button">${pageBeforeTwo}</button>
-    <button type="submit" class="pagin_button">${pageBefore}</button>
-    <button type="submit" class="pagin_button pagin_accent">${page}</button>`;
+    if (refs.pagin_button_el_3.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_3.classList.add('hidden');
+    }
+    if (refs.pagin_button_el_4.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_4.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_9.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_9.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_10.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_10.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_11.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_11.classList.add('hidden');
+    }
+
+    refs.pagin_button_el_8.classList.add('pagin_accent');
+
+    refs.pagin_button_el_5.innerHTML = `${pageBeforeThree}`;
+    refs.pagin_button_el_6.innerHTML = `${pageBeforeTwo}`;
+    refs.pagin_button_el_7.innerHTML = `${pageBefore}`;
+    refs.pagin_button_el_8.innerHTML = `${page}`;
   }
 }
 
 function pagin_rander_5() {
   if (page === 1) {
-    refs.pagin_box.innerHTML = `
-    <button type="submit" class="pagin_button pagin_accent">${page}</button>
-    <button type="submit" class="pagin_button">${pageAfter}</button>
-    <button type="submit" class="pagin_button">${pageAfterTwo}</button>
-    <button type="submit" class="pagin_button">${pageAfterThree}</button>
-    <button type="submit" class="pagin_button">${pageAfterFour}</button>
-    <button type="submit" class="pagin_button pagin_button_rigth">🡲</button>`;
+    if (refs.pagin_button_el_1.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_1.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_2.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_2.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_3.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_3.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_9.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_9.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_10.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_10.classList.add('hidden');
+    }
+    refs.pagin_button_el_4.classList.add('pagin_accent');
+
+    refs.pagin_button_el_4.innerHTML = `${page}`;
+    refs.pagin_button_el_5.innerHTML = `${pageAfter}`;
+    refs.pagin_button_el_6.innerHTML = `${pageAfterTwo}`;
+    refs.pagin_button_el_7.innerHTML = `${pageAfterThree}`;
+    refs.pagin_button_el_8.innerHTML = `${pageAfterFour}`;
   } else if (page === 2) {
-    refs.pagin_box.innerHTML = `
-    <button type="submit" class="pagin_button pagin_button_left">🡰</button>
-    <button type="submit" class="pagin_button">${pageBefore}</button>
-    <button type="submit" class="pagin_button pagin_accent">${page}</button>
-    <button type="submit" class="pagin_button">${pageAfter}</button>
-    <button type="submit" class="pagin_button">${pageAfterTwo}</button>
-    <button type="submit" class="pagin_button">${pageAfterThree}</button>
-    <button type="submit" class="pagin_button pagin_button_rigth">🡲</button>`;
+    if (refs.pagin_button_el_2.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_2.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_3.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_3.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_9.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_9.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_10.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_10.classList.add('hidden');
+    }
+    refs.pagin_button_el_5.classList.add('pagin_accent');
+
+    refs.pagin_button_el_4.innerHTML = `${pageBefore}`;
+    refs.pagin_button_el_5.innerHTML = `${page}`;
+    refs.pagin_button_el_6.innerHTML = `${pageAfter}`;
+    refs.pagin_button_el_7.innerHTML = `${pageAfterTwo}`;
+    refs.pagin_button_el_8.innerHTML = `${pageAfterThree}`;
   } else if (page === 3) {
-    refs.pagin_box.innerHTML = `
-    <button type="submit" class="pagin_button pagin_button_left">🡰</button>
-    <button type="submit" class="pagin_button">${pageBeforeTwo}</button>
-    <button type="submit" class="pagin_button">${pageBefore}</button>
-    <button type="submit" class="pagin_button pagin_accent">${page}</button>
-    <button type="submit" class="pagin_button">${pageAfter}</button>
-    <button type="submit" class="pagin_button">${pageAfterTwo}</button>
-    <button type="submit" class="pagin_button pagin_button_rigth">🡲</button>`;
+    if (refs.pagin_button_el_2.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_2.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_3.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_3.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_9.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_9.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_10.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_10.classList.add('hidden');
+    }
+    refs.pagin_button_el_6.classList.add('pagin_accent');
+
+    refs.pagin_button_el_4.innerHTML = `${pageBeforeTwo}`;
+    refs.pagin_button_el_5.innerHTML = `${pageBefore}`;
+    refs.pagin_button_el_6.innerHTML = `${page}`;
+    refs.pagin_button_el_7.innerHTML = `${pageAfter}`;
+    refs.pagin_button_el_8.innerHTML = `${pageAfterTwo}`;
   } else if (page === 4) {
-    refs.pagin_box.innerHTML = `
-    <button type="submit" class="pagin_button pagin_button_left">🡰</button>
-    <button type="submit" class="pagin_button">${pageBeforeThree}</button>
-    <button type="submit" class="pagin_button">${pageBeforeTwo}</button>
-    <button type="submit" class="pagin_button">${pageBefore}</button>
-    <button type="submit" class="pagin_button" pagin_accent>${page}</button>
-    <button type="submit" class="pagin_button">${pageAfter}</button>
-    <button type="submit" class="pagin_button pagin_button_rigth">🡲</button>`;
+    if (refs.pagin_button_el_2.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_2.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_3.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_3.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_9.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_9.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_10.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_10.classList.add('hidden');
+    }
+    refs.pagin_button_el_7.classList.add('pagin_accent');
+
+    refs.pagin_button_el_4.innerHTML = `${pageBeforeThree}`;
+    refs.pagin_button_el_5.innerHTML = `${pageBeforeTwo}`;
+    refs.pagin_button_el_6.innerHTML = `${pageBefore}`;
+    refs.pagin_button_el_7.innerHTML = `${page}`;
+    refs.pagin_button_el_8.innerHTML = `${pageAfter}`;
   } else if (page === 5) {
-    refs.pagin_box.innerHTML = `
-    <button type="submit" class="pagin_button pagin_button_left">🡰</button>
-    <button type="submit" class="pagin_button">${pageBeforeFour}</button>
-    <button type="submit" class="pagin_button">${pageBeforeThree}</button>
-    <button type="submit" class="pagin_button">${pageBeforeTwo}</button>
-    <button type="submit" class="pagin_button" pagin_accent>${pageBefore}</button>
-    <button type="submit" class="pagin_button">${page}</button>`;
+    if (refs.pagin_button_el_2.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_2.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_3.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_3.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_9.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_9.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_10.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_10.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_11.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_11.classList.add('hidden');
+    }
+
+    refs.pagin_button_el_8.classList.add('pagin_accent');
+
+    refs.pagin_button_el_5.innerHTML = `${pageBeforeFour}`;
+    refs.pagin_button_el_5.innerHTML = `${pageBeforeThree}`;
+    refs.pagin_button_el_6.innerHTML = `${pageBeforeTwo}`;
+    refs.pagin_button_el_7.innerHTML = `${pageBefore}`;
+    refs.pagin_button_el_8.innerHTML = `${page}`;
   }
 }
 
 function pagin_rander_6() {
   if (page === 1) {
-    refs.pagin_box.innerHTML = `
-    <button type="submit" class="pagin_button pagin_accent">${page}</button>
-    <button type="submit" class="pagin_button">${pageAfter}</button>
-    <button type="submit" class="pagin_button">${pageAfterTwo}</button>
-    <button type="submit" class="pagin_button">${pageAfterThree}</button>
-    <button type="submit" class="pagin_button">${pageAfterFour}</button>
-    <button type="submit" class="pagin_button">${maxPage}</button>
-    <button type="submit" class="pagin_button pagin_button_rigth">🡲</button>`;
+    pagin_button_remove_hidden();
+    pagin_button_remove_accent();
+
+    if (refs.pagin_button_el_1.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_1.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_2.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_2.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_3.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_3.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_9.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_9.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_10.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_10.classList.add('hidden');
+    }
+
+    refs.pagin_button_el_4.classList.add('pagin_accent');
+
+    refs.pagin_button_el_4.innerHTML = `${page}`;
+    refs.pagin_button_el_5.innerHTML = `${pageAfter}`;
+    refs.pagin_button_el_6.innerHTML = `${pageAfterTwo}`;
+    refs.pagin_button_el_7.innerHTML = `${pageAfterThree}`;
+    refs.pagin_button_el_8.innerHTML = `${pageAfterFour}`;
+    refs.pagin_button_el_10.innerHTML = `${maxPage}`;
   } else if (page === 2) {
-    refs.pagin_box.innerHTML = `
-    <button type="submit" class="pagin_button pagin_button_left">🡰</button>
-    <button type="submit" class="pagin_button">${pageBefore}</button>
-    <button type="submit" class="pagin_button pagin_accent">${page}</button>
-    <button type="submit" class="pagin_button">${pageAfter}</button>
-    <button type="submit" class="pagin_button">${pageAfterTwo}</button>
-    <button type="submit" class="pagin_button">${pageAfterThree}</button>
-    <button type="submit" class="pagin_button">${pageAfterFour}</button>
-    <button type="submit" class="pagin_button pagin_button_rigth">🡲</button>`;
+    pagin_button_remove_accent();
+    pagin_button_remove_hidden();
+
+    if (refs.pagin_button_el_2.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_2.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_3.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_3.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_9.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_9.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_10.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_10.classList.add('hidden');
+    }
+
+    refs.pagin_button_el_5.classList.add('pagin_accent');
+
+    refs.pagin_button_el_4.innerHTML = `${pageBefore}`;
+    refs.pagin_button_el_5.innerHTML = `${page}`;
+    refs.pagin_button_el_6.innerHTML = `${pageAfter}`;
+    refs.pagin_button_el_7.innerHTML = `${pageAfterTwo}`;
+    refs.pagin_button_el_8.innerHTML = `${pageAfterThree}`;
   } else if (page === 3) {
-    refs.pagin_box.innerHTML = `
-    <button type="submit" class="pagin_button pagin_button_left">🡰</button>
-    <button type="submit" class="pagin_button">${pageBeforeTwo}</button>
-    <button type="submit" class="pagin_button">${pageBefore}</button>
-    <button type="submit" class="pagin_button pagin_accent">${page}</button>
-    <button type="submit" class="pagin_button">${pageAfter}</button>
-    <button type="submit" class="pagin_button">${pageAfterTwo}</button>
-    <button type="submit" class="pagin_button">${pageAfterThree}</button>
-    <button type="submit" class="pagin_button pagin_button_rigth">🡲</button>`;
+    pagin_button_remove_accent();
+    pagin_button_remove_hidden();
+
+    if (refs.pagin_button_el_2.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_2.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_3.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_3.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_9.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_9.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_10.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_10.classList.add('hidden');
+    }
+
+    refs.pagin_button_el_6.classList.add('pagin_accent');
+
+    refs.pagin_button_el_5.innerHTML = `${pageBeforeTwo}`;
+    refs.pagin_button_el_5.innerHTML = `${pageBefore}`;
+    refs.pagin_button_el_6.innerHTML = `${page}`;
+    refs.pagin_button_el_7.innerHTML = `${pageAfter}`;
+    refs.pagin_button_el_8.innerHTML = `${pageAfterTwo}`;
   } else if (page === 4) {
-    refs.pagin_box.innerHTML = `
-    <button type="submit" class="pagin_button pagin_button_left">🡰</button>
-    <button type="submit" class="pagin_button">${pageBeforeThree}</button>
-    <button type="submit" class="pagin_button">${pageBeforeTwo}</button>
-    <button type="submit" class="pagin_button">${pageBefore}</button>
-    <button type="submit" class="pagin_button" pagin_accent>${page}</button>
-    <button type="submit" class="pagin_button">${pageAfter}</button>
-    <button type="submit" class="pagin_button">${pageAfterTwo}</button>
-    <button type="submit" class="pagin_button pagin_button_rigth">🡲</button>`;
+    pagin_button_remove_accent();
+    pagin_button_remove_hidden();
+
+    if (refs.pagin_button_el_2.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_2.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_3.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_3.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_9.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_9.classList.add('hidden');
+    }
+
+    refs.pagin_button_el_7.classList.add('pagin_accent');
+
+    refs.pagin_button_el_4.innerHTML = `${pageBeforeThree}`;
+    refs.pagin_button_el_5.innerHTML = `${pageBeforeTwo}`;
+    refs.pagin_button_el_6.innerHTML = `${pageBefore}`;
+    refs.pagin_button_el_7.innerHTML = `${page}`;
+    refs.pagin_button_el_8.innerHTML = `${pageAfter}`;
+    refs.pagin_button_el_10.innerHTML = `${maxPage}`;
   } else if (page === 5) {
-    refs.pagin_box.innerHTML = `
-    <button type="submit" class="pagin_button pagin_button_left">🡰</button>
-    <button type="submit" class="pagin_button">${pageBeforeFour}</button>
-    <button type="submit" class="pagin_button">${pageBeforeThree}</button>
-    <button type="submit" class="pagin_button">${pageBeforeTwo}</button>
-    <button type="submit" class="pagin_button">${pageBefore}</button>
-    <button type="submit" class="pagin_button" pagin_accent>${page}</button>
-    <button type="submit" class="pagin_button">${pageAfter}</button>
-    <button type="submit" class="pagin_button pagin_button_rigth">🡲</button>`;
-  } else if (page === 6) {
-    refs.pagin_box.innerHTML = `
-    <button type="submit" class="pagin_button pagin_button_left">🡰</button>
-    <button type="submit" class="pagin_button">${minPage}</button>
-    <button type="submit" class="pagin_button">${pageBeforeFour}</button>
-    <button type="submit" class="pagin_button">${pageBeforeThree}</button>
-    <button type="submit" class="pagin_button">${pageBeforeTwo}</button>
-    <button type="submit" class="pagin_button">${pageBefore}</button>
-    <button type="submit" class="pagin_button" pagin_accent>${page}</button>`;
+    pagin_button_remove_accent();
+    pagin_button_remove_hidden();
+
+    if (refs.pagin_button_el_2.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_2.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_3.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_3.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_9.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_9.classList.add('hidden');
+    }
+
+    refs.pagin_button_el_7.classList.add('pagin_accent');
+
+    refs.pagin_button_el_4.innerHTML = `${pageBeforeThree}`;
+    refs.pagin_button_el_5.innerHTML = `${pageBeforeTwo}`;
+    refs.pagin_button_el_6.innerHTML = `${pageBefore}`;
+    refs.pagin_button_el_7.innerHTML = `${page}`;
+    refs.pagin_button_el_8.innerHTML = `${pageAfter}`;
+    refs.pagin_button_el_10.innerHTML = `${maxPage}`;
+  } else if (page === maxPage) {
+    pagin_button_remove_accent();
+    pagin_button_remove_hidden();
+
+    if (refs.pagin_button_el_3.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_3.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_9.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_9.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_10.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_10.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_11.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_11.classList.add('hidden');
+    }
+
+    refs.pagin_button_el_8.classList.add('pagin_accent');
+
+    refs.pagin_button_el_4.innerHTML = `${pageBeforeFour}`;
+    refs.pagin_button_el_5.innerHTML = `${pageBeforeThree}`;
+    refs.pagin_button_el_6.innerHTML = `${pageBeforeTwo}`;
+    refs.pagin_button_el_7.innerHTML = `${pageBefore}`;
+    refs.pagin_button_el_8.innerHTML = `${page}`;
   }
 }
 
 function pagin_rander_7() {
   if (page === 1) {
-    refs.pagin_box.innerHTML = `
-    <button type="submit" class="pagin_button pagin_accent">${page}</button>
-    <button type="submit" class="pagin_button">${pageAfter}</button>
-    <button type="submit" class="pagin_button">${pageAfterTwo}</button>
-    <button type="submit" class="pagin_button">${pageAfterThree}</button>
-    <button type="submit" class="pagin_button">${pageAfterFour}</button>
-    <p class="pagin_nothing">...</p>
-    <button type="submit" class="pagin_button">${maxPage}</button>
-    <button type="submit" class="pagin_button pagin_button_rigth">🡲</button>
-    `;
+    pagin_button_remove_hidden();
+    pagin_button_remove_accent();
+
+    if (refs.pagin_button_el_1.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_1.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_2.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_2.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_3.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_3.classList.add('hidden');
+    }
+
+    refs.pagin_button_el_4.classList.add('pagin_accent');
+
+    refs.pagin_button_el_4.innerHTML = `${page}`;
+    refs.pagin_button_el_5.innerHTML = `${pageAfter}`;
+    refs.pagin_button_el_6.innerHTML = `${pageAfterTwo}`;
+    refs.pagin_button_el_7.innerHTML = `${pageAfterThree}`;
+    refs.pagin_button_el_8.innerHTML = `${pageAfterFour}`;
+    refs.pagin_button_el_10.innerHTML = `${maxPage}`;
   } else if (page === 2) {
-    refs.pagin_box.innerHTML = `
-    <button type="submit" class="pagin_button pagin_button_left">🡰</button>
-    <button type="submit" class="pagin_button">${pageBefore}</button>
-    <button type="submit" class="pagin_button pagin_accent">${page}</button>
-    <button type="submit" class="pagin_button">${pageAfter}</button>
-    <button type="submit" class="pagin_button">${pageAfterTwo}</button>
-    <button type="submit" class="pagin_button">${pageAfterThree}</button>
-    <p class="pagin_nothing">...</p>
-    <button type="submit" class="pagin_button">${maxPage}</button>
-    <button type="submit" class="pagin_button pagin_button_rigth">🡲</button>
-  `;
+    pagin_button_remove_accent();
+    pagin_button_remove_hidden();
+    if (refs.pagin_button_el_2.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_2.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_3.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_3.classList.add('hidden');
+    }
+    refs.pagin_button_el_5.classList.add('pagin_accent');
+
+    refs.pagin_button_el_4.innerHTML = `${pageBefore}`;
+    refs.pagin_button_el_5.innerHTML = `${page}`;
+    refs.pagin_button_el_6.innerHTML = `${pageAfter}`;
+    refs.pagin_button_el_7.innerHTML = `${pageAfterTwo}`;
+    refs.pagin_button_el_8.innerHTML = `${pageAfterThree}`;
+    refs.pagin_button_el_10.innerHTML = `${maxPage}`;
   } else if (page === 3) {
-    refs.pagin_box.innerHTML = `
-    <button type="submit" class="pagin_button pagin_button_left">🡰</button>
-    <button type="submit" class="pagin_button">${pageBeforeTwo}</button>
-    <button type="submit" class="pagin_button">${pageBefore}</button>
-    <button type="submit" class="pagin_button pagin_accent">${page}</button>
-    <button type="submit" class="pagin_button">${pageAfter}</button>
-    <button type="submit" class="pagin_button">${pageAfterTwo}</button>
-    <p class="pagin_nothing">...</p>
-    <button type="submit" class="pagin_button">${maxPage}</button>
-    <button type="submit" class="pagin_button pagin_button_rigth">🡲</button>
-  `;
+    pagin_button_remove_accent();
+    pagin_button_remove_hidden();
+
+    if (refs.pagin_button_el_2.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_2.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_3.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_3.classList.add('hidden');
+    }
+
+    refs.pagin_button_el_6.classList.add('pagin_accent');
+
+    refs.pagin_button_el_4.innerHTML = `${pageBeforeTwo}`;
+    refs.pagin_button_el_5.innerHTML = `${pageBefore}`;
+    refs.pagin_button_el_6.innerHTML = `${page}`;
+    refs.pagin_button_el_7.innerHTML = `${pageAfter}`;
+    refs.pagin_button_el_8.innerHTML = `${pageAfterTwo}`;
+    refs.pagin_button_el_10.innerHTML = `${maxPage}`;
   } else if (page >= 4 && page <= maxPage - 3) {
-    refs.pagin_box.innerHTML = `
-    <button type="submit" class="pagin_button pagin_button_left">🡰</button>
-    <button type="submit" class="pagin_button">${minPage}</button>
-    <p class="pagin_nothing">...</p>
-    <button type="submit" class="pagin_button">${pageBeforeTwo}</button>
-    <button type="submit" class="pagin_button">${pageBefore}</button>
-    <button type="submit" class="pagin_button pagin_accent">${page}</button>
-    <button type="submit" class="pagin_button">${pageAfter}</button>
-    <button type="submit" class="pagin_button">${pageAfterTwo}</button>
-    <p class="pagin_nothing">...</p>
-    <button type="submit" class="pagin_button">${maxPage}</button>
-    <button type="submit" class="pagin_button pagin_button_rigth">🡲</button>
-  `;
+    pagin_button_remove_accent();
+    pagin_button_remove_hidden();
+
+    refs.pagin_button_el_6.classList.add('pagin_accent');
+
+    refs.pagin_button_el_2.innerHTML = `${minPage}`;
+    refs.pagin_button_el_4.innerHTML = `${pageBeforeTwo}`;
+    refs.pagin_button_el_5.innerHTML = `${pageBefore}`;
+    refs.pagin_button_el_6.innerHTML = `${page}`;
+    refs.pagin_button_el_7.innerHTML = `${pageAfter}`;
+    refs.pagin_button_el_8.innerHTML = `${pageAfterTwo}`;
+    refs.pagin_button_el_10.innerHTML = `${maxPage}`;
   } else if (page === maxPage - 2) {
-    refs.pagin_box.innerHTML = `
-    <button type="submit" class="pagin_button pagin_button_left">🡰</button>
+    pagin_button_remove_accent();
+    pagin_button_remove_hidden();
 
-    <button type="submit" class="pagin_button">${minPage}</button>
-    <p class="pagin_nothing">...</p>
-    <button type="submit" class="pagin_button">${pageBeforeThree}</button>
-    <button type="submit" class="pagin_button">${pageBefore}</button>
-    <button type="submit" class="pagin_button pagin_accent">${page}</button>
-    <button type="submit" class="pagin_button">${pageAfter}</button>
-    <button type="submit" class="pagin_button">${pageAfterTwo}</button>
-    <button type="submit" class="pagin_button pagin_button_rigth">🡲</button>
-  `;
+    if (refs.pagin_button_el_10.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_10.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_9.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_9.classList.add('hidden');
+    }
+
+    refs.pagin_button_el_6.classList.add('pagin_accent');
+
+    refs.pagin_button_el_4.innerHTML = `${pageBeforeTwo}`;
+    refs.pagin_button_el_5.innerHTML = `${pageBefore}`;
+    refs.pagin_button_el_6.innerHTML = `${page}`;
+    refs.pagin_button_el_7.innerHTML = `${pageAfter}`;
+    refs.pagin_button_el_8.innerHTML = `${pageAfterTwo}`;
+    refs.pagin_button_el_10.innerHTML = `${maxPage}`;
   } else if (page === maxPage - 1) {
-    refs.pagin_box.innerHTML = `
-    <button type="submit" class="pagin_button pagin_button_left">🡰</button>
-    <button type="submit" class="pagin_button">${minPage}</button>
-    <p class="pagin_nothing">...</p>
-    <button type="submit" class="pagin_button">${pageBeforeThree}</button>
-    <button type="submit" class="pagin_button">${pageBeforeTwo}</button>
-    <button type="submit" class="pagin_button">${pageBefore}</button>
-    <button type="submit" class="pagin_button pagin_accent">${page}</button>
-    <button type="submit" class="pagin_button">${pageAfter}</button>
-    <button type="submit" class="pagin_button pagin_button_rigth">🡲</button>
-  `;
-  } else if (page === maxPage) {
-    refs.pagin_box.innerHTML = `
-    <button type="submit" class="pagin_button pagin_button_left">🡰</button>
+    pagin_button_remove_accent();
+    pagin_button_remove_hidden();
 
-    <button type="submit" class="pagin_button">${minPage}</button>
-    <p class="pagin_nothing">...</p>
-    <button type="submit" class="pagin_button">${pageBeforeFour}</button>
-    <button type="submit" class="pagin_button">${pageBeforeThree}</button>
-    <button type="submit" class="pagin_button">${pageBeforeTwo}</button>
-    <button type="submit" class="pagin_button">${pageBefore}</button>
-    <button type="submit" class="pagin_button pagin_accent">${page}</button>
-    `;
+    if (refs.pagin_button_el_10.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_10.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_9.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_9.classList.add('hidden');
+    }
+    refs.pagin_button_el_7.classList.add('pagin_accent');
+
+    refs.pagin_button_el_2.innerHTML = `${minPage}`;
+
+    refs.pagin_button_el_4.innerHTML = `${pageBeforeThree}`;
+    refs.pagin_button_el_5.innerHTML = `${pageBeforeTwo}`;
+    refs.pagin_button_el_6.innerHTML = `${pageBefore}`;
+    refs.pagin_button_el_7.innerHTML = `${page}`;
+    refs.pagin_button_el_8.innerHTML = `${pageAfter}`;
+  } else if (page === maxPage) {
+    pagin_button_remove_accent();
+    pagin_button_remove_hidden();
+    if (refs.pagin_button_el_11.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_11.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_10.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_10.classList.add('hidden');
+    }
+
+    if (refs.pagin_button_el_9.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_9.classList.add('hidden');
+    }
+    refs.pagin_button_el_8.classList.add('pagin_accent');
+
+    refs.pagin_button_el_2.innerHTML = `${minPage}`;
+    refs.pagin_button_el_4.innerHTML = `${pageBeforeFour}`;
+    refs.pagin_button_el_5.innerHTML = `${pageBeforeThree}`;
+    refs.pagin_button_el_6.innerHTML = `${pageBeforeTwo}`;
+    refs.pagin_button_el_7.innerHTML = `${pageBefore}`;
+    refs.pagin_button_el_8.innerHTML = `${page}`;
   }
 }
 
@@ -346,8 +894,7 @@ function on_pagin_button(evt) {
     if (Number(page) === Number(evt.target.innerText)) {
       return;
     }
-
-    if (evt.target.innerText === '🡰') {
+    if (evt.target.classList.contains('pagin_button_left')) {
       page--;
 
       pagin_namer_button();
@@ -355,7 +902,7 @@ function on_pagin_button(evt) {
       return on_pagin_rander();
     }
 
-    if (evt.target.innerText === '🡲') {
+    if (evt.target.classList.contains('pagin_button_el_11')) {
       page++;
 
       pagin_namer_button();
@@ -380,4 +927,98 @@ function pagin_namer_button() {
   pageAfterTwo = page + 2;
   pageAfterThree = page + 3;
   pageAfterFour = page + 4;
+}
+
+function pagin_button_remove_hidden() {
+  if (refs.pagin_button_el_1.classList.contains('hidden') === false) {
+  } else {
+    refs.pagin_button_el_1.classList.remove('hidden');
+  }
+  if (refs.pagin_button_el_2.classList.contains('hidden') === false) {
+  } else {
+    refs.pagin_button_el_2.classList.remove('hidden');
+  }
+  if (refs.pagin_button_el_3.classList.contains('hidden') === false) {
+  } else {
+    refs.pagin_button_el_3.classList.remove('hidden');
+  }
+  if (refs.pagin_button_el_4.classList.contains('hidden') === false) {
+  } else {
+    refs.pagin_button_el_4.classList.remove('hidden');
+  }
+  if (refs.pagin_button_el_5.classList.contains('hidden') === false) {
+  } else {
+    refs.pagin_button_el_5.classList.remove('hidden');
+  }
+  if (refs.pagin_button_el_6.classList.contains('hidden') === false) {
+  } else {
+    refs.pagin_button_el_6.classList.remove('hidden');
+  }
+  if (refs.pagin_button_el_7.classList.contains('hidden') === false) {
+  } else {
+    refs.pagin_button_el_7.classList.remove('hidden');
+  }
+  if (refs.pagin_button_el_8.classList.contains('hidden') === false) {
+  } else {
+    refs.pagin_button_el_8.classList.remove('hidden');
+  }
+  if (refs.pagin_button_el_9.classList.contains('hidden') === false) {
+  } else {
+    refs.pagin_button_el_9.classList.remove('hidden');
+  }
+  if (refs.pagin_button_el_10.classList.contains('hidden') === false) {
+  } else {
+    refs.pagin_button_el_10.classList.remove('hidden');
+  }
+  if (refs.pagin_button_el_11.classList.contains('hidden') === false) {
+  } else {
+    refs.pagin_button_el_11.classList.remove('hidden');
+  }
+}
+
+function pagin_button_remove_accent() {
+  if (refs.pagin_button_el_1.classList.contains('pagin_accent') === false) {
+  } else {
+    refs.pagin_button_el_1.classList.remove('pagin_accent');
+  }
+  if (refs.pagin_button_el_2.classList.contains('pagin_accent') === false) {
+  } else {
+    refs.pagin_button_el_2.classList.remove('pagin_accent');
+  }
+  if (refs.pagin_button_el_3.classList.contains('pagin_accent') === false) {
+  } else {
+    refs.pagin_button_el_3.classList.remove('pagin_accent');
+  }
+  if (refs.pagin_button_el_4.classList.contains('pagin_accent') === false) {
+  } else {
+    refs.pagin_button_el_4.classList.remove('pagin_accent');
+  }
+  if (refs.pagin_button_el_5.classList.contains('pagin_accent') === false) {
+  } else {
+    refs.pagin_button_el_5.classList.remove('pagin_accent');
+  }
+  if (refs.pagin_button_el_6.classList.contains('pagin_accent') === false) {
+  } else {
+    refs.pagin_button_el_6.classList.remove('pagin_accent');
+  }
+  if (refs.pagin_button_el_7.classList.contains('pagin_accent') === false) {
+  } else {
+    refs.pagin_button_el_7.classList.remove('pagin_accent');
+  }
+  if (refs.pagin_button_el_8.classList.contains('pagin_accent') === false) {
+  } else {
+    refs.pagin_button_el_8.classList.remove('pagin_accent');
+  }
+  if (refs.pagin_button_el_9.classList.contains('pagin_accent') === false) {
+  } else {
+    refs.pagin_button_el_9.classList.remove('pagin_accent');
+  }
+  if (refs.pagin_button_el_10.classList.contains('pagin_accent') === false) {
+  } else {
+    refs.pagin_button_el_10.classList.remove('pagin_accent');
+  }
+  if (refs.pagin_button_el_11.classList.contains('pagin_accent') === false) {
+  } else {
+    refs.pagin_button_el_11.classList.remove('pagin_accent');
+  }
 }
