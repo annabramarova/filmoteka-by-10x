@@ -9,6 +9,10 @@ $colors: (
   'footer-bgr': #f7f7f7,
   'auth-modal': #000000a0,
   'auth-cancel-btn': #757575,
+
+  // dark theme
+  'body-background': #121212,
+  'elemets-background': #1f1b24,
 );
 
 @function getColor($key) {

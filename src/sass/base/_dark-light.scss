@@ -1,24 +1,92 @@
-// body {
-//   color: getColor('black');
-//   background-color: getColor('white');
-//   font-family: 'Roboto', sans-serif;
-
-//   &::-webkit-scrollbar {
-//     width: 10px;
-//   }
-//   &::-webkit-scrollbar-thumb {
-//     background-color: getColor('modal-accent');
-//     border-radius: 2px;
-//     height: 77px;
-//   }
-// }
-
-// =========== TOGGLE ===========
-
 .dark body {
-  background-color: black;
+  background-color: getColor('body-background');
   color: getColor('white');
 }
+
+.dark header::after {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(../images/main/main-bg-mob.jpg);
+  @include retina {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url(../images/main/main-bg-mob@2x.jpg);
+  }
+
+  @include mq($width-tablet) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(../images/main/main-bg-tablet.jpg);
+    @include retina {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(../images/main/main-bg-tablet@2x.jpg);
+    }
+  }
+
+  @include mq($width-desktop) {
+    max-width: 1280px;
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(../images/main/main-bg-desktop.jpg);
+    @include retina {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(../images/main/main-bg-desktop@2x.jpg);
+    }
+  }
+}
+
+.dark .header--my-library::after {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(../images/my-library/library-bg-mob.jpg);
+  @include retina {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url(../images/my-library/library-bg-mob@2x.jpg);
+  }
+
+  @include mq($width-mobile) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url(../images/my-library/library-bg-tablet.jpg);
+    @include retina {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url(../images/my-library/library-bg-tablet@2x.jpg);
+    }
+  }
+
+  @include mq($width-desktop) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url(../images/my-library/library-bg-desktop.jpg);
+    @include retina {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url(../images/my-library/library-bg-desktop@2x.jpg);
+    }
+  }
+}
+
+.dark .plug__container {
+  background-color: getColor('elemets-background');
+}
+
+.dark .footer {
+  background-color: getColor('elemets-background');
+}
+
+.dark .footer__text {
+  color: getColor('white');
+}
+
+.dark .footer__btn {
+  background-color: getColor('elemets-background');
+  color: getColor('white');
+  transition: color $duration $timing-function;
+
+  &:hover,
+  &:focus {
+    color: getColor('modal-accent');
+  }
+}
+
+.dark .card {
+  background-color: getColor('elemets-background');
+}
+
+// =========== TOGGLE ===========
 
 .toggle-wrapper {
   position: absolute;
@@ -41,8 +109,14 @@
   border-radius: 10px;
   cursor: pointer;
   background: #1e90ff;
-  transition: 0.3s;
-  box-shadow: rgb(204, 219, 232) 0px 1px 4px 0px inset;
+  box-shadow: rgb(204, 219, 232) 0px 1px 3px 0px inset;
+
+  transition-duration: $duration;
+  transition-timing-function: $timing-function;
+
+  &:hover {
+    box-shadow: 0px 0px 5px 2px getColor('accent');
+  }
 }
 
 .theme-toggle:checked {
