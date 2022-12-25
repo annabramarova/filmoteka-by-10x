@@ -40,7 +40,7 @@ const onGoHomeButtonClick = e => {
 };
 
 const onGoQueueButtonClick = e => {
-  console.log('CLICK!');
+  // console.log('CLICK!');
   onQueueClick(e);
 };
 
