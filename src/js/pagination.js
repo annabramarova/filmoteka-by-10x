@@ -899,7 +899,8 @@ function on_pagin_button(evt) {
 
       pagin_namer_button();
       callback(page);
-      return on_pagin_rander();
+      on_pagin_rander();
+      return evt.target.blur();
     }
 
     if (evt.target.classList.contains('pagin_button_el_11')) {
@@ -907,14 +908,16 @@ function on_pagin_button(evt) {
 
       pagin_namer_button();
       callback(page);
-      return on_pagin_rander();
+      on_pagin_rander();
+      return evt.target.blur();
     }
 
     page = Number(evt.target.innerText);
 
     pagin_namer_button();
     callback(page);
-    return on_pagin_rander();
+    on_pagin_rander();
+    return evt.target.blur();
   }
 }
 

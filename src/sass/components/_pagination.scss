@@ -78,18 +78,9 @@ color: getColor('black');
       color: getColor('black');
 }
 
-.pagin__icon {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  display: inline-block;
-    width: 1em;
-    height: 1em;
-    stroke-width: 0;
-    stroke: currentColor;
-    // fill: currentColor;
-    fill: getColor('black');
-  }
+
 
   .pagin_svg{
-  pointer-events: none;}
+  pointer-events: none;
+width: 16px;
+height: 16px;}
