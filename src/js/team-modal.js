@@ -5,8 +5,8 @@ import { refs } from './refs';
 
   function openModalTeam() {
     refs.modalTeam.classList.toggle('visually-team-hidden');
-
-    refs.body.classList.add('no-scroll');
+    document.body.classList.add('modal-open-team');
+    refs.openModalBtn.setAttribute('disabled', '');
     refs.closeModalBtn.addEventListener('click', offModalTeam);
     refs.modalTeam.addEventListener('mousedown', offModalTeam);
     document.addEventListener('keydown', offModalTeam);
@@ -20,8 +20,9 @@ function offModalTeam(e) {
     e.code === 'Escape'
   ) {
     refs.modalTeam.classList.add('visually-team-hidden');
-    refs.body.classList.remove('no-scroll');
-    refs.modalTeam.removeEventListener('mousedown', offModal);
-    document.removeEventListener('keydown', offModal);
+    document.body.classList.remove('modal-open-team');
+    refs.openModalBtn.removeAttribute('disabled', '');
+    refs.modalTeam.removeEventListener('mousedown', offModalTeam);
+    document.removeEventListener('keydown', offModalTeam);
   }
 }

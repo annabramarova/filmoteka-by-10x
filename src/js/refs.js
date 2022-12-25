@@ -34,7 +34,6 @@ export const refs = {
   openModalBtn: document.querySelector('[data-team-modal-open]'),
   closeModalBtn: document.querySelector('[data-team-modal-close]'),
   modalTeam: document.querySelector('[data-team-modal]'),
-  body: document.querySelector('body'),
 
   // empty library-watcher modal
   galleryWatchedBtn: document.querySelector('button[data-activ="watched"]'),
