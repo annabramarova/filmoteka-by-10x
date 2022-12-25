@@ -24,7 +24,7 @@ export function galleryTemplate({
   getGenres();
 
   const url = `https://image.tmdb.org/t/p/original/${poster_path}`;
-  const date = release_date.slice(0, 4);
+  const date = release_date ? release_date.slice(0, 4) : '';
   const genresNames = genresArray.join(', ');
   const rating = vote_average.toFixed(1);
 
