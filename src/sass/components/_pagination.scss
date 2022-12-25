@@ -44,6 +44,7 @@ overflow: hidden;
       &:focus {
     background-color: getColor('error-text');
     color: getColor('white');
+    fill: getColor('white');
     } 
 }
 
@@ -78,9 +79,8 @@ color: getColor('black');
       color: getColor('black');
 }
 
-
-
-  .pagin_svg{
+.pagin_svg{
   pointer-events: none;
-width: 16px;
-height: 16px;}
+  width: 16px;
+  height: 16px;
+}
