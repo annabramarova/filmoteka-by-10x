@@ -40,7 +40,7 @@ function onWatchedClick(e) {
   tuneRenderWantched();
 }
 
-function onQueueClick(e) {
+export function onQueueClick(e) {
   refs.headerButtons[0].classList.remove('current');
   makeCurrent(e);
 
