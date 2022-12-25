@@ -91,7 +91,7 @@ class Storage {
       const ex = snapshot.exists();
       return ex;
     } catch (error) {
-      console.error('Includes error:', error);
+      // console.error('Includes error:', error);
       return false;
     }
   }
@@ -110,7 +110,7 @@ class Storage {
 
       return items;
     } catch (error) {
-      console.error('getIds error:', error);
+      // console.error('getIds error:', error);
     }
 
     return [];

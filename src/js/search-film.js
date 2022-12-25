@@ -27,16 +27,16 @@ async function onFormSubmit(e) {
     buttonSearch.removeAttribute('disabled');
     tuneRenderSearch();
   } catch {
-    console.error();
+    // console.error();
   } finally {
     refs.formSearch.reset();
     loaderRemove();
-    console.log('finally');
+    // console.log('finally');
   }
 }
 
 export function onEmptySearch() {
-  console.log('no data');
+  // console.log('no data');
   refs.searchErrorMessage.style.display = 'block';
   refs.searchButton.removeAttribute('disabled');
 }

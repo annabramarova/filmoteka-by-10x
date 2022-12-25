@@ -48,7 +48,11 @@ function on_pagin_rander() {
     pagin_rander_7();
   }
 
-  if (window.innerWidth > 600) {
+  if (window.innerWidth < 480) {
+    refs.pagin_button_el_2.classList.add('hidden');
+    refs.pagin_button_el_3.classList.add('hidden');
+    refs.pagin_button_el_9.classList.add('hidden');
+    refs.pagin_button_el_10.classList.add('hidden');
   }
 }
 
