@@ -69,7 +69,7 @@ export function hideLogoutButton() {
 refs.homeLink.addEventListener('click', goHome);
 refs.logo.addEventListener('click', goHome);
 
-function goHome(e) {
+export function goHome(e) {
   e.preventDefault();
 
   currentPage = 'home';
