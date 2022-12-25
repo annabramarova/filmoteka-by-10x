@@ -24,8 +24,12 @@ export async function trailer(id) {
 export const onBtnClickTrailer = () =>
   refs.trailerVideo?.classList.remove('hidden-trailer');
 
+import sprite from '../images/sprite.svg';
+// const sprite = require('../images/sprite.svg');
+
 function renderTrailerButton() {
-  const trailerBtnRender = `<button type="button" class="trailer-button"></button>`;
+  const trailerBtnRender = `<button type="button" class="trailer-button">
+  <svg class="play-icon" width="50" height="50"><use href="${sprite}#icon-play"></use></svg></button>`;
   return refs.modalCardItem.insertAdjacentHTML('beforeend', trailerBtnRender);
 }
 

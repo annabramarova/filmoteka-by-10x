@@ -8,14 +8,9 @@
   border-radius: 5px;
 }
 .trailer-button {
-  height: 50px;
-  width: 50px;
   background-color: transparent;
-  background-image: url('../images/play-circle.svg');
-  font-size: 55px;
-  // color: getColor('modal-accent');
-  //Fill color is set in play-circle.svg
-  transition-duration: 1000ms;
+  color: getColor('modal-accent');
+  transition: color 500ms, transform 500ms;
   border: none;
   position: absolute;
   top: 50%;
@@ -26,9 +21,13 @@
 
 .trailer-button:hover,
 .trailer-button:focus {
-  color: getColor('accent');
+  color: #ff4001;
   transform: translate(-50%, -50%) scale(1.1);
 }
 .hidden-trailer {
   display: none;
+}
+
+.play-icon {
+  fill: currentColor;
 }
