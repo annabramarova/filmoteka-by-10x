@@ -1,6 +1,5 @@
 export const refs = {
   galleryList: document.querySelector('.collection_list'),
-  pagin_box: document.querySelector('.pagin_box'),
   formSearch: document.querySelector('.search-form'),
   arrow: document.querySelector('.arrow-ref'),
   header: document.querySelector('.header'),
@@ -48,4 +47,17 @@ export const refs = {
   plug: document.querySelector('.plug'),
   // goHomeButton: document.querySelector('[data-action="go-home"]'),
   // goQueueButton: document.querySelector('[data-action="go-queue"]'),
+
+  pagin_box: document.querySelector('.pagin_box'),
+  pagin_button_el_1: document.querySelector('.pagin_button_el_1'),
+  pagin_button_el_2: document.querySelector('.pagin_button_el_2'),
+  pagin_button_el_3: document.querySelector('.pagin_button_el_3'),
+  pagin_button_el_4: document.querySelector('.pagin_button_el_4'),
+  pagin_button_el_5: document.querySelector('.pagin_button_el_5'),
+  pagin_button_el_6: document.querySelector('.pagin_button_el_6'),
+  pagin_button_el_7: document.querySelector('.pagin_button_el_7'),
+  pagin_button_el_8: document.querySelector('.pagin_button_el_8'),
+  pagin_button_el_9: document.querySelector('.pagin_button_el_9'),
+  pagin_button_el_10: document.querySelector('.pagin_button_el_10'),
+  pagin_button_el_11: document.querySelector('.pagin_button_el_11'),
 };
