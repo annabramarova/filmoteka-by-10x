@@ -71,7 +71,7 @@ export const tuneRenderTrending = tuneRender.bind(null, {
 
 export const tuneRenderSearch = tuneRender.bind(null, {
   getMoviesCallback: api.getFilmSearchByPage.bind(api),
-  renderCallback: renderLibrary,
+  renderCallback: renderGallery,
   runIfNoResultsCallback: onEmptySearch,
   preventRenderIfNoResults: true,
 });
