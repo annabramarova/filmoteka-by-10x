@@ -13,6 +13,13 @@
 //   }
 // }
 
+// =========== TOGGLE ===========
+
+.dark body {
+  background-color: black;
+  color: getColor('white');
+}
+
 .toggle-wrapper {
   position: absolute;
   z-index: 1;
@@ -28,18 +35,18 @@
 .theme-toggle {
   -webkit-appearance: none;
   appearance: none;
-  width: 45px;
-  height: 20px;
+  width: 40px;
+  height: 10px;
   outline: none;
   border-radius: 10px;
-  background: #33c5f6;
+  cursor: pointer;
+  background: #1e90ff;
   transition: 0.3s;
-  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
-    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  box-shadow: rgb(204, 219, 232) 0px 1px 4px 0px inset;
 }
 
 .theme-toggle:checked {
-  background: #77031a;
+  background: #8b0000;
 }
 
 .theme-toggle::before {
@@ -49,18 +56,16 @@
   left: 0;
   width: 20px;
   height: 20px;
-  border-radius: 50%;
-  //? background: #e6e6fa;
   background-color: transparent;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  transition: 0.3s;
-  transform: scale(1.3);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(../images/blu-sword.svg);
+  transition: $duration;
+  transform: scale(2);
 }
 
 .theme-toggle:checked::before {
-  left: 25px;
-}
-
-.dark body {
-  background-color: black;
+  left: 20px;
+  background-image: url(../images/red-sword.svg);
 }

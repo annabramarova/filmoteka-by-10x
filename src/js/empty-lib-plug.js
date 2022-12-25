@@ -9,7 +9,7 @@ const queueGIF = 'https://i.gifer.com/C4j.gif';
 const getEmptyWatchedMarkup = GIF => {
   return `
     <div class="plug__container">
-      <strong class="plug__strong">Ooops! Is nothing here yet!</strong>
+      <strong class="plug__strong">Ooops! There's nothing here yet!</strong>
       <img class="plug__gif" src="${GIF}" />
       <p class="plug__text">Hurry up and watch a movie!</p>
       <button type="button" class="plug__button" data-action="go-home">
