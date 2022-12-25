@@ -53,7 +53,50 @@ function on_pagin_rander() {
 }
 
 function pagin_rander_0() {
-  refs.pagin_box.innerHTML = ``;
+  if (refs.pagin_button_el_1.classList.contains('hidden')) {
+  } else {
+    refs.pagin_button_el_1.classList.add('hidden');
+  }
+  if (refs.pagin_button_el_2.classList.contains('hidden')) {
+  } else {
+    refs.pagin_button_el_2.classList.add('hidden');
+  }
+  if (refs.pagin_button_el_3.classList.contains('hidden')) {
+  } else {
+    refs.pagin_button_el_3.classList.add('hidden');
+  }
+  if (refs.pagin_button_el_4.classList.contains('hidden')) {
+  } else {
+    refs.pagin_button_el_4.classList.add('hidden');
+  }
+  if (refs.pagin_button_el_5.classList.contains('hidden')) {
+  } else {
+    refs.pagin_button_el_5.classList.add('hidden');
+  }
+  if (refs.pagin_button_el_6.classList.contains('hidden')) {
+  } else {
+    refs.pagin_button_el_6.classList.add('hidden');
+  }
+  if (refs.pagin_button_el_7.classList.contains('hidden')) {
+  } else {
+    refs.pagin_button_el_7.classList.add('hidden');
+  }
+  if (refs.pagin_button_el_8.classList.contains('hidden')) {
+  } else {
+    refs.pagin_button_el_8.classList.add('hidden');
+  }
+  if (refs.pagin_button_el_9.classList.contains('hidden')) {
+  } else {
+    refs.pagin_button_el_9.classList.add('hidden');
+  }
+  if (refs.pagin_button_el_10.classList.contains('hidden')) {
+  } else {
+    refs.pagin_button_el_10.classList.add('hidden');
+  }
+  if (refs.pagin_button_el_11.classList.contains('hidden')) {
+  } else {
+    refs.pagin_button_el_11.classList.add('hidden');
+  }
 }
 
 function pagin_rander_2() {
@@ -899,7 +942,8 @@ function on_pagin_button(evt) {
 
       pagin_namer_button();
       callback(page);
-      return on_pagin_rander();
+      on_pagin_rander();
+      return evt.target.blur();
     }
 
     if (evt.target.classList.contains('pagin_button_el_11')) {
@@ -907,14 +951,16 @@ function on_pagin_button(evt) {
 
       pagin_namer_button();
       callback(page);
-      return on_pagin_rander();
+      on_pagin_rander();
+      return evt.target.blur();
     }
 
     page = Number(evt.target.innerText);
 
     pagin_namer_button();
     callback(page);
-    return on_pagin_rander();
+    on_pagin_rander();
+    return evt.target.blur();
   }
 }
 
