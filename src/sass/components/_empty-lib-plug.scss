@@ -1,0 +1,75 @@
+.plug__container {
+  padding: 10px;
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.14;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.plug__title {
+  margin-bottom: 10px;
+  color: getColor('error-text');
+}
+
+.plug__gif {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  width: 600px;
+}
+
+.plug__text {
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+
+.plug__button {
+  font-size: 12px;
+  font-weight: inherit;
+  line-height: 1.33;
+  text-transform: uppercase;
+  color: getColor('white');
+  background-color: getColor('accent');
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+    rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+  transition: background-color $duration $timing-function;
+
+  &:hover,
+  &:focus {
+    background-color: getColor('error-text');
+  }
+}
+
+[data-action='go-home'] {
+  padding: 12px 36px;
+
+  @include mq($width-mobile) {
+    margin-right: 10px;
+  }
+
+  @include mq($width-tablet) {
+    margin-right: 20px;
+    padding: 12px 47px;
+  }
+
+  @include mq($width-desktop) {
+    padding: 11px 45px;
+  }
+}
+
+[data-action='go-queue'] {
+  padding: 12px 34px;
+
+  @include mq($width-tablet) {
+    padding: 12px 45px;
+  }
+
+  @include mq($width-desktop) {
+    padding: 11px 43px;
+  }
+}

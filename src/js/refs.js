@@ -46,4 +46,6 @@ export const refs = {
 
   // emty library-plug
   plug: document.querySelector('.plug'),
+  // goHomeButton: document.querySelector('[data-action="go-home"]'),
+  // goQueueButton: document.querySelector('[data-action="go-queue"]'),
 };
