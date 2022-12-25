@@ -24,7 +24,7 @@ export function libraryTemplate({
   // }
   // getGenres();
 
-  const url = `https://image.tmdb.org/t/p/original/${poster_path}`;
+  const url = `https://image.tmdb.org/t/p/w400/${poster_path}`;
   const date = release_date ? release_date.slice(0, 4) : '';
   const genresNames = genresArray.join(', ');
   const rating = vote_average.toFixed(1);
@@ -46,7 +46,7 @@ export function libraryTemplate({
   return `<li class="collection_item">
   <article class="card" data-id=${id}>
   <a href="" class="card_link">
-  <img class="card_img" width="394" src=${url} alt=${original_title}>
+  <img class="card_img" width="394" src=${url} alt=${original_title} loading="lazy">
   </a>
   <div class="library-card-wrap-info">
         <h3 class="card-name">${original_title}</h3>
