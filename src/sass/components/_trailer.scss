@@ -8,9 +8,13 @@
   border-radius: 5px;
 }
 .trailer-button {
+  height: 50px;
+  width: 50px;
   background-color: transparent;
+  background-image: url('../images/play-circle.svg');
   font-size: 55px;
-  color: getColor('modal-accent');
+  // color: getColor('modal-accent');
+  //Fill color is set in play-circle.svg
   transition-duration: 1000ms;
   border: none;
   position: absolute;

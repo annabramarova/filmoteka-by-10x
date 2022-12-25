@@ -25,7 +25,7 @@ export const onBtnClickTrailer = () =>
   refs.trailerVideo?.classList.remove('hidden-trailer');
 
 function renderTrailerButton() {
-  const trailerBtnRender = `<button type="button" class="trailer-button"><i class="fa fa-play-circle" aria-hidden="true"></i></button>`;
+  const trailerBtnRender = `<button type="button" class="trailer-button"></button>`;
   return refs.modalCardItem.insertAdjacentHTML('beforeend', trailerBtnRender);
 }
 
