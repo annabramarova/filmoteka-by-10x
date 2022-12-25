@@ -107,6 +107,7 @@ function onGalleryClick(e) {
   e.preventDefault();
 
   const card = e.target.closest('.card');
+  if (!card) { return; }
   cardId = Number(card.dataset.id);
   // const isPicture = e.target.classList.contains('card_img');
   // const blankPicture = e.target.classList.contains('card_no-img');
