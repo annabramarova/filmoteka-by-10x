@@ -19,7 +19,6 @@ export async function tuneRender({
   runIfNoResultsCallback,
   preventRenderIfNoResults,
 }) {
-  console.log('name', getMoviesCallback.name);
   try {
     loader();
     clearEmptyGallery();
