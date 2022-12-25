@@ -65,7 +65,6 @@ function killModal(e) {
 }
 
 function renderCard(data) {
-  document.body.classList.toggle('modal-open');
   const cardMarkup = getCardTemplate(data);
   refs.movieModalContainer.innerHTML = cardMarkup;
   refs.modalWatchedButton = document.querySelector(
@@ -115,6 +114,7 @@ function onGalleryClick(e) {
   // if (!isPicture && blankPicture && card) return;
 
   if (!card) return;
+  document.body.classList.toggle('modal-open');
 
   refs.movieModalBackDrop.classList.remove('modal-hidden');
 
