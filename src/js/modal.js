@@ -80,8 +80,10 @@ function renderCard(data) {
 
     if (await isWatched(cardId)) {
       removeWatchedId(cardId);
+      e.target.blur();
     } else {
       addWatchedId(cardId);
+      e.target.blur();
     }
     updateButtonsCaption(cardId);
   });
@@ -94,8 +96,10 @@ function renderCard(data) {
 
     if (await isQueued(cardId)) {
       removeQueuedId(cardId);
+      e.target.blur();
     } else {
       addQueuedId(cardId);
+      e.target.blur();
     }
     updateButtonsCaption(cardId);
   });
