@@ -140,3 +140,11 @@ export const genres = [
     name: 'Western',
   },
 ];
+
+export const genresDictiorary = genres.reduce(
+  (acc, { id, name }) => {
+    acc[id] = name;
+    return acc;
+  },
+  { other: 'Other' }
+);
