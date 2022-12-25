@@ -48,7 +48,7 @@ export function galleryTemplate({
   <article class="card" data-id=${id}>
   <span class="card-rating">${rating}</span>
   <a href="" class="card_link">
-  <img class="card_img" width="394" src=${url} alt=${original_title}>
+  <img class="card_img" width="394" src=${url} alt=${original_title} loading="lazy">
   </a>
       <div class="card-wrap">
         <h3 class="card-name">${original_title}</h3>
