@@ -1,89 +1,143 @@
-.dark body {
-  background-color: getColor('body-background');
-  color: getColor('white');
-}
+.dark {
+  body {
+    background-color: getColor('body-background');
+    color: getColor('white');
+  }
 
-.dark header::after {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url(../images/main/main-bg-mob.jpg);
-  @include retina {
+  header::after {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-      url(../images/main/main-bg-mob@2x.jpg);
-  }
-
-  @include mq($width-tablet) {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url(../images/main/main-bg-tablet.jpg);
+      url(../images/main/main-bg-mob.jpg);
     @include retina {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url(../images/main/main-bg-mob@2x.jpg);
+    }
+
+    @include mq($width-tablet) {
       background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url(../images/main/main-bg-tablet@2x.jpg);
+        url(../images/main/main-bg-tablet.jpg);
+      @include retina {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url(../images/main/main-bg-tablet@2x.jpg);
+      }
+    }
+
+    @include mq($width-desktop) {
+      max-width: 1280px;
+
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(../images/main/main-bg-desktop.jpg);
+      @include retina {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url(../images/main/main-bg-desktop@2x.jpg);
+      }
     }
   }
 
-  @include mq($width-desktop) {
-    max-width: 1280px;
-
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url(../images/main/main-bg-desktop.jpg);
-    @include retina {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url(../images/main/main-bg-desktop@2x.jpg);
-    }
-  }
-}
-
-.dark .header--my-library::after {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(../images/my-library/library-bg-mob.jpg);
-  @include retina {
+  .header--my-library::after {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-      url(../images/my-library/library-bg-mob@2x.jpg);
-  }
-
-  @include mq($width-mobile) {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-      url(../images/my-library/library-bg-tablet.jpg);
+      url(../images/my-library/library-bg-mob.jpg);
     @include retina {
       background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url(../images/my-library/library-bg-tablet@2x.jpg);
+        url(../images/my-library/library-bg-mob@2x.jpg);
     }
-  }
 
-  @include mq($width-desktop) {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-      url(../images/my-library/library-bg-desktop.jpg);
-    @include retina {
+    @include mq($width-mobile) {
       background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url(../images/my-library/library-bg-desktop@2x.jpg);
+        url(../images/my-library/library-bg-tablet.jpg);
+      @include retina {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)
+          ),
+          url(../images/my-library/library-bg-tablet@2x.jpg);
+      }
+    }
+
+    @include mq($width-desktop) {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url(../images/my-library/library-bg-desktop.jpg);
+      @include retina {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)
+          ),
+          url(../images/my-library/library-bg-desktop@2x.jpg);
+      }
     }
   }
-}
 
-.dark .plug__container {
-  background-color: getColor('elemets-background');
-}
-
-.dark .footer {
-  background-color: getColor('elemets-background');
-}
-
-.dark .footer__text {
-  color: getColor('white');
-}
-
-.dark .footer__btn {
-  background-color: getColor('elemets-background');
-  color: getColor('white');
-  transition: color $duration $timing-function;
-
-  &:hover,
-  &:focus {
-    color: getColor('modal-accent');
+  .plug__container,
+  .footer,
+  .card {
+    background-color: getColor('elemets-background');
   }
-}
 
-.dark .card {
-  background-color: getColor('elemets-background');
+  .footer__btn {
+    background-color: getColor('elemets-background');
+    color: getColor('white');
+    transition: color $duration $timing-function;
+
+    &:hover,
+    &:focus {
+      color: getColor('modal-accent');
+    }
+  }
+
+  .footer__text,
+  .cardItem__name,
+  .cardItem__title,
+  .cardItem__genreList,
+  .cardItem__about,
+  .cardItem__description,
+  .cardItem__data,
+  .cardItem__countVote {
+    color: getColor('white');
+  }
+
+  .cardItem__countVote,
+  .modal-close-btn {
+    background-color: transparent;
+  }
+
+  .movie-modal {
+    background-color: getColor('modal-background');
+  }
+
+  .no-poster {
+    background-color: getColor('elemets-background');
+    border-color: getColor('modal-info');
+  }
+
+  .modal-close-btn__icon-close {
+    stroke: getColor('modal-info');
+
+    transition: stroke $duration $timing-function;
+    .modal-close-btn:focus &,
+    .modal-close-btn:hover & {
+      stroke: getColor('modal-accent');
+    }
+  }
+
+  .modal-btn__queue {
+  }
+
+  .modal-btn__queue {
+    background-color: transparent;
+    color: getColor('white');
+    border: 1px solid getColor('white');
+
+    &:hover,
+    &:focus {
+      color: getColor('modal-accent');
+      border: 1px solid getColor('modal-accent');
+    }
+  }
 }
 
 // =========== TOGGLE ===========
