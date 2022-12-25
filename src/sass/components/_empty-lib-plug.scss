@@ -1,14 +1,21 @@
 .plug__container {
+  margin: 0 auto;
   padding: 10px;
   text-align: center;
   font-weight: 700;
   line-height: 1.14;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  @include mq($width-tablet) {
+    width: 768px;
+  }
 }
 
-.plug__title {
+.plug__strong {
+  display: block;
   margin-bottom: 10px;
+  font-size: 36px;
   color: getColor('error-text');
 }
 
@@ -16,7 +23,8 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;
-  width: 600px;
+  width: 500px;
+  border-radius: 7px;
 }
 
 .plug__text {

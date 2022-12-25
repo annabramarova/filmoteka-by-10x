@@ -73,11 +73,11 @@ async function monitorAuthState() {
       hideLoginForm();
       hideLoginButton();
       showLogoutButton();
-      showLoginState(user);
+      //showLoginState(user);
     } else {
       hideLogoutButton();
       showLoginButton();
-      console.log("You're not logged in.");
+      // console.log("You're not logged in.");
     }
     LoginStateChangeHandler(Boolean(user));
   });

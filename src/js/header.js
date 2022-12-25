@@ -40,7 +40,7 @@ function onWatchedClick(e) {
   tuneRenderWantched();
 }
 
-function onQueueClick(e) {
+export function onQueueClick(e) {
   refs.headerButtons[0].classList.remove('current');
   makeCurrent(e);
 
@@ -69,7 +69,7 @@ export function hideLogoutButton() {
 refs.homeLink.addEventListener('click', goHome);
 refs.logo.addEventListener('click', goHome);
 
-function goHome(e) {
+export function goHome(e) {
   e.preventDefault();
 
   currentPage = 'home';

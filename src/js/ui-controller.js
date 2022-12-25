@@ -19,7 +19,6 @@ export async function tuneRender({
   runIfNoResultsCallback,
   preventRenderIfNoResults,
 }) {
-  console.log('name', getMoviesCallback.name);
   try {
     loader();
     clearEmptyGallery();
@@ -71,7 +70,7 @@ export const tuneRenderTrending = tuneRender.bind(null, {
 
 export const tuneRenderSearch = tuneRender.bind(null, {
   getMoviesCallback: api.getFilmSearchByPage.bind(api),
-  renderCallback: renderLibrary,
+  renderCallback: renderGallery,
   runIfNoResultsCallback: onEmptySearch,
   preventRenderIfNoResults: true,
 });
