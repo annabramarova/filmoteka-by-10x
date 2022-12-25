@@ -45,7 +45,7 @@
   }
 }
 
-[data-activ='go-home'] {
+[data-action='go-home'] {
   padding: 12px 36px;
 
   @include mq($width-mobile) {
@@ -62,7 +62,7 @@
   }
 }
 
-[data-activ='go-queue'] {
+[data-action='go-queue'] {
   padding: 12px 34px;
 
   @include mq($width-tablet) {
