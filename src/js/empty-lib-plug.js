@@ -40,8 +40,8 @@ const onGoHomeButtonClick = e => {
 };
 
 const onGoQueueButtonClick = e => {
-  console.log('CLICK!');
   onQueueClick(e);
+  refs.queueButton.classList.add('current');
 };
 
 export const emptyWatchedRender = () => {

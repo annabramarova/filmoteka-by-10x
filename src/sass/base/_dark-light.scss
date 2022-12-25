@@ -1,0 +1,22 @@
+// body {
+//   color: getColor('black');
+//   background-color: getColor('white');
+//   font-family: 'Roboto', sans-serif;
+
+//   &::-webkit-scrollbar {
+//     width: 10px;
+//   }
+//   &::-webkit-scrollbar-thumb {
+//     background-color: getColor('modal-accent');
+//     border-radius: 2px;
+//     height: 77px;
+//   }
+// }
+.theme-toggle {
+  position: relative; //! absolute
+  z-index: 1;
+}
+
+.dark body {
+  background-color: black;
+}
