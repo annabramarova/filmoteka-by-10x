@@ -66,6 +66,7 @@
 }
 .card_img {
   border-radius: 5px;
+  width: 100%;
   @include mq($from: $width-min-allowable, $until: $width-tablet) {
     aspect-ratio: 280/398;
   }
@@ -94,11 +95,10 @@
 .card-name {
   text-transform: uppercase;
   white-space: nowrap;
-    overflow: hidden;
-    max-width: 394px;
-    // height: 30px;
-    text-overflow: ellipsis;
-  
+  overflow: hidden;
+  max-width: 394px;
+  // height: 30px;
+  text-overflow: ellipsis;
 }
 .card-genres {
   color: getColor('modal-accent');
