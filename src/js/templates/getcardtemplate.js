@@ -49,7 +49,7 @@ export const getCardTemplate = ({
   return `
   <div class="movie-card" data-action=${id}>
     <div class="cardItem__image">
-        <img class="image" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${id}" />
+        <img class="image" src="https://image.tmdb.org/t/p/w400${poster_path}" loading="lazy" alt="${id}" />
     </div>
     <div class="cardItem__wrapper">
         <h2 class="cardItem__name">${title}</h2>

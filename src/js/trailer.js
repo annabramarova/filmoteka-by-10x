@@ -8,29 +8,33 @@ export async function trailer(id) {
   try {
     const { official, key } = await api.getTrailer(id);
     if (!official) {
-      return console.log(official);
+      return; // console.log(official);
     }
-    console.log(official);
+    // console.log(official);
     renderTrailerButton();
     renderTrailer(key);
     refs.trailerBtn = document.querySelector('.trailer-button');
     refs.trailerVideo = document.querySelector('.trailer');
     refs.trailerBtn.addEventListener('click', onBtnClickTrailer);
   } catch {
-    err => console.log(err.massage);
+    // err => console.log(err.massage);
   }
 }
 
 export const onBtnClickTrailer = () =>
-  refs.trailerVideo.classList.remove('hidden-trailer');
+  refs.trailerVideo?.classList.remove('hidden-trailer');
+
+import sprite from '../images/sprite.svg';
+// const sprite = require('../images/sprite.svg');
 
 function renderTrailerButton() {
-  const trailerBtnRender = `<button type="button" class="trailer-button"><i class="fa fa-play-circle" aria-hidden="true"></i></button>`;
+  const trailerBtnRender = `<button type="button" class="trailer-button">
+  <svg class="play-icon" width="50" height="50"><use href="${sprite}#icon-play"></use></svg></button>`;
   return refs.modalCardItem.insertAdjacentHTML('beforeend', trailerBtnRender);
 }
 
 function renderTrailer(key) {
-  console.log(key);
+  // console.log(key);
   const trailer = `<iframe
       width="560"
       height="315"

@@ -1,0 +1,235 @@
+.dark {
+  body {
+    background-color: getColor('body-background');
+    color: getColor('white');
+  }
+
+  header::after {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url(../images/main/main-bg-mob.jpg);
+    @include retina {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url(../images/main/main-bg-mob@2x.jpg);
+    }
+
+    @include mq($width-tablet) {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(../images/main/main-bg-tablet.jpg);
+      @include retina {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url(../images/main/main-bg-tablet@2x.jpg);
+      }
+    }
+
+    @include mq($width-desktop) {
+      max-width: 1280px;
+
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(../images/main/main-bg-desktop.jpg);
+      @include retina {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url(../images/main/main-bg-desktop@2x.jpg);
+      }
+    }
+  }
+
+  .header--my-library::after {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url(../images/my-library/library-bg-mob.jpg);
+    @include retina {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url(../images/my-library/library-bg-mob@2x.jpg);
+    }
+
+    @include mq($width-mobile) {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url(../images/my-library/library-bg-tablet.jpg);
+      @include retina {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)
+          ),
+          url(../images/my-library/library-bg-tablet@2x.jpg);
+      }
+    }
+
+    @include mq($width-desktop) {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url(../images/my-library/library-bg-desktop.jpg);
+      @include retina {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)
+          ),
+          url(../images/my-library/library-bg-desktop@2x.jpg);
+      }
+    }
+  }
+
+  .plug__container,
+  .footer,
+  .card {
+    background-color: getColor('elemets-background');
+  }
+
+  .footer__btn {
+    background-color: getColor('elemets-background');
+    color: getColor('white');
+    transition: color $duration $timing-function;
+
+    &:hover,
+    &:focus {
+      color: getColor('modal-accent');
+    }
+  }
+
+  .footer__text,
+  .cardItem__name,
+  .cardItem__title,
+  .cardItem__genreList,
+  .cardItem__about,
+  .cardItem__description,
+  .cardItem__data,
+  .cardItem__countVote {
+    color: getColor('white');
+  }
+
+  .cardItem__countVote,
+  .modal-close-btn {
+    background-color: transparent;
+  }
+
+  .movie-modal {
+    background-color: getColor('modal-background');
+  }
+
+  .no-poster {
+    background-color: getColor('elemets-background');
+    border-color: getColor('modal-info');
+  }
+
+  .modal-close-btn__icon-close {
+    stroke: getColor('modal-info');
+
+    transition: stroke $duration $timing-function;
+    .modal-close-btn:focus &,
+    .modal-close-btn:hover & {
+      stroke: getColor('modal-accent');
+    }
+  }
+
+  .modal-btn__queue {
+    background-color: transparent;
+    color: getColor('white');
+    border: 1px solid getColor('white');
+
+    &:hover,
+    &:focus {
+      color: getColor('modal-accent');
+      border: 1px solid getColor('modal-accent');
+    }
+  }
+
+  .pagin_button,
+  .pagin_nothing {
+    color: getColor('white');
+  }
+
+  .pagin_button_left,
+  .pagin_button_rigth {
+    fill: getColor('white');
+    background-color: getColor('elemets-background');
+
+    &:hover,
+    &:focus {
+      background-color: getColor('modal-accent');
+    }
+  }
+
+  .team-modal {
+    background-color: getColor('modal-background');
+  }
+
+  .team-modal__button {
+    background-color: getColor('modal-background');
+  }
+
+  .team-modal__icon {
+    fill: getColor('modal-info');
+  }
+
+  .team-modal__title,
+  .team-list__item {
+    color: getColor('white');
+    background-color: getColor('elemets-background');
+
+    &:hover {
+      box-shadow: 0px 4px 4px #5daadd;
+      background-color: getColor('modal-accent');
+    }
+  }
+}
+
+// =========== TOGGLE ===========
+
+.toggle-wrapper {
+  position: absolute;
+  z-index: 1;
+  right: 20px;
+  top: -30px;
+  display: inline-block;
+
+  @include mq($width-tablet) {
+    right: 32px;
+  }
+}
+
+.theme-toggle {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 40px;
+  height: 10px;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #1e90ff;
+  box-shadow: rgb(204, 219, 232) 0px 1px 3px 0px inset;
+
+  transition-duration: $duration;
+  transition-timing-function: $timing-function;
+
+  &:hover {
+    box-shadow: 0px 0px 5px 2px getColor('accent');
+  }
+}
+
+.theme-toggle:checked {
+  background: #8b0000;
+}
+
+.theme-toggle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(../images/blu-sword.svg);
+  transition: $duration;
+  transform: scale(2);
+}
+
+.theme-toggle:checked::before {
+  left: 20px;
+  background-image: url(../images/red-sword.svg);
+}
