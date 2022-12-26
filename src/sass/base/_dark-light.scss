@@ -144,15 +144,18 @@
     color: getColor('white');
   }
 
+  
   .pagin_button_left,
   .pagin_button_rigth {
     fill: getColor('white');
     background-color: getColor('elemets-background');
 
-    &:hover,
-    &:focus {
-      background-color: getColor('modal-accent');
-    }
+    @media (hover: hover) {
+        &:hover {
+          background-color: getColor('error-text');
+          color: getColor('white');
+        }
+      }
   }
 
   .team-modal {
