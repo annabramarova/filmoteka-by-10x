@@ -1,3 +1,8 @@
+.header__container {
+  position: relative;
+  z-index: 1;
+}
+
 header {
   position: relative;
   min-width: 320px;
@@ -25,7 +30,6 @@ header {
   }
 
   a {
-    z-index: 1;
     outline: none;
   }
 }
@@ -133,7 +137,6 @@ header::after {
 }
 
 .header__log-button {
-  z-index: 1;
   margin-left: 4px;
   width: 25px;
   height: 25px;
@@ -164,7 +167,6 @@ header::after {
 }
 
 .search-form__label {
-  z-index: 1;
   position: absolute;
   left: 0;
   top: 50%;
@@ -187,7 +189,6 @@ header::after {
 }
 
 .wrapper--input {
-  z-index: 1;
   position: relative;
   width: fit-content;
   margin-left: auto;
@@ -199,7 +200,6 @@ header::after {
 .search-form__input {
   -webkit-appearance: none;
   appearance: none;
-  z-index: 1;
   min-width: 255px;
   height: 30px;
   border: none;
@@ -218,7 +218,6 @@ header::after {
 }
 
 .search-form__submit {
-  z-index: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -247,7 +246,6 @@ header::after {
 
 .search-form__warning {
   position: relative;
-  z-index: 1;
   margin-top: 16px;
   color: getColor('error-text');
   display: none;
@@ -311,7 +309,6 @@ header::after {
 }
 
 .header-button {
-  z-index: 1;
   margin-top: 60px;
   font-size: 12px;
   font-weight: inherit;
