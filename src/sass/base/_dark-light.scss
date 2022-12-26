@@ -73,10 +73,13 @@
   }
 
   .plug__container,
-  .footer,
-  .card {
+  .footer {
     background-color: getColor('elemets-background');
   }
+
+    .card {
+      background-color: getColor('body-background');
+    }
 
   .footer__btn {
     background-color: getColor('elemets-background');
