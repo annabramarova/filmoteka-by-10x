@@ -41,7 +41,7 @@
 
   background-color: getColor('white');
   .dark & {
-    background-color: getColor('body-background');
+    background-color: getColor('elemets-background');
   }
 
   border-radius: 5px;
