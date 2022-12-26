@@ -46,7 +46,7 @@
   transition-timing-function: $timing-function;
   &:hover,
   &:focus {
-    background-color: getColor('modal-accent');
+    background-color: getColor('error-text');
     color: getColor('white');
   }
 }
@@ -84,6 +84,7 @@
   &:hover,
   &:focus {
     fill: getColor('white');
+    background-color: getColor('error-text');
   }
 }
 

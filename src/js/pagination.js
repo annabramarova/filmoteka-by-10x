@@ -49,10 +49,22 @@ function on_pagin_rander() {
   }
 
   if (window.innerWidth < 480) {
-    refs.pagin_button_el_2.classList.add('hidden');
-    refs.pagin_button_el_3.classList.add('hidden');
-    refs.pagin_button_el_9.classList.add('hidden');
-    refs.pagin_button_el_10.classList.add('hidden');
+    if (refs.pagin_button_el_2.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_2.classList.add('hidden');
+    }
+    if (refs.pagin_button_el_3.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_3.classList.add('hidden');
+    }
+    if (refs.pagin_button_el_9.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_9.classList.add('hidden');
+    }
+    if (refs.pagin_button_el_10.classList.contains('hidden')) {
+    } else {
+      refs.pagin_button_el_10.classList.add('hidden');
+    }
   }
 }
 
@@ -939,7 +951,9 @@ refs.pagin_box.addEventListener('click', on_pagin_button);
 function on_pagin_button(evt) {
   if (evt.target.type === 'submit') {
     if (Number(page) === Number(evt.target.innerText)) {
-      return;
+      // console.log(evt.target);
+      // console.log('blur()');
+      return evt.target.blur();
     }
     if (evt.target.classList.contains('pagin_button_left')) {
       page--;
@@ -947,6 +961,8 @@ function on_pagin_button(evt) {
       pagin_namer_button();
       callback(page);
       on_pagin_rander();
+      // console.log(evt.target);
+      // console.log('blur()');
       return evt.target.blur();
     }
 
@@ -956,6 +972,8 @@ function on_pagin_button(evt) {
       pagin_namer_button();
       callback(page);
       on_pagin_rander();
+      // console.log(evt.target);
+      // console.log('blur()');
       return evt.target.blur();
     }
 
@@ -964,8 +982,13 @@ function on_pagin_button(evt) {
     pagin_namer_button();
     callback(page);
     on_pagin_rander();
+    // console.log(evt.target);
+    // console.log('blur()');
     return evt.target.blur();
   }
+  // console.log(evt.target);
+  // console.log('blur()');
+  evt.target.blur();
 }
 
 function pagin_namer_button() {
