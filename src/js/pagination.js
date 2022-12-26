@@ -947,7 +947,7 @@ function on_pagin_button(evt) {
       pagin_namer_button();
       callback(page);
       on_pagin_rander();
-      return evt.target.blur();
+      return;
     }
 
     if (evt.target.classList.contains('pagin_button_el_11')) {
