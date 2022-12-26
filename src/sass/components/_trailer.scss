@@ -9,9 +9,8 @@
 }
 .trailer-button {
   background-color: transparent;
-  font-size: 55px;
   color: getColor('modal-accent');
-  transition-duration: 1000ms;
+  transition: color 500ms, transform 500ms;
   border: none;
   position: absolute;
   top: 50%;
@@ -22,9 +21,13 @@
 
 .trailer-button:hover,
 .trailer-button:focus {
-  color: getColor('accent');
+  color: #ff4001;
   transform: translate(-50%, -50%) scale(1.1);
 }
 .hidden-trailer {
   display: none;
+}
+
+.play-icon {
+  fill: currentColor;
 }

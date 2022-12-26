@@ -66,20 +66,37 @@
 }
 .card_img {
   border-radius: 5px;
-  aspect-ratio: 394/596;
+  @include mq($from: $width-min-allowable, $until: $width-tablet) {
+    aspect-ratio: 280/398;
+  }
+  @include mq($from: $width-tablet, $until: $width-desktop) {
+    aspect-ratio: 336/455;
+  }
+  @include mq($from: $width-desktop) {
+    aspect-ratio: 394/574;
+  }
 }
 .card_no-img {
   width: auto;
   max-width: 394px;
   height: auto;
   aspect-ratio: 394/596;
+  @include mq($from: $width-min-allowable, $until: $width-tablet) {
+    aspect-ratio: 280/398;
+  }
+  @include mq($from: $width-tablet, $until: $width-desktop) {
+    aspect-ratio: 336/455;
+  }
+  @include mq($from: $width-desktop) {
+    aspect-ratio: 394/574;
+  }
 }
 .card-name {
   text-transform: uppercase;
   white-space: nowrap;
     overflow: hidden;
     max-width: 394px;
-    height: 30px;
+    // height: 30px;
     text-overflow: ellipsis;
   
 }

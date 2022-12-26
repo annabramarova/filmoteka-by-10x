@@ -40,7 +40,7 @@ function killModal(e) {
     refs.movieModalContainer.innerHTML = '';
     refs.movieModalBackDrop.classList.add('modal-hidden');
     onBtnClickTrailer();
-    console.log('killModal', cardId);
+    // console.log('killModal', cardId);
     if (getCurrentPage() === 'watched') {
       isWatched(cardId).then(isWatched => {
         if (!isWatched) {
@@ -80,8 +80,10 @@ function renderCard(data) {
 
     if (await isWatched(cardId)) {
       removeWatchedId(cardId);
+      e.target.blur();
     } else {
       addWatchedId(cardId);
+      e.target.blur();
     }
     updateButtonsCaption(cardId);
   });
@@ -94,8 +96,10 @@ function renderCard(data) {
 
     if (await isQueued(cardId)) {
       removeQueuedId(cardId);
+      e.target.blur();
     } else {
       addQueuedId(cardId);
+      e.target.blur();
     }
     updateButtonsCaption(cardId);
   });
@@ -105,15 +109,19 @@ function renderCard(data) {
 
 function onGalleryClick(e) {
   e.preventDefault();
-  document.body.classList.toggle('modal-open');
-  const card = e.target.closest('.card');
-  cardId = Number(card.dataset.id);
-  const isPicture = e.target.classList.contains('card_img');
-  const blankPicture = e.target.classList.contains('card_no-img');
 
-  if (!isPicture && blankPicture) {
+  const card = e.target.closest('.card');
+  if (!card) {
     return;
   }
+  cardId = Number(card.dataset.id);
+  // const isPicture = e.target.classList.contains('card_img');
+  // const blankPicture = e.target.classList.contains('card_no-img');
+
+  // if (!isPicture && blankPicture && card) return;
+
+  if (!card) return;
+  document.body.classList.toggle('modal-open');
 
   refs.movieModalBackDrop.classList.remove('modal-hidden');
 

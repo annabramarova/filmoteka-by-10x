@@ -76,7 +76,7 @@ export default class Api {
       .get(`/movie/${id}/videos?api_key=${this.KEY}&language=en-US`)
       .then(r => r.data);
     const trailer = r.results.filter(v => v.name === 'Official Trailer');
-    console.log(trailer[0]);
+    //console.log(trailer[0]);
     return trailer[0];
   }
 
