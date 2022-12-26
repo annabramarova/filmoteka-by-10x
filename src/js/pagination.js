@@ -50,7 +50,7 @@ function on_pagin_rander() {
   }
 
   if (window.innerWidth < 480) {
-    pagin_button_el_1_add_hidden();
+    pagin_button_el_2_add_hidden();
     pagin_button_el_3_add_hidden();
     pagin_button_el_9_add_hidden();
     pagin_button_el_10_add_hidden();
