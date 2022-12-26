@@ -939,7 +939,7 @@ refs.pagin_box.addEventListener('click', on_pagin_button);
 function on_pagin_button(evt) {
   if (evt.target.type === 'submit') {
     if (Number(page) === Number(evt.target.innerText)) {
-      return evt.target.blur();
+      return;
     }
     if (evt.target.classList.contains('pagin_button_left')) {
       page--;
@@ -947,7 +947,7 @@ function on_pagin_button(evt) {
       pagin_namer_button();
       callback(page);
       on_pagin_rander();
-      return;
+      return evt.target.blur();
     }
 
     if (evt.target.classList.contains('pagin_button_el_11')) {
