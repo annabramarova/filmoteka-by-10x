@@ -26,7 +26,7 @@ export const getCardTemplate = ({
           >
         </p>
         <p class="cardItem__text">
-          Popularity<span class="cardItem__data">${popularity.toFixed(1)}</span>
+          Popularity<span class="cardItem__data">${popularity.toFixed(0)}</span>
         </p>
         <p class="cardItem__text">
           Original&nbspTitle<span class="cardItem__title">${original_title}</span>
@@ -64,7 +64,7 @@ export const getCardTemplate = ({
           >
         </p>
         <p class="cardItem__text">
-          Popularity<span class="cardItem__data">${popularity.toFixed(1)}</span>
+          Popularity<span class="cardItem__data">${popularity.toFixed(0)}</span>
         </p>
         <p class="cardItem__text">
           Original&nbspTitle<span class="cardItem__title">${original_title}</span>
