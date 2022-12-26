@@ -32,6 +32,7 @@
   height: 40px;
 
   border: none;
+  outline: none;
   background-color: transparent;
   color: getColor('black');
   border-radius: 5px;
@@ -40,11 +41,13 @@
 
   overflow: hidden;
 
+  transition-property: background-color color;
+  transition-duration: $duration;
+  transition-timing-function: $timing-function;
   &:hover,
   &:focus {
-    background-color: getColor('error-text');
+    background-color: getColor('modal-accent');
     color: getColor('white');
-    fill: getColor('white');
   }
 }
 
@@ -65,18 +68,23 @@
 .pagin_accent {
   background-color: getColor('modal-accent');
   color: getColor('white');
+  transition: background-color $duration $timing-function;
+  &:hover,
+  &:focus {
+    background-color: getColor('error-text');
+  }
 }
 
-.pagin_button_left {
-  font-size: large;
-  background-color: getColor('footer-bgr');
-  color: getColor('black');
-}
-
+.pagin_button_left,
 .pagin_button_rigth {
   font-size: large;
   background-color: getColor('footer-bgr');
-  color: getColor('black');
+  fill: getColor('black');
+  transition: fill $duration $timing-function;
+  &:hover,
+  &:focus {
+    fill: getColor('white');
+  }
 }
 
 .pagin_svg {

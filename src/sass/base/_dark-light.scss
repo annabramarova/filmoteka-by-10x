@@ -144,7 +144,35 @@
   .pagin_button_left,
   .pagin_button_rigth {
     fill: getColor('white');
+    background-color: getColor('elemets-background');
+
+    &:hover,
+    &:focus {
+      background-color: getColor('modal-accent');
+    }
+  }
+
+  .team-modal {
     background-color: getColor('modal-background');
+  }
+
+  .team-modal__button {
+    background-color: getColor('modal-background');
+  }
+
+  .team-modal__icon {
+    fill: getColor('modal-info');
+  }
+
+  .team-modal__title,
+  .team-list__item {
+    color: getColor('white');
+    background-color: getColor('elemets-background');
+
+    &:hover {
+      box-shadow: 0px 4px 4px #5daadd;
+      background-color: getColor('modal-accent');
+    }
   }
 }
 
