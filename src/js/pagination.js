@@ -85,7 +85,6 @@ function pagin_rander_2() {
     refs.pagin_button_el_6.innerHTML = `${page}`;
     refs.pagin_button_el_7.innerHTML = `${pageAfter}`;
   } else if (page === 2) {
-    pagin_button_el_1_add_hidden();
     pagin_button_el_2_add_hidden();
     pagin_button_el_3_add_hidden();
     pagin_button_el_4_add_hidden();
@@ -93,6 +92,7 @@ function pagin_rander_2() {
     pagin_button_el_8_add_hidden();
     pagin_button_el_9_add_hidden();
     pagin_button_el_10_add_hidden();
+    pagin_button_el_11_add_hidden();
     refs.pagin_button_el_7.classList.add('pagin_accent');
     refs.pagin_button_el_6.innerHTML = `${pageBefore}`;
     refs.pagin_button_el_7.innerHTML = `${page}`;
@@ -130,6 +130,7 @@ function pagin_rander_3() {
     pagin_button_el_5_add_hidden();
     pagin_button_el_9_add_hidden();
     pagin_button_el_10_add_hidden();
+    pagin_button_el_11_add_hidden();
     refs.pagin_button_el_8.classList.add('pagin_accent');
     refs.pagin_button_el_6.innerHTML = `${pageBeforeTwo}`;
     refs.pagin_button_el_7.innerHTML = `${pageBefore}`;
