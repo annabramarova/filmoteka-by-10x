@@ -300,12 +300,12 @@ function pagin_rander_6() {
     pagin_button_el_2_add_hidden();
     pagin_button_el_3_add_hidden();
     pagin_button_el_9_add_hidden();
-    refs.pagin_button_el_7.classList.add('pagin_accent');
-    refs.pagin_button_el_4.innerHTML = `${pageBeforeThree}`;
-    refs.pagin_button_el_5.innerHTML = `${pageBeforeTwo}`;
-    refs.pagin_button_el_6.innerHTML = `${pageBefore}`;
-    refs.pagin_button_el_7.innerHTML = `${page}`;
-    refs.pagin_button_el_8.innerHTML = `${pageAfter}`;
+    refs.pagin_button_el_8.classList.add('pagin_accent');
+    refs.pagin_button_el_4.innerHTML = `${pageBeforeFour}`;
+    refs.pagin_button_el_5.innerHTML = `${pageBeforeThree}`;
+    refs.pagin_button_el_6.innerHTML = `${pageBeforeTwo}`;
+    refs.pagin_button_el_7.innerHTML = `${pageBefore}`;
+    refs.pagin_button_el_8.innerHTML = `${page}`;
     refs.pagin_button_el_10.innerHTML = `${maxPage}`;
   } else if (page === maxPage) {
     pagin_button_el_3_add_hidden();
@@ -612,3 +612,27 @@ function pagin_button_el_11_add_hidden() {
     refs.pagin_button_el_11.classList.add('hidden');
   }
 }
+
+const paginButtons = [
+  refs.pagin_button_el_1,
+  refs.pagin_button_el_2,
+  refs.pagin_button_el_3,
+  refs.pagin_button_el_4,
+  refs.pagin_button_el_5,
+  refs.pagin_button_el_6,
+  refs.pagin_button_el_7,
+  refs.pagin_button_el_8,
+  refs.pagin_button_el_9,
+  refs.pagin_button_el_10,
+  refs.pagin_button_el_11,
+];
+
+function paginBattonElAddClass(paginButtons, AddClass) {
+  for (const button of paginButtons) {
+    // button.classList.add(AddClass);
+    // console.log(button.classList.add(AddClass));
+    // console.log(button.classList);
+  }
+}
+
+paginBattonElAddClass(paginButtons, 'hidden');
