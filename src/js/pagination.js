@@ -27,9 +27,8 @@ let maxPage = 1;
 
 function on_pagin_rander() {
   window.scrollTo(0, 0);
-  pagin_button_remove_accent();
-  pagin_button_remove_hidden();
-  pagin_button_remove_hidden();
+  paginBattonElRemoveClass(paginButtons, 'pagin_accent');
+  paginBattonElRemoveClass(paginButtons, 'hidden');
   pagin_namer_button();
   if (maxPage === 0) {
     pagin_rander_0();
@@ -58,17 +57,7 @@ function on_pagin_rander() {
 }
 
 function pagin_rander_0() {
-  pagin_button_el_1_add_hidden();
-  pagin_button_el_2_add_hidden();
-  pagin_button_el_3_add_hidden();
-  pagin_button_el_4_add_hidden();
-  pagin_button_el_5_add_hidden();
-  pagin_button_el_6_add_hidden();
-  pagin_button_el_7_add_hidden();
-  pagin_button_el_8_add_hidden();
-  pagin_button_el_9_add_hidden();
-  pagin_button_el_10_add_hidden();
-  pagin_button_el_11_add_hidden();
+  paginBattonElRemoveClass(paginButtons, 'hidden');
 }
 
 function pagin_rander_2() {
@@ -442,100 +431,6 @@ function pagin_namer_button() {
   pageAfterFour = page + 4;
 }
 
-function pagin_button_remove_hidden() {
-  if (refs.pagin_button_el_1.classList.contains('hidden') === false) {
-  } else {
-    refs.pagin_button_el_1.classList.remove('hidden');
-  }
-  if (refs.pagin_button_el_2.classList.contains('hidden') === false) {
-  } else {
-    refs.pagin_button_el_2.classList.remove('hidden');
-  }
-  if (refs.pagin_button_el_3.classList.contains('hidden') === false) {
-  } else {
-    refs.pagin_button_el_3.classList.remove('hidden');
-  }
-  if (refs.pagin_button_el_4.classList.contains('hidden') === false) {
-  } else {
-    refs.pagin_button_el_4.classList.remove('hidden');
-  }
-  if (refs.pagin_button_el_5.classList.contains('hidden') === false) {
-  } else {
-    refs.pagin_button_el_5.classList.remove('hidden');
-  }
-  if (refs.pagin_button_el_6.classList.contains('hidden') === false) {
-  } else {
-    refs.pagin_button_el_6.classList.remove('hidden');
-  }
-  if (refs.pagin_button_el_7.classList.contains('hidden') === false) {
-  } else {
-    refs.pagin_button_el_7.classList.remove('hidden');
-  }
-  if (refs.pagin_button_el_8.classList.contains('hidden') === false) {
-  } else {
-    refs.pagin_button_el_8.classList.remove('hidden');
-  }
-  if (refs.pagin_button_el_9.classList.contains('hidden') === false) {
-  } else {
-    refs.pagin_button_el_9.classList.remove('hidden');
-  }
-  if (refs.pagin_button_el_10.classList.contains('hidden') === false) {
-  } else {
-    refs.pagin_button_el_10.classList.remove('hidden');
-  }
-  if (refs.pagin_button_el_11.classList.contains('hidden') === false) {
-  } else {
-    refs.pagin_button_el_11.classList.remove('hidden');
-  }
-}
-
-function pagin_button_remove_accent() {
-  if (refs.pagin_button_el_1.classList.contains('pagin_accent') === false) {
-  } else {
-    refs.pagin_button_el_1.classList.remove('pagin_accent');
-  }
-  if (refs.pagin_button_el_2.classList.contains('pagin_accent') === false) {
-  } else {
-    refs.pagin_button_el_2.classList.remove('pagin_accent');
-  }
-  if (refs.pagin_button_el_3.classList.contains('pagin_accent') === false) {
-  } else {
-    refs.pagin_button_el_3.classList.remove('pagin_accent');
-  }
-  if (refs.pagin_button_el_4.classList.contains('pagin_accent') === false) {
-  } else {
-    refs.pagin_button_el_4.classList.remove('pagin_accent');
-  }
-  if (refs.pagin_button_el_5.classList.contains('pagin_accent') === false) {
-  } else {
-    refs.pagin_button_el_5.classList.remove('pagin_accent');
-  }
-  if (refs.pagin_button_el_6.classList.contains('pagin_accent') === false) {
-  } else {
-    refs.pagin_button_el_6.classList.remove('pagin_accent');
-  }
-  if (refs.pagin_button_el_7.classList.contains('pagin_accent') === false) {
-  } else {
-    refs.pagin_button_el_7.classList.remove('pagin_accent');
-  }
-  if (refs.pagin_button_el_8.classList.contains('pagin_accent') === false) {
-  } else {
-    refs.pagin_button_el_8.classList.remove('pagin_accent');
-  }
-  if (refs.pagin_button_el_9.classList.contains('pagin_accent') === false) {
-  } else {
-    refs.pagin_button_el_9.classList.remove('pagin_accent');
-  }
-  if (refs.pagin_button_el_10.classList.contains('pagin_accent') === false) {
-  } else {
-    refs.pagin_button_el_10.classList.remove('pagin_accent');
-  }
-  if (refs.pagin_button_el_11.classList.contains('pagin_accent') === false) {
-  } else {
-    refs.pagin_button_el_11.classList.remove('pagin_accent');
-  }
-}
-
 function pagin_button_el_1_add_hidden() {
   if (refs.pagin_button_el_1.classList.contains('hidden')) {
   } else {
@@ -627,12 +522,11 @@ const paginButtons = [
   refs.pagin_button_el_11,
 ];
 
-function paginBattonElAddClass(paginButtons, AddClass) {
+function paginBattonElRemoveClass(paginButtons, topicalClass) {
   for (const button of paginButtons) {
-    // button.classList.add(AddClass);
-    // console.log(button.classList.add(AddClass));
-    // console.log(button.classList);
+    if (button.classList.contains(topicalClass) === false) {
+    } else {
+      button.classList.remove(topicalClass);
+    }
   }
 }
-
-paginBattonElAddClass(paginButtons, 'hidden');
