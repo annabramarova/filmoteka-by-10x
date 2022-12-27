@@ -57,7 +57,7 @@ function on_pagin_rander() {
 }
 
 function pagin_rander_0() {
-  paginBattonElRemoveClass(paginButtons, 'hidden');
+  paginBattonElAddClass(paginButtons, 'hidden');
 }
 
 function pagin_rander_2() {
@@ -527,6 +527,15 @@ function paginBattonElRemoveClass(paginButtons, topicalClass) {
     if (button.classList.contains(topicalClass) === false) {
     } else {
       button.classList.remove(topicalClass);
+    }
+  }
+}
+
+function paginBattonElAddClass(paginButtons, topicalClass) {
+  for (const button of paginButtons) {
+    if (button.classList.contains(topicalClass)) {
+    } else {
+      button.classList.add(topicalClass);
     }
   }
 }
