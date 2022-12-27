@@ -9,28 +9,27 @@
 .collection_list {
   display: flex;
   flex-wrap: wrap;
+  row-gap: 20px;
 
-  @include mq($from: $width-min-allowable, $until: $width-tablet) {
-    row-gap: 20px;
-  }
-  @include mq($from: $width-tablet, $until: $width-desktop) {
+  @include mq($from: $width-tablet) {
     column-gap: 32px;
     row-gap: 32px;
   }
+
   @include mq($from: $width-desktop) {
     column-gap: 16px;
     row-gap: 32px;
   }
 }
 .collection_item {
-  @include mq($from: $width-min-allowable, $until: $width-tablet) {
-    width: 100%;
+  width: 100%;
+
+  @include mq($from: $width-tablet) {
+    width: calc((100% + 32px) / 2 - 32px);
   }
-  @include mq($from: $width-tablet, $until: $width-desktop) {
-    width: calc((100% - 32px) / 2);
-  }
+
   @include mq($from: $width-desktop) {
-    width: calc((100% - 32px) / 3);
+    width: calc((100% + 16px) / 3 - 16px);
   }
 }
 .card {
@@ -45,12 +44,11 @@
   transition-duration: 1000ms;
   cursor: pointer;
 
-  @include mq($from: $width-min-allowable, $until: $width-tablet) {
-    gap: 10px;
-    font-size: 12px;
-    line-height: calc(14 / 12);
-  }
-  @include mq($from: $width-tablet, $until: $width-desktop) {
+  gap: 10px;
+  font-size: 12px;
+  line-height: calc(14 / 12);
+
+  @include mq($from: $width-tablet) {
     font-size: 12px;
     line-height: calc(16 / 12);
     gap: 8px;
@@ -67,10 +65,9 @@
 .card_img {
   border-radius: 5px;
   width: 100%;
-  @include mq($from: $width-min-allowable, $until: $width-tablet) {
-    aspect-ratio: 280/398;
-  }
-  @include mq($from: $width-tablet, $until: $width-desktop) {
+  aspect-ratio: 280/398;
+
+  @include mq($from: $width-tablet) {
     aspect-ratio: 336/455;
   }
   @include mq($from: $width-desktop) {
@@ -78,14 +75,11 @@
   }
 }
 .card_no-img {
-  width: auto;
-  max-width: 394px;
-  height: auto;
-  aspect-ratio: 394/596;
-  @include mq($from: $width-min-allowable, $until: $width-tablet) {
-    aspect-ratio: 280/398;
-  }
-  @include mq($from: $width-tablet, $until: $width-desktop) {
+  width: 100%;
+  aspect-ratio: 280/398;
+  object-fit: cover;
+
+  @include mq($from: $width-tablet) {
     aspect-ratio: 336/455;
   }
   @include mq($from: $width-desktop) {
@@ -96,8 +90,6 @@
   text-transform: uppercase;
   white-space: nowrap;
   overflow: hidden;
-  max-width: 394px;
-  // height: 30px;
   text-overflow: ellipsis;
 }
 .card-genres {
