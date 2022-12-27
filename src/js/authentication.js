@@ -15,6 +15,7 @@ import {
   signOut,
   GoogleAuthProvider,
   EmailAuthProvider,
+  GithubAuthProvider,
 } from 'firebase/auth';
 
 import { getCurrentPage } from './header';
@@ -43,6 +44,7 @@ const uiConfig = {
   signInOptions: [
     GoogleAuthProvider.PROVIDER_ID,
     EmailAuthProvider.PROVIDER_ID,
+    GithubAuthProvider.PROVIDER_ID,
   ],
 };
 

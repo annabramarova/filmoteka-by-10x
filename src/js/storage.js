@@ -1,5 +1,5 @@
 import Api from './api-service';
-import { getDatabase, ref, get, update, remove } from 'firebase/database';
+import { getDatabase, ref, get, update, remove, set } from 'firebase/database';
 import { firebaseApp, auth } from './authentication';
 
 const api = new Api();
@@ -120,11 +120,17 @@ class Storage {
     if (!auth.currentUser) return;
 
     try {
-      await update(
-        ref(db, `/users/${auth.currentUser.uid}/${this.#STORAGE_KEY}`),
-        {
-          [id]: id,
-        }
+      // you can use update or set:
+
+      // await update(
+      //   ref(db, `/users/${auth.currentUser.uid}/${this.#STORAGE_KEY}`),
+      //   {
+      //     [id]: id,
+      //   }
+      // );
+      await set(
+        ref(db, `/users/${auth.currentUser.uid}/${this.#STORAGE_KEY}/${id}`),
+        id
       );
     } catch {}
   }
