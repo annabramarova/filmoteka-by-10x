@@ -12,7 +12,7 @@
     flex-direction: column;
     justify-content: flex-start;
     background-color: getColor('white');
-    
+    margin-top: 10px;
 
     .dark & {
             background-color: getColor('body-background');
@@ -38,11 +38,11 @@
         }
 }
 
-// .filters__list:not(:last-child) {
-//     @include mq($width-tablet) {
-//         margin-right: 20px;
-//     }
-// }
+.filters__list:not(:last-child) {
+    @include mq($width-tablet) {
+        margin-right: 10px;
+    }
+}
 
 .filter-container {
     animation-name: opacity;
@@ -55,6 +55,7 @@
     border-radius: 5px;
 
     fill: getColor('white');
+    stroke: getColor('black');
         background-color: transparent;
         border: none;
 
@@ -103,20 +104,14 @@
 }
 
 .filters__icon-close {
+    fill: getColor('error-text');
     stroke: getColor('black');
-    stroke-width: 1px;
 
     .dark & {
             stroke: getColor('footer-bgr');
             fill: getColor('footer-bgr');
         }
 
-    transition: stroke $duration $timing-function;
-
-    .filters__icon-close:focus &,
-    .filters__icon-close:hover & {
-        stroke: getColor('white');
-    }
 }
 
 .is-hidden-filter {
