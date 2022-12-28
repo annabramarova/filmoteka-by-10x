@@ -1,0 +1,125 @@
+.filter__wrapper {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-top: 45px;
+}
+
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: getColor('white');
+    
+
+    .dark & {
+            background-color: getColor('body-background');
+        }
+
+    @include mq($width-tablet) {
+        flex-direction: row;
+    }
+}
+
+.filters__item {
+    background-color: getColor('white');
+    border: 1px solid getColor('error-text');
+    outline: none;
+    color: getColor('black');
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+
+    .dark & {
+            background-color: getColor('elemets-background');
+                color: getColor('footer-bgr');
+        }
+}
+
+// .filters__list:not(:last-child) {
+//     @include mq($width-tablet) {
+//         margin-right: 20px;
+//     }
+// }
+
+.filter-container {
+    animation-name: opacity;
+    animation-duration: 1000ms;
+    
+}
+
+.filter__btn {
+    padding: 5px 2px;
+    border-radius: 5px;
+
+    fill: getColor('white');
+        background-color: transparent;
+        border: none;
+
+    .dark & {
+            background-color: transparent;
+            fill: getColor('footer-bgr');
+        }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.filter__text {
+    font-weight: 500;
+    margin-right: 5px;
+    color: getColor('white');
+
+    .dark & {
+            color: getColor('footer-bgr');}
+    font-size: 14px;
+    text-transform: uppercase;
+
+        @include mq($until: $width-tablet) {
+            display: none;
+        }
+}
+
+.filters__reset {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+
+    width: 33px;
+    height: 33px;
+    
+    border: none;
+    border-radius: 5px;
+    background-color: getColor('white');
+    cursor: pointer;
+
+    .dark & {
+        background-color: getColor('body-background');
+        }
+}
+
+.filters__icon-close {
+    stroke: getColor('black');
+    stroke-width: 1px;
+
+    .dark & {
+            stroke: getColor('footer-bgr');
+            fill: getColor('footer-bgr');
+        }
+
+    transition: stroke $duration $timing-function;
+
+    .filters__icon-close:focus &,
+    .filters__icon-close:hover & {
+        stroke: getColor('white');
+    }
+}
+
+.is-hidden-filter {
+    visibility: hidden;
+    display: none;
+}

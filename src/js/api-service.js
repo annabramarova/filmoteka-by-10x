@@ -8,6 +8,9 @@ export default class Api {
     this.page = 1;
     this.query = '';
     this.id = null;
+    this.genre = '';    
+    this.year = '';
+    this.vote = '';
   }
 
   async getTrendingFilms() {
@@ -87,6 +90,20 @@ export default class Api {
         return res.data;
       });
     return r;
+  }
+
+  async getFilteredMovies() {
+      const searchParams = new URLSearchParams({
+        api_key: this.KEY,
+        sort_by: 'popularity.desc',
+        page: this.page,
+        include_adult: false,
+        with_genres: this.genre,
+        primary_release_year: this.year,
+      });
+      const r = await axios
+        .get(`/discover/movie?${searchParams}&vote_average.gte=${this.vote}`);
+      return r.data;
   }
 }
 
