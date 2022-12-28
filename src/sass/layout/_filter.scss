@@ -42,11 +42,19 @@
     border-radius: 5px;
     padding: 5px;
     cursor: pointer;
+    scale: 1;
+    transition: scale $duration $timing-function;
 
+        &:hover,
+        &:focus {
+            scale: 1.1;
+        }
     .dark & {
             background-color: getColor('elemets-background');
                 color: getColor('footer-bgr');
         }
+
+                
 }
 
 .filters__list {
@@ -76,11 +84,10 @@
             fill: getColor('footer-bgr');
         }
 
-         @include mq($width-tablet) {
-             margin-top: 0;
-         }
+            @include mq($width-tablet) {
+                margin-top: 0;
+            }                               
 }
-
 
 .filter__text {
     font-weight: 500;

@@ -15,23 +15,27 @@ function onFilterResetButton(e) {
 }
 
 function onFilterOpen(e) {
-    refs.filterContainer.classList.toggle('is-hidden-filter');
+    refs.filterContainer.classList.toggle('is-hidden-filter');    
+  e.target.blur();
 }
 
 function onGenresFilter(e) {
-  let genre = e.target.value;
+    let genre = e.target.value;
+  e.target.blur();
   apiService.genre = Number(genre);
   renderFilter();
 }
 
 function onYearsFilter(e) {
-  let year = e.target.value;
+    let year = e.target.value;
+  e.target.blur();
   apiService.year = Number(year);
   renderFilter();
 }
 
 function onVotesFilter(e) {
-  let vote = e.target.value;
+    let vote = e.target.value;    
+  e.target.blur();
   apiService.vote = Number(vote);
   renderFilter();
 }
