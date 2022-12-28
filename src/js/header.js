@@ -26,6 +26,9 @@ function onMyLibraryClick(e) {
 
   makeCurrent(e);
   refs.formSearch.classList.add('visually-hidden');
+  refs.filterWrapper.classList.add('visually-hidden');
+  refs.filterContainer.classList.add('is-hidden-filter');
+
   refs.headerButtons.forEach(element => {
     element.classList.remove('visually-hidden');
   });
@@ -78,6 +81,8 @@ export function goHome(e) {
   makeCurrent({ target: refs.homeLink });
   refs.formSearch.classList.remove('visually-hidden');
   refs.formSearch.reset();
+  refs.filterWrapper.classList.remove('visually-hidden');
+
   refs.headerButtons.forEach(element => {
     element.classList.add('visually-hidden');
   });
