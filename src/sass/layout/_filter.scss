@@ -1,8 +1,17 @@
+    
 .filter__wrapper {
+    position:absolute;
+    z-index: 1;
+    left: 20px;
+    top: 160px;
     display: flex;
     align-items: center;
     margin-right: auto;
-    margin-top: 45px;
+
+    @include mq($width-tablet) {
+            left: 35px;
+            top: 150px;
+        }
 }
 
 
@@ -38,9 +47,11 @@
         }
 }
 
-.filters__list:not(:last-child) {
+.filters__list {
+    margin-bottom: 10px;
     @include mq($width-tablet) {
         margin-right: 10px;
+        margin-bottom: 0;
     }
 }
 
@@ -51,6 +62,9 @@
 }
 
 .filter__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 5px 2px;
     border-radius: 5px;
 
@@ -63,9 +77,10 @@
             background-color: transparent;
             fill: getColor('footer-bgr');
         }
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+         @include mq($width-tablet) {
+             margin-top: 0;
+         }
 }
 
 
