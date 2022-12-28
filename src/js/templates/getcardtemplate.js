@@ -18,13 +18,15 @@ export const getCardTemplate = ({
     <div class="cardItem__wrapper">
         <h2 class="cardItem__name">${title}</h2>
         <p class="cardItem__text">
-          Vote / Votes<span class="cardItem__averageVote">${vote_average}</span>/<span
+          Vote / Votes<span class="cardItem__averageVote">${vote_average.toFixed(
+            1
+          )}</span>/<span
             class="cardItem__countVote"
             >${vote_count}</span
           >
         </p>
         <p class="cardItem__text">
-          Popularity<span class="cardItem__data">${popularity}</span>
+          Popularity<span class="cardItem__data">${popularity.toFixed(0)}</span>
         </p>
         <p class="cardItem__text">
           Original&nbspTitle<span class="cardItem__title">${original_title}</span>
@@ -54,13 +56,15 @@ export const getCardTemplate = ({
     <div class="cardItem__wrapper">
         <h2 class="cardItem__name">${title}</h2>
         <p class="cardItem__text">
-          Vote / Votes<span class="cardItem__averageVote">${vote_average}</span>/<span
+          Vote / Votes<span class="cardItem__averageVote">${vote_average.toFixed(
+            1
+          )}</span>/<span
             class="cardItem__countVote"
             >${vote_count}</span
           >
         </p>
         <p class="cardItem__text">
-          Popularity<span class="cardItem__data">${popularity}</span>
+          Popularity<span class="cardItem__data">${popularity.toFixed(0)}</span>
         </p>
         <p class="cardItem__text">
           Original&nbspTitle<span class="cardItem__title">${original_title}</span>
