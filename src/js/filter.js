@@ -15,7 +15,7 @@ function onFilterResetButton(e) {
 }
 
 function onFilterOpen(e) {
-  refs.filterContainer.classList.toggle('is-hidden-filter');
+    refs.filterContainer.classList.toggle('is-hidden-filter');
 }
 
 function onGenresFilter(e) {
