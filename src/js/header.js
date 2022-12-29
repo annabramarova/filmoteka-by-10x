@@ -3,13 +3,12 @@ import { getQueued, getWatched } from './storage';
 import { tuneRender } from './render/render-gallery';
 // import { onLibraryOpen } from './empty-lib-modal';
 // import { onEmptyWatched } from './empty-watch-modal';
-import Api from './api-service';
+
 import {
   tuneRenderQeueue,
   tuneRenderTrending,
   tuneRenderWantched,
 } from './ui-controller';
-const apiService = new Api();
 
 refs.myLibraryLink.addEventListener('click', onMyLibraryClick);
 refs.headerButtons[0].addEventListener('click', onWatchedClick);
