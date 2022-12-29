@@ -12,6 +12,7 @@ import {
 import { onEmptySearch } from './search-film';
 import { api } from './api-service';
 import { getWatched, getQueued } from './storage';
+import { emptyFilterRender } from './filter';
 
 export async function tuneRender({
   getMoviesCallback,
@@ -90,8 +91,7 @@ export const tuneRenderQeueue = tuneRender.bind(null, {
 export const tuneRenderFilter = tuneRender.bind(null, {
   getMoviesCallback: api.getFilteredMovies.bind(api),
   renderCallback: renderGallery,
-  runIfNoResultsCallback: onEmptySearch,
-  preventRenderIfNoResults: true,
+  runIfNoResultsCallback: emptyFilterRender,
 });
 
 tuneRenderTrending();

@@ -1,11 +1,12 @@
 import { refs } from './refs';
-import Api from './api-service';
 import { api } from './api-service';
+
+import { goHome } from './header';
 import {
-  clearGallery,
   tuneRenderTrending,
   tuneRenderFilter,
 } from './ui-controller';
+
 
 refs.filterListGenres.addEventListener('change', onGenresFilter);
 refs.filterListYears.addEventListener('change', onYearsFilter);
@@ -13,7 +14,7 @@ refs.filterListVoteAverage.addEventListener('change', onVotesFilter);
 refs.filterButtonOpen.addEventListener('click', onFilterOpen);
 refs.filterResetButton.addEventListener('click', onFilterResetButton);
 
-const apiService = new Api();
+const filterGIF = 'https://i.gifer.com/C4j.gif';
 
 function onFilterResetButton(e) {
   tuneRenderTrending();
@@ -70,3 +71,27 @@ async function renderFilter() {
 
   // tuneRenderTrending();
 }
+
+const getNothingFoundFilter = GIF => {
+  return `
+    <div class="plug__container">
+      <strong class="plug__strong">Ooops! Nothing found!</strong>
+      <img class="plug__gif" src="${GIF}" />
+      <button type="button" class="plug__button" data-action="go-home">
+        Try again
+      </button> 
+    </div>
+  `;
+};
+
+export const emptyFilterRender = () => {
+  refs.plug.innerHTML = getNothingFoundFilter(filterGIF);
+  document
+    .querySelector('[data-action="go-home"]')
+    .addEventListener('click', onGoHomeButtonClick);
+};
+
+const onGoHomeButtonClick = e => {
+    goHome(e);
+    refs.filterContainer.reset();
+};

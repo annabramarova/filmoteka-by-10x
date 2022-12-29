@@ -27,6 +27,7 @@ function onMyLibraryClick(e) {
   makeCurrent(e);
   refs.formSearch.classList.add('visually-hidden');
   refs.filterWrapper.classList.add('visually-hidden');
+  refs.filterContainer.reset();
   refs.filterContainer.classList.add('is-hidden-filter');
 
   refs.headerButtons.forEach(element => {
