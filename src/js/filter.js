@@ -55,7 +55,8 @@ refs.filterListYears.innerHTML = yearsList();
 async function renderFilter() {
 
   const movies = await apiService.getFilteredMovies();
-  const { results } = movies;
+    const { results } = movies;
+    console.log(results);
 
   if (results.length === 0) {
     clearGallery();
