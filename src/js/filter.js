@@ -1,6 +1,11 @@
 import { refs } from './refs';
 import Api from './api-service';
-import { clearGallery, tuneRenderTrending } from './ui-controller';
+import { api } from './api-service';
+import {
+  clearGallery,
+  tuneRenderTrending,
+  tuneRenderFilter,
+} from './ui-controller';
 
 refs.filterListGenres.addEventListener('change', onGenresFilter);
 refs.filterListYears.addEventListener('change', onYearsFilter);
@@ -15,28 +20,28 @@ function onFilterResetButton(e) {
 }
 
 function onFilterOpen(e) {
-    refs.filterContainer.classList.toggle('is-hidden-filter');    
+  refs.filterContainer.classList.toggle('is-hidden-filter');
   e.target.blur();
 }
 
 function onGenresFilter(e) {
-    let genre = e.target.value;
+  let genre = e.target.value;
   e.target.blur();
-  apiService.genre = Number(genre);
+  api.genre = Number(genre);
   renderFilter();
 }
 
 function onYearsFilter(e) {
-    let year = e.target.value;
+  let year = e.target.value;
   e.target.blur();
-  apiService.year = Number(year);
+  api.year = Number(year);
   renderFilter();
 }
 
 function onVotesFilter(e) {
-    let vote = e.target.value;    
+  let vote = e.target.value;
   e.target.blur();
-  apiService.vote = Number(vote);
+  api.vote = Number(vote);
   renderFilter();
 }
 
@@ -53,15 +58,15 @@ const yearsList = () => {
 refs.filterListYears.innerHTML = yearsList();
 
 async function renderFilter() {
+  tuneRenderFilter();
+  // const movies = await api.getFilteredMovies();
+  //   const { results } = movies;
+  //   console.log(results);
 
-  const movies = await apiService.getFilteredMovies();
-    const { results } = movies;
-    console.log(results);
+  // if (results.length === 0) {
+  //   clearGallery();
+  //   return;
+  // }
 
-  if (results.length === 0) {
-    clearGallery();
-    return;
-  }  
-  
-  tuneRenderTrending(results);
+  // tuneRenderTrending();
 }

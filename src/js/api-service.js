@@ -29,7 +29,6 @@ export default class Api {
       )
       .then(res => res.data);
     return r;
-    
   }
 
   async getFilmBySearch() {
@@ -93,24 +92,31 @@ export default class Api {
     return r;
   }
 
-  async getFilteredMovies() {
+  async getFilteredMovies(page) {
     try {
-      const searchParams = new URLSearchParams({
+      const searchParams = {
         api_key: this.KEY,
         sort_by: 'popularity.desc',
-        page: this.page,
+        page,
         include_adult: false,
         with_genres: this.genre,
         primary_release_year: this.year,
-      });
-      const res = await axios.get(`discover/movie?${searchParams}&vote_average.gte=${this.vote}`);
+        ['vote_average.gte']: this.vote,
+      };
+      const res = await axios.get(`discover/movie`, { params: searchParams });
+      console.log('res,', res.data);
       return res.data;
     } catch (error) {
-      return error;
+      console.log('err', error);
+      return {
+        page: 0,
+        total_pages: 0,
+        total_results: 0,
+        results: [],
+      };
     }
   }
 }
-
 
 export const api = new Api();
 

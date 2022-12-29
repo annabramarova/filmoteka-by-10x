@@ -87,4 +87,11 @@ export const tuneRenderQeueue = tuneRender.bind(null, {
   runIfNoResultsCallback: emptyQueueRender,
 });
 
+export const tuneRenderFilter = tuneRender.bind(null, {
+  getMoviesCallback: api.getFilteredMovies.bind(api),
+  renderCallback: renderGallery,
+  runIfNoResultsCallback: onEmptySearch,
+  preventRenderIfNoResults: true,
+});
+
 tuneRenderTrending();
