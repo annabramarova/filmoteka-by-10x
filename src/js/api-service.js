@@ -104,7 +104,7 @@ export default class Api {
         ['vote_average.gte']: this.vote,
       };
       const res = await axios.get(`discover/movie`, { params: searchParams });
-      console.log('res,', res.data);
+      // console.log('res,', res.data)
       return res.data;
     } catch (error) {
       console.log('err', error);
