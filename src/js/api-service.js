@@ -8,6 +8,9 @@ export default class Api {
     this.page = 1;
     this.query = '';
     this.id = null;
+    this.genre = '';
+    this.year = '';
+    this.vote = '';
   }
 
   async getTrendingFilms() {
@@ -87,6 +90,31 @@ export default class Api {
         return res.data;
       });
     return r;
+  }
+
+  async getFilteredMovies(page) {
+    try {
+      const searchParams = {
+        api_key: this.KEY,
+        sort_by: 'popularity.desc',
+        page,
+        include_adult: false,
+        with_genres: this.genre,
+        primary_release_year: this.year,
+        ['vote_average.gte']: this.vote,
+      };
+      const res = await axios.get(`discover/movie`, { params: searchParams });
+      // console.log('res,', res.data)
+      return res.data;
+    } catch (error) {
+      console.log('err', error);
+      return {
+        page: 0,
+        total_pages: 0,
+        total_results: 0,
+        results: [],
+      };
+    }
   }
 }
 

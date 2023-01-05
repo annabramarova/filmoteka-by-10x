@@ -3,13 +3,12 @@ import { getQueued, getWatched } from './storage';
 import { tuneRender } from './render/render-gallery';
 // import { onLibraryOpen } from './empty-lib-modal';
 // import { onEmptyWatched } from './empty-watch-modal';
-import Api from './api-service';
+
 import {
   tuneRenderQeueue,
   tuneRenderTrending,
   tuneRenderWantched,
 } from './ui-controller';
-const apiService = new Api();
 
 refs.myLibraryLink.addEventListener('click', onMyLibraryClick);
 refs.headerButtons[0].addEventListener('click', onWatchedClick);
@@ -26,6 +25,10 @@ function onMyLibraryClick(e) {
 
   makeCurrent(e);
   refs.formSearch.classList.add('visually-hidden');
+  refs.filterWrapper.classList.add('visually-hidden');
+  refs.filterContainer.reset();
+  refs.filterContainer.classList.add('is-hidden-filter');
+
   refs.headerButtons.forEach(element => {
     element.classList.remove('visually-hidden');
   });
@@ -78,6 +81,8 @@ export function goHome(e) {
   makeCurrent({ target: refs.homeLink });
   refs.formSearch.classList.remove('visually-hidden');
   refs.formSearch.reset();
+  refs.filterWrapper.classList.remove('visually-hidden');
+
   refs.headerButtons.forEach(element => {
     element.classList.add('visually-hidden');
   });

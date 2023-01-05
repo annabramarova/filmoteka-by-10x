@@ -1,7 +1,6 @@
 import './js/preloader';
 import './js/render/render-gallery';
 import './js/render/render-library';
-import './js/gettrendfilms';
 import './js/team-modal';
 import './js/pagination';
 import './js/loading';
@@ -14,3 +13,4 @@ import './js/trailer';
 import './js/arrow';
 import './js/empty-lib-plug';
 import './js/dark-light';
+import './js/filter';
