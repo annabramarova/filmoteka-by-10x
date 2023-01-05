@@ -5,7 +5,6 @@ import { goHome } from './header';
 import { tuneRenderTrending, tuneRenderFilter } from './ui-controller';
 
 refs.filters.addEventListener('mouseout', e => e.target.blur());
-refs.filterButtonOpen.addEventListener('mouseout', e => e.target.blur());
 refs.filterListGenres.addEventListener('change', onGenresFilter);
 refs.filterListYears.addEventListener('change', onYearsFilter);
 refs.filterListVoteAverage.addEventListener('change', onVotesFilter);
