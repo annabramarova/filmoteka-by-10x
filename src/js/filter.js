@@ -2,12 +2,9 @@ import { refs } from './refs';
 import { api } from './api-service';
 
 import { goHome } from './header';
-import {
-  tuneRenderTrending,
-  tuneRenderFilter,
-} from './ui-controller';
+import { tuneRenderTrending, tuneRenderFilter } from './ui-controller';
 
-
+refs.filters.addEventListener('mouseout', e => e.target.blur());
 refs.filterListGenres.addEventListener('change', onGenresFilter);
 refs.filterListYears.addEventListener('change', onYearsFilter);
 refs.filterListVoteAverage.addEventListener('change', onVotesFilter);
@@ -22,12 +19,13 @@ function onFilterResetButton(e) {
 }
 
 function onFilterOpen(e) {
-  refs.filterContainer.classList.toggle('is-hidden-filter');  
+  refs.filterContainer.classList.toggle('is-hidden-filter');
   refs.filterButtonOpen.classList.toggle('filter__btn__animation');
   return e.target.blur();
 }
 
 function onGenresFilter(e) {
+  console.log(e.target);
   let genre = e.target.value;
   if (!genre) {
     api.genre = '';
@@ -37,7 +35,6 @@ function onGenresFilter(e) {
   renderFilter();
   e.target.blur();
 }
-
 
 function onYearsFilter(e) {
   let year = e.target.value;
@@ -69,7 +66,6 @@ async function renderFilter() {
   tuneRenderFilter();
 }
 
-
 const getNothingFoundFilter = GIF => {
   return `
     <div class="plug__container">
@@ -90,6 +86,6 @@ export const emptyFilterRender = () => {
 };
 
 const onGoHomeButtonClick = e => {
-    goHome(e);
-    refs.filterContainer.reset();
+  goHome(e);
+  refs.filterContainer.reset();
 };

@@ -63,7 +63,6 @@ export const refs = {
   themeToggle: document.querySelector('.theme-toggle'),
   HTML: document.querySelector('html'),
 
-
   //filter
   filterWrapper: document.querySelector('.filter__wrapper'),
   filterListGenres: document.querySelector('.js-filter-genres'),
@@ -73,4 +72,5 @@ export const refs = {
   filterText: document.querySelector('.filter__text'),
   filterResetButton: document.querySelector('.filters__reset'),
   filterContainer: document.querySelector('.filter-container'),
+  filters: document.querySelector('.filters'),
 };
