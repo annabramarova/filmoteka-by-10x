@@ -20,12 +20,10 @@ function onFilterResetButton(e) {
 
 function onFilterOpen(e) {
   refs.filterContainer.classList.toggle('is-hidden-filter');
-  refs.filterButtonOpen.classList.toggle('filter__btn__animation');
   return e.target.blur();
 }
 
 function onGenresFilter(e) {
-  console.log(e.target);
   let genre = e.target.value;
   if (!genre) {
     api.genre = '';
