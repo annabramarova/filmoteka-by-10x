@@ -67,7 +67,6 @@ refs.filterListYears.innerHTML = yearsList();
 
 async function renderFilter() {
   tuneRenderFilter();
-  e.target.blur();
 }
 
 
