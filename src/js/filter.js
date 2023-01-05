@@ -18,32 +18,39 @@ const filterGIF = 'https://i.gifer.com/C4j.gif';
 
 function onFilterResetButton(e) {
   tuneRenderTrending();
+  e.target.blur();
 }
 
 function onFilterOpen(e) {
-  refs.filterContainer.classList.toggle('is-hidden-filter');
-  e.target.blur();
+  refs.filterContainer.classList.toggle('is-hidden-filter');  
+  refs.filterButtonOpen.classList.toggle('filter__btn__animation');
+  return e.target.blur();
 }
 
 function onGenresFilter(e) {
   let genre = e.target.value;
-  e.target.blur();
-  api.genre = Number(genre);
+  if (!genre) {
+    api.genre = '';
+  } else {
+    api.genre = Number(genre);
+  }
   renderFilter();
+  e.target.blur();
 }
+
 
 function onYearsFilter(e) {
   let year = e.target.value;
-  e.target.blur();
   api.year = Number(year);
   renderFilter();
+  e.target.blur();
 }
 
 function onVotesFilter(e) {
   let vote = e.target.value;
-  e.target.blur();
   api.vote = Number(vote);
   renderFilter();
+  e.target.blur();
 }
 
 let startYear = 1907;
@@ -60,17 +67,9 @@ refs.filterListYears.innerHTML = yearsList();
 
 async function renderFilter() {
   tuneRenderFilter();
-  // const movies = await api.getFilteredMovies();
-  //   const { results } = movies;
-  //   console.log(results);
-
-  // if (results.length === 0) {
-  //   clearGallery();
-  //   return;
-  // }
-
-  // tuneRenderTrending();
+  e.target.blur();
 }
+
 
 const getNothingFoundFilter = GIF => {
   return `
