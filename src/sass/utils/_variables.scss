@@ -62,17 +62,3 @@ $duration: 250ms;
     opacity: 1;
   }
 }
-
-@keyframes Glow {
-  from {
-    text-shadow: 0 0 10px getColor('error-text'), 0 0 20px getColor('error-text'),
-      0 0 30px getColor('error-text'), 0 0 40px getColor('error-text'), 0 0 70px getColor('error-text'),
-      0 0 80px getColor('error-text'), 0 0 100px getColor('error-text'), 0 0 150px getColor('error-text');
-  }
-
-  to {
-    text-shadow: 0 0 5px getColor('error-text'), 0 0 10px getColor('error-text'),
-      0 0 15px getColor('error-text'), 0 0 20px getColor('error-text'), 0 0 35px getColor('error-text'),
-      0 0 40px getColor('error-text'), 0 0 50px getColor('error-text'), 0 0 75px getColor('error-text');
-  }
-}

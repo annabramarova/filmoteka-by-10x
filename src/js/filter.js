@@ -5,6 +5,7 @@ import { goHome } from './header';
 import { tuneRenderTrending, tuneRenderFilter } from './ui-controller';
 
 refs.filters.addEventListener('mouseout', e => e.target.blur());
+refs.filterButtonOpen.addEventListener('mouseout', e => e.target.blur());
 refs.filterListGenres.addEventListener('change', onGenresFilter);
 refs.filterListYears.addEventListener('change', onYearsFilter);
 refs.filterListVoteAverage.addEventListener('change', onVotesFilter);
@@ -20,12 +21,10 @@ function onFilterResetButton(e) {
 
 function onFilterOpen(e) {
   refs.filterContainer.classList.toggle('is-hidden-filter');
-  refs.filterButtonOpen.classList.toggle('filter__btn__animation');
   return e.target.blur();
 }
 
 function onGenresFilter(e) {
-  console.log(e.target);
   let genre = e.target.value;
   if (!genre) {
     api.genre = '';
