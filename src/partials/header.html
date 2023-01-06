@@ -109,9 +109,21 @@
       </button>
     </div>
 
-    <div class="toggle-wrapper">
-      <input type="checkbox" class="theme-toggle" />
-    </div>
-    <!-- <button class="theme-toggle" type="button">Dark/Light</button> -->
+    <fieldset class="switcher">
+      <legend class="switcher__legend">Theme</legend>
+      <input
+        class="switcher__radio switcher__radio--light"
+        type="radio"
+        name="color-theme"
+        value="light"
+      />
+      <input
+        class="switcher__radio switcher__radio--dark"
+        type="radio"
+        name="color-theme"
+        value="dark"
+      />
+      <div class="switcher__status"></div>
+    </fieldset>
   </div>
 </header>
