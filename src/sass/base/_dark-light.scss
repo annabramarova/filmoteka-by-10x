@@ -188,18 +188,17 @@
   right: 7px;
   top: 160px;
   transform: rotate(90deg);
-  padding: 2px;
+  padding: 1px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   border: none;
 
   @include mq($width-tablet) {
     right: 35px;
-    top: 134px;
+    top: 139px;
+    padding: 2px;
     transform: rotate(0);
   }
-
-  outline: 1px dashed yellowgreen;
 }
 
 .switcher__legend {
@@ -212,19 +211,20 @@
   -webkit-appearance: none;
   appearance: none;
   margin: 0;
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 14px;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 14px;
+  background-size: 12px;
   filter: invert(1);
   transition: filter $duration $timing-function;
   outline: none;
+  cursor: pointer;
 
   @include mq($width-tablet) {
-    width: 32px;
-    height: 32px;
-    background-size: 22px;
+    width: 24px;
+    height: 22px;
+    background-size: 19px;
   }
 
   &--light {
@@ -252,80 +252,40 @@
   bottom: 0;
   right: 0;
   z-index: -1;
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
-  border-radius: 18px;
-  background-color: rgba(220, 220, 220, 0.5);
+  box-shadow: 0 0 0 1px getColor('white');
+  border-radius: 7px;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 32px;
+  background-size: 17px;
   background-image: url(../images/circle.svg);
-  transition: background-position 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
+  transition-property: background-position box-shadow;
+  transition-duration: $duration;
+  transition-timing-function: $timing-function;
 
-.switcher__radio:focus ~ .switcher__status {
-  box-shadow: 0 0 0 2px #000000;
+  @include mq($width-tablet) {
+    box-shadow: 0 0 0 2px getColor('white');
+    border-radius: 12px;
+    background-size: 25px;
+  }
+
+  .switcher__radio:hover ~ &,
+  .switcher__radio:focus ~ & {
+    box-shadow: 0 0 0 2px getColor('accent');
+  }
 }
 
 .switcher__radio--light:checked ~ .switcher__status {
-  background-position: left 2px center;
+  background-position: left center;
+
+  @include mq($width-tablet) {
+    background-position: left 2px center;
+  }
 }
 
 .switcher__radio--dark:checked ~ .switcher__status {
-  background-position: right 2px center;
+  background-position: right center;
+
+  @include mq($width-tablet) {
+    background-position: right 2px center;
+  }
 }
-
-// .toggle-wrapper {
-//   position: absolute;
-//   z-index: 1;
-//   right: 20px;
-//   top: -30px;
-//   display: inline-block;
-
-//   @include mq($width-tablet) {
-//     right: 32px;
-//   }
-// }
-
-// .theme-toggle {
-//   -webkit-appearance: none;
-//   appearance: none;
-//   width: 40px;
-//   height: 10px;
-//   outline: none;
-//   border-radius: 10px;
-//   cursor: pointer;
-//   background: #1e90ff;
-//   box-shadow: rgb(204, 219, 232) 0px 1px 3px 0px inset;
-
-//   transition-duration: $duration;
-//   transition-timing-function: $timing-function;
-
-//   &:hover {
-//     box-shadow: 0px 0px 5px 2px getColor('accent');
-//   }
-// }
-
-// .theme-toggle:checked {
-//   background: #8b0000;
-// }
-
-// .theme-toggle::before {
-//   content: '';
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 20px;
-//   height: 20px;
-//   background-color: transparent;
-//   background-position: center;
-//   background-size: contain;
-//   background-repeat: no-repeat;
-//   background-image: url(../images/blu-sword.svg);
-//   transition: $duration;
-//   transform: scale(2);
-// }
-
-// .theme-toggle:checked::before {
-//   left: 20px;
-//   background-image: url(../images/red-sword.svg);
-// }
