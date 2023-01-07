@@ -60,7 +60,7 @@ export const refs = {
   pagin_button_el_11: document.querySelector('.pagin_button_el_11'),
 
   // theme-dark/light-toggle
-  themeToggle: document.querySelector('.theme-toggle'),
+  switcher: document.querySelector('.switcher'),
   HTML: document.querySelector('html'),
 
   //filter
