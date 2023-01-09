@@ -49,10 +49,10 @@ function on_pagin_rander() {
   }
 
   if (window.innerWidth < 480) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
+    pagin_button_el_add_hidden(refs.pagin_button_el_2);
+    pagin_button_el_add_hidden(refs.pagin_button_el_3);
+    pagin_button_el_add_hidden(refs.pagin_button_el_9);
+    pagin_button_el_add_hidden(refs.pagin_button_el_10);
   }
 }
 
@@ -61,27 +61,20 @@ function pagin_rander_0() {
 }
 
 function pagin_rander_2() {
+  pagin_button_el_add_hidden(refs.pagin_button_el_2);
+  pagin_button_el_add_hidden(refs.pagin_button_el_3);
+  pagin_button_el_add_hidden(refs.pagin_button_el_4);
+  pagin_button_el_add_hidden(refs.pagin_button_el_5);
+  pagin_button_el_add_hidden(refs.pagin_button_el_8);
+  pagin_button_el_add_hidden(refs.pagin_button_el_9);
+  pagin_button_el_add_hidden(refs.pagin_button_el_10);
   if (page === 1) {
-    pagin_button_el_1_add_hidden();
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_4_add_hidden();
-    pagin_button_el_5_add_hidden();
-    pagin_button_el_8_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
+    pagin_button_el_add_hidden(refs.pagin_button_el_1);
     refs.pagin_button_el_6.classList.add('pagin_accent');
     refs.pagin_button_el_6.innerHTML = `${page}`;
     refs.pagin_button_el_7.innerHTML = `${pageAfter}`;
   } else if (page === 2) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_4_add_hidden();
-    pagin_button_el_5_add_hidden();
-    pagin_button_el_8_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
-    pagin_button_el_11_add_hidden();
+    pagin_button_el_add_hidden(refs.pagin_button_el_11);
     refs.pagin_button_el_7.classList.add('pagin_accent');
     refs.pagin_button_el_6.innerHTML = `${pageBefore}`;
     refs.pagin_button_el_7.innerHTML = `${page}`;
@@ -89,37 +82,25 @@ function pagin_rander_2() {
 }
 
 function pagin_rander_3() {
+  pagin_button_el_add_hidden(refs.pagin_button_el_2);
+  pagin_button_el_add_hidden(refs.pagin_button_el_3);
+  pagin_button_el_add_hidden(refs.pagin_button_el_4);
+  pagin_button_el_add_hidden(refs.pagin_button_el_5);
+  pagin_button_el_add_hidden(refs.pagin_button_el_9);
+  pagin_button_el_add_hidden(refs.pagin_button_el_10);
   if (page === 1) {
-    pagin_button_el_1_add_hidden();
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_4_add_hidden();
-    pagin_button_el_5_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
+    pagin_button_el_add_hidden(refs.pagin_button_el_1);
     refs.pagin_button_el_6.classList.add('pagin_accent');
     refs.pagin_button_el_6.innerHTML = `${page}`;
     refs.pagin_button_el_7.innerHTML = `${pageAfter}`;
     refs.pagin_button_el_8.innerHTML = `${pageAfterTwo}`;
   } else if (page === 2) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_4_add_hidden();
-    pagin_button_el_5_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
     refs.pagin_button_el_7.classList.add('pagin_accent');
     refs.pagin_button_el_6.innerHTML = `${pageBefore}`;
     refs.pagin_button_el_7.innerHTML = `${page}`;
     refs.pagin_button_el_8.innerHTML = `${pageAfter}`;
   } else if (page === 3) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_4_add_hidden();
-    pagin_button_el_5_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
-    pagin_button_el_11_add_hidden();
+    pagin_button_el_add_hidden(refs.pagin_button_el_11);
     refs.pagin_button_el_8.classList.add('pagin_accent');
     refs.pagin_button_el_6.innerHTML = `${pageBeforeTwo}`;
     refs.pagin_button_el_7.innerHTML = `${pageBefore}`;
@@ -128,47 +109,32 @@ function pagin_rander_3() {
 }
 
 function pagin_rander_4() {
+  pagin_button_el_add_hidden(refs.pagin_button_el_2);
+  pagin_button_el_add_hidden(refs.pagin_button_el_3);
+  pagin_button_el_add_hidden(refs.pagin_button_el_4);
+  pagin_button_el_add_hidden(refs.pagin_button_el_9);
+  pagin_button_el_add_hidden(refs.pagin_button_el_10);
   if (page === 1) {
-    pagin_button_el_1_add_hidden();
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_4_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
+    pagin_button_el_add_hidden(refs.pagin_button_el_1);
     refs.pagin_button_el_5.classList.add('pagin_accent');
     refs.pagin_button_el_5.innerHTML = `${page}`;
     refs.pagin_button_el_6.innerHTML = `${pageAfter}`;
     refs.pagin_button_el_7.innerHTML = `${pageAfterTwo}`;
     refs.pagin_button_el_8.innerHTML = `${pageAfterThree}`;
   } else if (page === 2) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_4_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
     refs.pagin_button_el_6.classList.add('pagin_accent');
     refs.pagin_button_el_5.innerHTML = `${pageBefore}`;
     refs.pagin_button_el_6.innerHTML = `${page}`;
     refs.pagin_button_el_7.innerHTML = `${pageAfter}`;
     refs.pagin_button_el_8.innerHTML = `${pageAfterTwo}`;
   } else if (page === 3) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_4_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
     refs.pagin_button_el_7.classList.add('pagin_accent');
     refs.pagin_button_el_5.innerHTML = `${pageBeforeTwo}`;
     refs.pagin_button_el_6.innerHTML = `${pageBefore}`;
     refs.pagin_button_el_7.innerHTML = `${page}`;
     refs.pagin_button_el_8.innerHTML = `${pageAfter}`;
   } else if (page === 4) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_4_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
-    pagin_button_el_11_add_hidden();
+    pagin_button_el_add_hidden(refs.pagin_button_el_11);
     refs.pagin_button_el_8.classList.add('pagin_accent');
     refs.pagin_button_el_5.innerHTML = `${pageBeforeThree}`;
     refs.pagin_button_el_6.innerHTML = `${pageBeforeTwo}`;
@@ -178,12 +144,12 @@ function pagin_rander_4() {
 }
 
 function pagin_rander_5() {
+  pagin_button_el_add_hidden(refs.pagin_button_el_2);
+  pagin_button_el_add_hidden(refs.pagin_button_el_3);
+  pagin_button_el_add_hidden(refs.pagin_button_el_9);
+  pagin_button_el_add_hidden(refs.pagin_button_el_10);
   if (page === 1) {
-    pagin_button_el_1_add_hidden();
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
+    pagin_button_el_add_hidden(refs.pagin_button_el_1);
     refs.pagin_button_el_4.classList.add('pagin_accent');
     refs.pagin_button_el_4.innerHTML = `${page}`;
     refs.pagin_button_el_5.innerHTML = `${pageAfter}`;
@@ -191,10 +157,6 @@ function pagin_rander_5() {
     refs.pagin_button_el_7.innerHTML = `${pageAfterThree}`;
     refs.pagin_button_el_8.innerHTML = `${pageAfterFour}`;
   } else if (page === 2) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
     refs.pagin_button_el_5.classList.add('pagin_accent');
     refs.pagin_button_el_4.innerHTML = `${pageBefore}`;
     refs.pagin_button_el_5.innerHTML = `${page}`;
@@ -202,10 +164,6 @@ function pagin_rander_5() {
     refs.pagin_button_el_7.innerHTML = `${pageAfterTwo}`;
     refs.pagin_button_el_8.innerHTML = `${pageAfterThree}`;
   } else if (page === 3) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
     refs.pagin_button_el_6.classList.add('pagin_accent');
     refs.pagin_button_el_4.innerHTML = `${pageBeforeTwo}`;
     refs.pagin_button_el_5.innerHTML = `${pageBefore}`;
@@ -213,10 +171,6 @@ function pagin_rander_5() {
     refs.pagin_button_el_7.innerHTML = `${pageAfter}`;
     refs.pagin_button_el_8.innerHTML = `${pageAfterTwo}`;
   } else if (page === 4) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
     refs.pagin_button_el_7.classList.add('pagin_accent');
     refs.pagin_button_el_4.innerHTML = `${pageBeforeThree}`;
     refs.pagin_button_el_5.innerHTML = `${pageBeforeTwo}`;
@@ -224,11 +178,7 @@ function pagin_rander_5() {
     refs.pagin_button_el_7.innerHTML = `${page}`;
     refs.pagin_button_el_8.innerHTML = `${pageAfter}`;
   } else if (page === 5) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
-    pagin_button_el_11_add_hidden();
+    pagin_button_el_add_hidden(refs.pagin_button_el_11);
     refs.pagin_button_el_8.classList.add('pagin_accent');
     refs.pagin_button_el_5.innerHTML = `${pageBeforeFour}`;
     refs.pagin_button_el_5.innerHTML = `${pageBeforeThree}`;
@@ -239,12 +189,12 @@ function pagin_rander_5() {
 }
 
 function pagin_rander_6() {
+  pagin_button_el_add_hidden(refs.pagin_button_el_3);
+  pagin_button_el_add_hidden(refs.pagin_button_el_9);
   if (page === 1) {
-    pagin_button_el_1_add_hidden();
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
+    pagin_button_el_add_hidden(refs.pagin_button_el_1);
+    pagin_button_el_add_hidden(refs.pagin_button_el_2);
+    pagin_button_el_add_hidden(refs.pagin_button_el_10);
     refs.pagin_button_el_4.classList.add('pagin_accent');
     refs.pagin_button_el_4.innerHTML = `${page}`;
     refs.pagin_button_el_5.innerHTML = `${pageAfter}`;
@@ -253,10 +203,8 @@ function pagin_rander_6() {
     refs.pagin_button_el_8.innerHTML = `${pageAfterFour}`;
     refs.pagin_button_el_10.innerHTML = `${maxPage}`;
   } else if (page === 2) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
+    pagin_button_el_add_hidden(refs.pagin_button_el_2);
+    pagin_button_el_add_hidden(refs.pagin_button_el_10);
     refs.pagin_button_el_5.classList.add('pagin_accent');
     refs.pagin_button_el_4.innerHTML = `${pageBefore}`;
     refs.pagin_button_el_5.innerHTML = `${page}`;
@@ -264,10 +212,8 @@ function pagin_rander_6() {
     refs.pagin_button_el_7.innerHTML = `${pageAfterTwo}`;
     refs.pagin_button_el_8.innerHTML = `${pageAfterThree}`;
   } else if (page === 3) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
+    pagin_button_el_add_hidden(refs.pagin_button_el_2);
+    pagin_button_el_add_hidden(refs.pagin_button_el_10);
     refs.pagin_button_el_6.classList.add('pagin_accent');
     refs.pagin_button_el_5.innerHTML = `${pageBeforeTwo}`;
     refs.pagin_button_el_5.innerHTML = `${pageBefore}`;
@@ -275,9 +221,7 @@ function pagin_rander_6() {
     refs.pagin_button_el_7.innerHTML = `${pageAfter}`;
     refs.pagin_button_el_8.innerHTML = `${pageAfterTwo}`;
   } else if (page === 4) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_9_add_hidden();
+    pagin_button_el_add_hidden(refs.pagin_button_el_2);
     refs.pagin_button_el_7.classList.add('pagin_accent');
     refs.pagin_button_el_4.innerHTML = `${pageBeforeThree}`;
     refs.pagin_button_el_5.innerHTML = `${pageBeforeTwo}`;
@@ -286,9 +230,7 @@ function pagin_rander_6() {
     refs.pagin_button_el_8.innerHTML = `${pageAfter}`;
     refs.pagin_button_el_10.innerHTML = `${maxPage}`;
   } else if (page === 5) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_9_add_hidden();
+    pagin_button_el_add_hidden(refs.pagin_button_el_2);
     refs.pagin_button_el_8.classList.add('pagin_accent');
     refs.pagin_button_el_4.innerHTML = `${pageBeforeFour}`;
     refs.pagin_button_el_5.innerHTML = `${pageBeforeThree}`;
@@ -297,10 +239,8 @@ function pagin_rander_6() {
     refs.pagin_button_el_8.innerHTML = `${page}`;
     refs.pagin_button_el_10.innerHTML = `${maxPage}`;
   } else if (page === maxPage) {
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
-    pagin_button_el_11_add_hidden();
+    pagin_button_el_add_hidden(refs.pagin_button_el_10);
+    pagin_button_el_add_hidden(refs.pagin_button_el_11);
     refs.pagin_button_el_8.classList.add('pagin_accent');
     refs.pagin_button_el_4.innerHTML = `${pageBeforeFour}`;
     refs.pagin_button_el_5.innerHTML = `${pageBeforeThree}`;
@@ -312,9 +252,9 @@ function pagin_rander_6() {
 
 function pagin_rander_7() {
   if (page === 1) {
-    pagin_button_el_1_add_hidden();
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
+    pagin_button_el_add_hidden(refs.pagin_button_el_1);
+    pagin_button_el_add_hidden(refs.pagin_button_el_2);
+    pagin_button_el_add_hidden(refs.pagin_button_el_3);
     refs.pagin_button_el_4.classList.add('pagin_accent');
     refs.pagin_button_el_4.innerHTML = `${page}`;
     refs.pagin_button_el_5.innerHTML = `${pageAfter}`;
@@ -323,8 +263,8 @@ function pagin_rander_7() {
     refs.pagin_button_el_8.innerHTML = `${pageAfterFour}`;
     refs.pagin_button_el_10.innerHTML = `${maxPage}`;
   } else if (page === 2) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
+    pagin_button_el_add_hidden(refs.pagin_button_el_2);
+    pagin_button_el_add_hidden(refs.pagin_button_el_3);
     refs.pagin_button_el_5.classList.add('pagin_accent');
     refs.pagin_button_el_4.innerHTML = `${pageBefore}`;
     refs.pagin_button_el_5.innerHTML = `${page}`;
@@ -333,8 +273,8 @@ function pagin_rander_7() {
     refs.pagin_button_el_8.innerHTML = `${pageAfterThree}`;
     refs.pagin_button_el_10.innerHTML = `${maxPage}`;
   } else if (page === 3) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
+    pagin_button_el_add_hidden(refs.pagin_button_el_2);
+    pagin_button_el_add_hidden(refs.pagin_button_el_3);
     refs.pagin_button_el_6.classList.add('pagin_accent');
     refs.pagin_button_el_4.innerHTML = `${pageBeforeTwo}`;
     refs.pagin_button_el_5.innerHTML = `${pageBefore}`;
@@ -352,8 +292,8 @@ function pagin_rander_7() {
     refs.pagin_button_el_8.innerHTML = `${pageAfterTwo}`;
     refs.pagin_button_el_10.innerHTML = `${maxPage}`;
   } else if (page === maxPage - 2) {
-    pagin_button_el_10_add_hidden();
-    pagin_button_el_9_add_hidden();
+    pagin_button_el_add_hidden(refs.pagin_button_el_10);
+    pagin_button_el_add_hidden(refs.pagin_button_el_9);
     refs.pagin_button_el_6.classList.add('pagin_accent');
     refs.pagin_button_el_4.innerHTML = `${pageBeforeTwo}`;
     refs.pagin_button_el_5.innerHTML = `${pageBefore}`;
@@ -362,8 +302,8 @@ function pagin_rander_7() {
     refs.pagin_button_el_8.innerHTML = `${pageAfterTwo}`;
     refs.pagin_button_el_10.innerHTML = `${maxPage}`;
   } else if (page === maxPage - 1) {
-    pagin_button_el_10_add_hidden();
-    pagin_button_el_9_add_hidden();
+    pagin_button_el_add_hidden(refs.pagin_button_el_10);
+    pagin_button_el_add_hidden(refs.pagin_button_el_9);
     refs.pagin_button_el_7.classList.add('pagin_accent');
     refs.pagin_button_el_2.innerHTML = `${minPage}`;
     refs.pagin_button_el_4.innerHTML = `${pageBeforeThree}`;
@@ -372,9 +312,9 @@ function pagin_rander_7() {
     refs.pagin_button_el_7.innerHTML = `${page}`;
     refs.pagin_button_el_8.innerHTML = `${pageAfter}`;
   } else if (page === maxPage) {
-    pagin_button_el_11_add_hidden();
-    pagin_button_el_10_add_hidden();
-    pagin_button_el_9_add_hidden();
+    pagin_button_el_add_hidden(refs.pagin_button_el_11);
+    pagin_button_el_add_hidden(refs.pagin_button_el_10);
+    pagin_button_el_add_hidden(refs.pagin_button_el_9);
     refs.pagin_button_el_8.classList.add('pagin_accent');
     refs.pagin_button_el_2.innerHTML = `${minPage}`;
     refs.pagin_button_el_4.innerHTML = `${pageBeforeFour}`;
@@ -431,80 +371,10 @@ function pagin_namer_button() {
   pageAfterFour = page + 4;
 }
 
-function pagin_button_el_1_add_hidden() {
-  if (refs.pagin_button_el_1.classList.contains('hidden')) {
+function pagin_button_el_add_hidden(elem) {
+  if (elem.classList.contains('hidden')) {
   } else {
-    refs.pagin_button_el_1.classList.add('hidden');
-  }
-}
-
-function pagin_button_el_2_add_hidden() {
-  if (refs.pagin_button_el_2.classList.contains('hidden')) {
-  } else {
-    refs.pagin_button_el_2.classList.add('hidden');
-  }
-}
-
-function pagin_button_el_3_add_hidden() {
-  if (refs.pagin_button_el_3.classList.contains('hidden')) {
-  } else {
-    refs.pagin_button_el_3.classList.add('hidden');
-  }
-}
-
-function pagin_button_el_4_add_hidden() {
-  if (refs.pagin_button_el_4.classList.contains('hidden')) {
-  } else {
-    refs.pagin_button_el_4.classList.add('hidden');
-  }
-}
-
-function pagin_button_el_5_add_hidden() {
-  if (refs.pagin_button_el_5.classList.contains('hidden')) {
-  } else {
-    refs.pagin_button_el_5.classList.add('hidden');
-  }
-}
-
-function pagin_button_el_6_add_hidden() {
-  if (refs.pagin_button_el_6.classList.contains('hidden')) {
-  } else {
-    refs.pagin_button_el_6.classList.add('hidden');
-  }
-}
-
-function pagin_button_el_7_add_hidden() {
-  if (refs.pagin_button_el_7.classList.contains('hidden')) {
-  } else {
-    refs.pagin_button_el_7.classList.add('hidden');
-  }
-}
-
-function pagin_button_el_8_add_hidden() {
-  if (refs.pagin_button_el_8.classList.contains('hidden')) {
-  } else {
-    refs.pagin_button_el_8.classList.add('hidden');
-  }
-}
-
-function pagin_button_el_9_add_hidden() {
-  if (refs.pagin_button_el_9.classList.contains('hidden')) {
-  } else {
-    refs.pagin_button_el_9.classList.add('hidden');
-  }
-}
-
-function pagin_button_el_10_add_hidden() {
-  if (refs.pagin_button_el_10.classList.contains('hidden')) {
-  } else {
-    refs.pagin_button_el_10.classList.add('hidden');
-  }
-}
-
-function pagin_button_el_11_add_hidden() {
-  if (refs.pagin_button_el_11.classList.contains('hidden')) {
-  } else {
-    refs.pagin_button_el_11.classList.add('hidden');
+    elem.classList.add('hidden');
   }
 }
 
