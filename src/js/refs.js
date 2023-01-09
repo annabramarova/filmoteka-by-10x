@@ -47,7 +47,7 @@ export const refs = {
   plug: document.querySelector('.plug'),
 
   pagin_box: document.querySelector('.pagin_box'),
-  pagin_button_el_1: document.querySelector('.pagin_button_el_1'),
+  pagin_button_left: document.querySelector('.pagin_button_left'),
   pagin_button_el_2: document.querySelector('.pagin_button_el_2'),
   pagin_button_el_3: document.querySelector('.pagin_button_el_3'),
   pagin_button_el_4: document.querySelector('.pagin_button_el_4'),
@@ -57,7 +57,7 @@ export const refs = {
   pagin_button_el_8: document.querySelector('.pagin_button_el_8'),
   pagin_button_el_9: document.querySelector('.pagin_button_el_9'),
   pagin_button_el_10: document.querySelector('.pagin_button_el_10'),
-  pagin_button_el_11: document.querySelector('.pagin_button_el_11'),
+  pagin_button_rigth: document.querySelector('.pagin_button_rigth'),
 
   // theme-dark/light-toggle
   switcher: document.querySelector('.switcher'),

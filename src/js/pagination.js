@@ -69,12 +69,12 @@ function pagin_rander_2() {
   pagin_button_el_add_hidden(refs.pagin_button_el_9);
   pagin_button_el_add_hidden(refs.pagin_button_el_10);
   if (page === 1) {
-    pagin_button_el_add_hidden(refs.pagin_button_el_1);
+    pagin_button_el_add_hidden(refs.pagin_button_left);
     refs.pagin_button_el_6.classList.add('pagin_accent');
     refs.pagin_button_el_6.innerHTML = `${page}`;
     refs.pagin_button_el_7.innerHTML = `${pageAfter}`;
   } else if (page === 2) {
-    pagin_button_el_add_hidden(refs.pagin_button_el_11);
+    pagin_button_el_add_hidden(refs.pagin_button_rigth);
     refs.pagin_button_el_7.classList.add('pagin_accent');
     refs.pagin_button_el_6.innerHTML = `${pageBefore}`;
     refs.pagin_button_el_7.innerHTML = `${page}`;
@@ -89,7 +89,7 @@ function pagin_rander_3() {
   pagin_button_el_add_hidden(refs.pagin_button_el_9);
   pagin_button_el_add_hidden(refs.pagin_button_el_10);
   if (page === 1) {
-    pagin_button_el_add_hidden(refs.pagin_button_el_1);
+    pagin_button_el_add_hidden(refs.pagin_button_left);
     refs.pagin_button_el_6.classList.add('pagin_accent');
     refs.pagin_button_el_6.innerHTML = `${page}`;
     refs.pagin_button_el_7.innerHTML = `${pageAfter}`;
@@ -100,7 +100,7 @@ function pagin_rander_3() {
     refs.pagin_button_el_7.innerHTML = `${page}`;
     refs.pagin_button_el_8.innerHTML = `${pageAfter}`;
   } else if (page === 3) {
-    pagin_button_el_add_hidden(refs.pagin_button_el_11);
+    pagin_button_el_add_hidden(refs.pagin_button_rigth);
     refs.pagin_button_el_8.classList.add('pagin_accent');
     refs.pagin_button_el_6.innerHTML = `${pageBeforeTwo}`;
     refs.pagin_button_el_7.innerHTML = `${pageBefore}`;
@@ -115,7 +115,7 @@ function pagin_rander_4() {
   pagin_button_el_add_hidden(refs.pagin_button_el_9);
   pagin_button_el_add_hidden(refs.pagin_button_el_10);
   if (page === 1) {
-    pagin_button_el_add_hidden(refs.pagin_button_el_1);
+    pagin_button_el_add_hidden(refs.pagin_button_left);
     refs.pagin_button_el_5.classList.add('pagin_accent');
     refs.pagin_button_el_5.innerHTML = `${page}`;
     refs.pagin_button_el_6.innerHTML = `${pageAfter}`;
@@ -134,7 +134,7 @@ function pagin_rander_4() {
     refs.pagin_button_el_7.innerHTML = `${page}`;
     refs.pagin_button_el_8.innerHTML = `${pageAfter}`;
   } else if (page === 4) {
-    pagin_button_el_add_hidden(refs.pagin_button_el_11);
+    pagin_button_el_add_hidden(refs.pagin_button_rigth);
     refs.pagin_button_el_8.classList.add('pagin_accent');
     refs.pagin_button_el_5.innerHTML = `${pageBeforeThree}`;
     refs.pagin_button_el_6.innerHTML = `${pageBeforeTwo}`;
@@ -149,7 +149,7 @@ function pagin_rander_5() {
   pagin_button_el_add_hidden(refs.pagin_button_el_9);
   pagin_button_el_add_hidden(refs.pagin_button_el_10);
   if (page === 1) {
-    pagin_button_el_add_hidden(refs.pagin_button_el_1);
+    pagin_button_el_add_hidden(refs.pagin_button_left);
     refs.pagin_button_el_4.classList.add('pagin_accent');
     refs.pagin_button_el_4.innerHTML = `${page}`;
     refs.pagin_button_el_5.innerHTML = `${pageAfter}`;
@@ -178,7 +178,7 @@ function pagin_rander_5() {
     refs.pagin_button_el_7.innerHTML = `${page}`;
     refs.pagin_button_el_8.innerHTML = `${pageAfter}`;
   } else if (page === 5) {
-    pagin_button_el_add_hidden(refs.pagin_button_el_11);
+    pagin_button_el_add_hidden(refs.pagin_button_rigth);
     refs.pagin_button_el_8.classList.add('pagin_accent');
     refs.pagin_button_el_5.innerHTML = `${pageBeforeFour}`;
     refs.pagin_button_el_5.innerHTML = `${pageBeforeThree}`;
@@ -192,7 +192,7 @@ function pagin_rander_6() {
   pagin_button_el_add_hidden(refs.pagin_button_el_3);
   pagin_button_el_add_hidden(refs.pagin_button_el_9);
   if (page === 1) {
-    pagin_button_el_add_hidden(refs.pagin_button_el_1);
+    pagin_button_el_add_hidden(refs.pagin_button_left);
     pagin_button_el_add_hidden(refs.pagin_button_el_2);
     pagin_button_el_add_hidden(refs.pagin_button_el_10);
     refs.pagin_button_el_4.classList.add('pagin_accent');
@@ -240,7 +240,7 @@ function pagin_rander_6() {
     refs.pagin_button_el_10.innerHTML = `${maxPage}`;
   } else if (page === maxPage) {
     pagin_button_el_add_hidden(refs.pagin_button_el_10);
-    pagin_button_el_add_hidden(refs.pagin_button_el_11);
+    pagin_button_el_add_hidden(refs.pagin_button_rigth);
     refs.pagin_button_el_8.classList.add('pagin_accent');
     refs.pagin_button_el_4.innerHTML = `${pageBeforeFour}`;
     refs.pagin_button_el_5.innerHTML = `${pageBeforeThree}`;
@@ -252,7 +252,7 @@ function pagin_rander_6() {
 
 function pagin_rander_7() {
   if (page === 1) {
-    pagin_button_el_add_hidden(refs.pagin_button_el_1);
+    pagin_button_el_add_hidden(refs.pagin_button_left);
     pagin_button_el_add_hidden(refs.pagin_button_el_2);
     pagin_button_el_add_hidden(refs.pagin_button_el_3);
     refs.pagin_button_el_4.classList.add('pagin_accent');
@@ -312,7 +312,7 @@ function pagin_rander_7() {
     refs.pagin_button_el_7.innerHTML = `${page}`;
     refs.pagin_button_el_8.innerHTML = `${pageAfter}`;
   } else if (page === maxPage) {
-    pagin_button_el_add_hidden(refs.pagin_button_el_11);
+    pagin_button_el_add_hidden(refs.pagin_button_rigth);
     pagin_button_el_add_hidden(refs.pagin_button_el_10);
     pagin_button_el_add_hidden(refs.pagin_button_el_9);
     refs.pagin_button_el_8.classList.add('pagin_accent');
@@ -341,7 +341,7 @@ function on_pagin_button(evt) {
       return evt.target.blur();
     }
 
-    if (evt.target.classList.contains('pagin_button_el_11')) {
+    if (evt.target.classList.contains('pagin_button_rigth')) {
       page++;
 
       pagin_namer_button();
@@ -379,7 +379,7 @@ function pagin_button_el_add_hidden(elem) {
 }
 
 const paginButtons = [
-  refs.pagin_button_el_1,
+  refs.pagin_button_left,
   refs.pagin_button_el_2,
   refs.pagin_button_el_3,
   refs.pagin_button_el_4,
@@ -389,7 +389,7 @@ const paginButtons = [
   refs.pagin_button_el_8,
   refs.pagin_button_el_9,
   refs.pagin_button_el_10,
-  refs.pagin_button_el_11,
+  refs.pagin_button_rigth,
 ];
 
 function paginBattonElRemoveClass(paginButtons, topicalClass) {
