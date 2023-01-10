@@ -1,5 +1,4 @@
 import { refs } from './refs';
-// пагінація
 
 let callback = page => {};
 
@@ -15,21 +14,23 @@ export function tune(totalPages, newCallback) {
 
 let page = 1;
 let minPage = 1;
-let pageBeforeFour = page - 4;
-let pageBeforeThree = page - 3;
-let pageBeforeTwo = page - 2;
-let pageBefore = page - 1;
-let pageAfter = page + 1;
-let pageAfterTwo = page + 2;
-let pageAfterThree = page + 3;
-let pageAfterFour = page + 4;
+let pageRemove_4 = page - 4;
+let pageRemove_3 = page - 3;
+let pageRemove_2 = page - 2;
+let pageRemove_1 = page - 1;
+let pageAdd_1 = page + 1;
+let pageAdd_2 = page + 2;
+let pageAdd_3 = page + 3;
+let pageAdd_4 = page + 4;
 let maxPage = 1;
+
+refs.pagin_box.addEventListener('click', on_pagin_button);
 
 function on_pagin_rander() {
   window.scrollTo(0, 0);
-  paginBattonElRemoveClass(paginButtons, 'pagin_accent');
   paginBattonElRemoveClass(paginButtons, 'hidden');
-  pagin_namer_button();
+  pagin_namber_button();
+  paginButtonsAddNumbers();
   if (maxPage === 0) {
     pagin_rander_0();
   } else if (maxPage === 1) {
@@ -49,10 +50,13 @@ function on_pagin_rander() {
   }
 
   if (window.innerWidth < 480) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
+    const paginButtonsHidden = [
+      refs.paginButtonMinPage,
+      refs.paginButtonElementLeft,
+      refs.paginButtonElementRigth,
+      refs.paginButtonMaxPage,
+    ];
+    paginBattonElAddClass(paginButtonsHidden, 'hidden');
   }
 }
 
@@ -61,350 +65,323 @@ function pagin_rander_0() {
 }
 
 function pagin_rander_2() {
+  const paginButtonsHiddenPage = [
+    refs.paginButtonMinPage,
+    refs.paginButtonElementLeft,
+    refs.paginButtonPageRemove_4,
+    refs.paginButtonPageRemove_3,
+    refs.paginButtonPageRemove_2,
+    refs.paginButtonPageAdd_2,
+    refs.paginButtonPageAdd_3,
+    refs.paginButtonPageAdd_4,
+    refs.paginButtonElementRigth,
+    refs.paginButtonMaxPage,
+  ];
+  paginBattonElAddClass(paginButtonsHiddenPage, 'hidden');
   if (page === 1) {
-    pagin_button_el_1_add_hidden();
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_4_add_hidden();
-    pagin_button_el_5_add_hidden();
-    pagin_button_el_8_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
-    refs.pagin_button_el_6.classList.add('pagin_accent');
-    refs.pagin_button_el_6.innerHTML = `${page}`;
-    refs.pagin_button_el_7.innerHTML = `${pageAfter}`;
+    const paginButtonsHidden = [
+      refs.paginButtonLeft,
+      refs.paginButtonPageRemove_1,
+    ];
+    paginBattonElAddClass(paginButtonsHidden, 'hidden');
   } else if (page === 2) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_4_add_hidden();
-    pagin_button_el_5_add_hidden();
-    pagin_button_el_8_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
-    pagin_button_el_11_add_hidden();
-    refs.pagin_button_el_7.classList.add('pagin_accent');
-    refs.pagin_button_el_6.innerHTML = `${pageBefore}`;
-    refs.pagin_button_el_7.innerHTML = `${page}`;
+    const paginButtonsHidden = [
+      refs.paginButtonPageAdd_1,
+      refs.paginButtonRigth,
+    ];
+    paginBattonElAddClass(paginButtonsHidden, 'hidden');
   }
 }
 
 function pagin_rander_3() {
+  const paginButtonsHiddenPage = [
+    refs.paginButtonMinPage,
+    refs.paginButtonElementLeft,
+    refs.paginButtonPageRemove_4,
+    refs.paginButtonPageRemove_3,
+    refs.paginButtonPageAdd_3,
+    refs.paginButtonPageAdd_4,
+    refs.paginButtonElementRigth,
+    refs.paginButtonMaxPage,
+  ];
+  paginBattonElAddClass(paginButtonsHiddenPage, 'hidden');
   if (page === 1) {
-    pagin_button_el_1_add_hidden();
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_4_add_hidden();
-    pagin_button_el_5_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
-    refs.pagin_button_el_6.classList.add('pagin_accent');
-    refs.pagin_button_el_6.innerHTML = `${page}`;
-    refs.pagin_button_el_7.innerHTML = `${pageAfter}`;
-    refs.pagin_button_el_8.innerHTML = `${pageAfterTwo}`;
+    const paginButtonsHidden = [
+      refs.paginButtonLeft,
+      refs.paginButtonPageRemove_2,
+      refs.paginButtonPageRemove_1,
+    ];
+    paginBattonElAddClass(paginButtonsHidden, 'hidden');
   } else if (page === 2) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_4_add_hidden();
-    pagin_button_el_5_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
-    refs.pagin_button_el_7.classList.add('pagin_accent');
-    refs.pagin_button_el_6.innerHTML = `${pageBefore}`;
-    refs.pagin_button_el_7.innerHTML = `${page}`;
-    refs.pagin_button_el_8.innerHTML = `${pageAfter}`;
+    const paginButtonsHidden = [
+      refs.paginButtonPageRemove_2,
+      refs.paginButtonPageAdd_2,
+    ];
+    paginBattonElAddClass(paginButtonsHidden, 'hidden');
   } else if (page === 3) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_4_add_hidden();
-    pagin_button_el_5_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
-    pagin_button_el_11_add_hidden();
-    refs.pagin_button_el_8.classList.add('pagin_accent');
-    refs.pagin_button_el_6.innerHTML = `${pageBeforeTwo}`;
-    refs.pagin_button_el_7.innerHTML = `${pageBefore}`;
-    refs.pagin_button_el_8.innerHTML = `${page}`;
+    const paginButtonsHidden = [
+      refs.paginButtonPageAdd_1,
+      refs.paginButtonPageAdd_2,
+      refs.paginButtonRigth,
+    ];
+    paginBattonElAddClass(paginButtonsHidden, 'hidden');
   }
 }
 
 function pagin_rander_4() {
+  const paginButtonsHiddenPage = [
+    refs.paginButtonMinPage,
+    refs.paginButtonElementLeft,
+    refs.paginButtonPageRemove_4,
+    refs.paginButtonPageAdd_4,
+    refs.paginButtonElementRigth,
+    refs.paginButtonMaxPage,
+  ];
+  paginBattonElAddClass(paginButtonsHiddenPage, 'hidden');
   if (page === 1) {
-    pagin_button_el_1_add_hidden();
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_4_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
-    refs.pagin_button_el_5.classList.add('pagin_accent');
-    refs.pagin_button_el_5.innerHTML = `${page}`;
-    refs.pagin_button_el_6.innerHTML = `${pageAfter}`;
-    refs.pagin_button_el_7.innerHTML = `${pageAfterTwo}`;
-    refs.pagin_button_el_8.innerHTML = `${pageAfterThree}`;
+    const paginButtonsHidden = [
+      refs.paginButtonLeft,
+      refs.paginButtonPageRemove_3,
+      refs.paginButtonPageRemove_2,
+      refs.paginButtonPageRemove_1,
+    ];
+    paginBattonElAddClass(paginButtonsHidden, 'hidden');
   } else if (page === 2) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_4_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
-    refs.pagin_button_el_6.classList.add('pagin_accent');
-    refs.pagin_button_el_5.innerHTML = `${pageBefore}`;
-    refs.pagin_button_el_6.innerHTML = `${page}`;
-    refs.pagin_button_el_7.innerHTML = `${pageAfter}`;
-    refs.pagin_button_el_8.innerHTML = `${pageAfterTwo}`;
+    const paginButtonsHidden = [
+      refs.paginButtonPageRemove_3,
+      refs.paginButtonPageRemove_2,
+      refs.paginButtonPageAdd_3,
+    ];
+    paginBattonElAddClass(paginButtonsHidden, 'hidden');
   } else if (page === 3) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_4_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
-    refs.pagin_button_el_7.classList.add('pagin_accent');
-    refs.pagin_button_el_5.innerHTML = `${pageBeforeTwo}`;
-    refs.pagin_button_el_6.innerHTML = `${pageBefore}`;
-    refs.pagin_button_el_7.innerHTML = `${page}`;
-    refs.pagin_button_el_8.innerHTML = `${pageAfter}`;
+    const paginButtonsHidden = [
+      refs.paginButtonPageRemove_3,
+      refs.paginButtonPageAdd_2,
+      refs.paginButtonPageAdd_3,
+    ];
+    paginBattonElAddClass(paginButtonsHidden, 'hidden');
   } else if (page === 4) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_4_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
-    pagin_button_el_11_add_hidden();
-    refs.pagin_button_el_8.classList.add('pagin_accent');
-    refs.pagin_button_el_5.innerHTML = `${pageBeforeThree}`;
-    refs.pagin_button_el_6.innerHTML = `${pageBeforeTwo}`;
-    refs.pagin_button_el_7.innerHTML = `${pageBefore}`;
-    refs.pagin_button_el_8.innerHTML = `${page}`;
+    const paginButtonsHidden = [
+      refs.paginButtonPageAdd_1,
+      refs.paginButtonPageAdd_2,
+      refs.paginButtonPageAdd_3,
+      refs.paginButtonRigth,
+    ];
+    paginBattonElAddClass(paginButtonsHidden, 'hidden');
   }
 }
 
 function pagin_rander_5() {
+  const paginButtonsHiddenPage = [
+    refs.paginButtonMinPage,
+    refs.paginButtonElementLeft,
+    refs.paginButtonPageAdd_4,
+    refs.paginButtonElementRigth,
+  ];
+  paginBattonElAddClass(paginButtonsHiddenPage, 'hidden');
   if (page === 1) {
-    pagin_button_el_1_add_hidden();
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
-    refs.pagin_button_el_4.classList.add('pagin_accent');
-    refs.pagin_button_el_4.innerHTML = `${page}`;
-    refs.pagin_button_el_5.innerHTML = `${pageAfter}`;
-    refs.pagin_button_el_6.innerHTML = `${pageAfterTwo}`;
-    refs.pagin_button_el_7.innerHTML = `${pageAfterThree}`;
-    refs.pagin_button_el_8.innerHTML = `${pageAfterFour}`;
+    const paginButtonsHidden = [
+      refs.paginButtonLeft,
+      refs.paginButtonPageRemove_4,
+      refs.paginButtonPageRemove_3,
+      refs.paginButtonPageRemove_2,
+      refs.paginButtonPageRemove_1,
+    ];
+    paginBattonElAddClass(paginButtonsHidden, 'hidden');
   } else if (page === 2) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
-    refs.pagin_button_el_5.classList.add('pagin_accent');
-    refs.pagin_button_el_4.innerHTML = `${pageBefore}`;
-    refs.pagin_button_el_5.innerHTML = `${page}`;
-    refs.pagin_button_el_6.innerHTML = `${pageAfter}`;
-    refs.pagin_button_el_7.innerHTML = `${pageAfterTwo}`;
-    refs.pagin_button_el_8.innerHTML = `${pageAfterThree}`;
+    const paginButtonsHidden = [
+      refs.paginButtonPageRemove_4,
+      refs.paginButtonPageRemove_3,
+      refs.paginButtonPageRemove_2,
+      refs.paginButtonPageAdd_3,
+    ];
+    paginBattonElAddClass(paginButtonsHidden, 'hidden');
   } else if (page === 3) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
-    refs.pagin_button_el_6.classList.add('pagin_accent');
-    refs.pagin_button_el_4.innerHTML = `${pageBeforeTwo}`;
-    refs.pagin_button_el_5.innerHTML = `${pageBefore}`;
-    refs.pagin_button_el_6.innerHTML = `${page}`;
-    refs.pagin_button_el_7.innerHTML = `${pageAfter}`;
-    refs.pagin_button_el_8.innerHTML = `${pageAfterTwo}`;
+    const paginButtonsHidden = [
+      refs.paginButtonPageRemove_4,
+      refs.paginButtonPageRemove_3,
+      refs.paginButtonPageAdd_3,
+      refs.paginButtonMaxPage,
+    ];
+    paginBattonElAddClass(paginButtonsHidden, 'hidden');
   } else if (page === 4) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
-    refs.pagin_button_el_7.classList.add('pagin_accent');
-    refs.pagin_button_el_4.innerHTML = `${pageBeforeThree}`;
-    refs.pagin_button_el_5.innerHTML = `${pageBeforeTwo}`;
-    refs.pagin_button_el_6.innerHTML = `${pageBefore}`;
-    refs.pagin_button_el_7.innerHTML = `${page}`;
-    refs.pagin_button_el_8.innerHTML = `${pageAfter}`;
+    const paginButtonsHidden = [
+      refs.paginButtonPageRemove_4,
+      refs.paginButtonPageAdd_2,
+      refs.paginButtonPageAdd_3,
+      refs.paginButtonMaxPage,
+    ];
+    paginBattonElAddClass(paginButtonsHidden, 'hidden');
   } else if (page === 5) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
-    pagin_button_el_11_add_hidden();
-    refs.pagin_button_el_8.classList.add('pagin_accent');
-    refs.pagin_button_el_5.innerHTML = `${pageBeforeFour}`;
-    refs.pagin_button_el_5.innerHTML = `${pageBeforeThree}`;
-    refs.pagin_button_el_6.innerHTML = `${pageBeforeTwo}`;
-    refs.pagin_button_el_7.innerHTML = `${pageBefore}`;
-    refs.pagin_button_el_8.innerHTML = `${page}`;
+    const paginButtonsHidden = [
+      refs.paginButtonPageAdd_1,
+      refs.paginButtonPageAdd_2,
+      refs.paginButtonPageAdd_3,
+      refs.paginButtonMaxPage,
+      refs.paginButtonRigth,
+    ];
+    paginBattonElAddClass(paginButtonsHidden, 'hidden');
   }
 }
 
 function pagin_rander_6() {
   if (page === 1) {
-    pagin_button_el_1_add_hidden();
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
-    refs.pagin_button_el_4.classList.add('pagin_accent');
-    refs.pagin_button_el_4.innerHTML = `${page}`;
-    refs.pagin_button_el_5.innerHTML = `${pageAfter}`;
-    refs.pagin_button_el_6.innerHTML = `${pageAfterTwo}`;
-    refs.pagin_button_el_7.innerHTML = `${pageAfterThree}`;
-    refs.pagin_button_el_8.innerHTML = `${pageAfterFour}`;
-    refs.pagin_button_el_10.innerHTML = `${maxPage}`;
+    const paginButtonsHidden = [
+      refs.paginButtonLeft,
+      refs.paginButtonMinPage,
+      refs.paginButtonElementLeft,
+      refs.paginButtonPageRemove_4,
+      refs.paginButtonPageRemove_3,
+      refs.paginButtonPageRemove_2,
+      refs.paginButtonPageRemove_1,
+    ];
+    paginBattonElAddClass(paginButtonsHidden, 'hidden');
   } else if (page === 2) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
-    refs.pagin_button_el_5.classList.add('pagin_accent');
-    refs.pagin_button_el_4.innerHTML = `${pageBefore}`;
-    refs.pagin_button_el_5.innerHTML = `${page}`;
-    refs.pagin_button_el_6.innerHTML = `${pageAfter}`;
-    refs.pagin_button_el_7.innerHTML = `${pageAfterTwo}`;
-    refs.pagin_button_el_8.innerHTML = `${pageAfterThree}`;
+    const paginButtonsHidden = [
+      refs.paginButtonMinPage,
+      refs.paginButtonElementLeft,
+      refs.paginButtonPageRemove_4,
+      refs.paginButtonPageRemove_3,
+      refs.paginButtonPageRemove_2,
+      refs.paginButtonPageAdd_4,
+    ];
+    paginBattonElAddClass(paginButtonsHidden, 'hidden');
   } else if (page === 3) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
-    refs.pagin_button_el_6.classList.add('pagin_accent');
-    refs.pagin_button_el_5.innerHTML = `${pageBeforeTwo}`;
-    refs.pagin_button_el_5.innerHTML = `${pageBefore}`;
-    refs.pagin_button_el_6.innerHTML = `${page}`;
-    refs.pagin_button_el_7.innerHTML = `${pageAfter}`;
-    refs.pagin_button_el_8.innerHTML = `${pageAfterTwo}`;
+    const paginButtonsHidden = [
+      refs.paginButtonMinPage,
+      refs.paginButtonElementLeft,
+      refs.paginButtonPageRemove_4,
+      refs.paginButtonPageRemove_3,
+      refs.paginButtonPageAdd_3,
+      refs.paginButtonPageAdd_4,
+    ];
+    paginBattonElAddClass(paginButtonsHidden, 'hidden');
   } else if (page === 4) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_9_add_hidden();
-    refs.pagin_button_el_7.classList.add('pagin_accent');
-    refs.pagin_button_el_4.innerHTML = `${pageBeforeThree}`;
-    refs.pagin_button_el_5.innerHTML = `${pageBeforeTwo}`;
-    refs.pagin_button_el_6.innerHTML = `${pageBefore}`;
-    refs.pagin_button_el_7.innerHTML = `${page}`;
-    refs.pagin_button_el_8.innerHTML = `${pageAfter}`;
-    refs.pagin_button_el_10.innerHTML = `${maxPage}`;
+    const paginButtonsHidden = [
+      refs.paginButtonPageRemove_4,
+      refs.paginButtonPageRemove_3,
+      refs.paginButtonPageAdd_3,
+      refs.paginButtonPageAdd_4,
+      refs.paginButtonElementRigth,
+      refs.paginButtonMaxPage,
+    ];
+    paginBattonElAddClass(paginButtonsHidden, 'hidden');
   } else if (page === 5) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_9_add_hidden();
-    refs.pagin_button_el_8.classList.add('pagin_accent');
-    refs.pagin_button_el_4.innerHTML = `${pageBeforeFour}`;
-    refs.pagin_button_el_5.innerHTML = `${pageBeforeThree}`;
-    refs.pagin_button_el_6.innerHTML = `${pageBeforeTwo}`;
-    refs.pagin_button_el_7.innerHTML = `${pageBefore}`;
-    refs.pagin_button_el_8.innerHTML = `${page}`;
-    refs.pagin_button_el_10.innerHTML = `${maxPage}`;
+    const paginButtonsHidden = [
+      refs.paginButtonPageRemove_4,
+      refs.paginButtonPageAdd_2,
+      refs.paginButtonPageAdd_3,
+      refs.paginButtonPageAdd_4,
+      refs.paginButtonElementRigth,
+      refs.paginButtonMaxPage,
+    ];
+    paginBattonElAddClass(paginButtonsHidden, 'hidden');
   } else if (page === maxPage) {
-    pagin_button_el_3_add_hidden();
-    pagin_button_el_9_add_hidden();
-    pagin_button_el_10_add_hidden();
-    pagin_button_el_11_add_hidden();
-    refs.pagin_button_el_8.classList.add('pagin_accent');
-    refs.pagin_button_el_4.innerHTML = `${pageBeforeFour}`;
-    refs.pagin_button_el_5.innerHTML = `${pageBeforeThree}`;
-    refs.pagin_button_el_6.innerHTML = `${pageBeforeTwo}`;
-    refs.pagin_button_el_7.innerHTML = `${pageBefore}`;
-    refs.pagin_button_el_8.innerHTML = `${page}`;
+    const paginButtonsHidden = [
+      refs.paginButtonPageAdd_1,
+      refs.paginButtonPageAdd_2,
+      refs.paginButtonPageAdd_3,
+      refs.paginButtonPageAdd_4,
+      refs.paginButtonElementRigth,
+      refs.paginButtonMaxPage,
+      refs.paginButtonRigth,
+    ];
+    paginBattonElAddClass(paginButtonsHidden, 'hidden');
   }
 }
 
 function pagin_rander_7() {
   if (page === 1) {
-    pagin_button_el_1_add_hidden();
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    refs.pagin_button_el_4.classList.add('pagin_accent');
-    refs.pagin_button_el_4.innerHTML = `${page}`;
-    refs.pagin_button_el_5.innerHTML = `${pageAfter}`;
-    refs.pagin_button_el_6.innerHTML = `${pageAfterTwo}`;
-    refs.pagin_button_el_7.innerHTML = `${pageAfterThree}`;
-    refs.pagin_button_el_8.innerHTML = `${pageAfterFour}`;
-    refs.pagin_button_el_10.innerHTML = `${maxPage}`;
+    const paginButtonsHidden = [
+      refs.paginButtonLeft,
+      refs.paginButtonMinPage,
+      refs.paginButtonElementLeft,
+      refs.paginButtonPageRemove_4,
+      refs.paginButtonPageRemove_3,
+      refs.paginButtonPageRemove_2,
+      refs.paginButtonPageRemove_1,
+    ];
+    paginBattonElAddClass(paginButtonsHidden, 'hidden');
   } else if (page === 2) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    refs.pagin_button_el_5.classList.add('pagin_accent');
-    refs.pagin_button_el_4.innerHTML = `${pageBefore}`;
-    refs.pagin_button_el_5.innerHTML = `${page}`;
-    refs.pagin_button_el_6.innerHTML = `${pageAfter}`;
-    refs.pagin_button_el_7.innerHTML = `${pageAfterTwo}`;
-    refs.pagin_button_el_8.innerHTML = `${pageAfterThree}`;
-    refs.pagin_button_el_10.innerHTML = `${maxPage}`;
+    const paginButtonsHidden = [
+      refs.paginButtonMinPage,
+      refs.paginButtonElementLeft,
+      refs.paginButtonPageRemove_4,
+      refs.paginButtonPageRemove_3,
+      refs.paginButtonPageRemove_2,
+      refs.paginButtonPageAdd_4,
+    ];
+    paginBattonElAddClass(paginButtonsHidden, 'hidden');
   } else if (page === 3) {
-    pagin_button_el_2_add_hidden();
-    pagin_button_el_3_add_hidden();
-    refs.pagin_button_el_6.classList.add('pagin_accent');
-    refs.pagin_button_el_4.innerHTML = `${pageBeforeTwo}`;
-    refs.pagin_button_el_5.innerHTML = `${pageBefore}`;
-    refs.pagin_button_el_6.innerHTML = `${page}`;
-    refs.pagin_button_el_7.innerHTML = `${pageAfter}`;
-    refs.pagin_button_el_8.innerHTML = `${pageAfterTwo}`;
-    refs.pagin_button_el_10.innerHTML = `${maxPage}`;
+    const paginButtonsHidden = [
+      refs.paginButtonMinPage,
+      refs.paginButtonElementLeft,
+      refs.paginButtonPageRemove_4,
+      refs.paginButtonPageRemove_3,
+      refs.paginButtonPageAdd_3,
+      refs.paginButtonPageAdd_4,
+    ];
+    paginBattonElAddClass(paginButtonsHidden, 'hidden');
   } else if (page >= 4 && page <= maxPage - 3) {
-    refs.pagin_button_el_6.classList.add('pagin_accent');
-    refs.pagin_button_el_2.innerHTML = `${minPage}`;
-    refs.pagin_button_el_4.innerHTML = `${pageBeforeTwo}`;
-    refs.pagin_button_el_5.innerHTML = `${pageBefore}`;
-    refs.pagin_button_el_6.innerHTML = `${page}`;
-    refs.pagin_button_el_7.innerHTML = `${pageAfter}`;
-    refs.pagin_button_el_8.innerHTML = `${pageAfterTwo}`;
-    refs.pagin_button_el_10.innerHTML = `${maxPage}`;
+    const paginButtonsHidden = [
+      refs.paginButtonPageRemove_4,
+      refs.paginButtonPageRemove_3,
+      refs.paginButtonPageAdd_3,
+      refs.paginButtonPageAdd_4,
+    ];
+    paginBattonElAddClass(paginButtonsHidden, 'hidden');
   } else if (page === maxPage - 2) {
-    pagin_button_el_10_add_hidden();
-    pagin_button_el_9_add_hidden();
-    refs.pagin_button_el_6.classList.add('pagin_accent');
-    refs.pagin_button_el_4.innerHTML = `${pageBeforeTwo}`;
-    refs.pagin_button_el_5.innerHTML = `${pageBefore}`;
-    refs.pagin_button_el_6.innerHTML = `${page}`;
-    refs.pagin_button_el_7.innerHTML = `${pageAfter}`;
-    refs.pagin_button_el_8.innerHTML = `${pageAfterTwo}`;
-    refs.pagin_button_el_10.innerHTML = `${maxPage}`;
+    const paginButtonsHidden = [
+      refs.paginButtonPageRemove_4,
+      refs.paginButtonPageRemove_3,
+      refs.paginButtonPageAdd_3,
+      refs.paginButtonPageAdd_4,
+      refs.paginButtonElementRigth,
+      refs.paginButtonMaxPage,
+    ];
+    paginBattonElAddClass(paginButtonsHidden, 'hidden');
   } else if (page === maxPage - 1) {
-    pagin_button_el_10_add_hidden();
-    pagin_button_el_9_add_hidden();
-    refs.pagin_button_el_7.classList.add('pagin_accent');
-    refs.pagin_button_el_2.innerHTML = `${minPage}`;
-    refs.pagin_button_el_4.innerHTML = `${pageBeforeThree}`;
-    refs.pagin_button_el_5.innerHTML = `${pageBeforeTwo}`;
-    refs.pagin_button_el_6.innerHTML = `${pageBefore}`;
-    refs.pagin_button_el_7.innerHTML = `${page}`;
-    refs.pagin_button_el_8.innerHTML = `${pageAfter}`;
+    const paginButtonsHidden = [
+      refs.paginButtonPageRemove_3,
+      refs.paginButtonPageAdd_2,
+      refs.paginButtonPageAdd_3,
+      refs.paginButtonPageAdd_4,
+      refs.paginButtonElementRigth,
+      refs.paginButtonMaxPage,
+    ];
+    paginBattonElAddClass(paginButtonsHidden, 'hidden');
   } else if (page === maxPage) {
-    pagin_button_el_11_add_hidden();
-    pagin_button_el_10_add_hidden();
-    pagin_button_el_9_add_hidden();
-    refs.pagin_button_el_8.classList.add('pagin_accent');
-    refs.pagin_button_el_2.innerHTML = `${minPage}`;
-    refs.pagin_button_el_4.innerHTML = `${pageBeforeFour}`;
-    refs.pagin_button_el_5.innerHTML = `${pageBeforeThree}`;
-    refs.pagin_button_el_6.innerHTML = `${pageBeforeTwo}`;
-    refs.pagin_button_el_7.innerHTML = `${pageBefore}`;
-    refs.pagin_button_el_8.innerHTML = `${page}`;
+    const paginButtonsHidden = [
+      refs.paginButtonPageAdd_1,
+      refs.paginButtonPageAdd_2,
+      refs.paginButtonPageAdd_3,
+      refs.paginButtonPageAdd_4,
+      refs.paginButtonElementRigth,
+      refs.paginButtonMaxPage,
+      refs.paginButtonRigth,
+    ];
+    paginBattonElAddClass(paginButtonsHidden, 'hidden');
   }
 }
-
-refs.pagin_box.addEventListener('click', on_pagin_button);
 
 function on_pagin_button(evt) {
   if (evt.target.type === 'submit') {
     if (Number(page) === Number(evt.target.innerText)) {
       return evt.target.blur();
     }
-    if (evt.target.classList.contains('pagin_button_left')) {
+    if (evt.target.classList.contains('paginButtonLeft')) {
       page--;
 
-      pagin_namer_button();
+      pagin_namber_button();
       callback(page);
       on_pagin_rander();
       return evt.target.blur();
     }
 
-    if (evt.target.classList.contains('pagin_button_el_11')) {
+    if (evt.target.classList.contains('paginButtonRigth')) {
       page++;
 
-      pagin_namer_button();
+      pagin_namber_button();
       callback(page);
       on_pagin_rander();
       return evt.target.blur();
@@ -412,7 +389,7 @@ function on_pagin_button(evt) {
 
     page = Number(evt.target.innerText);
 
-    pagin_namer_button();
+    pagin_namber_button();
     callback(page);
     on_pagin_rander();
     return evt.target.blur();
@@ -420,106 +397,47 @@ function on_pagin_button(evt) {
   evt.target.blur();
 }
 
-function pagin_namer_button() {
-  pageBeforeFour = page - 4;
-  pageBeforeThree = page - 3;
-  pageBeforeTwo = page - 2;
-  pageBefore = page - 1;
-  pageAfter = page + 1;
-  pageAfterTwo = page + 2;
-  pageAfterThree = page + 3;
-  pageAfterFour = page + 4;
+function pagin_namber_button() {
+  pageRemove_4 = page - 4;
+  pageRemove_3 = page - 3;
+  pageRemove_2 = page - 2;
+  pageRemove_1 = page - 1;
+  pageAdd_1 = page + 1;
+  pageAdd_2 = page + 2;
+  pageAdd_3 = page + 3;
+  pageAdd_4 = page + 4;
 }
 
-function pagin_button_el_1_add_hidden() {
-  if (refs.pagin_button_el_1.classList.contains('hidden')) {
-  } else {
-    refs.pagin_button_el_1.classList.add('hidden');
-  }
-}
-
-function pagin_button_el_2_add_hidden() {
-  if (refs.pagin_button_el_2.classList.contains('hidden')) {
-  } else {
-    refs.pagin_button_el_2.classList.add('hidden');
-  }
-}
-
-function pagin_button_el_3_add_hidden() {
-  if (refs.pagin_button_el_3.classList.contains('hidden')) {
-  } else {
-    refs.pagin_button_el_3.classList.add('hidden');
-  }
-}
-
-function pagin_button_el_4_add_hidden() {
-  if (refs.pagin_button_el_4.classList.contains('hidden')) {
-  } else {
-    refs.pagin_button_el_4.classList.add('hidden');
-  }
-}
-
-function pagin_button_el_5_add_hidden() {
-  if (refs.pagin_button_el_5.classList.contains('hidden')) {
-  } else {
-    refs.pagin_button_el_5.classList.add('hidden');
-  }
-}
-
-function pagin_button_el_6_add_hidden() {
-  if (refs.pagin_button_el_6.classList.contains('hidden')) {
-  } else {
-    refs.pagin_button_el_6.classList.add('hidden');
-  }
-}
-
-function pagin_button_el_7_add_hidden() {
-  if (refs.pagin_button_el_7.classList.contains('hidden')) {
-  } else {
-    refs.pagin_button_el_7.classList.add('hidden');
-  }
-}
-
-function pagin_button_el_8_add_hidden() {
-  if (refs.pagin_button_el_8.classList.contains('hidden')) {
-  } else {
-    refs.pagin_button_el_8.classList.add('hidden');
-  }
-}
-
-function pagin_button_el_9_add_hidden() {
-  if (refs.pagin_button_el_9.classList.contains('hidden')) {
-  } else {
-    refs.pagin_button_el_9.classList.add('hidden');
-  }
-}
-
-function pagin_button_el_10_add_hidden() {
-  if (refs.pagin_button_el_10.classList.contains('hidden')) {
-  } else {
-    refs.pagin_button_el_10.classList.add('hidden');
-  }
-}
-
-function pagin_button_el_11_add_hidden() {
-  if (refs.pagin_button_el_11.classList.contains('hidden')) {
-  } else {
-    refs.pagin_button_el_11.classList.add('hidden');
-  }
+function paginButtonsAddNumbers() {
+  refs.paginButtonMinPage.innerHTML = `${minPage}`;
+  refs.paginButtonPageRemove_4.innerHTML = `${pageRemove_4}`;
+  refs.paginButtonPageRemove_3.innerHTML = `${pageRemove_3}`;
+  refs.paginButtonPageRemove_2.innerHTML = `${pageRemove_2}`;
+  refs.paginButtonPageRemove_1.innerHTML = `${pageRemove_1}`;
+  refs.paginButtonPage.innerHTML = `${page}`;
+  refs.paginButtonPageAdd_1.innerHTML = `${pageAdd_1}`;
+  refs.paginButtonPageAdd_2.innerHTML = `${pageAdd_2}`;
+  refs.paginButtonPageAdd_3.innerHTML = `${pageAdd_3}`;
+  refs.paginButtonPageAdd_4.innerHTML = `${pageAdd_4}`;
+  refs.paginButtonMaxPage.innerHTML = `${maxPage}`;
 }
 
 const paginButtons = [
-  refs.pagin_button_el_1,
-  refs.pagin_button_el_2,
-  refs.pagin_button_el_3,
-  refs.pagin_button_el_4,
-  refs.pagin_button_el_5,
-  refs.pagin_button_el_6,
-  refs.pagin_button_el_7,
-  refs.pagin_button_el_8,
-  refs.pagin_button_el_9,
-  refs.pagin_button_el_10,
-  refs.pagin_button_el_11,
+  refs.paginButtonLeft,
+  refs.paginButtonMinPage,
+  refs.paginButtonElementLeft,
+  refs.paginButtonPageRemove_4,
+  refs.paginButtonPageRemove_3,
+  refs.paginButtonPageRemove_2,
+  refs.paginButtonPageRemove_1,
+  refs.paginButtonPage,
+  refs.paginButtonPageAdd_1,
+  refs.paginButtonPageAdd_2,
+  refs.paginButtonPageAdd_3,
+  refs.paginButtonPageAdd_4,
+  refs.paginButtonElementRigth,
+  refs.paginButtonMaxPage,
+  refs.paginButtonRigth,
 ];
 
 function paginBattonElRemoveClass(paginButtons, topicalClass) {
