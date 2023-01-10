@@ -22,7 +22,7 @@
   }
 }
 
-.pagin_button {
+.paginButton {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,19 +45,17 @@
   transition-duration: $duration;
   transition-timing-function: $timing-function;
   &:focus {
+    background-color: getColor('error-text');
+    color: getColor('white');
+  }
+
+  @media (hover: hover) {
+    &:hover {
       background-color: getColor('error-text');
       color: getColor('white');
     }
-  
-    @media (hover: hover) {
-      &:hover {
-        background-color: getColor('error-text');
-        color: getColor('white');
-      }
-    }
+  }
 }
-
-
 
 .pagin_nothing {
   display: flex;
@@ -73,7 +71,7 @@
   color: getColor('black');
 }
 
-.pagin_accent {
+.paginAccent {
   background-color: getColor('modal-accent');
   color: getColor('white');
   transition: background-color $duration $timing-function;
@@ -83,8 +81,8 @@
   }
 }
 
-.pagin_button_left,
-.pagin_button_rigth {
+.paginButtonLeft,
+.paginButtonRigth {
   font-size: large;
   background-color: getColor('footer-bgr');
   fill: getColor('black');
@@ -96,7 +94,7 @@
   }
 }
 
-.pagin_svg {
+.paginSvg {
   pointer-events: none;
   width: 16px;
   height: 16px;
